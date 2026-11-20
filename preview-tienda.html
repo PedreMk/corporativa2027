@@ -70,18 +70,12 @@
       transform: translateY(-4px);
       box-shadow: 0 12px 24px -6px rgba(15, 23, 42, 0.1);
     }
-    /* Estilos para el desplegable del menú */
-    .has-dropdown:hover .dropdown-menu {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
   </style>
 </head>
 <body class="min-h-screen flex flex-col antialiased">
 
   <!-- ========================================== -->
-  <!-- 1. TOPBAR B2B INSTITUCIONAL & TELÉFONO -->
+  <!-- 1. TOPBAR B2B INSTITUCIONAL (TELÉFONO ÚNICO) -->
   <!-- ========================================== -->
   <aside class="bg-slate-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
     <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
@@ -123,13 +117,13 @@
   </div>
 
   <!-- ========================================== -->
-  <!-- 3. CABECERA PRINCIPAL CON BUSCADOR & CESTA -->
+  <!-- 3. CABECERA PRINCIPAL CON BUSCADOR & ACCIONES B2B -->
   <!-- ========================================== -->
   <header class="bg-white sticky top-0 z-40 shadow-sm border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 py-3 sm:py-4 flex items-center justify-between gap-3 sm:gap-4">
       
-      <!-- BOTÓN HAMBURGUESA MÓVIL (VISIBLE EN PANTALLAS PEQUEÑAS) -->
-      <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-slate-700 hover:text-crimson hover:bg-slate-100 rounded-lg transition" aria-label="Abrir menú de categorías">
+      <!-- BOTÓN HAMBURGUESA MÓVIL -->
+      <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-slate-700 hover:text-crimson hover:bg-slate-100 rounded-lg transition" aria-label="Abrir menú">
         <span class="material-symbols-outlined text-2xl">menu</span>
       </button>
 
@@ -160,13 +154,27 @@
         </div>
       </div>
 
-      <!-- ACCIONES DE USUARIO & CESTA -->
-      <div class="flex items-center gap-3 sm:gap-6 flex-shrink-0">
+      <!-- ACCIONES DE USUARIO & CESTA & PEDIDO RÁPIDO -->
+      <div class="flex items-center gap-2 sm:gap-4 flex-shrink-0">
+        
+        <!-- BOTÓN PEDIDO RÁPIDO B2B (PARA RECURRENTES) -->
+        <button onclick="openQuickOrderModal()" class="hidden md:flex items-center gap-1.5 bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 px-3 py-1.5 rounded-xl text-xs font-bold transition shadow-xs">
+          <span class="material-symbols-outlined text-base text-amber-600">bolt</span>
+          <span>Pedido Rápido B2B</span>
+        </button>
+
+        <!-- FAVORITOS (WISHLIST) -->
+        <button onclick="openWishlistModal()" class="flex items-center gap-1.5 text-slate-700 hover:text-crimson transition relative p-2 rounded-xl hover:bg-slate-50" title="Ver mis artículos favoritos">
+          <span class="material-symbols-outlined text-2xl text-rose-500">favorite</span>
+          <span id="wishlistBadgeCount" class="absolute -top-1 -right-1 bg-rose-500 text-white text-[9px] font-extrabold w-4 h-4 rounded-full flex items-center justify-center shadow-xs">1</span>
+          <span class="text-xs font-bold hidden xl:inline">Favoritos</span>
+        </button>
+
         <!-- Mi Cuenta -->
-        <a href="#" class="hidden md:flex items-center gap-2 text-slate-700 hover:text-crimson transition">
+        <a href="#" class="hidden lg:flex items-center gap-2 text-slate-700 hover:text-crimson transition p-1">
           <span class="material-symbols-outlined text-2xl">person</span>
           <div class="text-left text-xs leading-tight">
-            <span class="block text-slate-400">Acceso</span>
+            <span class="block text-slate-400 text-[10px]">Acceso B2B</span>
             <span class="font-bold">Mi Cuenta</span>
           </div>
         </a>
@@ -211,38 +219,38 @@
         
         <!-- ENLACES HORIZONTALES DIRECTOS -->
         <div class="flex items-center gap-1 sm:gap-2">
-          <a href="#" class="px-3 py-2 rounded-lg text-crimson bg-red-50/80 border border-red-200 font-extrabold flex items-center gap-1.5 whitespace-nowrap">
+          <a href="#catalogo-it" class="px-3 py-2 rounded-lg text-crimson bg-red-50/80 border border-red-200 font-extrabold flex items-center gap-1.5 whitespace-nowrap">
             <span class="material-symbols-outlined text-base">laptop_mac</span>
             PORTÁTILES & PCS
           </a>
-          <a href="#" class="px-3 py-2 rounded-lg text-slate-700 hover:text-crimson hover:bg-slate-50 transition flex items-center gap-1.5 whitespace-nowrap">
+          <a href="#catalogo-it" class="px-3 py-2 rounded-lg text-slate-700 hover:text-crimson hover:bg-slate-50 transition flex items-center gap-1.5 whitespace-nowrap">
             <span class="material-symbols-outlined text-base text-slate-400">memory</span>
             COMPONENTES
           </a>
-          <a href="#" class="px-3 py-2 rounded-lg text-slate-700 hover:text-crimson hover:bg-slate-50 transition flex items-center gap-1.5 whitespace-nowrap">
+          <a href="#catalogo-it" class="px-3 py-2 rounded-lg text-slate-700 hover:text-crimson hover:bg-slate-50 transition flex items-center gap-1.5 whitespace-nowrap">
             <span class="material-symbols-outlined text-base text-slate-400">chair</span>
             OFICINA & MOBILIARIO
           </a>
-          <a href="#" class="px-3 py-2 rounded-lg text-slate-700 hover:text-crimson hover:bg-slate-50 transition flex items-center gap-1.5 whitespace-nowrap">
+          <a href="#catalogo-it" class="px-3 py-2 rounded-lg text-slate-700 hover:text-crimson hover:bg-slate-50 transition flex items-center gap-1.5 whitespace-nowrap">
             <span class="material-symbols-outlined text-base text-slate-400">print</span>
             CONSUMIBLES & TÓNER
           </a>
-          <a href="#" class="px-3 py-2 rounded-lg text-slate-700 hover:text-crimson hover:bg-slate-50 transition flex items-center gap-1.5 whitespace-nowrap">
+          <a href="#catalogo-it" class="px-3 py-2 rounded-lg text-slate-700 hover:text-crimson hover:bg-slate-50 transition flex items-center gap-1.5 whitespace-nowrap">
             <span class="material-symbols-outlined text-base text-slate-400">cable</span>
             CONECTIVIDAD & DOCKS
           </a>
-          <a href="#" class="px-3 py-2 rounded-lg text-slate-700 hover:text-crimson hover:bg-slate-50 transition flex items-center gap-1.5 whitespace-nowrap">
+          <a href="#catalogo-it" class="px-3 py-2 rounded-lg text-slate-700 hover:text-crimson hover:bg-slate-50 transition flex items-center gap-1.5 whitespace-nowrap">
             <span class="material-symbols-outlined text-base text-slate-400">health_and_safety</span>
             ERGONOMÍA FELLOWES
           </a>
-          <a href="#" class="px-3 py-2 rounded-lg text-emerald-700 hover:text-emerald-800 hover:bg-emerald-50 transition flex items-center gap-1.5 whitespace-nowrap">
+          <a href="#marcas" class="px-3 py-2 rounded-lg text-emerald-700 hover:text-emerald-800 hover:bg-emerald-50 transition flex items-center gap-1.5 whitespace-nowrap">
             <span class="material-symbols-outlined text-base">verified</span>
             MARCAS OFICIALES
           </a>
         </div>
 
         <!-- ACCESO DESTACADO A OFERTAS -->
-        <a href="#" class="px-3.5 py-2 rounded-lg text-crimson bg-red-100 hover:bg-crimson hover:text-white transition font-extrabold flex items-center gap-1.5 whitespace-nowrap ml-3 shadow-xs">
+        <a href="#mas-vendidos" class="px-3.5 py-2 rounded-lg text-crimson bg-red-100 hover:bg-crimson hover:text-white transition font-extrabold flex items-center gap-1.5 whitespace-nowrap ml-3 shadow-xs">
           <span class="material-symbols-outlined text-base animate-bounce">local_fire_department</span>
           <span>OFERTAS</span>
         </a>
@@ -270,37 +278,36 @@
 
       <!-- Enlaces de Categorías -->
       <div class="flex-1 overflow-y-auto p-4 space-y-3 text-xs font-bold text-slate-800">
-        <a href="#" class="flex items-center gap-3 p-2.5 rounded-lg bg-red-50 text-crimson font-extrabold">
-          <span class="material-symbols-outlined">local_fire_department</span>
-          OFERTAS DEL DÍA
-        </a>
-        <a href="#" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-slate-50 transition">
+        <button onclick="openQuickOrderModal(); toggleMobileMenu();" class="w-full flex items-center gap-3 p-2.5 rounded-lg bg-amber-50 text-amber-900 font-extrabold border border-amber-200">
+          <span class="material-symbols-outlined text-amber-600">bolt</span>
+          ⚡ Pedido Rápido B2B
+        </button>
+        <button onclick="openWishlistModal(); toggleMobileMenu();" class="w-full flex items-center gap-3 p-2.5 rounded-lg bg-rose-50 text-rose-700 font-extrabold border border-rose-200">
+          <span class="material-symbols-outlined text-rose-500">favorite</span>
+          Mis Favoritos
+        </button>
+        <a href="#catalogo-it" onclick="toggleMobileMenu()" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-slate-50 transition">
           <span class="material-symbols-outlined text-slate-400">laptop_mac</span>
           Portátiles & Laptops Pro
         </a>
-        <a href="#" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-slate-50 transition">
+        <a href="#catalogo-it" onclick="toggleMobileMenu()" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-slate-50 transition">
           <span class="material-symbols-outlined text-slate-400">print</span>
           Consumibles & Tóners Originales
         </a>
-        <a href="#" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-slate-50 transition">
+        <a href="#catalogo-it" onclick="toggleMobileMenu()" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-slate-50 transition">
           <span class="material-symbols-outlined text-slate-400">chair</span>
           Ergonomía & Oficina Fellowes
         </a>
-        <a href="#" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-slate-50 transition">
+        <a href="#catalogo-it" onclick="toggleMobileMenu()" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-slate-50 transition">
           <span class="material-symbols-outlined text-slate-400">cable</span>
           Conectividad & Docks (AISENS / Conceptronic)
         </a>
-        <a href="#" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-slate-50 transition text-emerald-700">
+        <a href="#marcas" onclick="toggleMobileMenu()" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-slate-50 transition text-emerald-700">
           <span class="material-symbols-outlined">verified</span>
           Marcas Oficiales Homologadas
         </a>
 
         <div class="pt-4 border-t border-slate-200 space-y-2 text-slate-600 font-semibold">
-          <div class="text-[11px] font-extrabold uppercase text-slate-400">Atención Directa</div>
-          <a href="tel:954368011" class="flex items-center gap-2 text-slate-900 font-bold">
-            <span class="material-symbols-outlined text-emerald-600 text-sm">call</span>
-            954 36 80 11
-          </a>
           <a href="https://pedremk.github.io/corporativa2027/" target="_blank" class="flex items-center gap-2 text-slate-600 hover:text-crimson">
             <span class="material-symbols-outlined text-sm">open_in_new</span>
             Web Corporativa & Servicios IT
@@ -437,7 +444,7 @@
     <!-- ========================================== -->
     <!-- 5. FRANJA DE MARCAS PREFERENTES -->
     <!-- ========================================== -->
-    <section class="max-w-7xl mx-auto px-4 py-8">
+    <section id="marcas" class="max-w-7xl mx-auto px-4 py-8">
       <div class="bg-white rounded-xl p-4 sm:p-6 border border-slate-200 shadow-sm">
         <div class="flex items-center justify-between mb-4 pb-2 border-b border-slate-100">
           <div class="flex items-center gap-2">
@@ -463,9 +470,176 @@
     </section>
 
     <!-- ========================================== -->
-    <!-- 6. MÓDULO: ARTÍCULOS MÁS VENDIDOS (TOP VENTAS) -->
+    <!-- 6. CATÁLOGO INFORMÁTICO CENTRALIZADO: CATEGORÍAS PRINCIPALES IT -->
     <!-- ========================================== -->
-    <section class="max-w-7xl mx-auto px-4 pb-12">
+    <section id="catalogo-it" class="max-w-7xl mx-auto px-4 pb-10">
+      <div class="flex items-end justify-between mb-6 pb-2 border-b border-slate-200">
+        <div>
+          <div class="text-[11px] font-extrabold uppercase tracking-widest text-slate-400 mb-1">
+            CATÁLOGO INFORMÁTICO CENTRALIZADO
+          </div>
+          <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900">
+            Categorías Principales IT
+          </h2>
+        </div>
+        <a href="#mas-vendidos" class="text-xs font-bold text-crimson hover:underline flex items-center gap-1">
+          Ver todas las familias B2B <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Tarjeta 1: Ordenadores & Portátiles -->
+        <a href="#mas-vendidos" class="group bg-white rounded-xl border border-slate-200 p-6 flex flex-col justify-between hover:border-crimson hover:shadow-lg transition cursor-pointer">
+          <div>
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-12 h-12 rounded-xl bg-red-50 text-crimson flex items-center justify-center group-hover:bg-crimson group-hover:text-white transition shadow-xs">
+                <span class="material-symbols-outlined text-2xl">laptop_mac</span>
+              </div>
+              <span class="text-[11px] font-bold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full border border-slate-200">
+                +2.400 refs
+              </span>
+            </div>
+            <h3 class="font-extrabold text-slate-900 text-base mb-2 group-hover:text-crimson transition">
+              Ordenadores & Portátiles
+            </h3>
+            <p class="text-slate-500 text-xs leading-relaxed mb-4">
+              All-In-One Pcs, ordenadores portátiles, estaciones de trabajo, Pcs de sobremesa, clientes livianos y tablets corporativas.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 font-semibold">
+            <span>HP, Lenovo, ASUS, Acer</span>
+            <span class="material-symbols-outlined text-base text-crimson group-hover:translate-x-1 transition">arrow_forward</span>
+          </div>
+        </a>
+
+        <!-- Tarjeta 2: Impresoras & Escáner -->
+        <a href="#mas-vendidos" class="group bg-white rounded-xl border border-slate-200 p-6 flex flex-col justify-between hover:border-crimson hover:shadow-lg transition cursor-pointer">
+          <div>
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-12 h-12 rounded-xl bg-red-50 text-crimson flex items-center justify-center group-hover:bg-crimson group-hover:text-white transition shadow-xs">
+                <span class="material-symbols-outlined text-2xl">print</span>
+              </div>
+              <span class="text-[11px] font-bold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full border border-slate-200">
+                +1.800 refs
+              </span>
+            </div>
+            <h3 class="font-extrabold text-slate-900 text-base mb-2 group-hover:text-crimson transition">
+              Impresoras & Escáner
+            </h3>
+            <p class="text-slate-500 text-xs leading-relaxed mb-4">
+              Impresoras láser, multifunción, inyección de tinta, gran formato, tickets TPV, etiquetas, impresoras 3D y portátiles.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 font-semibold">
+            <span>HP, Brother, Epson</span>
+            <span class="material-symbols-outlined text-base text-crimson group-hover:translate-x-1 transition">arrow_forward</span>
+          </div>
+        </a>
+
+        <!-- Tarjeta 3: Consumibles & Tóner Original -->
+        <a href="#mas-vendidos" class="group bg-white rounded-xl border border-slate-200 p-6 flex flex-col justify-between hover:border-crimson hover:shadow-lg transition cursor-pointer">
+          <div>
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-12 h-12 rounded-xl bg-red-50 text-crimson flex items-center justify-center group-hover:bg-crimson group-hover:text-white transition shadow-xs">
+                <span class="material-symbols-outlined text-2xl">water_drop</span>
+              </div>
+              <span class="text-[11px] font-bold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full border border-slate-200">
+                +3.200 refs
+              </span>
+            </div>
+            <h3 class="font-extrabold text-slate-900 text-base mb-2 group-hover:text-crimson transition">
+              Consumibles & Tóner Original
+            </h3>
+            <p class="text-slate-500 text-xs leading-relaxed mb-4">
+              Cartuchos de tóner original, cartuchos de tinta, tambores de impresoras, fotoconductores y depósitos de residuo original.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 font-semibold">
+            <span>HP Original, Brother, Epson, Canon</span>
+            <span class="material-symbols-outlined text-base text-crimson group-hover:translate-x-1 transition">arrow_forward</span>
+          </div>
+        </a>
+
+        <!-- Tarjeta 4: Audiovisuales & Monitores -->
+        <a href="#mas-vendidos" class="group bg-white rounded-xl border border-slate-200 p-6 flex flex-col justify-between hover:border-crimson hover:shadow-lg transition cursor-pointer">
+          <div>
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-12 h-12 rounded-xl bg-red-50 text-crimson flex items-center justify-center group-hover:bg-crimson group-hover:text-white transition shadow-xs">
+                <span class="material-symbols-outlined text-2xl">tv</span>
+              </div>
+              <span class="text-[11px] font-bold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full border border-slate-200">
+                +650 refs
+              </span>
+            </div>
+            <h3 class="font-extrabold text-slate-900 text-base mb-2 group-hover:text-crimson transition">
+              Audiovisuales & Monitores
+            </h3>
+            <p class="text-slate-500 text-xs leading-relaxed mb-4">
+              Monitores para PC, televisores profesionales para cartelería y salas, monitores y TV portátiles y proyectores.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 font-semibold">
+            <span>TCL, Samsung, LG, ViewSonic</span>
+            <span class="material-symbols-outlined text-base text-crimson group-hover:translate-x-1 transition">arrow_forward</span>
+          </div>
+        </a>
+
+        <!-- Tarjeta 5: Periféricos & Accesorios -->
+        <a href="#mas-vendidos" class="group bg-white rounded-xl border border-slate-200 p-6 flex flex-col justify-between hover:border-crimson hover:shadow-lg transition cursor-pointer">
+          <div>
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-12 h-12 rounded-xl bg-red-50 text-crimson flex items-center justify-center group-hover:bg-crimson group-hover:text-white transition shadow-xs">
+                <span class="material-symbols-outlined text-2xl">mouse</span>
+              </div>
+              <span class="text-[11px] font-bold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full border border-slate-200">
+                +1.400 refs
+              </span>
+            </div>
+            <h3 class="font-extrabold text-slate-900 text-base mb-2 group-hover:text-crimson transition">
+              Periféricos & Accesorios
+            </h3>
+            <p class="text-slate-500 text-xs leading-relaxed mb-4">
+              Discos duros sólidos SSD (internos y externos), teclados, ratones, memorias USB, estaciones base docking, soportes y cables.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 font-semibold">
+            <span>Kingston, Logitech, SanDisk, Seagate</span>
+            <span class="material-symbols-outlined text-base text-crimson group-hover:translate-x-1 transition">arrow_forward</span>
+          </div>
+        </a>
+
+        <!-- Tarjeta 6: Papelería & Catálogos Generales -->
+        <a href="https://pedregosa.es/catalogos" target="_blank" class="group bg-white rounded-xl border border-slate-200 p-6 flex flex-col justify-between hover:border-amber-500 hover:shadow-lg transition cursor-pointer">
+          <div>
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center group-hover:bg-amber-600 group-hover:text-white transition shadow-xs">
+                <span class="material-symbols-outlined text-2xl">menu_book</span>
+              </div>
+              <span class="text-[11px] font-bold text-amber-800 bg-amber-100 px-2.5 py-1 rounded-full border border-amber-200">
+                Tienda diferente
+              </span>
+            </div>
+            <h3 class="font-extrabold text-slate-900 text-base mb-2 group-hover:text-amber-700 transition">
+              Papelería & Catálogos Generales
+            </h3>
+            <p class="text-slate-500 text-xs leading-relaxed mb-4">
+              Catálogos corporativos de papelería general, suministros de oficina, archivo y mobiliario disponibles en portal independiente.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 font-semibold">
+            <span>pedregosa.es/catalogos</span>
+            <span class="material-symbols-outlined text-base text-amber-600 group-hover:translate-x-1 transition">open_in_new</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 7. MÓDULO: ARTÍCULOS MÁS VENDIDOS (TOP VENTAS) -->
+    <!-- ========================================== -->
+    <section id="mas-vendidos" class="max-w-7xl mx-auto px-4 pb-12">
       <div class="flex items-end justify-between mb-6">
         <div>
           <div class="flex items-center gap-1.5 text-crimson text-xs font-extrabold uppercase tracking-wider mb-1">
@@ -476,32 +650,39 @@
             Artículos Más Vendidos
           </h2>
         </div>
-        <a href="#" class="text-xs font-bold text-crimson hover:underline flex items-center gap-1">
+        <a href="#catalogo-it" class="text-xs font-bold text-crimson hover:underline flex items-center gap-1">
           Ver todo el catálogo <span class="material-symbols-outlined text-sm">arrow_forward</span>
         </a>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         
-        <!-- PRODUCTO 1 -->
-        <div class="product-card bg-white rounded-xl border border-slate-200 p-4 flex flex-col justify-between">
-          <div>
-            <div class="relative bg-slate-50 rounded-lg p-4 mb-3 flex items-center justify-center h-44 overflow-hidden">
+        <!-- PRODUCTO 1: LG GRAM (FOTOGRAFÍA Y TARJETA 100% CLICABLE) -->
+        <div class="product-card bg-white rounded-xl border border-slate-200 p-4 flex flex-col justify-between relative group">
+          
+          <!-- BOTÓN FAVORITO -->
+          <button onclick="toggleFavorite(event, 'lg-gram')" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 hover:bg-white text-slate-400 hover:text-rose-500 flex items-center justify-center transition shadow-xs z-10" title="Guardar en mis habituales">
+            <span class="material-symbols-outlined text-base" id="fav-icon-lg-gram">favorite_border</span>
+          </button>
+
+          <div onclick="openProductModal('lg-gram')" class="cursor-pointer">
+            <div class="relative bg-slate-50 rounded-lg p-4 mb-3 flex items-center justify-center h-44 overflow-hidden group-hover:bg-slate-100 transition">
               <span class="absolute top-2 left-2 bg-crimson text-white text-[10px] font-extrabold px-2 py-0.5 rounded shadow-sm">
                 TOP VENTAS
               </span>
-              <img src="assets/img/banner-lg-gram.jpg" alt="Portátil LG Gram" class="h-full object-contain mix-blend-multiply">
+              <img src="assets/img/banner-lg-gram.jpg" alt="Portátil LG Gram" class="h-full object-contain mix-blend-multiply group-hover:scale-105 transition duration-300">
             </div>
             <div class="text-[11px] text-slate-400 font-semibold mb-1 uppercase">LG Electronics</div>
-            <h3 class="font-bold text-slate-900 text-sm leading-snug line-clamp-2 hover:text-crimson transition cursor-pointer" onclick="openProductModal('lg-gram')">
+            <h3 class="font-bold text-slate-900 text-sm leading-snug line-clamp-2 group-hover:text-crimson transition">
               Portátil LG Gram 16Z90R Intel Core i7 16GB 512GB SSD W11 Pro
             </h3>
             <div class="mt-2 text-xs text-emerald-600 font-bold flex items-center gap-1">
               <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Stock en Sevilla (24/48h)
             </div>
           </div>
+
           <div class="pt-4 border-t border-slate-100 mt-4">
-            <div class="flex items-baseline gap-2">
+            <div class="flex items-baseline gap-2 cursor-pointer" onclick="openProductModal('lg-gram')">
               <span class="text-xl font-extrabold text-crimson">899,00 €</span>
               <span class="text-xs text-slate-500 font-medium">sin IVA</span>
             </div>
@@ -515,25 +696,31 @@
           </div>
         </div>
 
-        <!-- PRODUCTO 2 -->
-        <div class="product-card bg-white rounded-xl border border-slate-200 p-4 flex flex-col justify-between">
-          <div>
-            <div class="relative bg-slate-50 rounded-lg p-4 mb-3 flex items-center justify-center h-44 overflow-hidden">
+        <!-- PRODUCTO 2: FELLOWES -->
+        <div class="product-card bg-white rounded-xl border border-slate-200 p-4 flex flex-col justify-between relative group">
+          
+          <button onclick="toggleFavorite(event, 'fellowes')" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 hover:bg-white text-slate-400 hover:text-rose-500 flex items-center justify-center transition shadow-xs z-10" title="Guardar en mis habituales">
+            <span class="material-symbols-outlined text-base" id="fav-icon-fellowes">favorite_border</span>
+          </button>
+
+          <div onclick="openProductModal('fellowes')" class="cursor-pointer">
+            <div class="relative bg-slate-50 rounded-lg p-4 mb-3 flex items-center justify-center h-44 overflow-hidden group-hover:bg-slate-100 transition">
               <span class="absolute top-2 left-2 bg-emerald-600 text-white text-[10px] font-extrabold px-2 py-0.5 rounded shadow-sm">
                 ERGONOMÍA PRO
               </span>
-              <img src="assets/img/banner-fellowes.jpg" alt="Destructora Fellowes" class="h-full object-contain mix-blend-multiply">
+              <img src="assets/img/banner-fellowes.jpg" alt="Destructora Fellowes" class="h-full object-contain mix-blend-multiply group-hover:scale-105 transition duration-300">
             </div>
             <div class="text-[11px] text-slate-400 font-semibold mb-1 uppercase">Fellowes</div>
-            <h3 class="font-bold text-slate-900 text-sm leading-snug line-clamp-2 hover:text-crimson transition cursor-pointer" onclick="openProductModal('fellowes')">
+            <h3 class="font-bold text-slate-900 text-sm leading-snug line-clamp-2 group-hover:text-crimson transition">
               Destructora Fellowes AutoMax 100M Microcorte DIN P-5
             </h3>
             <div class="mt-2 text-xs text-emerald-600 font-bold flex items-center gap-1">
               <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Stock Disponible
             </div>
           </div>
+
           <div class="pt-4 border-t border-slate-100 mt-4">
-            <div class="flex items-baseline gap-2">
+            <div class="flex items-baseline gap-2 cursor-pointer" onclick="openProductModal('fellowes')">
               <span class="text-xl font-extrabold text-crimson">235,00 €</span>
               <span class="text-xs text-slate-500 font-medium">sin IVA</span>
             </div>
@@ -547,25 +734,31 @@
           </div>
         </div>
 
-        <!-- PRODUCTO 3 -->
-        <div class="product-card bg-white rounded-xl border border-slate-200 p-4 flex flex-col justify-between">
-          <div>
-            <div class="relative bg-slate-50 rounded-lg p-4 mb-3 flex items-center justify-center h-44 overflow-hidden">
+        <!-- PRODUCTO 3: DOCKING CONCEPTRONIC -->
+        <div class="product-card bg-white rounded-xl border border-slate-200 p-4 flex flex-col justify-between relative group">
+          
+          <button onclick="toggleFavorite(event, 'docking')" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 hover:bg-white text-rose-500 flex items-center justify-center transition shadow-xs z-10" title="Guardar en mis habituales">
+            <span class="material-symbols-outlined text-base" id="fav-icon-docking">favorite</span>
+          </button>
+
+          <div onclick="openProductModal('docking')" class="cursor-pointer">
+            <div class="relative bg-slate-50 rounded-lg p-4 mb-3 flex items-center justify-center h-44 overflow-hidden group-hover:bg-slate-100 transition">
               <span class="absolute top-2 left-2 bg-sky-600 text-white text-[10px] font-extrabold px-2 py-0.5 rounded shadow-sm">
                 CONECTIVIDAD
               </span>
-              <img src="assets/img/banner-conceptronic.jpg" alt="Docking Station" class="h-full object-contain mix-blend-multiply">
+              <img src="assets/img/banner-conceptronic.jpg" alt="Docking Station" class="h-full object-contain mix-blend-multiply group-hover:scale-105 transition duration-300">
             </div>
             <div class="text-[11px] text-slate-400 font-semibold mb-1 uppercase">Conceptronic</div>
-            <h3 class="font-bold text-slate-900 text-sm leading-snug line-clamp-2 hover:text-crimson transition cursor-pointer" onclick="openProductModal('docking')">
+            <h3 class="font-bold text-slate-900 text-sm leading-snug line-clamp-2 group-hover:text-crimson transition">
               Docking Station USB-C Dual HDMI 4K Gigabit Ethernet 100W PD
             </h3>
             <div class="mt-2 text-xs text-emerald-600 font-bold flex items-center gap-1">
               <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Stock en Sevilla (24h)
             </div>
           </div>
+
           <div class="pt-4 border-t border-slate-100 mt-4">
-            <div class="flex items-baseline gap-2">
+            <div class="flex items-baseline gap-2 cursor-pointer" onclick="openProductModal('docking')">
               <span class="text-xl font-extrabold text-crimson">48,00 €</span>
               <span class="text-xs text-slate-500 font-medium">sin IVA</span>
             </div>
@@ -579,10 +772,15 @@
           </div>
         </div>
 
-        <!-- PRODUCTO 4 -->
-        <div class="product-card bg-white rounded-xl border border-slate-200 p-4 flex flex-col justify-between">
-          <div>
-            <div class="relative bg-slate-50 rounded-lg p-4 mb-3 flex items-center justify-center h-44 overflow-hidden">
+        <!-- PRODUCTO 4: TÓNER HP ORIGINAL -->
+        <div class="product-card bg-white rounded-xl border border-slate-200 p-4 flex flex-col justify-between relative group">
+          
+          <button onclick="toggleFavorite(event, 'toner-hp')" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 hover:bg-white text-slate-400 hover:text-rose-500 flex items-center justify-center transition shadow-xs z-10" title="Guardar en mis habituales">
+            <span class="material-symbols-outlined text-base" id="fav-icon-toner-hp">favorite_border</span>
+          </button>
+
+          <div onclick="openProductModal('toner-hp')" class="cursor-pointer">
+            <div class="relative bg-slate-50 rounded-lg p-4 mb-3 flex items-center justify-center h-44 overflow-hidden group-hover:bg-slate-100 transition">
               <span class="absolute top-2 left-2 bg-slate-900 text-white text-[10px] font-extrabold px-2 py-0.5 rounded shadow-sm">
                 100% ORIGINAL
               </span>
@@ -592,15 +790,16 @@
               </div>
             </div>
             <div class="text-[11px] text-slate-400 font-semibold mb-1 uppercase">HP Original</div>
-            <h3 class="font-bold text-slate-900 text-sm leading-snug line-clamp-2 hover:text-crimson transition cursor-pointer" onclick="openProductModal('toner-hp')">
+            <h3 class="font-bold text-slate-900 text-sm leading-snug line-clamp-2 group-hover:text-crimson transition">
               Tóner Original HP W2030A (HP 415A) Negro 2.400 páginas
             </h3>
             <div class="mt-2 text-xs text-emerald-600 font-bold flex items-center gap-1">
               <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Stock Permanente
             </div>
           </div>
+
           <div class="pt-4 border-t border-slate-100 mt-4">
-            <div class="flex items-baseline gap-2">
+            <div class="flex items-baseline gap-2 cursor-pointer" onclick="openProductModal('toner-hp')">
               <span class="text-xl font-extrabold text-crimson">79,50 €</span>
               <span class="text-xs text-slate-500 font-medium">sin IVA</span>
             </div>
@@ -619,7 +818,109 @@
   </main>
 
   <!-- ========================================== -->
-  <!-- 7. MODAL DETALLE DE PRODUCTO (HIGH CONVERSION) -->
+  <!-- 8. MODAL PEDIDO RÁPIDO B2B (REPETIR PEDIDOS FRECUENTES) -->
+  <!-- ========================================== -->
+  <div id="quickOrderModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-2xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+      <button onclick="closeQuickOrderModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 transition">
+        <span class="material-symbols-outlined text-2xl">close</span>
+      </button>
+
+      <div class="flex items-center gap-2 mb-2">
+        <span class="material-symbols-outlined text-2xl text-amber-600">bolt</span>
+        <h2 class="text-xl font-extrabold text-slate-900">Pedido Rápido B2B / Habituales</h2>
+      </div>
+      <p class="text-xs text-slate-500 mb-6">
+        Agiliza tus pedidos recurrentes añadiendo tus artículos habituales en 1 clic o introduciendo referencias SKU directas:
+      </p>
+
+      <!-- SECCIÓN A: REPETIR PEDIDO HABITUAL -->
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 mb-6">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-sm text-crimson">history</span>
+            Tus 3 Artículos Más Repetidos:
+          </span>
+          <span class="text-[11px] text-emerald-600 font-semibold">Stock confirmado</span>
+        </div>
+
+        <div class="space-y-2 text-xs">
+          <div class="flex items-center justify-between bg-white p-2.5 rounded-lg border border-slate-200">
+            <div>
+              <div class="font-bold text-slate-800">Tóner Original HP W2030A Negro</div>
+              <div class="text-[11px] text-slate-400">Ref: W2030A • 79,50 € + IVA</div>
+            </div>
+            <span class="text-xs font-extrabold text-slate-700">Cant: 2</span>
+          </div>
+
+          <div class="flex items-center justify-between bg-white p-2.5 rounded-lg border border-slate-200">
+            <div>
+              <div class="font-bold text-slate-800">Papel Fotocopia Navigator Universal A4 80g (Caja 5 paquetes)</div>
+              <div class="text-[11px] text-slate-400">Ref: NAV-A4 • 24,90 € + IVA</div>
+            </div>
+            <span class="text-xs font-extrabold text-slate-700">Cant: 3</span>
+          </div>
+
+          <div class="flex items-center justify-between bg-white p-2.5 rounded-lg border border-slate-200">
+            <div>
+              <div class="font-bold text-slate-800">Docking Station USB-C Dual HDMI 4K Gigabit</div>
+              <div class="text-[11px] text-slate-400">Ref: DOC-4K • 48,00 € + IVA</div>
+            </div>
+            <span class="text-xs font-extrabold text-slate-700">Cant: 1</span>
+          </div>
+        </div>
+
+        <button onclick="reorderFrequentItems()" class="w-full mt-4 btn-crimson py-2.5 rounded-lg font-bold text-xs flex items-center justify-center gap-2 shadow-sm">
+          <span class="material-symbols-outlined text-base">replay</span>
+          Cargar mis 3 Habituales en la Cesta (Envío Gratis asegurado)
+        </button>
+      </div>
+
+      <!-- SECCIÓN B: ENTRADA DIRECTA POR REFERENCIA SKU -->
+      <div class="border-t border-slate-200 pt-4">
+        <h3 class="text-xs font-bold text-slate-800 mb-3 flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-sm text-slate-400">qr_code</span>
+          Añadir por Referencia SKU o Código de Catálogo:
+        </h3>
+        <div class="flex items-center gap-3">
+          <input id="quickSkuInput" type="text" placeholder="Ej: W2030A o 16Z90R" class="flex-1 px-3 py-2 text-xs border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-crimson">
+          <input id="quickQtyInput" type="number" value="1" min="1" class="w-16 px-3 py-2 text-xs text-center border border-slate-300 rounded-lg focus:outline-none font-bold">
+          <button onclick="addSkuQuick()" class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-lg transition">
+            Añadir
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- 9. MODAL MIS FAVORITOS (WISHLIST) -->
+  <!-- ========================================== -->
+  <div id="wishlistModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl relative max-h-[85vh] overflow-y-auto">
+      <button onclick="closeWishlistModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 transition">
+        <span class="material-symbols-outlined text-2xl">close</span>
+      </button>
+
+      <div class="flex items-center gap-2 mb-4">
+        <span class="material-symbols-outlined text-2xl text-rose-500">favorite</span>
+        <h2 class="text-xl font-extrabold text-slate-900">Mis Artículos Favoritos</h2>
+      </div>
+
+      <div id="wishlistItemsList" class="space-y-3 mb-6">
+        <!-- Inyectado dinámicamente -->
+      </div>
+
+      <button onclick="addAllWishlistToCart()" class="w-full btn-crimson py-2.5 rounded-lg font-bold text-xs flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-base">shopping_cart</span>
+        Añadir Todos a la Cesta
+      </button>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- 10. MODAL DETALLE DE PRODUCTO (HIGH CONVERSION) -->
   <!-- ========================================== -->
   <div id="productModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
     <div class="bg-white rounded-2xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
@@ -711,7 +1012,7 @@
   </div>
 
   <!-- ========================================== -->
-  <!-- 8. CAJÓN DE LA CESTA (CART DRAWER CON ENVÍO GRATIS > 75 €) -->
+  <!-- 11. CAJÓN DE LA CESTA (CART DRAWER CON ENVÍO GRATIS > 75 €) -->
   <!-- ========================================== -->
   <div id="cartDrawer" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex justify-end transition-opacity duration-300 opacity-0 pointer-events-none">
     <div id="cartDrawerContent" class="bg-white w-full max-w-md h-full shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out">
@@ -788,7 +1089,7 @@
   </div>
 
   <!-- ========================================== -->
-  <!-- 9. FOOTER E-COMMERCE CON SELLOS ISO ADOK -->
+  <!-- 12. FOOTER E-COMMERCE CON SELLOS ISO ADOK -->
   <!-- ========================================== -->
   <footer class="bg-slate-900 text-slate-300 pt-12 pb-8 border-t border-slate-800 mt-12 text-xs">
     <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
@@ -840,13 +1141,18 @@
   </footer>
 
   <!-- ========================================== -->
-  <!-- 10. LÓGICA INTERACTIVA JAVASCRIPT -->
+  <!-- 13. LÓGICA INTERACTIVA JAVASCRIPT -->
   <!-- ========================================== -->
   <script>
     // Carrito de estado
     let cart = [
       { id: 'docking', name: 'Docking Station USB-C Dual HDMI', priceNet: 48.00, qty: 1, img: 'assets/img/banner-conceptronic.jpg' },
       { id: 'toner-hp', name: 'Tóner Original HP W2030A Negro', priceNet: 79.50, qty: 1, img: 'assets/img/banner-lg-gram.jpg' }
+    ];
+
+    // Favoritos de estado
+    let favorites = [
+      { id: 'docking', name: 'Docking Station USB-C Dual HDMI', priceNet: 48.00, img: 'assets/img/banner-conceptronic.jpg' }
     ];
 
     const FREE_SHIPPING_THRESHOLD = 75.00;
@@ -1033,6 +1339,145 @@
       }
     }
 
+    // ==========================================
+    // SISTEMA DE FAVORITOS (WISHLIST)
+    // ==========================================
+    function toggleFavorite(event, id) {
+      if (event) event.stopPropagation();
+
+      const index = favorites.findIndex(f => f.id === id);
+      const icon = document.getElementById('fav-icon-' + id);
+
+      if (index >= 0) {
+        favorites.splice(index, 1);
+        if (icon) {
+          icon.innerText = 'favorite_border';
+          icon.parentElement.classList.remove('text-rose-500');
+          icon.parentElement.classList.add('text-slate-400');
+        }
+      } else {
+        let productToAdd = null;
+        if (id === 'lg-gram') productToAdd = { id: 'lg-gram', name: 'Portátil LG Gram 16Z90R Pro', priceNet: 899.00, img: 'assets/img/banner-lg-gram.jpg' };
+        else if (id === 'fellowes') productToAdd = { id: 'fellowes', name: 'Destructora Fellowes AutoMax 100M', priceNet: 235.00, img: 'assets/img/banner-fellowes.jpg' };
+        else if (id === 'docking') productToAdd = { id: 'docking', name: 'Docking Station USB-C Dual HDMI', priceNet: 48.00, img: 'assets/img/banner-conceptronic.jpg' };
+        else productToAdd = { id: 'toner-hp', name: 'Tóner Original HP W2030A Negro', priceNet: 79.50, img: 'assets/img/banner-lg-gram.jpg' };
+
+        favorites.push(productToAdd);
+        if (icon) {
+          icon.innerText = 'favorite';
+          icon.parentElement.classList.remove('text-slate-400');
+          icon.parentElement.classList.add('text-rose-500');
+        }
+      }
+      renderFavoritesBadge();
+    }
+
+    function renderFavoritesBadge() {
+      const badge = document.getElementById('wishlistBadgeCount');
+      if (badge) badge.innerText = favorites.length;
+    }
+
+    function openWishlistModal() {
+      const modal = document.getElementById('wishlistModal');
+      const list = document.getElementById('wishlistItemsList');
+      list.innerHTML = '';
+
+      if (favorites.length === 0) {
+        list.innerHTML = '<div class="text-center py-6 text-slate-400 text-xs">No tienes artículos favoritos guardados todavía.</div>';
+      } else {
+        favorites.forEach((item, idx) => {
+          const div = document.createElement('div');
+          div.className = 'flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-200';
+          div.innerHTML = `
+            <div class="flex items-center gap-3">
+              <img src="${item.img}" class="w-12 h-12 object-cover rounded-lg bg-white border border-slate-200">
+              <div>
+                <h4 class="font-bold text-xs text-slate-800">${item.name}</h4>
+                <div class="text-xs text-crimson font-extrabold">${item.priceNet.toFixed(2)} € + IVA</div>
+              </div>
+            </div>
+            <button onclick="addToCart('${item.name}', ${item.priceNet}, '${item.id}'); closeWishlistModal();" class="btn-crimson px-3 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1 shadow-xs">
+              <span class="material-symbols-outlined text-sm">shopping_cart</span>
+              Comprar
+            </button>
+          `;
+          list.appendChild(div);
+        });
+      }
+
+      modal.classList.remove('hidden');
+    }
+
+    function closeWishlistModal() {
+      document.getElementById('wishlistModal').classList.add('hidden');
+    }
+
+    function addAllWishlistToCart() {
+      favorites.forEach(item => {
+        const existing = cart.find(i => i.id === item.id);
+        if (existing) existing.qty += 1;
+        else cart.push({ ...item, qty: 1 });
+      });
+      closeWishlistModal();
+      renderCart();
+      toggleCartDrawer(true);
+    }
+
+    // ==========================================
+    // SISTEMA DE PEDIDO RÁPIDO B2B (REPETIR PEDIDOS)
+    // ==========================================
+    function openQuickOrderModal() {
+      document.getElementById('quickOrderModal').classList.remove('hidden');
+    }
+
+    function closeQuickOrderModal() {
+      document.getElementById('quickOrderModal').classList.add('hidden');
+    }
+
+    function reorderFrequentItems() {
+      // Carga directa de los 3 habituales
+      const frequent = [
+        { id: 'toner-hp', name: 'Tóner Original HP W2030A Negro', priceNet: 79.50, qty: 2, img: 'assets/img/banner-lg-gram.jpg' },
+        { id: 'docking', name: 'Docking Station USB-C Dual HDMI', priceNet: 48.00, qty: 1, img: 'assets/img/banner-conceptronic.jpg' }
+      ];
+
+      frequent.forEach(item => {
+        const existing = cart.find(i => i.id === item.id);
+        if (existing) existing.qty += item.qty;
+        else cart.push({ ...item });
+      });
+
+      closeQuickOrderModal();
+      renderCart();
+      toggleCartDrawer(true);
+    }
+
+    function addSkuQuick() {
+      const skuInput = document.getElementById('quickSkuInput');
+      const qtyInput = document.getElementById('quickQtyInput');
+      const sku = skuInput.value.trim().toUpperCase();
+      const qty = parseInt(qtyInput.value) || 1;
+
+      if (!sku) {
+        alert('Por favor introduce un SKU o referencia');
+        return;
+      }
+
+      // Añadir artículo por SKU
+      cart.push({
+        id: 'sku-' + sku,
+        name: 'Artículo Ref: ' + sku,
+        priceNet: 35.00,
+        qty: qty,
+        img: 'assets/img/banner-conceptronic.jpg'
+      });
+
+      skuInput.value = '';
+      closeQuickOrderModal();
+      renderCart();
+      toggleCartDrawer(true);
+    }
+
     // Slider Logic
     let currentSlide = 0;
     const slides = [0, 1, 2, 3];
@@ -1068,6 +1513,7 @@
 
     // Inicializar
     renderCart();
+    renderFavoritesBadge();
   </script>
 </body>
 </html>
