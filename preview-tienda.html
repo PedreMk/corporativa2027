@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedregosa Tienda Oficial | Informática, Consumibles y Oficina B2B</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  
+  <!-- Tailwind CSS para maqueta responsive rápida y limpia -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            crimson: {
+              DEFAULT: '#8a0018',
+              hover: '#b50524',
+              dark: '#6b0013',
+            },
+            slate: {
+              950: '#0b1120',
+              900: '#0f172a',
+              850: '#141e33',
+              800: '#1e293b',
+              50: '#f8fafc'
+            },
+            emerald: {
+              600: '#059669',
+              500: '#10b981',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      vertical-align: middle;
+    }
+    .btn-crimson {
+      background-color: #8a0018;
+      color: #ffffff;
+      transition: all 0.2s ease-in-out;
+    }
+    .btn-crimson:hover {
+      background-color: #b50524;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(181, 5, 36, 0.3);
+    }
+    .product-card {
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px -6px rgba(15, 23, 42, 0.1);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased">
+
+  <!-- ========================================== -->
+  <!-- 1. TOPBAR B2B INSTITUCIONAL & TELÉFONO -->
+  <!-- ========================================== -->
+  <aside class="bg-slate-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-6">
+        <span class="flex items-center gap-1.5 font-medium text-white">
+          <span class="material-symbols-outlined text-sm text-emerald-400">call</span>
+          Pedidos Directos: <a href="tel:954368011" class="hover:underline font-bold text-white">954 36 80 11</a>
+        </span>
+        <span class="hidden md:flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-sm text-slate-400">mail</span>
+          pedidos@pedregosa.es
+        </span>
+        <span class="hidden lg:flex items-center gap-1.5 text-slate-400">
+          <span class="material-symbols-outlined text-sm text-slate-400">location_on</span>
+          Almacén Central en Sevilla (Polígono Store)
+        </span>
+      </div>
+      <div class="flex items-center gap-4">
+        <span class="hidden sm:inline-block bg-slate-800 text-slate-200 px-2 py-0.5 rounded text-[11px] font-semibold border border-slate-700">
+          🏛️ Facturación FACe para Entes Públicos
+        </span>
+        <a href="https://pedremk.github.io/corporativa2027/" target="_blank" class="hover:text-white transition flex items-center gap-1">
+          <span>Web Corporativa</span>
+          <span class="material-symbols-outlined text-xs">open_in_new</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ========================================== -->
+  <!-- 2. FRANJA DE ENVÍO GRATIS A PARTIR DE 75 € -->
+  <!-- ========================================== -->
+  <div class="bg-gradient-to-r from-crimson via-slate-900 to-crimson text-white text-xs sm:text-sm font-semibold py-2 px-4 text-center shadow-inner">
+    <div class="max-w-7xl mx-auto flex items-center justify-center gap-2">
+      <span class="material-symbols-outlined text-base text-yellow-300 animate-pulse">local_shipping</span>
+      <span><strong>ENVÍO GRATIS</strong> en pedidos a partir de <strong>75 €</strong></span>
+      <span class="hidden md:inline text-slate-300">| Entrega Urgente 24/48h con Garantía Oficial de Fabricante</span>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- 3. CABECERA PRINCIPAL CON BUSCADOR & CESTA -->
+  <!-- ========================================== -->
+  <header class="bg-white sticky top-0 z-40 shadow-sm border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 py-3 sm:py-4 flex items-center justify-between gap-4">
+      
+      <!-- LOGO CORPORATIVO -->
+      <a href="#" class="flex items-center gap-2 flex-shrink-0">
+        <div class="flex flex-col">
+          <span class="text-2xl sm:text-3xl font-extrabold tracking-tight text-crimson">
+            PEDRE<span class="text-slate-900">GOSA</span>
+          </span>
+          <span class="text-[9px] font-bold tracking-widest text-slate-500 uppercase -mt-1">
+            TIENDA OFICIAL B2B & PROFESIONAL
+          </span>
+        </div>
+      </a>
+
+      <!-- BUSCADOR PREDICTIVO CENTRAL -->
+      <div class="flex-1 max-w-2xl mx-2 hidden sm:block">
+        <div class="relative">
+          <input 
+            type="text" 
+            placeholder="Buscar por producto, marca (LG, Fellowes...) o referencia de tóner / SKU..." 
+            class="w-full pl-10 pr-24 py-2.5 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-crimson focus:border-transparent transition"
+          >
+          <span class="material-symbols-outlined absolute left-3 top-2.5 text-slate-400 text-lg">search</span>
+          <button class="absolute right-1 top-1 bottom-1 px-4 bg-crimson text-white text-xs font-bold rounded-md hover:bg-crimson-hover transition">
+            Buscar
+          </button>
+        </div>
+      </div>
+
+      <!-- ACCIONES DE USUARIO & CESTA -->
+      <div class="flex items-center gap-4 sm:gap-6 flex-shrink-0">
+        <!-- Mi Cuenta -->
+        <a href="#" class="hidden md:flex items-center gap-2 text-slate-700 hover:text-crimson transition">
+          <span class="material-symbols-outlined text-2xl">person</span>
+          <div class="text-left text-xs leading-tight">
+            <span class="block text-slate-400">Acceso</span>
+            <span class="font-bold">Mi Cuenta</span>
+          </div>
+        </a>
+
+        <!-- Botón Cesta con disparador interactivo -->
+        <button onclick="toggleCartDrawer()" class="flex items-center gap-3 bg-slate-50 hover:bg-slate-100 border border-slate-200 px-3.5 py-2 rounded-xl transition group relative">
+          <div class="relative">
+            <span class="material-symbols-outlined text-2xl text-crimson group-hover:scale-110 transition">shopping_cart</span>
+            <span id="cartBadgeCount" class="absolute -top-2 -right-2 bg-crimson text-white text-[10px] font-extrabold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white shadow-sm">
+              2
+            </span>
+          </div>
+          <div class="text-left text-xs hidden lg:block">
+            <span class="block text-slate-400 font-medium">Mi Cesta</span>
+            <span id="cartHeaderTotal" class="font-bold text-slate-900">127,50 €</span>
+          </div>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- NAVEGACIÓN PRINCIPAL DE CATEGORÍAS -->
+    <nav class="border-t border-slate-100 bg-white">
+      <div class="max-w-7xl mx-auto px-4 flex items-center justify-between overflow-x-auto no-scrollbar py-2 text-xs font-bold tracking-tight">
+        <div class="flex items-center gap-6 whitespace-nowrap">
+          <a href="#" class="text-crimson flex items-center gap-1.5 py-1">
+            <span class="material-symbols-outlined text-base">menu</span>
+            TODAS LAS CATEGORÍAS
+          </a>
+          <a href="#" class="text-slate-700 hover:text-crimson transition py-1">Portátiles & Laptops Pro</a>
+          <a href="#" class="text-slate-700 hover:text-crimson transition py-1">Consumibles & Tóners</a>
+          <a href="#" class="text-slate-700 hover:text-crimson transition py-1">Ergonomía & Fellowes</a>
+          <a href="#" class="text-slate-700 hover:text-crimson transition py-1">Conectividad & Cables</a>
+          <a href="#" class="text-slate-700 hover:text-crimson transition py-1">Monitores & Puestos</a>
+          <a href="#" class="text-emerald-700 hover:text-emerald-800 transition py-1 flex items-center gap-1">
+            <span class="material-symbols-outlined text-sm">verified</span>
+            Marcas Homologadas
+          </a>
+        </div>
+        <a href="#" class="text-crimson font-extrabold flex items-center gap-1 whitespace-nowrap bg-red-50 px-2.5 py-1 rounded-md border border-red-200">
+          <span class="material-symbols-outlined text-sm">local_fire_department</span>
+          OFERTAS DEL DÍA
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- 4. HERO SLIDER COMERCIAL (1200x480px) -->
+  <!-- ========================================== -->
+  <main class="flex-grow">
+    <section class="max-w-7xl mx-auto px-4 pt-4 sm:pt-6">
+      <div class="relative rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-slate-900 aspect-[12/5] min-h-[300px]">
+        
+        <!-- SLIDE 1 (Activo) -->
+        <div id="slide-0" class="slide-item absolute inset-0 transition-opacity duration-500 ease-in-out opacity-100">
+          <img src="assets/img/banner-lg-gram.jpg" alt="Portátiles LG Gram Profesionales" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-950/40 to-transparent flex items-center p-6 sm:p-12">
+            <div class="max-w-lg text-white space-y-3">
+              <span class="inline-block bg-crimson text-white text-[11px] font-extrabold tracking-wider uppercase px-2.5 py-1 rounded">
+                OFERTA ESPECIAL PROFESIONAL
+              </span>
+              <h1 class="text-2xl sm:text-4xl font-extrabold leading-tight">
+                Especial LG Gram: Potencia Ultraligera
+              </h1>
+              <p class="text-slate-200 text-xs sm:text-sm line-clamp-2">
+                Menos de 1,2 kg, chasis de magnesio militar y más de 20 horas de autonomía para directivos y comerciales.
+              </p>
+              <div class="pt-2 flex flex-wrap items-center gap-3">
+                <button onclick="openProductModal('lg-gram')" class="btn-crimson font-bold text-xs sm:text-sm px-5 py-2.5 rounded-lg flex items-center gap-2">
+                  <span>Ver Oferta Portátil</span>
+                  <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </button>
+                <span class="text-xs text-yellow-300 font-semibold flex items-center gap-1">
+                  <span class="material-symbols-outlined text-sm">local_shipping</span>
+                  Envío Gratis Incluido
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div id="slide-1" class="slide-item absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none">
+          <img src="assets/img/banner-copilot.jpg" alt="Copilot+ PC" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-950/40 to-transparent flex items-center p-6 sm:p-12">
+            <div class="max-w-lg text-white space-y-3">
+              <span class="inline-block bg-sky-600 text-white text-[11px] font-extrabold tracking-wider uppercase px-2.5 py-1 rounded">
+                NUEVA ERA TECNOLÓGICA
+              </span>
+              <h2 class="text-2xl sm:text-4xl font-extrabold leading-tight">
+                Copilot+ PC: IA Local para tu Empresa
+              </h2>
+              <p class="text-slate-200 text-xs sm:text-sm line-clamp-2">
+                Procesamiento NPU dedicado para acelerar tareas empresariales con seguridad y confidencialidad.
+              </p>
+              <div class="pt-2">
+                <button class="btn-crimson font-bold text-xs sm:text-sm px-5 py-2.5 rounded-lg">
+                  Descubrir Puestos Copilot+
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 3 -->
+        <div id="slide-2" class="slide-item absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none">
+          <img src="assets/img/banner-fellowes.jpg" alt="Ergonomía Fellowes" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-950/40 to-transparent flex items-center p-6 sm:p-12">
+            <div class="max-w-lg text-white space-y-3">
+              <span class="inline-block bg-emerald-600 text-white text-[11px] font-extrabold tracking-wider uppercase px-2.5 py-1 rounded">
+                SALUD LABORAL & RGPD
+              </span>
+              <h2 class="text-2xl sm:text-4xl font-extrabold leading-tight">
+                Ergonomía y Destrucción Fellowes
+              </h2>
+              <p class="text-slate-200 text-xs sm:text-sm line-clamp-2">
+                Brazos para monitor, reposapiés certificados y destructoras seguras para cumplir la normativa de prevención.
+              </p>
+              <div class="pt-2">
+                <button class="btn-crimson font-bold text-xs sm:text-sm px-5 py-2.5 rounded-lg">
+                  Ver Gama Fellowes
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 4 -->
+        <div id="slide-3" class="slide-item absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none">
+          <img src="assets/img/banner-conceptronic.jpg" alt="Conectividad Conceptronic" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-950/40 to-transparent flex items-center p-6 sm:p-12">
+            <div class="max-w-lg text-white space-y-3">
+              <span class="inline-block bg-amber-600 text-white text-[11px] font-extrabold tracking-wider uppercase px-2.5 py-1 rounded">
+                STOCK INMEDIATO EN SEVILLA
+              </span>
+              <h2 class="text-2xl sm:text-4xl font-extrabold leading-tight">
+                Conectividad, Docks y Adaptadores
+              </h2>
+              <p class="text-slate-200 text-xs sm:text-sm line-clamp-2">
+                Todo el cableado técnico y hubs multipuerto para equipar salas y oficinas sin esperas.
+              </p>
+              <div class="pt-2">
+                <button class="btn-crimson font-bold text-xs sm:text-sm px-5 py-2.5 rounded-lg">
+                  Ver Accesorios & Docks
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controles Slider -->
+        <button onclick="prevSlide()" class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white w-9 h-9 rounded-full flex items-center justify-center transition backdrop-blur-sm">
+          <span class="material-symbols-outlined text-lg">chevron_left</span>
+        </button>
+        <button onclick="nextSlide()" class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white w-9 h-9 rounded-full flex items-center justify-center transition backdrop-blur-sm">
+          <span class="material-symbols-outlined text-lg">chevron_right</span>
+        </button>
+
+        <!-- Indicadores -->
+        <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2">
+          <button onclick="goToSlide(0)" class="slider-dot w-2.5 h-2.5 rounded-full bg-white transition"></button>
+          <button onclick="goToSlide(1)" class="slider-dot w-2.5 h-2.5 rounded-full bg-white/40 transition"></button>
+          <button onclick="goToSlide(2)" class="slider-dot w-2.5 h-2.5 rounded-full bg-white/40 transition"></button>
+          <button onclick="goToSlide(3)" class="slider-dot w-2.5 h-2.5 rounded-full bg-white/40 transition"></button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 5. FRANJA DE MARCAS PREFERENTES -->
+    <!-- ========================================== -->
+    <section class="max-w-7xl mx-auto px-4 py-8">
+      <div class="bg-white rounded-xl p-4 sm:p-6 border border-slate-200 shadow-sm">
+        <div class="flex items-center justify-between mb-4 pb-2 border-b border-slate-100">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-emerald-600">verified</span>
+            <span class="text-xs font-extrabold uppercase tracking-wider text-slate-800">
+              Distribuidor Oficial y Marcas Preferentes
+            </span>
+          </div>
+          <span class="text-xs text-slate-500 font-medium">Garantía Directa de Fabricante</span>
+        </div>
+        
+        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4 items-center justify-items-center opacity-75 hover:opacity-100 transition">
+          <span class="font-extrabold text-slate-700 tracking-wider text-sm hover:text-crimson transition cursor-pointer">HP AMPLIFY</span>
+          <span class="font-extrabold text-slate-700 tracking-wider text-sm hover:text-crimson transition cursor-pointer">BROTHER</span>
+          <span class="font-extrabold text-slate-700 tracking-wider text-sm hover:text-crimson transition cursor-pointer">EPSON</span>
+          <span class="font-extrabold text-slate-700 tracking-wider text-sm hover:text-crimson transition cursor-pointer">LG GRAM</span>
+          <span class="font-extrabold text-slate-700 tracking-wider text-sm hover:text-crimson transition cursor-pointer">FELLOWES</span>
+          <span class="font-extrabold text-slate-700 tracking-wider text-sm hover:text-crimson transition cursor-pointer">LENOVO</span>
+          <span class="font-extrabold text-slate-700 tracking-wider text-sm hover:text-crimson transition cursor-pointer">AISENS</span>
+          <span class="font-extrabold text-slate-700 tracking-wider text-sm hover:text-crimson transition cursor-pointer">CONCEPTRONIC</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 6. MÓDULO: ARTÍCULOS MÁS VENDIDOS (TOP VENTAS) -->
+    <!-- ========================================== -->
+    <section class="max-w-7xl mx-auto px-4 pb-12">
+      <div class="flex items-end justify-between mb-6">
+        <div>
+          <div class="flex items-center gap-1.5 text-crimson text-xs font-extrabold uppercase tracking-wider mb-1">
+            <span class="material-symbols-outlined text-sm">trending_up</span>
+            Alta Rotación Profesional
+          </div>
+          <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900">
+            Artículos Más Vendidos
+          </h2>
+        </div>
+        <a href="#" class="text-xs font-bold text-crimson hover:underline flex items-center gap-1">
+          Ver todo el catálogo <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- PRODUCTO 1 -->
+        <div class="product-card bg-white rounded-xl border border-slate-200 p-4 flex flex-col justify-between">
+          <div>
+            <div class="relative bg-slate-50 rounded-lg p-4 mb-3 flex items-center justify-center h-44 overflow-hidden">
+              <span class="absolute top-2 left-2 bg-crimson text-white text-[10px] font-extrabold px-2 py-0.5 rounded shadow-sm">
+                TOP VENTAS
+              </span>
+              <img src="assets/img/banner-lg-gram.jpg" alt="Portátil LG Gram" class="h-full object-contain mix-blend-multiply">
+            </div>
+            <div class="text-[11px] text-slate-400 font-semibold mb-1 uppercase">LG Electronics</div>
+            <h3 class="font-bold text-slate-900 text-sm leading-snug line-clamp-2 hover:text-crimson transition cursor-pointer" onclick="openProductModal('lg-gram')">
+              Portátil LG Gram 16Z90R Intel Core i7 16GB 512GB SSD W11 Pro
+            </h3>
+            <div class="mt-2 text-xs text-emerald-600 font-bold flex items-center gap-1">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Stock en Sevilla (24/48h)
+            </div>
+          </div>
+          <div class="pt-4 border-t border-slate-100 mt-4">
+            <div class="flex items-baseline gap-2">
+              <span class="text-xl font-extrabold text-crimson">899,00 €</span>
+              <span class="text-xs text-slate-500 font-medium">sin IVA</span>
+            </div>
+            <div class="text-[11px] text-slate-400 font-medium -mt-0.5 mb-3">
+              1.087,79 € con IVA incl.
+            </div>
+            <button onclick="addToCart('Portátil LG Gram 16Z90R Pro', 899.00, 'lg-gram')" class="w-full btn-crimson text-xs font-bold py-2.5 rounded-lg flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined text-base">shopping_cart</span>
+              Añadir a la Cesta
+            </button>
+          </div>
+        </div>
+
+        <!-- PRODUCTO 2 -->
+        <div class="product-card bg-white rounded-xl border border-slate-200 p-4 flex flex-col justify-between">
+          <div>
+            <div class="relative bg-slate-50 rounded-lg p-4 mb-3 flex items-center justify-center h-44 overflow-hidden">
+              <span class="absolute top-2 left-2 bg-emerald-600 text-white text-[10px] font-extrabold px-2 py-0.5 rounded shadow-sm">
+                ERGONOMÍA PRO
+              </span>
+              <img src="assets/img/banner-fellowes.jpg" alt="Destructora Fellowes" class="h-full object-contain mix-blend-multiply">
+            </div>
+            <div class="text-[11px] text-slate-400 font-semibold mb-1 uppercase">Fellowes</div>
+            <h3 class="font-bold text-slate-900 text-sm leading-snug line-clamp-2 hover:text-crimson transition cursor-pointer" onclick="openProductModal('fellowes')">
+              Destructora Fellowes AutoMax 100M Microcorte DIN P-5
+            </h3>
+            <div class="mt-2 text-xs text-emerald-600 font-bold flex items-center gap-1">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Stock Disponible
+            </div>
+          </div>
+          <div class="pt-4 border-t border-slate-100 mt-4">
+            <div class="flex items-baseline gap-2">
+              <span class="text-xl font-extrabold text-crimson">235,00 €</span>
+              <span class="text-xs text-slate-500 font-medium">sin IVA</span>
+            </div>
+            <div class="text-[11px] text-slate-400 font-medium -mt-0.5 mb-3">
+              284,35 € con IVA incl.
+            </div>
+            <button onclick="addToCart('Destructora Fellowes AutoMax 100M', 235.00, 'fellowes')" class="w-full btn-crimson text-xs font-bold py-2.5 rounded-lg flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined text-base">shopping_cart</span>
+              Añadir a la Cesta
+            </button>
+          </div>
+        </div>
+
+        <!-- PRODUCTO 3 -->
+        <div class="product-card bg-white rounded-xl border border-slate-200 p-4 flex flex-col justify-between">
+          <div>
+            <div class="relative bg-slate-50 rounded-lg p-4 mb-3 flex items-center justify-center h-44 overflow-hidden">
+              <span class="absolute top-2 left-2 bg-sky-600 text-white text-[10px] font-extrabold px-2 py-0.5 rounded shadow-sm">
+                CONECTIVIDAD
+              </span>
+              <img src="assets/img/banner-conceptronic.jpg" alt="Docking Station" class="h-full object-contain mix-blend-multiply">
+            </div>
+            <div class="text-[11px] text-slate-400 font-semibold mb-1 uppercase">Conceptronic</div>
+            <h3 class="font-bold text-slate-900 text-sm leading-snug line-clamp-2 hover:text-crimson transition cursor-pointer" onclick="openProductModal('docking')">
+              Docking Station USB-C Dual HDMI 4K Gigabit Ethernet 100W PD
+            </h3>
+            <div class="mt-2 text-xs text-emerald-600 font-bold flex items-center gap-1">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Stock en Sevilla (24h)
+            </div>
+          </div>
+          <div class="pt-4 border-t border-slate-100 mt-4">
+            <div class="flex items-baseline gap-2">
+              <span class="text-xl font-extrabold text-crimson">48,00 €</span>
+              <span class="text-xs text-slate-500 font-medium">sin IVA</span>
+            </div>
+            <div class="text-[11px] text-slate-400 font-medium -mt-0.5 mb-3">
+              58,08 € con IVA incl.
+            </div>
+            <button onclick="addToCart('Docking Station USB-C Dual HDMI', 48.00, 'docking')" class="w-full btn-crimson text-xs font-bold py-2.5 rounded-lg flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined text-base">shopping_cart</span>
+              Añadir a la Cesta
+            </button>
+          </div>
+        </div>
+
+        <!-- PRODUCTO 4 -->
+        <div class="product-card bg-white rounded-xl border border-slate-200 p-4 flex flex-col justify-between">
+          <div>
+            <div class="relative bg-slate-50 rounded-lg p-4 mb-3 flex items-center justify-center h-44 overflow-hidden">
+              <span class="absolute top-2 left-2 bg-slate-900 text-white text-[10px] font-extrabold px-2 py-0.5 rounded shadow-sm">
+                100% ORIGINAL
+              </span>
+              <div class="flex flex-col items-center justify-center h-full text-slate-400 font-extrabold text-center">
+                <span class="material-symbols-outlined text-4xl text-crimson">print</span>
+                <span class="text-xs mt-1 text-slate-600">HP LaserJet Original</span>
+              </div>
+            </div>
+            <div class="text-[11px] text-slate-400 font-semibold mb-1 uppercase">HP Original</div>
+            <h3 class="font-bold text-slate-900 text-sm leading-snug line-clamp-2 hover:text-crimson transition cursor-pointer" onclick="openProductModal('toner-hp')">
+              Tóner Original HP W2030A (HP 415A) Negro 2.400 páginas
+            </h3>
+            <div class="mt-2 text-xs text-emerald-600 font-bold flex items-center gap-1">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Stock Permanente
+            </div>
+          </div>
+          <div class="pt-4 border-t border-slate-100 mt-4">
+            <div class="flex items-baseline gap-2">
+              <span class="text-xl font-extrabold text-crimson">79,50 €</span>
+              <span class="text-xs text-slate-500 font-medium">sin IVA</span>
+            </div>
+            <div class="text-[11px] text-slate-400 font-medium -mt-0.5 mb-3">
+              96,20 € con IVA incl.
+            </div>
+            <button onclick="addToCart('Tóner Original HP W2030A', 79.50, 'toner-hp')" class="w-full btn-crimson text-xs font-bold py-2.5 rounded-lg flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined text-base">shopping_cart</span>
+              Añadir a la Cesta
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================== -->
+  <!-- 7. MODAL DETALLE DE PRODUCTO (HIGH CONVERSION) -->
+  <!-- ========================================== -->
+  <div id="productModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-2xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+      <button onclick="closeProductModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 transition">
+        <span class="material-symbols-outlined text-2xl">close</span>
+      </button>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <!-- Imagen y Galería -->
+        <div class="bg-slate-50 rounded-xl p-6 border border-slate-200 flex flex-col items-center">
+          <img id="modalImg" src="assets/img/banner-lg-gram.jpg" alt="Producto" class="max-h-60 object-contain rounded-lg">
+          <div class="mt-4 text-xs text-slate-500 flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm">verified_user</span>
+            Producto 100% Nuevo & Embalaje Original
+          </div>
+        </div>
+
+        <!-- Información y Compra -->
+        <div class="space-y-4">
+          <span class="inline-block bg-emerald-100 text-emerald-800 text-[10px] font-extrabold px-2 py-0.5 rounded">
+            STOCK EN SEVILLA - ENVÍO 24/48H
+          </span>
+          <h2 id="modalTitle" class="text-xl font-extrabold text-slate-900 leading-snug">
+            Portátil LG Gram 16Z90R Intel Core i7 16GB 512GB SSD
+          </h2>
+
+          <!-- Precio Doble B2B / B2C -->
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+            <div class="flex items-baseline gap-2">
+              <span id="modalPriceNet" class="text-3xl font-extrabold text-crimson">899,00 €</span>
+              <span class="text-xs font-bold uppercase text-slate-600">Precio Neto (sin IVA)</span>
+            </div>
+            <div id="modalPriceTax" class="text-xs text-slate-500 font-semibold mt-1">
+              1.087,79 € con IVA incluido (21%)
+            </div>
+          </div>
+
+          <!-- Selector de Cantidad & Botón -->
+          <div class="flex items-center gap-3 pt-2">
+            <div class="flex items-center border border-slate-300 rounded-lg overflow-hidden">
+              <button onclick="decrementQty()" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold">-</button>
+              <input id="modalQty" type="number" value="1" min="1" class="w-12 text-center text-sm font-bold focus:outline-none">
+              <button onclick="incrementQty()" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold">+</button>
+            </div>
+            <button onclick="confirmModalAddToCart()" class="flex-1 btn-crimson font-bold text-sm py-2.5 px-4 rounded-lg flex items-center justify-center gap-2 shadow-md">
+              <span class="material-symbols-outlined text-lg">shopping_cart</span>
+              Añadir a la Cesta
+            </button>
+          </div>
+
+          <!-- BLOQUE DE GARANTÍAS OFICIALES -->
+          <div class="pt-4 border-t border-slate-200 grid grid-cols-2 gap-3 text-xs">
+            <div class="flex items-start gap-2 text-slate-700">
+              <span class="material-symbols-outlined text-emerald-600 text-base flex-shrink-0">shield</span>
+              <div>
+                <strong>Garantía Oficial Directa</strong>
+                <div class="text-[11px] text-slate-500">Cobertura oficial de fabricante</div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-2 text-slate-700">
+              <span class="material-symbols-outlined text-emerald-600 text-base flex-shrink-0">local_shipping</span>
+              <div>
+                <strong>Envío 24/48h</strong>
+                <div class="text-[11px] text-slate-500">Gratis si supera 75 €</div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-2 text-slate-700">
+              <span class="material-symbols-outlined text-sky-600 text-base flex-shrink-0">store</span>
+              <div>
+                <strong>Distribuidor Oficial</strong>
+                <div class="text-[11px] text-slate-500">Sede y SAT en Sevilla</div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-2 text-slate-700">
+              <span class="material-symbols-outlined text-sky-600 text-base flex-shrink-0">receipt_long</span>
+              <div>
+                <strong>Factura Oficial IVA</strong>
+                <div class="text-[11px] text-slate-500">Deducible para autónomos/pymes</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- 8. CAJÓN DE LA CESTA (CART DRAWER CON ENVÍO GRATIS > 75 €) -->
+  <!-- ========================================== -->
+  <div id="cartDrawer" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex justify-end transition-opacity duration-300 opacity-0 pointer-events-none">
+    <div id="cartDrawerContent" class="bg-white w-full max-w-md h-full shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out">
+      
+      <!-- Cabecera de la Cesta -->
+      <div class="p-4 sm:p-5 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-crimson">shopping_bag</span>
+          <h3 class="font-extrabold text-slate-900 text-base">Tu Cesta de Compra</h3>
+        </div>
+        <button onclick="toggleCartDrawer()" class="text-slate-400 hover:text-slate-800 transition">
+          <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+      </div>
+
+      <!-- BARRA DINAMIZADORA DE ENVÍO GRATIS (75 €) -->
+      <div class="p-4 bg-red-50/50 border-b border-red-100">
+        <div class="flex items-center justify-between text-xs font-bold mb-1.5" id="shippingStatusTitle">
+          <span class="flex items-center gap-1 text-slate-800">
+            <span>🚚</span> Envío GRATIS a partir de 75 €
+          </span>
+          <span id="shippingRemainingText" class="text-crimson">¡Te faltan 27,00 €!</span>
+        </div>
+        <div class="w-full bg-slate-200 h-2.5 rounded-full overflow-hidden">
+          <div id="shippingProgressBar" class="bg-gradient-to-r from-crimson to-emerald-600 h-full rounded-full transition-all duration-300" style="width: 64%;"></div>
+        </div>
+        <div id="shippingSuccessNotice" class="hidden text-xs text-emerald-700 font-bold mt-1.5 flex items-center gap-1">
+          <span class="material-symbols-outlined text-sm">check_circle</span>
+          ¡Enhorabuena! Has conseguido Envío GRATIS para este pedido.
+        </div>
+      </div>
+
+      <!-- Lista de Artículos -->
+      <div id="cartItemsList" class="flex-1 overflow-y-auto p-4 space-y-4">
+        <!-- Ítems inyectados dinámicamente con JavaScript -->
+      </div>
+
+      <!-- Resumen Económico & Checkout -->
+      <div class="p-4 sm:p-5 border-t border-slate-200 bg-slate-50 space-y-3">
+        <div class="space-y-1.5 text-xs">
+          <div class="flex justify-between text-slate-600">
+            <span>Subtotal (Base Imponible):</span>
+            <span id="cartSubtotalText" class="font-bold text-slate-800">105,37 €</span>
+          </div>
+          <div class="flex justify-between text-slate-600">
+            <span>IVA (21% desglosado):</span>
+            <span id="cartVatText" class="font-bold text-slate-800">22,13 €</span>
+          </div>
+          <div class="flex justify-between text-slate-600">
+            <span>Gastos de Envío:</span>
+            <span id="cartShippingFeeText" class="font-bold text-emerald-600">GRATIS</span>
+          </div>
+          <div class="flex justify-between text-base font-extrabold text-slate-900 pt-2 border-t border-slate-200">
+            <span>Total a Pagar:</span>
+            <span id="cartTotalText" class="text-crimson">127,50 €</span>
+          </div>
+        </div>
+
+        <button class="w-full btn-crimson py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-lg">
+          <span class="material-symbols-outlined text-lg">lock</span>
+          Tramitar Pedido Seguro
+        </button>
+
+        <div class="text-[11px] text-center text-slate-500 flex items-center justify-center gap-3 pt-1">
+          <span>🔒 Pago 100% Seguro</span>
+          <span>•</span>
+          <span>💳 Redsys / Bizum</span>
+          <span>•</span>
+          <span>🏛️ Factura FACe</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- 9. FOOTER E-COMMERCE CON SELLOS ISO ADOK -->
+  <!-- ========================================== -->
+  <footer class="bg-slate-900 text-slate-300 pt-12 pb-8 border-t border-slate-800 mt-12 text-xs">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      <div>
+        <div class="text-2xl font-extrabold text-white mb-2">
+          PEDRE<span class="text-crimson">GOSA</span>
+        </div>
+        <p class="text-slate-400 text-xs leading-relaxed mb-4">
+          Distribución de tecnología, consumibles oficiales y soluciones integrales de equipamiento informático para empresas, colegios y administraciones.
+        </p>
+        <div class="text-slate-400">
+          📍 Calle Gramil 14, Polígono Store, 41008 Sevilla
+        </div>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-white text-sm mb-3">Atención al Cliente</h4>
+        <ul class="space-y-2 text-slate-400">
+          <li>Teléfono: <strong class="text-white">954 36 80 11</strong></li>
+          <li>Email: <strong class="text-white">pedidos@pedregosa.es</strong></li>
+          <li>Horario: Lunes a Viernes de 8:00 a 15:00</li>
+          <li>Factura para Administraciones (FACe)</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-white text-sm mb-3">Condiciones de Compra</h4>
+        <ul class="space-y-2 text-slate-400">
+          <li>🚚 <strong>Envío Gratis a partir de 75 €</strong></li>
+          <li>🛡️ <strong>Garantía Oficial de Fabricante</strong></li>
+          <li>💳 Pago con Tarjeta Redsys, Bizum y Transferencia</li>
+          <li>🏢 Condiciones especiales para compras recurrentes B2B</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-white text-sm mb-3">Sellos y Certificaciones</h4>
+        <p class="text-slate-400 mb-3">Procesos de gestión de calidad y medioambiente auditados:</p>
+        <div class="flex items-center gap-3">
+          <img src="assets/img/adok-iso9001-120.jpg" alt="ISO 9001 Adok" class="h-10 bg-white p-1 rounded">
+          <img src="assets/img/adok-iso14001-120.jpg" alt="ISO 14001 Adok" class="h-10 bg-white p-1 rounded">
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 pt-6 border-t border-slate-800 text-center text-slate-500">
+      &copy; 2026 Grupo Pedregosa. Todos los derechos reservados. Tienda Online Profesional.
+    </div>
+  </footer>
+
+  <!-- ========================================== -->
+  <!-- 10. LÓGICA INTERACTIVA JAVASCRIPT -->
+  <!-- ========================================== -->
+  <script>
+    // Carrito de estado
+    let cart = [
+      { id: 'docking', name: 'Docking Station USB-C Dual HDMI', priceNet: 48.00, qty: 1, img: 'assets/img/banner-conceptronic.jpg' },
+      { id: 'toner-hp', name: 'Tóner Original HP W2030A Negro', priceNet: 79.50, qty: 1, img: 'assets/img/banner-lg-gram.jpg' }
+    ];
+
+    const FREE_SHIPPING_THRESHOLD = 75.00;
+
+    function renderCart() {
+      const container = document.getElementById('cartItemsList');
+      container.innerHTML = '';
+
+      let totalNet = 0;
+      let totalQty = 0;
+
+      cart.forEach((item, index) => {
+        totalNet += item.priceNet * item.qty;
+        totalQty += item.qty;
+
+        const row = document.createElement('div');
+        row.className = 'flex items-center gap-3 bg-slate-50 p-3 rounded-xl border border-slate-200';
+        row.innerHTML = `
+          <img src="${item.img}" class="w-14 h-14 object-cover rounded-lg bg-white border border-slate-200">
+          <div class="flex-1 min-w-0">
+            <h4 class="font-bold text-xs text-slate-900 truncate">${item.name}</h4>
+            <div class="text-[11px] text-slate-500">${item.priceNet.toFixed(2)} € + IVA</div>
+            <div class="flex items-center gap-2 mt-1">
+              <button onclick="changeQty(${index}, -1)" class="w-6 h-6 bg-slate-200 hover:bg-slate-300 rounded text-xs font-bold">-</button>
+              <span class="text-xs font-bold">${item.qty}</span>
+              <button onclick="changeQty(${index}, 1)" class="w-6 h-6 bg-slate-200 hover:bg-slate-300 rounded text-xs font-bold">+</button>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="font-extrabold text-xs text-crimson">${(item.priceNet * item.qty).toFixed(2)} €</div>
+            <button onclick="removeItem(${index})" class="text-slate-400 hover:text-red-600 text-xs mt-1">
+              <span class="material-symbols-outlined text-base">delete</span>
+            </button>
+          </div>
+        `;
+        container.appendChild(row);
+      });
+
+      const vat = totalNet * 0.21;
+      const isFreeShipping = totalNet >= FREE_SHIPPING_THRESHOLD;
+      const shippingFee = isFreeShipping || totalNet === 0 ? 0 : 5.95;
+      const grandTotal = totalNet + vat + shippingFee;
+
+      // Actualizar interfaz
+      document.getElementById('cartBadgeCount').innerText = totalQty;
+      document.getElementById('cartHeaderTotal').innerText = grandTotal.toFixed(2) + ' €';
+      document.getElementById('cartSubtotalText').innerText = totalNet.toFixed(2) + ' €';
+      document.getElementById('cartVatText').innerText = vat.toFixed(2) + ' €';
+      document.getElementById('cartTotalText').innerText = grandTotal.toFixed(2) + ' €';
+      document.getElementById('cartShippingFeeText').innerText = isFreeShipping ? 'GRATIS' : '5,95 €';
+
+      // Barra de progreso envío gratis
+      const remaining = FREE_SHIPPING_THRESHOLD - totalNet;
+      const pct = Math.min(100, Math.max(5, (totalNet / FREE_SHIPPING_THRESHOLD) * 100));
+      const progressBar = document.getElementById('shippingProgressBar');
+      const remainingText = document.getElementById('shippingRemainingText');
+      const successNotice = document.getElementById('shippingSuccessNotice');
+
+      progressBar.style.width = pct + '%';
+
+      if (isFreeShipping) {
+        remainingText.innerText = '¡Conseguido!';
+        remainingText.className = 'text-emerald-600 font-bold';
+        progressBar.className = 'bg-emerald-600 h-full rounded-full transition-all duration-300';
+        successNotice.classList.remove('hidden');
+      } else {
+        remainingText.innerText = `¡Te faltan ${remaining.toFixed(2)} €!`;
+        remainingText.className = 'text-crimson font-bold';
+        progressBar.className = 'bg-gradient-to-r from-crimson to-emerald-600 h-full rounded-full transition-all duration-300';
+        successNotice.classList.add('hidden');
+      }
+    }
+
+    function changeQty(index, delta) {
+      cart[index].qty += delta;
+      if (cart[index].qty <= 0) {
+        cart.splice(index, 1);
+      }
+      renderCart();
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      renderCart();
+    }
+
+    function addToCart(name, priceNet, id) {
+      const existing = cart.find(i => i.id === id);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ id, name, priceNet, qty: 1, img: 'assets/img/banner-lg-gram.jpg' });
+      }
+      renderCart();
+      toggleCartDrawer(true);
+    }
+
+    function toggleCartDrawer(forceOpen = false) {
+      const drawer = document.getElementById('cartDrawer');
+      const content = document.getElementById('cartDrawerContent');
+
+      if (forceOpen || drawer.classList.contains('pointer-events-none')) {
+        drawer.classList.remove('pointer-events-none', 'opacity-0');
+        drawer.classList.add('opacity-100');
+        content.classList.remove('translate-x-full');
+      } else {
+        drawer.classList.add('opacity-0');
+        content.classList.add('translate-x-full');
+        setTimeout(() => drawer.classList.add('pointer-events-none'), 300);
+      }
+    }
+
+    // Modal Producto
+    let currentModalProduct = null;
+    function openProductModal(type) {
+      const modal = document.getElementById('productModal');
+      const title = document.getElementById('modalTitle');
+      const priceNet = document.getElementById('modalPriceNet');
+      const priceTax = document.getElementById('modalPriceTax');
+      const img = document.getElementById('modalImg');
+
+      if (type === 'lg-gram') {
+        currentModalProduct = { id: 'lg-gram', name: 'Portátil LG Gram 16Z90R Intel Core i7 16GB 512GB SSD', priceNet: 899.00, img: 'assets/img/banner-lg-gram.jpg' };
+      } else if (type === 'fellowes') {
+        currentModalProduct = { id: 'fellowes', name: 'Destructora Fellowes AutoMax 100M Microcorte DIN P-5', priceNet: 235.00, img: 'assets/img/banner-fellowes.jpg' };
+      } else if (type === 'docking') {
+        currentModalProduct = { id: 'docking', name: 'Docking Station USB-C Dual HDMI 4K Gigabit Ethernet', priceNet: 48.00, img: 'assets/img/banner-conceptronic.jpg' };
+      } else {
+        currentModalProduct = { id: 'toner-hp', name: 'Tóner Original HP W2030A (HP 415A) Negro 2.400 pág.', priceNet: 79.50, img: 'assets/img/banner-lg-gram.jpg' };
+      }
+
+      title.innerText = currentModalProduct.name;
+      priceNet.innerText = currentModalProduct.priceNet.toFixed(2) + ' €';
+      priceTax.innerText = (currentModalProduct.priceNet * 1.21).toFixed(2) + ' € con IVA incluido (21%)';
+      img.src = currentModalProduct.img;
+      document.getElementById('modalQty').value = 1;
+
+      modal.classList.remove('hidden');
+    }
+
+    function closeProductModal() {
+      document.getElementById('productModal').classList.add('hidden');
+    }
+
+    function incrementQty() {
+      const input = document.getElementById('modalQty');
+      input.value = parseInt(input.value) + 1;
+    }
+
+    function decrementQty() {
+      const input = document.getElementById('modalQty');
+      if (parseInt(input.value) > 1) {
+        input.value = parseInt(input.value) - 1;
+      }
+    }
+
+    function confirmModalAddToCart() {
+      if (!currentModalProduct) return;
+      const qty = parseInt(document.getElementById('modalQty').value) || 1;
+      const existing = cart.find(i => i.id === currentModalProduct.id);
+      if (existing) {
+        existing.qty += qty;
+      } else {
+        cart.push({ ...currentModalProduct, qty });
+      }
+      closeProductModal();
+      renderCart();
+      toggleCartDrawer(true);
+    }
+
+    // Slider Logic
+    let currentSlide = 0;
+    const slides = [0, 1, 2, 3];
+
+    function showSlide(index) {
+      currentSlide = (index + slides.length) % slides.length;
+      slides.forEach(i => {
+        const slide = document.getElementById('slide-' + i);
+        if (i === currentSlide) {
+          slide.classList.remove('opacity-0', 'pointer-events-none');
+          slide.classList.add('opacity-100');
+        } else {
+          slide.classList.add('opacity-0', 'pointer-events-none');
+          slide.classList.remove('opacity-100');
+        }
+      });
+      // Dots
+      document.querySelectorAll('.slider-dot').forEach((dot, idx) => {
+        if (idx === currentSlide) {
+          dot.className = 'slider-dot w-2.5 h-2.5 rounded-full bg-white transition';
+        } else {
+          dot.className = 'slider-dot w-2.5 h-2.5 rounded-full bg-white/40 transition';
+        }
+      });
+    }
+
+    function nextSlide() { showSlide(currentSlide + 1); }
+    function prevSlide() { showSlide(currentSlide - 1); }
+    function goToSlide(i) { showSlide(i); }
+
+    // Auto-advance slider every 6s
+    setInterval(nextSlide, 6000);
+
+    // Inicializar
+    renderCart();
+  </script>
+</body>
+</html>
