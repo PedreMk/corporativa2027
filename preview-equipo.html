@@ -96,38 +96,93 @@
 </div>
 <!-- MAIN NAVIGATION -->
 <div class="border-b border-slate-200/80 bg-white/95 backdrop-blur-md">
-<div class="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between gap-8">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
 <a class="flex-shrink-0 py-2" href="#">
-<img alt="Pedregosa - Impresión, Oficina, Tecnología" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsTV91HlsiipuI2OMKZJAOIw_BLGxRMRGjnR3pAbgplWTToGtIsIwTDeEBrH8KRjHNKqGopCvdrDlH05WU193yBdiUsW5bVzrxOzZttmZKBI-1Xc1xRlNDs5MX6LvxqvSNCCiM3NfkPjswPj9EFpZM97EilIanMhfW2ryTGY4aaa37u7ZJdoFOU6F5g_FBcfzmjcfgmvfJPX1aIeSQ-yVM4sH742SI1V4SPEoZoS2XOEIrYYmzQemf4w"/>
+<img alt="Pedregosa - Impresión, Oficina, Tecnología" class="h-9 sm:h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsTV91HlsiipuI2OMKZJAOIw_BLGxRMRGjnR3pAbgplWTToGtIsIwTDeEBrH8KRjHNKqGopCvdrDlH05WU193yBdiUsW5bVzrxOzZttmZKBI-1Xc1xRlNDs5MX6LvxqvSNCCiM3NfkPjswPj9EFpZM97EilIanMhfW2ryTGY4aaa37u7ZJdoFOU6F5g_FBcfzmjcfgmvfJPX1aIeSQ-yVM4sH742SI1V4SPEoZoS2XOEIrYYmzQemf4w"/>
 </a>
-<nav class="hidden lg:flex items-center gap-8 text-[14px] font-semibold text-slate-700"><a class="text-primary hover:text-primary transition-colors" href="#">Inicio</a>
-<a class="hover:text-slate-950 transition-colors" href="#divisiones">Divisiones &amp; Soluciones</a>
+<nav class="hidden lg:flex items-center gap-8 text-[14px] font-semibold text-slate-700">
+<a class="text-primary hover:text-primary transition-colors font-bold" href="#">Inicio</a>
 <a class="hover:text-slate-950 transition-colors" href="#servicio-tecnico">Servicio Técnico &amp; Equipo</a>
 <a class="hover:text-slate-950 transition-colors" href="#sectores">Sector Público y PYMES</a>
 <a class="hover:text-slate-950 transition-colors" href="#homologaciones">Homologaciones &amp; Calidad</a>
 <a class="hover:text-slate-950 transition-colors" href="#casos-exito">Casos de Éxito</a>
-<a class="hover:text-slate-950 transition-colors" href="#tiendas">Portales B2B</a></nav>
-<div class="flex items-center gap-4">
+<a class="hover:text-slate-950 transition-colors" href="#tiendas">Portales B2B</a>
+</nav>
+<div class="flex items-center gap-3">
 <a class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 bg-primary-container hover:bg-crimson-deep text-white font-semibold text-[13px] rounded tracking-wide shadow-sm hover:shadow transition-all" href="#contacto-b2b">
 <span>Pedir Presupuesto B2B</span>
 <span class="material-symbols-outlined text-[17px]">arrow_forward</span>
 </a>
+<button type="button" id="ped-mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-slate-700 hover:text-primary hover:bg-slate-100 transition-colors cursor-pointer" aria-label="Abrir menú">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+</div>
+</div>
+<!-- Mobile Navigation Menu -->
+<div id="ped-mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white/98 backdrop-blur-md px-6 py-4 shadow-xl">
+<div class="flex flex-col gap-3 text-sm font-semibold text-slate-800">
+<a class="py-2 hover:text-primary transition-colors border-b border-slate-100" href="#">Inicio</a>
+<a class="py-2 hover:text-primary transition-colors border-b border-slate-100" href="#servicio-tecnico">Servicio Técnico &amp; Equipo</a>
+<a class="py-2 hover:text-primary transition-colors border-b border-slate-100" href="#homologaciones">Homologaciones &amp; Calidad</a>
+<a class="py-2 hover:text-primary transition-colors border-b border-slate-100" href="#casos-exito">Casos de Éxito</a>
+<a class="py-2 hover:text-primary transition-colors border-b border-slate-100" href="#tiendas">Portales B2B</a>
+<div class="pt-2 flex flex-col gap-2">
+<a class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-primary text-white text-xs font-bold rounded shadow-sm" href="tel:954368011">
+<span class="material-symbols-outlined text-sm">call</span>
+<span>Llamar: 954 36 80 11</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-slate-900 text-white text-xs font-bold rounded shadow-sm" href="#contacto-b2b">
+<span>Pedir Presupuesto B2B</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
 </div>
 </div>
 </div>
 </header>
 <main class="pt-[116px]">
 <!-- ==========================================
-         HERO SECTION: EDITORIAL HIGH CORPORATE
+         HERO SECTION: EQUIPO TÉCNICO & SAT OFICIAL
          ========================================== -->
-<!-- ==========================================
-     CALIDAD Y MEJORA CONTINUA DE PROCESOS (COMPACTO Y HOMOLOGADO)
-     ========================================== -->
+<section class="relative bg-white overflow-hidden border-b border-slate-200">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+    <div class="lg:col-span-7">
+      <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary mb-3">
+        <span class="w-2 h-2 rounded-full bg-primary-container"></span>
+        Servicio Técnico Homologado • Cobertura In Situ Sevilla y Andalucía
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950 leading-[1.15] tracking-tight">
+        Personas expertas y soporte técnico directo detrás de cada instalación.
+      </h1>
+      <p class="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-2xl">
+        Centralice el suministro de su organización con la tranquilidad de contar con técnicos de campo certificados, taller propio en Polígono Store y respuesta inmediata en menos de 24 horas.
+      </p>
+      <div class="mt-6 flex flex-wrap items-center gap-4">
+        <a class="inline-flex items-center gap-2 px-6 py-3 bg-primary-container hover:bg-crimson-deep text-white font-bold text-sm rounded shadow-sm hover:shadow transition-all" href="#contacto-b2b">
+          <span>Solicitar Asistencia Técnica In Situ</span>
+          <span class="material-symbols-outlined text-[18px]">support_agent</span>
+        </a>
+        <a class="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm rounded transition-all" href="#servicio-tecnico">
+          <span>Conocer Nuestro Equipo</span>
+          <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+        </a>
+      </div>
+    </div>
+    <div class="lg:col-span-5 relative">
+      <div class="rounded-xl overflow-hidden border border-slate-200 shadow-xl bg-slate-100">
+        <img alt="Técnicos de Campo & Certificación Oficial HP" class="w-full h-72 sm:h-84 lg:h-96 object-cover object-top" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXLm8CiLijSAkBmLF4Xm0pBP92KRP_XRZljtxtTq88YCZk9AVo-JhCzya8mwefAAaoYH-_z2pWTd_Odudpp5EwAgXMJNfieI4YU1APg6gMdccIoDMtledzxSrTGuWOxg98gcwTiOErlTpTSpL7HlSYnx86Oy1J1gfqygUcLVs1HiwOF7IDbmheqQB9ZicxKfg_4kPKy0vHp9SBWJVBRVph2YofQlurgG1r-S9IKnUZYntcvpvzu3-ytw"/>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
 <!-- ==========================================
      CALIDAD Y MEJORA CONTINUA DE PROCESOS (COMPACTO Y HOMOLOGADO)
      ========================================== -->
 <section class="py-6 sm:py-8 bg-white border-b border-slate-200" id="certificaciones">
-<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
   <div class="border border-slate-200 rounded-xl p-5 sm:p-6 bg-slate-50 flex flex-col lg:flex-row items-center justify-between gap-6">
     <div class="max-w-3xl">
       <div class="text-xs font-bold uppercase tracking-widest text-emerald-700 mb-1">Calidad y mejora continua de procesos</div>
@@ -142,10 +197,10 @@
     <!-- Logos Reales de Certificación Adok y Ciberseguridad SSL / INCIBE -->
     <div class="flex items-center gap-4 flex-shrink-0">
       <div class="p-1.5 border border-slate-200 rounded-lg bg-white shadow-xs" title="Certificación de Calidad ISO 9001 Adok">
-        <img alt="Sello Oficial ISO 9001 Adok Calidad" class="h-12 w-auto object-contain block" src="index.htmlwp-content/themes/pedregosa-corporate-30/assets/img/adok-iso9001-120.jpg"/>
+        <img alt="Sello Oficial ISO 9001 Adok Calidad" class="h-12 w-auto object-contain block" src="assets/img/adok-iso9001-120.jpg"/>
       </div>
       <div class="p-1.5 border border-slate-200 rounded-lg bg-white shadow-xs" title="Certificación Medioambiental ISO 14001 Adok">
-        <img alt="Sello Oficial ISO 14001 Adok Medio Ambiente" class="h-12 w-auto object-contain block" src="index.htmlwp-content/themes/pedregosa-corporate-30/assets/img/adok-iso14001-120.jpg"/>
+        <img alt="Sello Oficial ISO 14001 Adok Medio Ambiente" class="h-12 w-auto object-contain block" src="assets/img/adok-iso14001-120.jpg"/>
       </div>
       <div class="px-3 py-2 border border-slate-200 rounded-lg bg-white shadow-xs flex items-center gap-2" title="Seguridad Telemática Cifrada SSL 256-bit y Protocolos de Ciberseguridad recomendados por INCIBE">
         <span class="material-symbols-outlined text-blue-600 text-2xl">verified_user</span>
@@ -916,9 +971,9 @@
      BOTÓN FLOTANTE LATERAL VERTICAL (PESTAÑA DE AJUSTES & DEMOS)
      ========================================================================= -->
 <div id="ped-customizer-toggle-wrap" class="fixed right-0 top-1/2 -translate-y-1/2 z-50">
-  <button type="button" id="ped-customizer-toggle" class="group flex flex-col items-center justify-center py-4 px-2.5 bg-slate-900/95 hover:bg-primary text-white rounded-l-xl shadow-2xl border-y border-l border-white/20 transition-all cursor-pointer backdrop-blur-md select-none" title="Personalizar vista y cambiar versión">
-    <span class="material-symbols-outlined text-[20px] text-amber-400 mb-2 group-hover:rotate-90 transition-transform">tune</span>
-    <span style="writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg);" class="tracking-widest text-[11px] font-black uppercase text-white/90 group-hover:text-white py-1">
+  <button type="button" id="ped-customizer-toggle" class="group flex flex-col items-center justify-center py-2.5 sm:py-4 px-1.5 sm:px-2.5 bg-slate-900/95 hover:bg-primary text-white rounded-l-xl shadow-2xl border-y border-l border-white/20 transition-all cursor-pointer backdrop-blur-md select-none" title="Personalizar vista y cambiar versión">
+    <span class="material-symbols-outlined text-[18px] sm:text-[20px] text-amber-400 mb-1.5 sm:mb-2 group-hover:rotate-90 transition-transform">tune</span>
+    <span style="writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg);" class="tracking-widest text-[10px] sm:text-[11px] font-black uppercase text-white/90 group-hover:text-white py-1">
       Ajustes &amp; Demos
     </span>
   </button>
@@ -927,7 +982,7 @@
 <!-- =========================================================================
      DRAWER LATERAL DESLIZANTE (SIN FONDO OSCURO PARA VER LA WEB EN VIVO)
      ========================================================================= -->
-<aside id="ped-customizer-drawer" class="fixed top-0 right-0 w-84 sm:w-96 h-full bg-white text-slate-900 shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col border-l border-slate-300" aria-label="Panel de Configuración Rápida">
+<aside id="ped-customizer-drawer" class="fixed top-0 right-0 w-[90vw] max-w-sm sm:w-96 h-full bg-white text-slate-900 shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col border-l border-slate-300" aria-label="Panel de Configuración Rápida">
   
   <!-- Header del Panel -->
   <div class="p-4 sm:p-5 border-b border-slate-200 bg-slate-900 text-white flex items-center justify-between">
@@ -1149,10 +1204,10 @@
 <!-- =========================================================================
      WIDGET FLOTANTE DE WHATSAPP MULTIDEPARTAMENTO
      ========================================================================= -->
-<div id="ped-whatsapp-widget" class="fixed bottom-6 right-6 z-40 flex flex-col items-end">
+<div id="ped-whatsapp-widget" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex flex-col items-end">
   
   <!-- Cuadro de diálogo emergente de WhatsApp -->
-  <div id="ped-whatsapp-box" class="mb-3 w-80 sm:w-92 bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden transform scale-95 opacity-0 pointer-events-none transition-all duration-300 origin-bottom-right">
+  <div id="ped-whatsapp-box" class="mb-3 w-[calc(100vw-2rem)] max-w-sm sm:w-92 bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden transform scale-95 opacity-0 pointer-events-none transition-all duration-300 origin-bottom-right">
     
     <!-- Header WhatsApp -->
     <div class="bg-[#075e54] text-white p-4 flex items-center justify-between">
@@ -1723,6 +1778,24 @@
   if (waClose && waBox) {
     waClose.addEventListener('click', () => {
       waBox.classList.add('pointer-events-none', 'scale-95', 'opacity-0');
+    });
+  }
+
+  // Mobile Menu Toggle
+  const mobileBtn = document.getElementById('ped-mobile-menu-btn');
+  const mobileMenu = document.getElementById('ped-mobile-menu');
+  if (mobileBtn && mobileMenu) {
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      const icon = mobileBtn.querySelector('.material-symbols-outlined');
+      if (icon) icon.innerText = mobileMenu.classList.contains('hidden') ? 'menu' : 'close';
+    });
+    mobileMenu.querySelectorAll('a').forEach(l => {
+      l.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        const icon = mobileBtn.querySelector('.material-symbols-outlined');
+        if (icon) icon.innerText = 'menu';
+      });
     });
   }
 

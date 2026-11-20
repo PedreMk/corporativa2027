@@ -79,22 +79,45 @@
 </div>
 <!-- MAIN NAVIGATION -->
 <div class="border-b border-slate-200/80 bg-white/95 backdrop-blur-md">
-<div class="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between gap-8">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
 <a class="flex-shrink-0 py-2" href="#">
-<img alt="Pedregosa - Impresión, Oficina, Tecnología" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJMwHdlUuyUKQXtYmcLv0t5pu-o1VKhCQk-xnigP-H4toWZD-GXokvIa8xUjvOsddXwDFvV8ohPpboB_XNyO5QkbU-aJbnmsv5z9myravV9hSPgnlswqgPu1zY_fDC7Z-BKGpCD36_Vtjvt7lL-IR6Tw3GZMDX0BVWnGFyKo5jzOCjoVjKQu-lavjIqtruDoU37HVy535CNGOFzmZ5PxA2KdaUD2J_srdL1NScx_l1-WV2xM1OTST9LA">
+<img alt="Pedregosa - Impresión, Oficina, Tecnología" class="h-9 sm:h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJMwHdlUuyUKQXtYmcLv0t5pu-o1VKhCQk-xnigP-H4toWZD-GXokvIa8xUjvOsddXwDFvV8ohPpboB_XNyO5QkbU-aJbnmsv5z9myravV9hSPgnlswqgPu1zY_fDC7Z-BKGpCD36_Vtjvt7lL-IR6Tw3GZMDX0BVWnGFyKo5jzOCjoVjKQu-lavjIqtruDoU37HVy535CNGOFzmZ5PxA2KdaUD2J_srdL1NScx_l1-WV2xM1OTST9LA">
 </a>
 <nav class="hidden lg:flex items-center gap-8 text-[14px] font-semibold text-slate-700">
-<a class="text-primary hover:text-primary transition-colors" href="#">Inicio</a>
+<a class="text-primary hover:text-primary transition-colors font-bold" href="#">Inicio</a>
 <a class="hover:text-slate-950 transition-colors" href="#divisiones">Divisiones &amp; Soluciones</a>
 <a class="hover:text-slate-950 transition-colors" href="#sectores">Sector Público y PYMES</a>
 <a class="hover:text-slate-950 transition-colors" href="#homologaciones">Homologaciones &amp; Calidad</a>
 <a class="hover:text-slate-950 transition-colors" href="#tiendas">Portales B2B</a>
 </nav>
-<div class="flex items-center gap-4">
+<div class="flex items-center gap-3">
 <a class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 bg-primary-container hover:bg-crimson-deep text-white font-semibold text-[13px] rounded tracking-wide shadow-sm hover:shadow transition-all" href="#contacto-b2b">
 <span>Pedir Presupuesto B2B</span>
 <span class="material-symbols-outlined text-[17px]">arrow_forward</span>
 </a>
+<button type="button" id="ped-mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-slate-700 hover:text-primary hover:bg-slate-100 transition-colors cursor-pointer" aria-label="Abrir menú">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+</div>
+</div>
+<!-- Mobile Navigation Menu -->
+<div id="ped-mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white/98 backdrop-blur-md px-6 py-4 shadow-xl">
+<div class="flex flex-col gap-3 text-sm font-semibold text-slate-800">
+<a class="py-2 hover:text-primary transition-colors border-b border-slate-100" href="#">Inicio</a>
+<a class="py-2 hover:text-primary transition-colors border-b border-slate-100" href="#divisiones">Divisiones &amp; Soluciones</a>
+<a class="py-2 hover:text-primary transition-colors border-b border-slate-100" href="#sectores">Sector Público y PYMES</a>
+<a class="py-2 hover:text-primary transition-colors border-b border-slate-100" href="#homologaciones">Homologaciones &amp; Calidad</a>
+<a class="py-2 hover:text-primary transition-colors border-b border-slate-100" href="#tiendas">Portales B2B</a>
+<div class="pt-2 flex flex-col gap-2">
+<a class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-primary text-white text-xs font-bold rounded shadow-sm" href="tel:954368011">
+<span class="material-symbols-outlined text-sm">call</span>
+<span>Llamar: 954 36 80 11</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-slate-900 text-white text-xs font-bold rounded shadow-sm" href="#contacto-b2b">
+<span>Pedir Presupuesto B2B</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
 </div>
 </div>
 </div>
@@ -103,14 +126,447 @@
 <!-- ==========================================
          HERO SECTION: EDITORIAL HIGH CORPORATE
          ========================================== -->
+<section class="relative bg-white overflow-hidden border-b border-slate-200">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+<!-- Left Content -->
+<div class="lg:col-span-7 flex flex-col justify-center">
+<div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary mb-4">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+              Proveedor Homologado • Sector Público &amp; Corporativo
+            </div>
+<h1 class="text-3xl sm:text-5xl lg:text-[52px] font-extrabold text-slate-950 leading-[1.12] tracking-tight">
+              Suministro integral y tecnología para grandes organizaciones y empresas.
+            </h1>
+<p class="mt-5 text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-2xl">
+              Centralice sus compras en un único interlocutor con solvencia técnica demostrada. Más de 35 años aprovisionando con rigor administrativo a administraciones públicas, universidades y grandes cuentas, y aportando precios directos y agilidad comercial a PYMES.
+            </p>
+<!-- Key Bullet Points -->
+<div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-700 font-medium border-y border-slate-100 py-5">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[19px]">verified</span>
+<span>Homologación en Universidades y Junta</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[19px]">local_shipping</span>
+<span>Distribución directa 24/48h</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[19px]">account_box</span>
+<span>Asesor técnico comercial directo</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[19px]">inventory_2</span>
+<span>Catálogo Multimarca +30.000 referencias</span>
+</div>
+</div>
+<!-- CTAs -->
+<div class="mt-7 flex flex-wrap items-center gap-4">
+<a class="inline-flex items-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 bg-primary-container hover:bg-crimson-deep text-white font-bold text-sm tracking-wide rounded shadow-sm hover:shadow transition-all" href="#contacto-b2b">
+<span>Solicitar Propuesta a Medida</span>
+<span class="material-symbols-outlined text-[18px]">assignment_add</span>
+</a>
+<a class="inline-flex items-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm tracking-wide rounded transition-all" href="#tiendas">
+<span>Acceder a Tiendas B2B</span>
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+</div>
+<!-- Quick Direct Phone -->
+<div class="mt-5 flex items-center gap-2 text-xs text-slate-500">
+<span class="text-slate-400">Atención corporativa inmediata:</span>
+<a class="font-bold text-slate-900 hover:text-primary transition-colors text-sm" href="tel:954368011">954 36 80 11</a>
+<span class="text-slate-300">•</span>
+<span class="text-badge-accent-emerald font-semibold">Lunes a Viernes</span>
+</div>
+</div>
+<!-- Right: Authentic Corporate Visual -->
+<div class="lg:col-span-5 relative">
+<div class="relative rounded-xl overflow-hidden border border-slate-200/90 shadow-xl bg-slate-100 group">
+<img alt="Impresora multifunción HP Enterprise en entorno corporativo de oficina" class="w-full h-[360px] sm:h-[480px] lg:h-[520px] object-cover object-bottom group-hover:scale-[1.01] transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQVmV78tvVfe23E1pxr1q2hff1QN3fFvj9Mg4zc-ALdMXdm4gL-DEDU9Plvmo7plhHX3gTRHJE54wpAlyCtncoo0m6tb7BWM98Gm6s0afUhvn_9AdzExXuvQr4dumbOCgLe8uPKBC4FR4oQnoU7XBFVAuZgwyd9dj8tKsQyBGPcXOp2pHJkNKlEyxBLyUCfvniX48ro7odEEQ7JSrAXMfZ-nKBhEehjzQgFiZCZ_nNJYvnpIGSiZ8Uzw">
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+<!-- Context Pill Overlay -->
+<div class="absolute bottom-4 left-4 right-4 text-white bg-slate-900/85 backdrop-blur-md p-3.5 sm:p-4 rounded-lg border border-white/10">
+<div class="text-[11px] font-bold uppercase tracking-wider text-red-400 mb-0.5">Centro de Operaciones y Servicios</div>
+<div class="text-sm font-bold text-white">Polígono Store, Sevilla</div>
+<div class="text-xs text-slate-300 font-normal">Oficinas Centrales en C/ Gramil 8 • Centro de Distribución en C/ Escarpia 108</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ==========================================
+         FRANJA DE SOLVENCIA CORPORATIVA (NO DASHBOARD/SAAS)
+         ========================================== -->
+<section class="bg-slate-900 text-white border-b border-slate-800 py-10">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 divide-y md:divide-y-0 md:divide-x divide-slate-800">
+<div class="pt-4 md:pt-0 md:px-6 first:pl-0 flex flex-col justify-center">
+<div class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">Desde 1987</div>
+<div class="text-xs uppercase tracking-widest text-slate-400 mt-1.5 font-semibold">Más de 35 años de solvencia</div>
+<p class="text-xs text-slate-400 mt-1 font-normal">Trayectoria ininterrumpida de servicio en Andalucía y España.</p>
+</div>
+<div class="pt-4 md:pt-0 md:px-6 flex flex-col justify-center">
+<div class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">+50.000</div>
+<div class="text-xs uppercase tracking-widest text-slate-400 mt-1.5 font-semibold">Pedidos gestionados / año</div>
+<p class="text-xs text-slate-400 mt-1 font-normal">Flujo constante de suministro a empresas e instituciones.</p>
+</div>
+<div class="pt-4 md:pt-0 md:px-6 flex flex-col justify-center">
+<div class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">30.000+</div>
+<div class="text-xs uppercase tracking-widest text-slate-400 mt-1.5 font-semibold">Referencias homologadas</div>
+<p class="text-xs text-slate-400 mt-1 font-normal">Distribución directa de fabricantes líderes del mercado.</p>
+</div>
+<div class="pt-4 md:pt-0 md:px-6 flex flex-col justify-center">
+<div class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-red-500 tracking-tight">24/48h</div>
+<div class="text-xs uppercase tracking-widest text-slate-400 mt-1.5 font-semibold">Distribución ágil y directa</div>
+<p class="text-xs text-slate-400 mt-1 font-normal">Envíos diarios directos con conexión mayorista.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ==========================================
+         HOMOLOGACIONES & CLIENTES INSTITUCIONALES (ESTILO EDITORIAL)
+         ========================================== -->
+<section class="py-12 bg-slate-50 border-b border-slate-200" id="homologaciones">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-3xl mx-auto mb-8">
+<p class="text-xs uppercase tracking-widest font-bold text-slate-500">Confianza Institucional y Homologaciones Oficiales</p>
+<h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mt-1">Proveedor acreditado en acuerdos marco y licitaciones públicas</h2>
+</div>
+<!-- Institutional Badges & Official Entities Banner -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
+<div class="p-4 bg-white border border-slate-200 rounded-xl text-center flex flex-col items-center justify-center hover:border-slate-300 hover:shadow-xs transition">
+<span class="material-symbols-outlined text-slate-700 text-2xl mb-1">account_balance</span>
+<span class="text-xs font-bold text-slate-900">Junta de Andalucía</span>
+<span class="text-[11px] text-slate-500">Gobierno Autonómico</span>
+</div>
+<div class="p-4 bg-white border border-slate-200 rounded-xl text-center flex flex-col items-center justify-center hover:border-slate-300 hover:shadow-xs transition">
+<span class="material-symbols-outlined text-slate-700 text-2xl mb-1">school</span>
+<span class="text-xs font-bold text-slate-900">Univ. de Sevilla</span>
+<span class="text-[11px] text-slate-500">Acuerdo Marco Activo</span>
+</div>
+<div class="p-4 bg-white border border-slate-200 rounded-xl text-center flex flex-col items-center justify-center hover:border-slate-300 hover:shadow-xs transition">
+<span class="material-symbols-outlined text-slate-700 text-2xl mb-1">account_balance</span>
+<span class="text-xs font-bold text-slate-900">Principado de Asturias</span>
+<span class="text-[11px] text-slate-500">Suministro Homologado</span>
+</div>
+<div class="p-4 bg-white border border-slate-200 rounded-xl text-center flex flex-col items-center justify-center hover:border-slate-300 hover:shadow-xs transition">
+<span class="material-symbols-outlined text-slate-700 text-2xl mb-1">school</span>
+<span class="text-xs font-bold text-slate-900">Univ. Pablo de Olavide</span>
+<span class="text-[11px] text-slate-500">Licitación de Campus</span>
+</div>
+<div class="p-4 bg-white border border-slate-200 rounded-xl text-center flex flex-col items-center justify-center hover:border-slate-300 hover:shadow-xs transition">
+<span class="material-symbols-outlined text-slate-700 text-2xl mb-1">domain</span>
+<span class="text-xs font-bold text-slate-900">Ayto. Sevilla &amp; Huelva</span>
+<span class="text-[11px] text-slate-500">Corporaciones Locales</span>
+</div>
+<div class="p-4 bg-white border border-slate-200 rounded-xl text-center flex flex-col items-center justify-center hover:border-slate-300 hover:shadow-xs transition">
+<span class="material-symbols-outlined text-slate-700 text-2xl mb-1">school</span>
+<span class="text-xs font-bold text-slate-900">Univ. de Huelva</span>
+<span class="text-[11px] text-slate-500">Proveedor Acreditado</span>
+</div>
+</div>
+<!-- Official Manufacturer Partnerships -->
+<div class="mt-8 pt-6 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+<span class="font-bold text-slate-700 uppercase tracking-wider text-[11px] text-center md:text-left flex-shrink-0">Garantía oficial y alianzas de canal directo:</span>
+<div class="flex flex-wrap items-center justify-center md:justify-end gap-x-3 sm:gap-x-6 gap-y-2 text-slate-700 font-extrabold text-xs sm:text-sm tracking-tight text-center">
+<span>HP AMPLIFY PARTNER</span>
+<span class="text-slate-300 hidden sm:inline">/</span>
+<span>MICROSOFT EDUCATION</span>
+<span class="text-slate-300 hidden sm:inline">/</span>
+<span>BROTHER</span>
+<span class="text-slate-300 hidden sm:inline">/</span>
+<span>EPSON</span>
+<span class="text-slate-300 hidden sm:inline">/</span>
+<span>LENOVO</span>
+<span class="text-slate-300 hidden sm:inline">/</span>
+<span>DELL TECHNOLOGIES</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ==========================================
+         LOS TRES PILARES: DIVISIONES CORPORATIVAS DE PRESTIGIO
+         ========================================== -->
+<section class="py-16 sm:py-20 bg-white border-b border-slate-200" id="divisiones">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="max-w-3xl mb-12 sm:mb-14">
+<p class="text-xs uppercase tracking-widest font-bold text-primary">Divisiones Estratégicas</p>
+<h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-950 mt-1 tracking-tight">
+            Tres áreas de especialización para una cobertura integral
+          </h2>
+<p class="text-slate-600 mt-2 text-base">
+            Estructura operativa diseñada para dar respuesta rigurosa y experta en cada línea de aprovisionamiento de su organización.
+          </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- División 1: Impresión -->
+<article class="border border-slate-200 rounded-xl overflow-hidden bg-white flex flex-col justify-between hover:border-slate-400 transition-colors shadow-sm">
+<div>
+<!-- Visual Header with Icon -->
+<div class="p-7 border-b border-slate-100 flex items-start justify-between bg-slate-50/50">
+<div>
+<span class="text-[11px] font-bold tracking-widest text-primary uppercase">División Técnica</span>
+<h3 class="text-xl sm:text-2xl font-extrabold text-slate-950 mt-1">COSTE POR COPIA</h3>
+<p class="text-xs font-bold text-primary mt-1">De las marcas HP y Brother</p>
+</div>
+<div class="w-12 h-12 rounded bg-white border border-slate-200 flex items-center justify-center p-2 shadow-xs">
+<svg class="w-7 h-7" fill="none" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<path d="M22 42C17.58 42 14 45.58 14 50V68C14 70.21 15.79 72 18 72H24V86H76V72H82C84.21 72 86 70.21 86 68V50C86 45.58 82.42 42 78 42H70V28C70 25.79 68.21 24 66 24H34C31.79 24 30 25.79 30 28V42H22Z" fill="#b50524"></path>
+<path d="M32 30H68V42H32V30Z" fill="#ffffff"></path>
+<rect fill="#ffffff" height="8" rx="2" width="48" x="26" y="58"></rect>
+<path d="M28 72H72V82H28V72Z" fill="#8F031C"></path>
+</svg>
+</div>
+</div>
+<!-- Content -->
+<div class="p-7">
+<p class="text-sm text-slate-600 leading-relaxed">
+                  Equipos multifunción láser departamentales y flotas profesionales bajo modalidad oficial de Coste por Copia de las marcas HP y Brother. Mantenimiento técnico in situ, reposición automática de consumibles y control telemático de lecturas sin costes ocultos.
+                </p>
+<div class="mt-6 space-y-2.5 text-xs text-slate-700 font-medium">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">check</span>
+<span>Flotas oficiales HP Managed y Brother Commercial</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">check</span>
+<span>Servicio integral de Coste por Copia (hasta 30% de ahorro directo)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">check</span>
+<span>Tóner y consumibles incluidos con entrega preferente</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-7 pt-0 mt-4">
+<a class="inline-flex items-center justify-between w-full py-2.5 px-4 text-xs font-bold text-slate-900 bg-slate-100 hover:bg-primary-container hover:text-white rounded transition-colors" href="#contacto-b2b">
+<span>Auditar Coste por Copia</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- División 2: Oficina y Mobiliario -->
+<article class="border border-slate-200 rounded-xl overflow-hidden bg-white flex flex-col justify-between hover:border-slate-400 transition-colors shadow-sm">
+<div>
+<!-- Visual Header with Icon -->
+<div class="p-7 border-b border-slate-100 flex items-start justify-between bg-slate-50/50">
+<div>
+<span class="text-[11px] font-bold tracking-widest text-primary uppercase">División Espacios</span>
+<h3 class="text-2xl font-extrabold text-slate-950 mt-1">OFICINA</h3>
+</div>
+<div class="w-12 h-12 rounded bg-white border border-slate-200 flex items-center justify-center p-2 shadow-xs">
+<svg class="w-7 h-7" fill="none" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<path d="M34 22C34 16.48 38.48 12 44 12H56C61.52 12 66 16.48 66 22V36C66 41.52 61.52 46 56 46H44C38.48 46 34 41.52 34 36V22Z" fill="#1b7340"></path>
+<path d="M28 32H34V46H28C26.34 46 25 44.66 25 43V35C25 33.34 26.34 32 28 32Z" fill="#1b7340"></path>
+<path d="M66 32H72C73.66 32 75 33.34 75 35V43C75 44.66 73.66 46 72 46H66V32Z" fill="#1b7340"></path>
+<rect fill="#1b7340" height="10" rx="5" width="48" x="26" y="49"></rect>
+<rect fill="#14532d" height="18" rx="1" width="6" x="47" y="59"></rect>
+<path d="M32 78L48 76L52 76L68 78" stroke="#1b7340" stroke-linecap="round" stroke-width="4"></path>
+</svg>
+</div>
+</div>
+<!-- Content -->
+<div class="p-7">
+<p class="text-sm text-slate-600 leading-relaxed">
+                  Papelería técnica y corporativa, consumibles diarios, ergonomía laboral y proyectos integrales de mobiliario para oficinas modernas. Medición in situ, planos 2D/3D y servicio de montaje propio homologado.
+                </p>
+<div class="mt-6 space-y-2.5 text-xs text-slate-700 font-medium">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">check</span>
+<span>Papel Navigator, Rey, Xerox con tarifas corporativas</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">check</span>
+<span>Sillería de alta ergonomía certificada</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">check</span>
+<span>Mobiliario operativo y salas de juntas llave en mano</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-7 pt-0 mt-4">
+<a class="inline-flex items-center justify-between w-full py-2.5 px-4 text-xs font-bold text-slate-900 bg-slate-100 hover:bg-primary-container hover:text-white rounded transition-colors" href="https://oficina.pedregosa.es" rel="noopener" target="_blank">
+<span>Acceder a Tienda Oficina</span>
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+</article>
+<!-- División 3: Tecnología -->
+<article class="border border-slate-200 rounded-xl overflow-hidden bg-white flex flex-col justify-between hover:border-slate-400 transition-colors shadow-sm">
+<div>
+<!-- Visual Header with Icon -->
+<div class="p-7 border-b border-slate-100 flex items-start justify-between bg-slate-50/50">
+<div>
+<span class="text-[11px] font-bold tracking-widest text-primary uppercase">División IT &amp; Sistemas</span>
+<h3 class="text-2xl font-extrabold text-slate-950 mt-1">TECNOLOGÍA</h3>
+</div>
+<div class="w-12 h-12 rounded bg-white border border-slate-200 flex items-center justify-center p-2 shadow-xs">
+<svg class="w-7 h-7" fill="none" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#0284c7" height="60" rx="3" width="18" x="16" y="20"></rect>
+<circle cx="25" cy="66" fill="#ffffff" r="3.5"></circle>
+<path d="M38 23C38 21.34 39.34 20 41 20H81C82.66 20 84 21.34 84 23V58C84 59.66 82.66 61 81 61H41C39.34 61 38 59.66 38 58V23Z" fill="#0284c7"></path>
+<rect fill="#ffffff" height="30" rx="2" width="36" x="43" y="25"></rect>
+<path d="M57 61L54 74H68L65 61" fill="#0284c7"></path>
+</svg>
+</div>
+</div>
+<!-- Content -->
+<div class="p-7">
+<p class="text-sm text-slate-600 leading-relaxed">
+                  Infraestructura informática empresarial: servidores dedicados, almacenamiento, renovación masiva de puestos de trabajo (laptops y sobremesas), ciberseguridad, pantallas táctiles interactivas y licencias corporativas.
+                </p>
+<div class="mt-6 space-y-2.5 text-xs text-slate-700 font-medium">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">check</span>
+<span>Despliegues masivos HP, Dell, Asus y Lenovo</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">check</span>
+<span>Aulas interactivas y soluciones EduCAT para docencia</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">check</span>
+<span>Equipamiento de salas de videoconferencia Teams/Zoom</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-7 pt-0 mt-4">
+<a class="inline-flex items-center justify-between w-full py-2.5 px-4 text-xs font-bold text-slate-900 bg-slate-100 hover:bg-primary-container hover:text-white rounded transition-colors" href="https://tienda.pedregosa.es" rel="noopener" target="_blank">
+<span>Acceder a Tienda IT</span>
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+
+<!-- ==========================================
+         SECCIÓN COMPARATIVA DUAL: ADMINISTRACIÓN VS PYMES
+         ========================================== -->
+<section class="py-16 sm:py-20 bg-slate-50 border-b border-slate-200" id="sectores">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-3xl mx-auto mb-12 sm:mb-14">
+<p class="text-xs uppercase tracking-widest font-bold text-primary">Soluciones a Medida según su Perfil Operativo</p>
+<h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-950 mt-1 tracking-tight">
+            Canales diferenciados para necesidades distintas
+          </h2>
+<p class="text-slate-600 mt-2 text-base">
+            Adaptamos los procesos contractuales, la facturación y la asignación técnica según las exigencias de su institución o negocio.
+          </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Columna 1: Sector Público & Universidades -->
+<div class="bg-white border-2 border-slate-300 rounded-xl p-8 sm:p-10 flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between border-b border-slate-200 pb-5 mb-6">
+<div>
+<span class="text-xs font-bold uppercase tracking-wider text-slate-500">Canal Institucional</span>
+<h3 class="text-2xl font-black text-slate-950 mt-0.5">Administración Pública y Universidades</h3>
+</div>
+<div class="w-12 h-12 rounded bg-slate-100 flex items-center justify-center text-slate-800">
+<span class="material-symbols-outlined text-2xl">account_balance</span>
+</div>
+</div>
+<p class="text-slate-600 text-sm leading-relaxed mb-6">
+                Máxima solvencia técnica, económica y regulatoria para licitaciones públicas, contratos menores y adhesión a acuerdos marco autonómicos o universitarios.
+              </p>
+<div class="space-y-4 text-sm text-slate-800">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl flex-shrink-0 mt-0.5">verified</span>
+<div>
+<strong class="font-bold text-slate-950 block">Acuerdos marco vigentes:</strong>
+<span class="text-xs text-slate-600">Proveedor homologado en Univ. de Sevilla, Univ. Pablo de Olavide, Univ. de Huelva y entes autonómicos.</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl flex-shrink-0 mt-0.5">receipt_long</span>
+<div>
+<strong class="font-bold text-slate-950 block">Facturación electrónica FACe y códigos DIR3:</strong>
+<span class="text-xs text-slate-600">Tramitación ágil y cumplimiento estricto con los requerimientos contables del sector público estatal y regional.</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl flex-shrink-0 mt-0.5">policy</span>
+<div>
+<strong class="font-bold text-slate-950 block">Sistemas auditados ISO 9001 e ISO 14001:</strong>
+<span class="text-xs text-slate-600">Garantía total en pliegos de prescripciones técnicas y criterios de compra pública verde.</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between">
+<span class="text-xs font-semibold text-slate-500">Portal de licitaciones y concursos</span>
+<a class="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-crimson-deep" href="#contacto-b2b">
+<span>Contactar unidad institucional</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Columna 2: PYMES y Sector Privado -->
+<div class="bg-white border-2 border-slate-300 rounded-xl p-8 sm:p-10 flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between border-b border-slate-200 pb-5 mb-6">
+<div>
+<span class="text-xs font-bold uppercase tracking-wider text-slate-500">Canal Corporativo Ágil</span>
+<h3 class="text-2xl font-black text-slate-950 mt-0.5">PYMES y Sector Privado</h3>
+</div>
+<div class="w-12 h-12 rounded bg-slate-100 flex items-center justify-center text-slate-800">
+<span class="material-symbols-outlined text-2xl">business</span>
+</div>
+</div>
+<p class="text-slate-600 text-sm leading-relaxed mb-6">
+                Agilidad comercial inmediata sin burocracia: optimice tiempos de aprovisionamiento, obtenga tarifas preferenciales por volumen y centralice proveedores.
+              </p>
+<div class="space-y-4 text-sm text-slate-800">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-badge-accent-blue text-xl flex-shrink-0 mt-0.5">person_outline</span>
+<div>
+<strong class="font-bold text-slate-950 block">Asesor técnico comercial directo con nombre y apellidos:</strong>
+<span class="text-xs text-slate-600">Atención telefónica directa o visita presencial en sus instalaciones. Sin centralitas impersonales.</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-badge-accent-blue text-xl flex-shrink-0 mt-0.5">summarize</span>
+<div>
+<strong class="font-bold text-slate-950 block">Factura mensual unificada y centralizada:</strong>
+<span class="text-xs text-slate-600">Suministro de informática, mobiliario, tóners y papelería agrupado para aligerar la contabilidad de su empresa.</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-badge-accent-blue text-xl flex-shrink-0 mt-0.5">bolt</span>
+<div>
+<strong class="font-bold text-slate-950 block">Distribución preferente 24/48h:</strong>
+<span class="text-xs text-slate-600">Tarifas especiales para compras recurrentes y acceso inmediato a stock en plataformas mayoristas asociadas.</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between">
+<span class="text-xs font-semibold text-slate-500">Respuesta en menos de 4h laborables</span>
+<a class="inline-flex items-center gap-1.5 text-xs font-bold text-badge-accent-blue hover:text-sky-700" href="#contacto-b2b">
+<span>Alta rápida de empresa</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
 <!-- ==========================================
      CALIDAD Y MEJORA CONTINUA DE PROCESOS (COMPACTO Y HOMOLOGADO)
      ========================================== -->
-<!-- ==========================================
-     CALIDAD Y MEJORA CONTINUA DE PROCESOS (COMPACTO Y HOMOLOGADO)
-     ========================================== -->
-<section class="py-6 sm:py-8 bg-white border-b border-slate-200" id="certificaciones">
-<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<section class="py-8 sm:py-10 bg-white border-b border-slate-200" id="certificaciones">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
   <div class="border border-slate-200 rounded-xl p-5 sm:p-6 bg-slate-50 flex flex-col lg:flex-row items-center justify-between gap-6">
     <div class="max-w-3xl">
       <div class="text-xs font-bold uppercase tracking-widest text-emerald-700 mb-1">Calidad y mejora continua de procesos</div>
@@ -125,10 +581,10 @@
     <!-- Logos Reales de Certificación Adok y Ciberseguridad SSL / INCIBE -->
     <div class="flex items-center gap-4 flex-shrink-0">
       <div class="p-1.5 border border-slate-200 rounded-lg bg-white shadow-xs" title="Certificación de Calidad ISO 9001 Adok">
-        <img alt="Sello Oficial ISO 9001 Adok Calidad" class="h-12 w-auto object-contain block" src="index.htmlwp-content/themes/pedregosa-corporate-30/assets/img/adok-iso9001-120.jpg"/>
+        <img alt="Sello Oficial ISO 9001 Adok Calidad" class="h-12 w-auto object-contain block" src="assets/img/adok-iso9001-120.jpg"/>
       </div>
       <div class="p-1.5 border border-slate-200 rounded-lg bg-white shadow-xs" title="Certificación Medioambiental ISO 14001 Adok">
-        <img alt="Sello Oficial ISO 14001 Adok Medio Ambiente" class="h-12 w-auto object-contain block" src="index.htmlwp-content/themes/pedregosa-corporate-30/assets/img/adok-iso14001-120.jpg"/>
+        <img alt="Sello Oficial ISO 14001 Adok Medio Ambiente" class="h-12 w-auto object-contain block" src="assets/img/adok-iso14001-120.jpg"/>
       </div>
       <div class="px-3 py-2 border border-slate-200 rounded-lg bg-white shadow-xs flex items-center gap-2" title="Seguridad Telemática Cifrada SSL 256-bit y Protocolos de Ciberseguridad recomendados por INCIBE">
         <span class="material-symbols-outlined text-blue-600 text-2xl">verified_user</span>
@@ -437,9 +893,9 @@
      BOTÓN FLOTANTE LATERAL VERTICAL (PESTAÑA DE AJUSTES & DEMOS)
      ========================================================================= -->
 <div id="ped-customizer-toggle-wrap" class="fixed right-0 top-1/2 -translate-y-1/2 z-50">
-  <button type="button" id="ped-customizer-toggle" class="group flex flex-col items-center justify-center py-4 px-2.5 bg-slate-900/95 hover:bg-primary text-white rounded-l-xl shadow-2xl border-y border-l border-white/20 transition-all cursor-pointer backdrop-blur-md select-none" title="Personalizar vista y cambiar versión">
-    <span class="material-symbols-outlined text-[20px] text-amber-400 mb-2 group-hover:rotate-90 transition-transform">tune</span>
-    <span style="writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg);" class="tracking-widest text-[11px] font-black uppercase text-white/90 group-hover:text-white py-1">
+  <button type="button" id="ped-customizer-toggle" class="group flex flex-col items-center justify-center py-2.5 sm:py-4 px-1.5 sm:px-2.5 bg-slate-900/95 hover:bg-primary text-white rounded-l-xl shadow-2xl border-y border-l border-white/20 transition-all cursor-pointer backdrop-blur-md select-none" title="Personalizar vista y cambiar versión">
+    <span class="material-symbols-outlined text-[18px] sm:text-[20px] text-amber-400 mb-1.5 sm:mb-2 group-hover:rotate-90 transition-transform">tune</span>
+    <span style="writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg);" class="tracking-widest text-[10px] sm:text-[11px] font-black uppercase text-white/90 group-hover:text-white py-1">
       Ajustes &amp; Demos
     </span>
   </button>
@@ -448,7 +904,7 @@
 <!-- =========================================================================
      DRAWER LATERAL DESLIZANTE (SIN FONDO OSCURO PARA VER LA WEB EN VIVO)
      ========================================================================= -->
-<aside id="ped-customizer-drawer" class="fixed top-0 right-0 w-84 sm:w-96 h-full bg-white text-slate-900 shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col border-l border-slate-300" aria-label="Panel de Configuración Rápida">
+<aside id="ped-customizer-drawer" class="fixed top-0 right-0 w-[90vw] max-w-sm sm:w-96 h-full bg-white text-slate-900 shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col border-l border-slate-300" aria-label="Panel de Configuración Rápida">
   
   <!-- Header del Panel -->
   <div class="p-4 sm:p-5 border-b border-slate-200 bg-slate-900 text-white flex items-center justify-between">
@@ -670,10 +1126,10 @@
 <!-- =========================================================================
      WIDGET FLOTANTE DE WHATSAPP MULTIDEPARTAMENTO
      ========================================================================= -->
-<div id="ped-whatsapp-widget" class="fixed bottom-6 right-6 z-40 flex flex-col items-end">
+<div id="ped-whatsapp-widget" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex flex-col items-end">
   
   <!-- Cuadro de diálogo emergente de WhatsApp -->
-  <div id="ped-whatsapp-box" class="mb-3 w-80 sm:w-92 bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden transform scale-95 opacity-0 pointer-events-none transition-all duration-300 origin-bottom-right">
+  <div id="ped-whatsapp-box" class="mb-3 w-[calc(100vw-2rem)] max-w-sm sm:w-92 bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden transform scale-95 opacity-0 pointer-events-none transition-all duration-300 origin-bottom-right">
     
     <!-- Header WhatsApp -->
     <div class="bg-[#075e54] text-white p-4 flex items-center justify-between">
@@ -1244,6 +1700,24 @@
   if (waClose && waBox) {
     waClose.addEventListener('click', () => {
       waBox.classList.add('pointer-events-none', 'scale-95', 'opacity-0');
+    });
+  }
+
+  // Mobile Menu Toggle
+  const mobileBtn = document.getElementById('ped-mobile-menu-btn');
+  const mobileMenu = document.getElementById('ped-mobile-menu');
+  if (mobileBtn && mobileMenu) {
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      const icon = mobileBtn.querySelector('.material-symbols-outlined');
+      if (icon) icon.innerText = mobileMenu.classList.contains('hidden') ? 'menu' : 'close';
+    });
+    mobileMenu.querySelectorAll('a').forEach(l => {
+      l.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        const icon = mobileBtn.querySelector('.material-symbols-outlined');
+        if (icon) icon.innerText = 'menu';
+      });
     });
   }
 
