@@ -204,95 +204,47 @@
     </div>
 
     <!-- ========================================== -->
-    <!-- NAVEGACIÓN PRINCIPAL RESPONSIVE (100% VISIBLE) -->
+    <!-- 4. NAVEGACIÓN 100% HORIZONTAL (SIN DESPLEGABLES VERTICALES) -->
     <!-- ========================================== -->
-    <nav class="border-t border-slate-100 bg-white relative">
-      <div class="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-between gap-y-2 py-2 text-xs sm:text-[13px] font-bold">
+    <nav class="border-t border-b border-slate-200 bg-white">
+      <div class="max-w-7xl mx-auto px-4 flex items-center justify-between overflow-x-auto py-1 text-xs font-bold tracking-tight">
         
-        <!-- ELEMENTOS DE NAVEGACIÓN DIRECTA -->
-        <div class="flex items-center flex-wrap gap-x-4 sm:gap-x-6 gap-y-2">
-          
-          <!-- BOTÓN TODAS LAS CATEGORÍAS CON MEGAMENÚ DESPLEGABLE -->
-          <div class="relative has-dropdown">
-            <button class="bg-slate-900 text-white hover:bg-crimson px-3 py-1.5 rounded-md flex items-center gap-1.5 transition text-xs font-bold shadow-sm">
-              <span class="material-symbols-outlined text-base">grid_view</span>
-              <span>CATEGORÍAS</span>
-              <span class="material-symbols-outlined text-sm">expand_more</span>
-            </button>
-
-            <!-- MEGAMENÚ DESPLEGABLE -->
-            <div class="dropdown-menu absolute left-0 top-full mt-1.5 w-72 sm:w-80 bg-white border border-slate-200 rounded-xl shadow-2xl p-4 opacity-0 invisible -translate-y-2 transition-all duration-200 z-50">
-              <div class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 mb-3 px-2">
-                Explorar Catálogo Profesional
-              </div>
-              <ul class="space-y-1 text-xs">
-                <li>
-                  <a href="#" class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 hover:text-crimson transition text-slate-700">
-                    <span class="material-symbols-outlined text-slate-400 text-lg">laptop_mac</span>
-                    <div>
-                      <div class="font-bold">Portátiles & Laptops Pro</div>
-                      <div class="text-[10px] text-slate-400">LG Gram, Asus, Lenovo, Copilot+</div>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 hover:text-crimson transition text-slate-700">
-                    <span class="material-symbols-outlined text-slate-400 text-lg">print</span>
-                    <div>
-                      <div class="font-bold">Consumibles & Tóners Originales</div>
-                      <div class="text-[10px] text-slate-400">HP, Brother, Epson 100% oficial</div>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 hover:text-crimson transition text-slate-700">
-                    <span class="material-symbols-outlined text-slate-400 text-lg">chair</span>
-                    <div>
-                      <div class="font-bold">Ergonomía & Oficina Fellowes</div>
-                      <div class="text-[10px] text-slate-400">Destructoras, brazos monitor, reposapiés</div>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 hover:text-crimson transition text-slate-700">
-                    <span class="material-symbols-outlined text-slate-400 text-lg">cable</span>
-                    <div>
-                      <div class="font-bold">Conectividad & Accesorios</div>
-                      <div class="text-[10px] text-slate-400">Docks USB-C, cables AISENS, adaptadores</div>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 hover:text-crimson transition text-slate-700">
-                    <span class="material-symbols-outlined text-slate-400 text-lg">desktop_windows</span>
-                    <div>
-                      <div class="font-bold">Monitores & Puestos de Trabajo</div>
-                      <div class="text-[10px] text-slate-400">Pantallas IPS, audio y videoconferencia</div>
-                    </div>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- ENLACES PRINCIPALES VISIBLES EN ESCRITORIO -->
-          <div class="hidden md:flex items-center gap-4 lg:gap-6 text-slate-700">
-            <a href="#" class="hover:text-crimson transition py-1">Portátiles Pro</a>
-            <a href="#" class="hover:text-crimson transition py-1">Consumibles & Tóner</a>
-            <a href="#" class="hover:text-crimson transition py-1">Ergonomía Fellowes</a>
-            <a href="#" class="hover:text-crimson transition py-1">Conectividad & Docks</a>
-            <a href="#" class="text-emerald-700 hover:text-emerald-800 transition py-1 flex items-center gap-1">
-              <span class="material-symbols-outlined text-sm">verified</span>
-              Marcas Oficiales
-            </a>
-          </div>
-
+        <!-- ENLACES HORIZONTALES DIRECTOS -->
+        <div class="flex items-center gap-1 sm:gap-2">
+          <a href="#" class="px-3 py-2 rounded-lg text-crimson bg-red-50/80 border border-red-200 font-extrabold flex items-center gap-1.5 whitespace-nowrap">
+            <span class="material-symbols-outlined text-base">laptop_mac</span>
+            PORTÁTILES & PCS
+          </a>
+          <a href="#" class="px-3 py-2 rounded-lg text-slate-700 hover:text-crimson hover:bg-slate-50 transition flex items-center gap-1.5 whitespace-nowrap">
+            <span class="material-symbols-outlined text-base text-slate-400">memory</span>
+            COMPONENTES
+          </a>
+          <a href="#" class="px-3 py-2 rounded-lg text-slate-700 hover:text-crimson hover:bg-slate-50 transition flex items-center gap-1.5 whitespace-nowrap">
+            <span class="material-symbols-outlined text-base text-slate-400">chair</span>
+            OFICINA & MOBILIARIO
+          </a>
+          <a href="#" class="px-3 py-2 rounded-lg text-slate-700 hover:text-crimson hover:bg-slate-50 transition flex items-center gap-1.5 whitespace-nowrap">
+            <span class="material-symbols-outlined text-base text-slate-400">print</span>
+            CONSUMIBLES & TÓNER
+          </a>
+          <a href="#" class="px-3 py-2 rounded-lg text-slate-700 hover:text-crimson hover:bg-slate-50 transition flex items-center gap-1.5 whitespace-nowrap">
+            <span class="material-symbols-outlined text-base text-slate-400">cable</span>
+            CONECTIVIDAD & DOCKS
+          </a>
+          <a href="#" class="px-3 py-2 rounded-lg text-slate-700 hover:text-crimson hover:bg-slate-50 transition flex items-center gap-1.5 whitespace-nowrap">
+            <span class="material-symbols-outlined text-base text-slate-400">health_and_safety</span>
+            ERGONOMÍA FELLOWES
+          </a>
+          <a href="#" class="px-3 py-2 rounded-lg text-emerald-700 hover:text-emerald-800 hover:bg-emerald-50 transition flex items-center gap-1.5 whitespace-nowrap">
+            <span class="material-symbols-outlined text-base">verified</span>
+            MARCAS OFICIALES
+          </a>
         </div>
 
-        <!-- ACCESO DIRECTO DESTACADO A OFERTAS -->
-        <a href="#" class="text-crimson font-extrabold flex items-center gap-1.5 bg-red-50 hover:bg-red-100 px-3 py-1.5 rounded-md border border-red-200 transition text-xs">
-          <span class="material-symbols-outlined text-sm text-red-600 animate-bounce">local_fire_department</span>
-          <span>ZONA OFERTAS</span>
+        <!-- ACCESO DESTACADO A OFERTAS -->
+        <a href="#" class="px-3.5 py-2 rounded-lg text-crimson bg-red-100 hover:bg-crimson hover:text-white transition font-extrabold flex items-center gap-1.5 whitespace-nowrap ml-3 shadow-xs">
+          <span class="material-symbols-outlined text-base animate-bounce">local_fire_department</span>
+          <span>OFERTAS</span>
         </a>
 
       </div>
