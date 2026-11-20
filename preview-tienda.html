@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
   
-  <!-- Tailwind CSS para maqueta responsive rápida y limpia -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -70,6 +70,12 @@
       transform: translateY(-4px);
       box-shadow: 0 12px 24px -6px rgba(15, 23, 42, 0.1);
     }
+    /* Estilos para el desplegable del menú */
+    .has-dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
   </style>
 </head>
 <body class="min-h-screen flex flex-col antialiased">
@@ -79,7 +85,7 @@
   <!-- ========================================== -->
   <aside class="bg-slate-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
     <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
-      <div class="flex items-center gap-6">
+      <div class="flex items-center gap-4 sm:gap-6">
         <span class="flex items-center gap-1.5 font-medium text-white">
           <span class="material-symbols-outlined text-sm text-emerald-400">call</span>
           Pedidos Directos: <a href="tel:954368011" class="hover:underline font-bold text-white">954 36 80 11</a>
@@ -93,11 +99,11 @@
           Almacén Central en Sevilla (Polígono Store)
         </span>
       </div>
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-3 sm:gap-4">
         <span class="hidden sm:inline-block bg-slate-800 text-slate-200 px-2 py-0.5 rounded text-[11px] font-semibold border border-slate-700">
-          🏛️ Facturación FACe para Entes Públicos
+          🏛️ Facturación FACe
         </span>
-        <a href="https://pedremk.github.io/corporativa2027/" target="_blank" class="hover:text-white transition flex items-center gap-1">
+        <a href="https://pedremk.github.io/corporativa2027/" target="_blank" class="hover:text-white transition flex items-center gap-1 text-[11px] sm:text-xs">
           <span>Web Corporativa</span>
           <span class="material-symbols-outlined text-xs">open_in_new</span>
         </a>
@@ -120,15 +126,20 @@
   <!-- 3. CABECERA PRINCIPAL CON BUSCADOR & CESTA -->
   <!-- ========================================== -->
   <header class="bg-white sticky top-0 z-40 shadow-sm border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 py-3 sm:py-4 flex items-center justify-between gap-4">
+    <div class="max-w-7xl mx-auto px-4 py-3 sm:py-4 flex items-center justify-between gap-3 sm:gap-4">
       
+      <!-- BOTÓN HAMBURGUESA MÓVIL (VISIBLE EN PANTALLAS PEQUEÑAS) -->
+      <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-slate-700 hover:text-crimson hover:bg-slate-100 rounded-lg transition" aria-label="Abrir menú de categorías">
+        <span class="material-symbols-outlined text-2xl">menu</span>
+      </button>
+
       <!-- LOGO CORPORATIVO -->
       <a href="#" class="flex items-center gap-2 flex-shrink-0">
         <div class="flex flex-col">
-          <span class="text-2xl sm:text-3xl font-extrabold tracking-tight text-crimson">
+          <span class="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-crimson">
             PEDRE<span class="text-slate-900">GOSA</span>
           </span>
-          <span class="text-[9px] font-bold tracking-widest text-slate-500 uppercase -mt-1">
+          <span class="text-[8px] sm:text-[9px] font-bold tracking-widest text-slate-500 uppercase -mt-1">
             TIENDA OFICIAL B2B & PROFESIONAL
           </span>
         </div>
@@ -140,9 +151,9 @@
           <input 
             type="text" 
             placeholder="Buscar por producto, marca (LG, Fellowes...) o referencia de tóner / SKU..." 
-            class="w-full pl-10 pr-24 py-2.5 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-crimson focus:border-transparent transition"
+            class="w-full pl-10 pr-24 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-crimson focus:border-transparent transition"
           >
-          <span class="material-symbols-outlined absolute left-3 top-2.5 text-slate-400 text-lg">search</span>
+          <span class="material-symbols-outlined absolute left-3 top-2 sm:top-2.5 text-slate-400 text-lg">search</span>
           <button class="absolute right-1 top-1 bottom-1 px-4 bg-crimson text-white text-xs font-bold rounded-md hover:bg-crimson-hover transition">
             Buscar
           </button>
@@ -150,7 +161,7 @@
       </div>
 
       <!-- ACCIONES DE USUARIO & CESTA -->
-      <div class="flex items-center gap-4 sm:gap-6 flex-shrink-0">
+      <div class="flex items-center gap-3 sm:gap-6 flex-shrink-0">
         <!-- Mi Cuenta -->
         <a href="#" class="hidden md:flex items-center gap-2 text-slate-700 hover:text-crimson transition">
           <span class="material-symbols-outlined text-2xl">person</span>
@@ -161,47 +172,192 @@
         </a>
 
         <!-- Botón Cesta con disparador interactivo -->
-        <button onclick="toggleCartDrawer()" class="flex items-center gap-3 bg-slate-50 hover:bg-slate-100 border border-slate-200 px-3.5 py-2 rounded-xl transition group relative">
+        <button onclick="toggleCartDrawer()" class="flex items-center gap-2 sm:gap-3 bg-slate-50 hover:bg-slate-100 border border-slate-200 px-3 py-1.5 sm:py-2 rounded-xl transition group relative">
           <div class="relative">
             <span class="material-symbols-outlined text-2xl text-crimson group-hover:scale-110 transition">shopping_cart</span>
             <span id="cartBadgeCount" class="absolute -top-2 -right-2 bg-crimson text-white text-[10px] font-extrabold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white shadow-sm">
               2
             </span>
           </div>
-          <div class="text-left text-xs hidden lg:block">
-            <span class="block text-slate-400 font-medium">Mi Cesta</span>
-            <span id="cartHeaderTotal" class="font-bold text-slate-900">127,50 €</span>
+          <div class="text-left text-xs hidden sm:block">
+            <span class="block text-slate-400 font-medium text-[10px] sm:text-xs">Mi Cesta</span>
+            <span id="cartHeaderTotal" class="font-bold text-slate-900 text-xs sm:text-sm">127,50 €</span>
           </div>
         </button>
       </div>
 
     </div>
 
-    <!-- NAVEGACIÓN PRINCIPAL DE CATEGORÍAS -->
-    <nav class="border-t border-slate-100 bg-white">
-      <div class="max-w-7xl mx-auto px-4 flex items-center justify-between overflow-x-auto no-scrollbar py-2 text-xs font-bold tracking-tight">
-        <div class="flex items-center gap-6 whitespace-nowrap">
-          <a href="#" class="text-crimson flex items-center gap-1.5 py-1">
-            <span class="material-symbols-outlined text-base">menu</span>
-            TODAS LAS CATEGORÍAS
-          </a>
-          <a href="#" class="text-slate-700 hover:text-crimson transition py-1">Portátiles & Laptops Pro</a>
-          <a href="#" class="text-slate-700 hover:text-crimson transition py-1">Consumibles & Tóners</a>
-          <a href="#" class="text-slate-700 hover:text-crimson transition py-1">Ergonomía & Fellowes</a>
-          <a href="#" class="text-slate-700 hover:text-crimson transition py-1">Conectividad & Cables</a>
-          <a href="#" class="text-slate-700 hover:text-crimson transition py-1">Monitores & Puestos</a>
-          <a href="#" class="text-emerald-700 hover:text-emerald-800 transition py-1 flex items-center gap-1">
-            <span class="material-symbols-outlined text-sm">verified</span>
-            Marcas Homologadas
-          </a>
+    <!-- BUSCADOR MÓVIL EN PANTALLAS PEQUEÑAS -->
+    <div class="px-4 pb-2 sm:hidden">
+      <div class="relative">
+        <input 
+          type="text" 
+          placeholder="Buscar producto, marca o tóner..." 
+          class="w-full pl-9 pr-16 py-2 text-xs bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-crimson"
+        >
+        <span class="material-symbols-outlined absolute left-2.5 top-2 text-slate-400 text-base">search</span>
+        <button class="absolute right-1 top-1 bottom-1 px-3 bg-crimson text-white text-[11px] font-bold rounded-md">
+          Ir
+        </button>
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- NAVEGACIÓN PRINCIPAL RESPONSIVE (100% VISIBLE) -->
+    <!-- ========================================== -->
+    <nav class="border-t border-slate-100 bg-white relative">
+      <div class="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-between gap-y-2 py-2 text-xs sm:text-[13px] font-bold">
+        
+        <!-- ELEMENTOS DE NAVEGACIÓN DIRECTA -->
+        <div class="flex items-center flex-wrap gap-x-4 sm:gap-x-6 gap-y-2">
+          
+          <!-- BOTÓN TODAS LAS CATEGORÍAS CON MEGAMENÚ DESPLEGABLE -->
+          <div class="relative has-dropdown">
+            <button class="bg-slate-900 text-white hover:bg-crimson px-3 py-1.5 rounded-md flex items-center gap-1.5 transition text-xs font-bold shadow-sm">
+              <span class="material-symbols-outlined text-base">grid_view</span>
+              <span>CATEGORÍAS</span>
+              <span class="material-symbols-outlined text-sm">expand_more</span>
+            </button>
+
+            <!-- MEGAMENÚ DESPLEGABLE -->
+            <div class="dropdown-menu absolute left-0 top-full mt-1.5 w-72 sm:w-80 bg-white border border-slate-200 rounded-xl shadow-2xl p-4 opacity-0 invisible -translate-y-2 transition-all duration-200 z-50">
+              <div class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 mb-3 px-2">
+                Explorar Catálogo Profesional
+              </div>
+              <ul class="space-y-1 text-xs">
+                <li>
+                  <a href="#" class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 hover:text-crimson transition text-slate-700">
+                    <span class="material-symbols-outlined text-slate-400 text-lg">laptop_mac</span>
+                    <div>
+                      <div class="font-bold">Portátiles & Laptops Pro</div>
+                      <div class="text-[10px] text-slate-400">LG Gram, Asus, Lenovo, Copilot+</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 hover:text-crimson transition text-slate-700">
+                    <span class="material-symbols-outlined text-slate-400 text-lg">print</span>
+                    <div>
+                      <div class="font-bold">Consumibles & Tóners Originales</div>
+                      <div class="text-[10px] text-slate-400">HP, Brother, Epson 100% oficial</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 hover:text-crimson transition text-slate-700">
+                    <span class="material-symbols-outlined text-slate-400 text-lg">chair</span>
+                    <div>
+                      <div class="font-bold">Ergonomía & Oficina Fellowes</div>
+                      <div class="text-[10px] text-slate-400">Destructoras, brazos monitor, reposapiés</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 hover:text-crimson transition text-slate-700">
+                    <span class="material-symbols-outlined text-slate-400 text-lg">cable</span>
+                    <div>
+                      <div class="font-bold">Conectividad & Accesorios</div>
+                      <div class="text-[10px] text-slate-400">Docks USB-C, cables AISENS, adaptadores</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 hover:text-crimson transition text-slate-700">
+                    <span class="material-symbols-outlined text-slate-400 text-lg">desktop_windows</span>
+                    <div>
+                      <div class="font-bold">Monitores & Puestos de Trabajo</div>
+                      <div class="text-[10px] text-slate-400">Pantallas IPS, audio y videoconferencia</div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- ENLACES PRINCIPALES VISIBLES EN ESCRITORIO -->
+          <div class="hidden md:flex items-center gap-4 lg:gap-6 text-slate-700">
+            <a href="#" class="hover:text-crimson transition py-1">Portátiles Pro</a>
+            <a href="#" class="hover:text-crimson transition py-1">Consumibles & Tóner</a>
+            <a href="#" class="hover:text-crimson transition py-1">Ergonomía Fellowes</a>
+            <a href="#" class="hover:text-crimson transition py-1">Conectividad & Docks</a>
+            <a href="#" class="text-emerald-700 hover:text-emerald-800 transition py-1 flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">verified</span>
+              Marcas Oficiales
+            </a>
+          </div>
+
         </div>
-        <a href="#" class="text-crimson font-extrabold flex items-center gap-1 whitespace-nowrap bg-red-50 px-2.5 py-1 rounded-md border border-red-200">
-          <span class="material-symbols-outlined text-sm">local_fire_department</span>
-          OFERTAS DEL DÍA
+
+        <!-- ACCESO DIRECTO DESTACADO A OFERTAS -->
+        <a href="#" class="text-crimson font-extrabold flex items-center gap-1.5 bg-red-50 hover:bg-red-100 px-3 py-1.5 rounded-md border border-red-200 transition text-xs">
+          <span class="material-symbols-outlined text-sm text-red-600 animate-bounce">local_fire_department</span>
+          <span>ZONA OFERTAS</span>
         </a>
+
       </div>
     </nav>
   </header>
+
+  <!-- ========================================== -->
+  <!-- CAJÓN DE MENÚ MÓVIL (MOBILE DRAWER) -->
+  <!-- ========================================== -->
+  <div id="mobileMenuDrawer" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex transition-opacity duration-300 opacity-0 pointer-events-none lg:hidden">
+    <div id="mobileMenuContent" class="bg-white w-4/5 max-w-sm h-full shadow-2xl flex flex-col transform -translate-x-full transition-transform duration-300 ease-in-out">
+      
+      <!-- Cabecera del Cajón Móvil -->
+      <div class="p-4 bg-slate-900 text-white flex items-center justify-between">
+        <div>
+          <div class="font-extrabold text-base">PEDRE<span class="text-crimson">GOSA</span></div>
+          <div class="text-[10px] text-slate-400 font-bold uppercase">Menú de Navegación</div>
+        </div>
+        <button onclick="toggleMobileMenu()" class="text-slate-400 hover:text-white transition">
+          <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+      </div>
+
+      <!-- Enlaces de Categorías -->
+      <div class="flex-1 overflow-y-auto p-4 space-y-3 text-xs font-bold text-slate-800">
+        <a href="#" class="flex items-center gap-3 p-2.5 rounded-lg bg-red-50 text-crimson font-extrabold">
+          <span class="material-symbols-outlined">local_fire_department</span>
+          OFERTAS DEL DÍA
+        </a>
+        <a href="#" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-slate-50 transition">
+          <span class="material-symbols-outlined text-slate-400">laptop_mac</span>
+          Portátiles & Laptops Pro
+        </a>
+        <a href="#" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-slate-50 transition">
+          <span class="material-symbols-outlined text-slate-400">print</span>
+          Consumibles & Tóners Originales
+        </a>
+        <a href="#" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-slate-50 transition">
+          <span class="material-symbols-outlined text-slate-400">chair</span>
+          Ergonomía & Oficina Fellowes
+        </a>
+        <a href="#" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-slate-50 transition">
+          <span class="material-symbols-outlined text-slate-400">cable</span>
+          Conectividad & Docks (AISENS / Conceptronic)
+        </a>
+        <a href="#" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-slate-50 transition text-emerald-700">
+          <span class="material-symbols-outlined">verified</span>
+          Marcas Oficiales Homologadas
+        </a>
+
+        <div class="pt-4 border-t border-slate-200 space-y-2 text-slate-600 font-semibold">
+          <div class="text-[11px] font-extrabold uppercase text-slate-400">Atención Directa</div>
+          <a href="tel:954368011" class="flex items-center gap-2 text-slate-900 font-bold">
+            <span class="material-symbols-outlined text-emerald-600 text-sm">call</span>
+            954 36 80 11
+          </a>
+          <a href="https://pedremk.github.io/corporativa2027/" target="_blank" class="flex items-center gap-2 text-slate-600 hover:text-crimson">
+            <span class="material-symbols-outlined text-sm">open_in_new</span>
+            Web Corporativa & Servicios IT
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
 
   <!-- ========================================== -->
   <!-- 4. HERO SLIDER COMERCIAL (1200x480px) -->
@@ -907,6 +1063,22 @@
       closeProductModal();
       renderCart();
       toggleCartDrawer(true);
+    }
+
+    // Toggle Cajón Menú Móvil
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobileMenuDrawer');
+      const content = document.getElementById('mobileMenuContent');
+
+      if (drawer.classList.contains('pointer-events-none')) {
+        drawer.classList.remove('pointer-events-none', 'opacity-0');
+        drawer.classList.add('opacity-100');
+        content.classList.remove('-translate-x-full');
+      } else {
+        drawer.classList.add('opacity-0');
+        content.classList.add('-translate-x-full');
+        setTimeout(() => drawer.classList.add('pointer-events-none'), 300);
+      }
     }
 
     // Slider Logic
