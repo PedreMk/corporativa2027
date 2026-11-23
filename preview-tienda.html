@@ -501,8 +501,12 @@
         </div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         
+        <!-- ========================================== -->
+        <!-- FILA 1 DE PRODUCTOS (1 A 4) -->
+        <!-- ========================================== -->
+
         <!-- PRODUCTO 1: LG GRAM (PORTÁTILES) -->
         <div class="featured-product-card product-card bg-white rounded-xl border border-slate-200 p-4 flex flex-col justify-between relative group hover:border-crimson hover:shadow-md transition" data-category="portatiles">
           <button onclick="toggleFavorite(event, 'lg-gram')" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 hover:bg-white text-slate-400 hover:text-rose-500 flex items-center justify-center transition shadow-xs z-10" title="Guardar en mis habituales">
@@ -643,6 +647,305 @@
           </div>
         </div>
 
+        <!-- ========================================== -->
+        <!-- FILA 2 DE PRODUCTOS (5 A 8) -->
+        <!-- ========================================== -->
+
+        <!-- PRODUCTO 5: MONITOR LG ULTRAWIDE 29" (PORTÁTILES/PANTALLAS) -->
+        <div class="featured-product-card product-card bg-white rounded-xl border border-slate-200 p-4 flex flex-col justify-between relative group hover:border-crimson hover:shadow-md transition" data-category="portatiles">
+          <button onclick="toggleFavorite(event, 'monitor-lg')" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 hover:bg-white text-slate-400 hover:text-rose-500 flex items-center justify-center transition shadow-xs z-10" title="Guardar en mis habituales">
+            <span class="material-symbols-outlined text-base" id="fav-icon-monitor-lg">favorite_border</span>
+          </button>
+          <div onclick="openProductModal('monitor-lg')" class="cursor-pointer">
+            <div class="relative bg-slate-50 rounded-lg p-3 mb-3 flex items-center justify-center h-40 overflow-hidden group-hover:bg-slate-100 transition">
+              <span class="absolute top-2 left-2 bg-indigo-600 text-white text-[10px] font-extrabold px-2 py-0.5 rounded shadow-xs">
+                MULTITAREA PRO
+              </span>
+              <img src="assets/img/categories/cat-audiovisuales.jpg" alt="Monitor LG UltraWide" class="h-full object-cover rounded-md group-hover:scale-105 transition duration-300">
+            </div>
+            <div class="text-[11px] text-slate-400 font-semibold mb-1 uppercase">LG Commercial</div>
+            <h3 class="font-bold text-slate-900 text-sm leading-snug line-clamp-2 group-hover:text-crimson transition">
+              Monitor Profesional LG UltraWide 29" IPS Full HD 21:9 HDR
+            </h3>
+            <div class="mt-2 text-xs text-emerald-600 font-bold flex items-center gap-1">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Stock en Sevilla (24h)
+            </div>
+          </div>
+          <div class="pt-3 border-t border-slate-100 mt-3">
+            <div class="flex items-baseline gap-2 cursor-pointer" onclick="openProductModal('monitor-lg')">
+              <span class="text-xl font-extrabold text-crimson">169,00 €</span>
+              <span class="text-xs text-slate-500 font-medium">sin IVA</span>
+            </div>
+            <div class="text-[11px] text-slate-400 font-medium -mt-0.5 mb-2.5">
+              204,49 € con IVA incl.
+            </div>
+            <button onclick="addToCart('Monitor LG UltraWide 29 IPS', 169.00, 'monitor-lg')" class="w-full btn-crimson text-xs font-bold py-2 rounded-lg flex items-center justify-center gap-1.5 shadow-xs">
+              <span class="material-symbols-outlined text-base">shopping_cart</span>
+              Añadir a la Cesta
+            </button>
+          </div>
+        </div>
+
+        <!-- PRODUCTO 6: IMPRESORA BROTHER MULTIFUNCIÓN (IMPRESIÓN) -->
+        <div class="featured-product-card product-card bg-white rounded-xl border border-slate-200 p-4 flex flex-col justify-between relative group hover:border-crimson hover:shadow-md transition" data-category="impresion">
+          <button onclick="toggleFavorite(event, 'brother-laser')" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 hover:bg-white text-slate-400 hover:text-rose-500 flex items-center justify-center transition shadow-xs z-10" title="Guardar en mis habituales">
+            <span class="material-symbols-outlined text-base" id="fav-icon-brother-laser">favorite_border</span>
+          </button>
+          <div onclick="openProductModal('brother-laser')" class="cursor-pointer">
+            <div class="relative bg-slate-50 rounded-lg p-3 mb-3 flex items-center justify-center h-40 overflow-hidden group-hover:bg-slate-100 transition">
+              <span class="absolute top-2 left-2 bg-emerald-700 text-white text-[10px] font-extrabold px-2 py-0.5 rounded shadow-xs">
+                3 AÑOS GARANTÍA
+              </span>
+              <img src="assets/img/categories/cat-impresoras.jpg" alt="Multifunción Brother" class="h-full object-cover rounded-md group-hover:scale-105 transition duration-300">
+            </div>
+            <div class="text-[11px] text-slate-400 font-semibold mb-1 uppercase">Brother Commercial</div>
+            <h3 class="font-bold text-slate-900 text-sm leading-snug line-clamp-2 group-hover:text-crimson transition">
+              Multifunción Láser Color Brother MFC-L3760CDW Dúplex Red WiFi
+            </h3>
+            <div class="mt-2 text-xs text-emerald-600 font-bold flex items-center gap-1">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Stock Inmediato 24/48h
+            </div>
+          </div>
+          <div class="pt-3 border-t border-slate-100 mt-3">
+            <div class="flex items-baseline gap-2 cursor-pointer" onclick="openProductModal('brother-laser')">
+              <span class="text-xl font-extrabold text-crimson">389,00 €</span>
+              <span class="text-xs text-slate-500 font-medium">sin IVA</span>
+            </div>
+            <div class="text-[11px] text-slate-400 font-medium -mt-0.5 mb-2.5">
+              470,69 € con IVA incl.
+            </div>
+            <button onclick="addToCart('Multifunción Brother MFC-L3760CDW', 389.00, 'brother-laser')" class="w-full btn-crimson text-xs font-bold py-2 rounded-lg flex items-center justify-center gap-1.5 shadow-xs">
+              <span class="material-symbols-outlined text-base">shopping_cart</span>
+              Añadir a la Cesta
+            </button>
+          </div>
+        </div>
+
+        <!-- PRODUCTO 7: DISCO SSD KINGSTON NVME 1TB (ACCESORIOS) -->
+        <div class="featured-product-card product-card bg-white rounded-xl border border-slate-200 p-4 flex flex-col justify-between relative group hover:border-crimson hover:shadow-md transition" data-category="accesorios">
+          <button onclick="toggleFavorite(event, 'ssd-kingston')" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 hover:bg-white text-slate-400 hover:text-rose-500 flex items-center justify-center transition shadow-xs z-10" title="Guardar en mis habituales">
+            <span class="material-symbols-outlined text-base" id="fav-icon-ssd-kingston">favorite_border</span>
+          </button>
+          <div onclick="openProductModal('ssd-kingston')" class="cursor-pointer">
+            <div class="relative bg-slate-50 rounded-lg p-3 mb-3 flex items-center justify-center h-40 overflow-hidden group-hover:bg-slate-100 transition">
+              <span class="absolute top-2 left-2 bg-amber-600 text-white text-[10px] font-extrabold px-2 py-0.5 rounded shadow-xs">
+                GEN 4x4 RÁPIDO
+              </span>
+              <img src="assets/img/categories/cat-perifericos.jpg" alt="Disco SSD Kingston" class="h-full object-cover rounded-md group-hover:scale-105 transition duration-300">
+            </div>
+            <div class="text-[11px] text-slate-400 font-semibold mb-1 uppercase">Kingston Technology</div>
+            <h3 class="font-bold text-slate-900 text-sm leading-snug line-clamp-2 group-hover:text-crimson transition">
+              Disco Sólido SSD Kingston NV2 1TB PCIe 4.0 NVMe M.2 3.500MB/s
+            </h3>
+            <div class="mt-2 text-xs text-emerald-600 font-bold flex items-center gap-1">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Stock Permanente
+            </div>
+          </div>
+          <div class="pt-3 border-t border-slate-100 mt-3">
+            <div class="flex items-baseline gap-2 cursor-pointer" onclick="openProductModal('ssd-kingston')">
+              <span class="text-xl font-extrabold text-crimson">64,50 €</span>
+              <span class="text-xs text-slate-500 font-medium">sin IVA</span>
+            </div>
+            <div class="text-[11px] text-slate-400 font-medium -mt-0.5 mb-2.5">
+              78,05 € con IVA incl.
+            </div>
+            <button onclick="addToCart('SSD Kingston NV2 1TB NVMe', 64.50, 'ssd-kingston')" class="w-full btn-crimson text-xs font-bold py-2 rounded-lg flex items-center justify-center gap-1.5 shadow-xs">
+              <span class="material-symbols-outlined text-base">shopping_cart</span>
+              Añadir a la Cesta
+            </button>
+          </div>
+        </div>
+
+        <!-- PRODUCTO 8: CAJA PAPEL NAVIGATOR UNIVERSAL A4 (IMPRESIÓN/PAPEL) -->
+        <div class="featured-product-card product-card bg-white rounded-xl border border-slate-200 p-4 flex flex-col justify-between relative group hover:border-crimson hover:shadow-md transition" data-category="impresion">
+          <button onclick="toggleFavorite(event, 'papel-navigator')" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 hover:bg-white text-slate-400 hover:text-rose-500 flex items-center justify-center transition shadow-xs z-10" title="Guardar en mis habituales">
+            <span class="material-symbols-outlined text-base" id="fav-icon-papel-navigator">favorite_border</span>
+          </button>
+          <div onclick="openProductModal('papel-navigator')" class="cursor-pointer">
+            <div class="relative bg-slate-50 rounded-lg p-3 mb-3 flex items-center justify-center h-40 overflow-hidden group-hover:bg-slate-100 transition">
+              <span class="absolute top-2 left-2 bg-slate-900 text-white text-[10px] font-extrabold px-2 py-0.5 rounded shadow-xs">
+                CAJA 5 PAQUETES
+              </span>
+              <img src="assets/img/categories/cat-papeleria.jpg" alt="Papel Navigator A4" class="h-full object-cover rounded-md group-hover:scale-105 transition duration-300">
+            </div>
+            <div class="text-[11px] text-slate-400 font-semibold mb-1 uppercase">Navigator Company</div>
+            <h3 class="font-bold text-slate-900 text-sm leading-snug line-clamp-2 group-hover:text-crimson transition">
+              Caja 5x Paquetes Papel Navigator Universal A4 80g (2.500 hojas)
+            </h3>
+            <div class="mt-2 text-xs text-emerald-600 font-bold flex items-center gap-1">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Stock Masivo en Palet
+            </div>
+          </div>
+          <div class="pt-3 border-t border-slate-100 mt-3">
+            <div class="flex items-baseline gap-2 cursor-pointer" onclick="openProductModal('papel-navigator')">
+              <span class="text-xl font-extrabold text-crimson">24,90 €</span>
+              <span class="text-xs text-slate-500 font-medium">sin IVA</span>
+            </div>
+            <div class="text-[11px] text-slate-400 font-medium -mt-0.5 mb-2.5">
+              30,13 € con IVA incl.
+            </div>
+            <button onclick="addToCart('Caja 5x Paquetes Papel Navigator A4', 24.90, 'papel-navigator')" class="w-full btn-crimson text-xs font-bold py-2 rounded-lg flex items-center justify-center gap-1.5 shadow-xs">
+              <span class="material-symbols-outlined text-base">shopping_cart</span>
+              Añadir a la Cesta
+            </button>
+          </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- FILA 3 DE PRODUCTOS (9 A 12 - CONMUTABLE) -->
+        <!-- ========================================== -->
+
+        <!-- PRODUCTO 9: SOBREMESA LENOVO THINKCENTRE M70Q (PORTÁTILES/SOBREMESA) -->
+        <div class="row-3-card hidden featured-product-card product-card bg-white rounded-xl border border-slate-200 p-4 flex flex-col justify-between relative group hover:border-crimson hover:shadow-md transition" data-category="portatiles">
+          <button onclick="toggleFavorite(event, 'lenovo-think')" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 hover:bg-white text-slate-400 hover:text-rose-500 flex items-center justify-center transition shadow-xs z-10" title="Guardar en mis habituales">
+            <span class="material-symbols-outlined text-base" id="fav-icon-lenovo-think">favorite_border</span>
+          </button>
+          <div onclick="openProductModal('lenovo-think')" class="cursor-pointer">
+            <div class="relative bg-slate-50 rounded-lg p-3 mb-3 flex items-center justify-center h-40 overflow-hidden group-hover:bg-slate-100 transition">
+              <span class="absolute top-2 left-2 bg-crimson text-white text-[10px] font-extrabold px-2 py-0.5 rounded shadow-xs">
+                ULTRACONTACTO B2B
+              </span>
+              <img src="assets/img/categories/cat-ordenadores.jpg" alt="Lenovo ThinkCentre Tiny" class="h-full object-cover rounded-md group-hover:scale-105 transition duration-300">
+            </div>
+            <div class="text-[11px] text-slate-400 font-semibold mb-1 uppercase">Lenovo Infrastructure</div>
+            <h3 class="font-bold text-slate-900 text-sm leading-snug line-clamp-2 group-hover:text-crimson transition">
+              PC Sobremesa Lenovo ThinkCentre M70q Tiny Core i5 16GB 512GB W11P
+            </h3>
+            <div class="mt-2 text-xs text-emerald-600 font-bold flex items-center gap-1">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Stock para Flotas
+            </div>
+          </div>
+          <div class="pt-3 border-t border-slate-100 mt-3">
+            <div class="flex items-baseline gap-2 cursor-pointer" onclick="openProductModal('lenovo-think')">
+              <span class="text-xl font-extrabold text-crimson">649,00 €</span>
+              <span class="text-xs text-slate-500 font-medium">sin IVA</span>
+            </div>
+            <div class="text-[11px] text-slate-400 font-medium -mt-0.5 mb-2.5">
+              785,29 € con IVA incl.
+            </div>
+            <button onclick="addToCart('PC Lenovo ThinkCentre M70q Tiny', 649.00, 'lenovo-think')" class="w-full btn-crimson text-xs font-bold py-2 rounded-lg flex items-center justify-center gap-1.5 shadow-xs">
+              <span class="material-symbols-outlined text-base">shopping_cart</span>
+              Añadir a la Cesta
+            </button>
+          </div>
+        </div>
+
+        <!-- PRODUCTO 10: PACK TÓNER BROTHER TN-247 (IMPRESIÓN) -->
+        <div class="row-3-card hidden featured-product-card product-card bg-white rounded-xl border border-slate-200 p-4 flex flex-col justify-between relative group hover:border-crimson hover:shadow-md transition" data-category="impresion">
+          <button onclick="toggleFavorite(event, 'toner-brother')" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 hover:bg-white text-slate-400 hover:text-rose-500 flex items-center justify-center transition shadow-xs z-10" title="Guardar en mis habituales">
+            <span class="material-symbols-outlined text-base" id="fav-icon-toner-brother">favorite_border</span>
+          </button>
+          <div onclick="openProductModal('toner-brother')" class="cursor-pointer">
+            <div class="relative bg-slate-50 rounded-lg p-3 mb-3 flex items-center justify-center h-40 overflow-hidden group-hover:bg-slate-100 transition">
+              <span class="absolute top-2 left-2 bg-emerald-600 text-white text-[10px] font-extrabold px-2 py-0.5 rounded shadow-xs">
+                PACK 4 COLORES
+              </span>
+              <img src="assets/img/categories/cat-consumibles.jpg" alt="Tóner Brother Pack" class="h-full object-cover rounded-md group-hover:scale-105 transition duration-300">
+            </div>
+            <div class="text-[11px] text-slate-400 font-semibold mb-1 uppercase">Brother Original</div>
+            <h3 class="font-bold text-slate-900 text-sm leading-snug line-clamp-2 group-hover:text-crimson transition">
+              Pack 4x Cartuchos Tóner Brother TN-247 Alta Capacidad (CMYK)
+            </h3>
+            <div class="mt-2 text-xs text-emerald-600 font-bold flex items-center gap-1">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Stock Oficial
+            </div>
+          </div>
+          <div class="pt-3 border-t border-slate-100 mt-3">
+            <div class="flex items-baseline gap-2 cursor-pointer" onclick="openProductModal('toner-brother')">
+              <span class="text-xl font-extrabold text-crimson">189,00 €</span>
+              <span class="text-xs text-slate-500 font-medium">sin IVA</span>
+            </div>
+            <div class="text-[11px] text-slate-400 font-medium -mt-0.5 mb-2.5">
+              228,69 € con IVA incl.
+            </div>
+            <button onclick="addToCart('Pack 4x Tóner Brother TN-247', 189.00, 'toner-brother')" class="w-full btn-crimson text-xs font-bold py-2 rounded-lg flex items-center justify-center gap-1.5 shadow-xs">
+              <span class="material-symbols-outlined text-base">shopping_cart</span>
+              Añadir a la Cesta
+            </button>
+          </div>
+        </div>
+
+        <!-- PRODUCTO 11: COMBO LOGITECH MK270 (ACCESORIOS) -->
+        <div class="row-3-card hidden featured-product-card product-card bg-white rounded-xl border border-slate-200 p-4 flex flex-col justify-between relative group hover:border-crimson hover:shadow-md transition" data-category="accesorios">
+          <button onclick="toggleFavorite(event, 'logitech-combo')" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 hover:bg-white text-slate-400 hover:text-rose-500 flex items-center justify-center transition shadow-xs z-10" title="Guardar en mis habituales">
+            <span class="material-symbols-outlined text-base" id="fav-icon-logitech-combo">favorite_border</span>
+          </button>
+          <div onclick="openProductModal('logitech-combo')" class="cursor-pointer">
+            <div class="relative bg-slate-50 rounded-lg p-3 mb-3 flex items-center justify-center h-40 overflow-hidden group-hover:bg-slate-100 transition">
+              <span class="absolute top-2 left-2 bg-sky-600 text-white text-[10px] font-extrabold px-2 py-0.5 rounded shadow-xs">
+                PUESTO OFICINA
+              </span>
+              <img src="assets/img/categories/cat-perifericos.jpg" alt="Combo Logitech MK270" class="h-full object-cover rounded-md group-hover:scale-105 transition duration-300">
+            </div>
+            <div class="text-[11px] text-slate-400 font-semibold mb-1 uppercase">Logitech Workspace</div>
+            <h3 class="font-bold text-slate-900 text-sm leading-snug line-clamp-2 group-hover:text-crimson transition">
+              Combo Teclado y Ratón Inalámbrico Logitech MK270 B2B Receptor USB
+            </h3>
+            <div class="mt-2 text-xs text-emerald-600 font-bold flex items-center gap-1">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Stock Disponible (+200 uds)
+            </div>
+          </div>
+          <div class="pt-3 border-t border-slate-100 mt-3">
+            <div class="flex items-baseline gap-2 cursor-pointer" onclick="openProductModal('logitech-combo')">
+              <span class="text-xl font-extrabold text-crimson">28,90 €</span>
+              <span class="text-xs text-slate-500 font-medium">sin IVA</span>
+            </div>
+            <div class="text-[11px] text-slate-400 font-medium -mt-0.5 mb-2.5">
+              34,97 € con IVA incl.
+            </div>
+            <button onclick="addToCart('Combo Logitech MK270 Inalámbrico', 28.90, 'logitech-combo')" class="w-full btn-crimson text-xs font-bold py-2 rounded-lg flex items-center justify-center gap-1.5 shadow-xs">
+              <span class="material-symbols-outlined text-base">shopping_cart</span>
+              Añadir a la Cesta
+            </button>
+          </div>
+        </div>
+
+        <!-- PRODUCTO 12: PORTÁTIL ASUS EXPERTBOOK COPILOT+ (PORTÁTILES) -->
+        <div class="row-3-card hidden featured-product-card product-card bg-white rounded-xl border border-slate-200 p-4 flex flex-col justify-between relative group hover:border-crimson hover:shadow-md transition" data-category="portatiles">
+          <button onclick="toggleFavorite(event, 'asus-expert')" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 hover:bg-white text-slate-400 hover:text-rose-500 flex items-center justify-center transition shadow-xs z-10" title="Guardar en mis habituales">
+            <span class="material-symbols-outlined text-base" id="fav-icon-asus-expert">favorite_border</span>
+          </button>
+          <div onclick="openProductModal('asus-expert')" class="cursor-pointer">
+            <div class="relative bg-slate-50 rounded-lg p-3 mb-3 flex items-center justify-center h-40 overflow-hidden group-hover:bg-slate-100 transition">
+              <span class="absolute top-2 left-2 bg-sky-700 text-white text-[10px] font-extrabold px-2 py-0.5 rounded shadow-xs">
+                IA LOCAL NPU
+              </span>
+              <img src="assets/img/banner-copilot.jpg" alt="Portátil ASUS ExpertBook Copilot+" class="h-full object-cover rounded-md group-hover:scale-105 transition duration-300">
+            </div>
+            <div class="text-[11px] text-slate-400 font-semibold mb-1 uppercase">ASUS Commercial</div>
+            <h3 class="font-bold text-slate-900 text-sm leading-snug line-clamp-2 group-hover:text-crimson transition">
+              Portátil Copilot+ ASUS ExpertBook B5 Core Ultra 7 32GB 1TB SSD W11P
+            </h3>
+            <div class="mt-2 text-xs text-emerald-600 font-bold flex items-center gap-1">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Novedad 2026 Directa
+            </div>
+          </div>
+          <div class="pt-3 border-t border-slate-100 mt-3">
+            <div class="flex items-baseline gap-2 cursor-pointer" onclick="openProductModal('asus-expert')">
+              <span class="text-xl font-extrabold text-crimson">1.045,00 €</span>
+              <span class="text-xs text-slate-500 font-medium">sin IVA</span>
+            </div>
+            <div class="text-[11px] text-slate-400 font-medium -mt-0.5 mb-2.5">
+              1.264,45 € con IVA incl.
+            </div>
+            <button onclick="addToCart('Portátil ASUS ExpertBook Copilot+', 1045.00, 'asus-expert')" class="w-full btn-crimson text-xs font-bold py-2 rounded-lg flex items-center justify-center gap-1.5 shadow-xs">
+              <span class="material-symbols-outlined text-base">shopping_cart</span>
+              Añadir a la Cesta
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Control Interactivo: Conmutar entre 2 Filas (8 Artículos) y 3 Filas (12 Artículos) -->
+      <div class="mt-8 text-center flex flex-col sm:flex-row items-center justify-center gap-3">
+        <button id="toggleRow3Btn" onclick="toggleRow3()" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-slate-300 hover:border-crimson bg-white text-slate-800 hover:text-crimson font-extrabold text-xs shadow-xs transition-all duration-200 cursor-pointer">
+          <span class="material-symbols-outlined text-lg text-crimson" id="toggleRow3Icon">expand_more</span>
+          <span id="toggleRow3Text">Desplegar 3ª Fila (+4 Artículos Destacados)</span>
+        </button>
+        <span class="text-xs text-slate-500 font-medium bg-slate-100 px-3 py-1.5 rounded-full border border-slate-200">
+          Mostrando 8 artículos (2 filas) &middot; Total 12 disponibles
+        </span>
       </div>
     </section>
 
@@ -1379,15 +1682,22 @@
       const priceTax = document.getElementById('modalPriceTax');
       const img = document.getElementById('modalImg');
 
-      if (type === 'lg-gram') {
-        currentModalProduct = { id: 'lg-gram', name: 'Portátil LG Gram 16Z90R Intel Core i7 16GB 512GB SSD', priceNet: 899.00, img: 'assets/img/banner-lg-gram.jpg' };
-      } else if (type === 'fellowes') {
-        currentModalProduct = { id: 'fellowes', name: 'Destructora Fellowes AutoMax 100M Microcorte DIN P-5', priceNet: 235.00, img: 'assets/img/banner-fellowes.jpg' };
-      } else if (type === 'docking') {
-        currentModalProduct = { id: 'docking', name: 'Docking Station USB-C Dual HDMI 4K Gigabit Ethernet', priceNet: 48.00, img: 'assets/img/banner-conceptronic.jpg' };
-      } else {
-        currentModalProduct = { id: 'toner-hp', name: 'Tóner Original HP W2030A (HP 415A) Negro 2.400 pág.', priceNet: 79.50, img: 'assets/img/banner-lg-gram.jpg' };
-      }
+      const productCatalog = {
+        'lg-gram': { id: 'lg-gram', name: 'Portátil LG Gram 16Z90R Intel Core i7 16GB 512GB SSD W11 Pro', priceNet: 899.00, img: 'assets/img/banner-lg-gram.jpg' },
+        'toner-hp': { id: 'toner-hp', name: 'Tóner Original HP W2030A (HP 415A) Negro 2.400 págs.', priceNet: 79.50, img: 'assets/img/categories/cat-consumibles.jpg' },
+        'docking': { id: 'docking', name: 'Docking Station USB-C Dual HDMI 4K Gigabit Ethernet 100W PD', priceNet: 48.00, img: 'assets/img/banner-conceptronic.jpg' },
+        'fellowes': { id: 'fellowes', name: 'Destructora Fellowes AutoMax 100M Microcorte DIN P-5', priceNet: 235.00, img: 'assets/img/banner-fellowes.jpg' },
+        'monitor-lg': { id: 'monitor-lg', name: 'Monitor Profesional LG UltraWide 29 IPS Full HD 21:9 HDR', priceNet: 169.00, img: 'assets/img/categories/cat-audiovisuales.jpg' },
+        'brother-laser': { id: 'brother-laser', name: 'Multifunción Láser Color Brother MFC-L3760CDW Dúplex WiFi', priceNet: 389.00, img: 'assets/img/categories/cat-impresoras.jpg' },
+        'ssd-kingston': { id: 'ssd-kingston', name: 'Disco Sólido SSD Kingston NV2 1TB PCIe 4.0 NVMe M.2 3.500MB/s', priceNet: 64.50, img: 'assets/img/categories/cat-perifericos.jpg' },
+        'papel-navigator': { id: 'papel-navigator', name: 'Caja 5x Paquetes Papel Navigator Universal A4 80g (2.500 hojas)', priceNet: 24.90, img: 'assets/img/categories/cat-papeleria.jpg' },
+        'lenovo-think': { id: 'lenovo-think', name: 'PC Sobremesa Lenovo ThinkCentre M70q Tiny Core i5 16GB 512GB', priceNet: 649.00, img: 'assets/img/categories/cat-ordenadores.jpg' },
+        'toner-brother': { id: 'toner-brother', name: 'Pack 4x Cartuchos Tóner Brother TN-247 Alta Capacidad (CMYK)', priceNet: 189.00, img: 'assets/img/categories/cat-consumibles.jpg' },
+        'logitech-combo': { id: 'logitech-combo', name: 'Combo Teclado y Ratón Inalámbrico Logitech MK270 B2B Receptor USB', priceNet: 28.90, img: 'assets/img/categories/cat-perifericos.jpg' },
+        'asus-expert': { id: 'asus-expert', name: 'Portátil Copilot+ ASUS ExpertBook B5 Core Ultra 7 32GB 1TB SSD', priceNet: 1045.00, img: 'assets/img/banner-copilot.jpg' }
+      };
+
+      currentModalProduct = productCatalog[type] || productCatalog['lg-gram'];
 
       title.innerText = currentModalProduct.name;
       priceNet.innerText = currentModalProduct.priceNet.toFixed(2) + ' €';
