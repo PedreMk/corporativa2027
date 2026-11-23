@@ -139,6 +139,12 @@
         <span class="material-symbols-outlined text-base">sync</span>
         <span>5. Protección SOLUZION ERP</span>
       </button>
+
+      <button onclick="switchTab('horario')" id="tab-btn-horario"
+        class="tab-btn px-4 py-2 rounded-lg text-xs font-bold flex items-center gap-2 transition bg-slate-100 text-slate-700 hover:bg-slate-200">
+        <span class="material-symbols-outlined text-base text-amber-600">schedule</span>
+        <span>6. Horario y Contacto Unificado</span>
+      </button>
     </div>
   </div>
 
@@ -979,6 +985,177 @@ FELLOWES-100M</textarea>
       </div>
     </section>
 
+    <!-- ======================================================== -->
+    <!-- PESTAÑA 6: MÓDULO DE HORARIO Y CONTACTO CENTRALIZADO      -->
+    <!-- ======================================================== -->
+    <section id="tab-horario" class="tab-content hidden space-y-6">
+
+      <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-xs space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-amber-600 text-2xl">schedule</span>
+              <h2 class="text-base font-extrabold text-slate-900">
+                Módulo Centralizado de Horario Comercial &amp; Contacto B2B
+              </h2>
+            </div>
+            <p class="text-xs text-slate-500 mt-1">
+              Edita el horario y teléfonos una sola vez aquí. Se actualizan automáticamente en toda la tienda online, fichas de producto, web corporativa y botones flotantes de WhatsApp.
+            </p>
+          </div>
+          <span class="bg-amber-100 text-amber-900 text-[10px] font-extrabold px-3 py-1 rounded-full border border-amber-200 self-start sm:self-auto">
+            ⚡ Sincronización Global
+          </span>
+        </div>
+
+        <form id="scheduleForm" onsubmit="saveScheduleSettings(event)" class="space-y-6">
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <!-- BLOQUE 1: HORARIO DE LUNES A JUEVES -->
+            <div class="bg-slate-50 rounded-xl p-4 border border-slate-200 space-y-3">
+              <div class="flex items-center justify-between">
+                <h3 class="text-xs font-extrabold text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-sm text-crimson">calendar_month</span>
+                  <span>1. Lunes a Jueves (Turno Partido)</span>
+                </h3>
+                <span class="text-[10px] font-bold text-slate-400">Jornada Estándar</span>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3 text-xs">
+                <div>
+                  <label class="block font-bold text-slate-700 mb-1">Mañana Inicio:</label>
+                  <input type="text" id="sch_lj_m_start" value="08:30" oninput="updateSchedulePreview()"
+                    class="w-full bg-white border border-slate-300 rounded-lg p-2 font-mono font-bold text-center focus:border-crimson outline-none">
+                </div>
+                <div>
+                  <label class="block font-bold text-slate-700 mb-1">Mañana Cierre:</label>
+                  <input type="text" id="sch_lj_m_end" value="14:30" oninput="updateSchedulePreview()"
+                    class="w-full bg-white border border-slate-300 rounded-lg p-2 font-mono font-bold text-center focus:border-crimson outline-none">
+                </div>
+                <div>
+                  <label class="block font-bold text-slate-700 mb-1">Tarde Apertura:</label>
+                  <input type="text" id="sch_lj_t_start" value="15:30" oninput="updateSchedulePreview()"
+                    class="w-full bg-white border border-slate-300 rounded-lg p-2 font-mono font-bold text-center focus:border-crimson outline-none">
+                </div>
+                <div>
+                  <label class="block font-bold text-slate-700 mb-1">Tarde Cierre:</label>
+                  <input type="text" id="sch_lj_t_end" value="17:30" oninput="updateSchedulePreview()"
+                    class="w-full bg-white border border-slate-300 rounded-lg p-2 font-mono font-bold text-center focus:border-crimson outline-none">
+                </div>
+              </div>
+
+              <div>
+                <label class="block font-bold text-slate-700 text-xs mb-1">Texto Formateado Oficial L-J:</label>
+                <input type="text" id="sch_lj_custom" value="L-J: 8:30 a 14:30 y 15:30 a 17:30" oninput="updateSchedulePreview()"
+                  class="w-full bg-white border border-slate-300 rounded-lg p-2 text-xs font-semibold text-slate-800 focus:border-crimson outline-none">
+              </div>
+            </div>
+
+            <!-- BLOQUE 2: HORARIO DE VIERNES -->
+            <div class="bg-slate-50 rounded-xl p-4 border border-slate-200 space-y-3">
+              <div class="flex items-center justify-between">
+                <h3 class="text-xs font-extrabold text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-sm text-crimson">event_available</span>
+                  <span>2. Viernes (Jornada Continua)</span>
+                </h3>
+                <span class="text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">Intensiva</span>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3 text-xs">
+                <div>
+                  <label class="block font-bold text-slate-700 mb-1">Apertura Viernes:</label>
+                  <input type="text" id="sch_v_start" value="08:00" oninput="updateSchedulePreview()"
+                    class="w-full bg-white border border-slate-300 rounded-lg p-2 font-mono font-bold text-center focus:border-crimson outline-none">
+                </div>
+                <div>
+                  <label class="block font-bold text-slate-700 mb-1">Cierre Viernes:</label>
+                  <input type="text" id="sch_v_end" value="15:00" oninput="updateSchedulePreview()"
+                    class="w-full bg-white border border-slate-300 rounded-lg p-2 font-mono font-bold text-center focus:border-crimson outline-none">
+                </div>
+              </div>
+
+              <div class="pt-4">
+                <label class="block font-bold text-slate-700 text-xs mb-1">Texto Formateado Oficial Viernes:</label>
+                <input type="text" id="sch_v_custom" value="Viernes: 8:00 a 15:00" oninput="updateSchedulePreview()"
+                  class="w-full bg-white border border-slate-300 rounded-lg p-2 text-xs font-semibold text-slate-800 focus:border-crimson outline-none">
+              </div>
+            </div>
+
+          </div>
+
+          <!-- BLOQUE 3: TELÉFONOS Y CANALES DE CONTACTO B2B -->
+          <div class="bg-slate-50 rounded-xl p-4 border border-slate-200 space-y-3">
+            <h3 class="text-xs font-extrabold text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-sm text-emerald-600">contact_phone</span>
+              <span>3. Canales Oficiales de Pedidos y Cotizaciones</span>
+            </h3>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+              <div>
+                <label class="block font-bold text-slate-700 mb-1 flex items-center gap-1 text-[#25D366]">
+                  <span>💬</span> Móvil WhatsApp B2B:
+                </label>
+                <input type="text" id="sch_whatsapp" value="+34 624 82 58 68" oninput="updateSchedulePreview()"
+                  class="w-full bg-white border border-emerald-300 rounded-lg p-2 text-xs font-bold text-slate-800 focus:border-[#25D366] outline-none">
+              </div>
+              <div>
+                <label class="block font-bold text-slate-700 mb-1 flex items-center gap-1 text-slate-700">
+                  <span class="material-symbols-outlined text-xs text-crimson">call</span> Teléfono Centralita:
+                </label>
+                <input type="text" id="sch_phone" value="954 36 80 11" oninput="updateSchedulePreview()"
+                  class="w-full bg-white border border-slate-300 rounded-lg p-2 text-xs font-bold text-slate-800 focus:border-crimson outline-none">
+              </div>
+              <div>
+                <label class="block font-bold text-slate-700 mb-1 flex items-center gap-1 text-slate-700">
+                  <span class="material-symbols-outlined text-xs text-sky-600">mail</span> Email Pedidos:
+                </label>
+                <input type="text" id="sch_email" value="pedidos@pedregosa.es" oninput="updateSchedulePreview()"
+                  class="w-full bg-white border border-slate-300 rounded-lg p-2 text-xs font-bold text-slate-800 focus:border-sky-600 outline-none">
+              </div>
+            </div>
+          </div>
+
+          <!-- VISTA PREVIA EN VIVO -->
+          <div class="p-4 bg-amber-50/70 border border-amber-200 rounded-xl space-y-2">
+            <div class="text-[11px] font-extrabold text-amber-900 uppercase tracking-wider flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">visibility</span>
+              <span>Vista Previa en Vivo (Sincronizada con toda la Web):</span>
+            </div>
+            
+            <div class="bg-white p-3 rounded-lg border border-amber-200 flex flex-wrap items-center justify-between gap-3 text-xs">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-base text-amber-500">schedule</span>
+                <span id="preview_sch_full" class="font-bold text-slate-800">
+                  L-J: 8:30 a 14:30 y 15:30 a 17:30 &middot; Viernes: 8:00 a 15:00
+                </span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="flex items-center gap-1 font-extrabold text-[#25D366]">
+                  <span>💬</span> <span id="preview_sch_wa">+34 624 82 58 68</span>
+                </span>
+                <span class="flex items-center gap-1 font-bold text-slate-700">
+                  <span class="material-symbols-outlined text-xs text-crimson">call</span> <span id="preview_sch_phone">954 36 80 11</span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- BOTÓN GUARDAR -->
+          <div class="flex justify-end pt-2">
+            <button type="submit"
+              class="btn-crimson font-extrabold text-xs px-6 py-3 rounded-xl flex items-center gap-2 shadow-md hover:shadow-lg transition">
+              <span class="material-symbols-outlined text-base">save</span>
+              <span>Guardar Horario y Propagar a Toda la Web</span>
+            </button>
+          </div>
+
+        </form>
+
+      </div>
+
+    </section>
+
   </main>
 
   <!-- ======================================================== -->
@@ -1079,6 +1256,60 @@ FELLOWES-100M</textarea>
     function saveModuleSettings() {
       showToast();
     }
+
+    // ==========================================
+    // MÓDULO DE HORARIO CENTRALIZADO
+    // ==========================================
+    function updateSchedulePreview() {
+      const lj = document.getElementById('sch_lj_custom').value.trim() || 'L-J: 8:30 a 14:30 y 15:30 a 17:30';
+      const v = document.getElementById('sch_v_custom').value.trim() || 'Viernes: 8:00 a 15:00';
+      const wa = document.getElementById('sch_whatsapp').value.trim() || '+34 624 82 58 68';
+      const phone = document.getElementById('sch_phone').value.trim() || '954 36 80 11';
+
+      document.getElementById('preview_sch_full').innerText = lj + ' · ' + v;
+      document.getElementById('preview_sch_wa').innerText = wa;
+      document.getElementById('preview_sch_phone').innerText = phone;
+    }
+
+    function saveScheduleSettings(e) {
+      if (e) e.preventDefault();
+      const lj = document.getElementById('sch_lj_custom').value.trim();
+      const v = document.getElementById('sch_v_custom').value.trim();
+      const wa = document.getElementById('sch_whatsapp').value.trim();
+      const phone = document.getElementById('sch_phone').value.trim();
+      const email = document.getElementById('sch_email').value.trim();
+
+      const fullSchedule = lj + ' · ' + v;
+
+      localStorage.setItem('pedregosa_schedule_lj', lj);
+      localStorage.setItem('pedregosa_schedule_v', v);
+      localStorage.setItem('pedregosa_schedule_full', fullSchedule);
+      localStorage.setItem('pedregosa_whatsapp', wa);
+      localStorage.setItem('pedregosa_phone', phone);
+      localStorage.setItem('pedregosa_email', email);
+
+      showToast();
+      alert('¡Horario comercial y datos de contacto guardados con éxito!\n\nSe han propagado en tiempo real a toda la tienda online, fichas de producto, web corporativa y widgets de WhatsApp.');
+    }
+
+    function loadScheduleSettings() {
+      const savedLj = localStorage.getItem('pedregosa_schedule_lj');
+      const savedV = localStorage.getItem('pedregosa_schedule_v');
+      const savedWa = localStorage.getItem('pedregosa_whatsapp');
+      const savedPhone = localStorage.getItem('pedregosa_phone');
+      const savedEmail = localStorage.getItem('pedregosa_email');
+
+      if (savedLj) document.getElementById('sch_lj_custom').value = savedLj;
+      if (savedV) document.getElementById('sch_v_custom').value = savedV;
+      if (savedWa) document.getElementById('sch_whatsapp').value = savedWa;
+      if (savedPhone) document.getElementById('sch_phone').value = savedPhone;
+      if (savedEmail) document.getElementById('sch_email').value = savedEmail;
+
+      updateSchedulePreview();
+    }
+
+    // Inicializar al cargar
+    loadScheduleSettings();
   </script>
 
 </body>

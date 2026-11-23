@@ -109,9 +109,13 @@
           </button>
         </div>
 
-        <span class="hidden lg:inline-block bg-slate-800 text-slate-200 px-2 py-0.5 rounded text-[11px] font-semibold border border-slate-700">
-          🏛️ Facturación FACe
-        </span>
+        <a href="https://wa.me/34624825868?text=Hola,%20solicito%20informaci%C3%B3n%20o%20cotizaci%C3%B3n%20B2B"
+          target="_blank" rel="noopener"
+          class="bg-emerald-800 hover:bg-emerald-700 text-white px-2 py-0.5 rounded text-[11px] font-bold border border-emerald-600 transition flex items-center gap-1 shadow-2xs">
+          <span>💬</span>
+          <span>WhatsApp: 624 82 58 68</span>
+        </a>
+
         <a href="preview-backoffice.html"
           class="bg-slate-800 hover:bg-slate-700 text-amber-300 hover:text-amber-200 transition flex items-center gap-1 text-[11px] font-bold px-2 py-0.5 rounded border border-slate-700 shadow-xs">
           <span class="material-symbols-outlined text-xs">tune</span>
@@ -248,10 +252,10 @@
           </div>
 
           <div class="flex items-start gap-2">
-            <span class="material-symbols-outlined text-sky-600 text-lg flex-shrink-0">receipt_long</span>
+            <span class="material-symbols-outlined text-emerald-600 text-lg flex-shrink-0">chat</span>
             <div>
-              <strong class="text-slate-900">Facturación FACe</strong>
-              <div class="text-[11px] text-slate-500">Pymes, autónomos y organismos</div>
+              <strong class="text-slate-900">WhatsApp Directo</strong>
+              <div class="text-[11px] text-slate-500"><a href="https://wa.me/34624825868" target="_blank" rel="noopener" class="text-emerald-700 font-bold hover:underline">624 82 58 68</a></div>
             </div>
           </div>
         </div>
@@ -601,8 +605,14 @@
           <strong class="text-white">Pedregosa S.L.</strong> &middot; Polígono Store, Calle Gramil 14, 41008 Sevilla
         </div>
       </div>
-      <div>
-        Atención Comercial B2B: <a href="tel:954368011" class="text-white font-bold hover:underline">954 36 80 11</a> | pedidos@pedregosa.es
+      <div class="text-left sm:text-right space-y-1">
+        <div>
+          Atención Comercial B2B: <a href="tel:954368011" class="text-white font-bold hover:underline">954 36 80 11</a> | WhatsApp: <a href="https://wa.me/34624825868" target="_blank" rel="noopener" class="text-[#25D366] font-bold hover:underline">+34 624 82 58 68</a>
+        </div>
+        <div class="text-[11px] text-slate-400 flex items-center sm:justify-end gap-1">
+          <span class="material-symbols-outlined text-xs text-amber-400">schedule</span>
+          <span>Horario: <strong class="text-slate-300 ped-schedule-lj">L-J: 8:30 a 14:30 y 15:30 a 17:30</strong> &middot; <strong class="text-slate-300 ped-schedule-v">Viernes: 8:00 a 15:00</strong></span>
+        </div>
       </div>
     </div>
   </footer>
@@ -749,8 +759,21 @@
       closeConsultModal();
     }
 
+    // Sincronización Global de Horario y Contacto
+    function syncGlobalSchedule() {
+      const savedLj = localStorage.getItem('pedregosa_schedule_lj');
+      const savedV = localStorage.getItem('pedregosa_schedule_v');
+      const savedWa = localStorage.getItem('pedregosa_whatsapp');
+
+      if (savedLj) document.querySelectorAll('.ped-schedule-lj').forEach(el => el.innerText = savedLj);
+      if (savedV) document.querySelectorAll('.ped-schedule-v').forEach(el => el.innerText = savedV);
+      if (savedWa) document.querySelectorAll('.ped-wa-num').forEach(el => el.innerText = savedWa);
+    }
+    window.addEventListener('storage', syncGlobalSchedule);
+
     // Inicializar estado B2B al cargar
     setB2BRole(b2bRole);
+    syncGlobalSchedule();
   </script>
 
   <!-- ========================================== -->
@@ -816,5 +839,13 @@
     </div>
   </div>
 
+  <!-- BOTÓN FLOTANTE WHATSAPP B2B -->
+  <a href="https://wa.me/34624825868?text=Hola%20Pedregosa,%20solicito%20informaci%C3%B3n%20o%20cotizaci%C3%B3n%20B2B"
+    target="_blank" rel="noopener"
+    class="fixed bottom-6 right-6 z-40 bg-[#25D366] hover:bg-[#20ba59] text-white p-3.5 rounded-full shadow-2xl flex items-center gap-2 group hover:scale-105 transition-all"
+    title="Atención Comercial WhatsApp (+34 624 82 58 68)">
+    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.41 1.56 1.56 2.41 3.63 2.41 5.83s-.85 4.27-2.41 5.83a8.21 8.21 0 0 1-5.82 2.41c-1.5 0-2.97-.39-4.27-1.14l-.31-.18-3.12.82.83-3.04-.2-.32a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.53c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.01-1.24-.74-.66-1.24-1.48-1.39-1.73-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08 0 1.22.89 2.41 1.02 2.58.12.17 1.76 2.69 4.27 3.77.6.26 1.07.41 1.43.53.6.19 1.15.16 1.59.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.17-.48-.29Z"/></svg>
+    <span class="hidden sm:inline font-bold text-xs pr-1">WhatsApp B2B</span>
+  </a>
 </body>
 </html>
