@@ -79,10 +79,16 @@
       transform: translateY(-4px);
       box-shadow: 0 12px 24px -6px rgba(15, 23, 42, 0.1);
     }
+
+    /* POLÍTICA PRECIOS PRIVADOS B2B (CONSULTAR vs CLIENTE ACTIVADO) */
+    body.b2b-guest-mode .b2b-price-client { display: none !important; }
+    body.b2b-guest-mode .b2b-price-guest { display: block !important; }
+    body.b2b-client-mode .b2b-price-client { display: block !important; }
+    body.b2b-client-mode .b2b-price-guest { display: none !important; }
   </style>
 </head>
 
-<body class="min-h-screen flex flex-col antialiased">
+<body class="min-h-screen flex flex-col antialiased b2b-guest-mode">
 
   <!-- ========================================== -->
   <!-- 1. TOPBAR B2B INSTITUCIONAL (TELÉFONO ÚNICO) -->
@@ -103,9 +109,25 @@
           Sede Central y SAT en Sevilla (Polígono Store)
         </span>
       </div>
-      <div class="flex items-center gap-3 sm:gap-4">
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- CONMUTADOR ROL B2B: VISITANTE VS CLIENTE ACTIVADO -->
+        <div class="flex items-center bg-slate-800 rounded-lg p-0.5 border border-slate-700 text-[10px] sm:text-[11px]">
+          <button id="btnRoleGuest" onclick="setB2BRole('guest')"
+            class="px-2 py-0.5 rounded font-bold transition bg-amber-500 text-slate-950 flex items-center gap-1 shadow-2xs"
+            title="Precios ocultos para no registrados">
+            <span class="material-symbols-outlined text-xs">visibility_off</span>
+            <span>Visitante: "Consultar"</span>
+          </button>
+          <button id="btnRoleClient" onclick="setB2BRole('client')"
+            class="px-2 py-0.5 rounded font-semibold text-slate-300 hover:text-white transition flex items-center gap-1"
+            title="Precios visibles para clientes validados">
+            <span class="material-symbols-outlined text-xs">verified_user</span>
+            <span>Cliente B2B Activado</span>
+          </button>
+        </div>
+
         <span
-          class="hidden sm:inline-block bg-slate-800 text-slate-200 px-2 py-0.5 rounded text-[11px] font-semibold border border-slate-700">
+          class="hidden lg:inline-block bg-slate-800 text-slate-200 px-2 py-0.5 rounded text-[11px] font-semibold border border-slate-700">
           🏛️ Facturación FACe
         </span>
         <a href="preview-backoffice.html"
@@ -364,10 +386,14 @@
         <!-- ========================================== -->
         <div id="slide-0"
           class="slide-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 flex items-center bg-gradient-to-r from-slate-950 via-slate-900 to-[#0e1726] overflow-hidden">
-          <div class="absolute -right-20 -top-20 w-96 h-96 bg-sky-600/20 rounded-full blur-3xl pointer-events-none"></div>
-          <div class="absolute right-1/3 -bottom-20 w-80 h-80 bg-indigo-600/15 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute -right-20 -top-20 w-96 h-96 bg-sky-600/20 rounded-full blur-3xl pointer-events-none">
+          </div>
+          <div
+            class="absolute right-1/3 -bottom-20 w-80 h-80 bg-indigo-600/15 rounded-full blur-3xl pointer-events-none">
+          </div>
 
-          <div class="max-w-7xl mx-auto px-6 sm:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10 py-6">
+          <div
+            class="max-w-7xl mx-auto px-6 sm:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10 py-6">
             <div class="lg:col-span-7 space-y-3.5 text-white">
               <div
                 class="inline-flex items-center gap-2 bg-sky-500/10 border border-sky-400/30 text-sky-300 text-[11px] font-extrabold tracking-wider uppercase px-3 py-1 rounded-full backdrop-blur-xs">
@@ -381,7 +407,8 @@
                 </span>
               </h1>
               <p class="text-slate-300 text-xs sm:text-sm max-w-xl leading-relaxed">
-                Rendimiento de 45 TOPS sin dependencia de la nube. Confidencialidad total para auditorías y dirección corporativa con procesadores Intel Core Ultra y Snapdragon X Elite.
+                Rendimiento de 45 TOPS sin dependencia de la nube. Confidencialidad total para auditorías y dirección
+                corporativa con procesadores Intel Core Ultra y Snapdragon X Elite.
               </p>
 
               <div class="flex flex-wrap items-center gap-2 pt-1 text-xs">
@@ -446,9 +473,12 @@
         <!-- ========================================== -->
         <div id="slide-1"
           class="slide-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 pointer-events-none flex items-center bg-gradient-to-r from-slate-50 via-white to-red-50/60 overflow-hidden">
-          <div class="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-crimson/5 to-transparent pointer-events-none"></div>
+          <div
+            class="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-crimson/5 to-transparent pointer-events-none">
+          </div>
 
-          <div class="max-w-7xl mx-auto px-6 sm:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10 py-6">
+          <div
+            class="max-w-7xl mx-auto px-6 sm:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10 py-6">
             <div class="lg:col-span-7 space-y-3.5">
               <div
                 class="inline-flex items-center gap-2 bg-crimson/10 border border-crimson/20 text-crimson text-[11px] font-extrabold tracking-wider uppercase px-3 py-1 rounded-full">
@@ -460,17 +490,21 @@
                 <span class="text-crimson">en Menos de 1 Kilogramo</span>
               </h2>
               <p class="text-slate-600 text-xs sm:text-sm max-w-xl leading-relaxed">
-                Chasis de aleación de magnesio aeroespacial con certificación militar MIL-STD-810H. Equipado con Intel Core Ultra 7 y pantalla OLED antirreflejos para jornadas sin límites.
+                Chasis de aleación de magnesio aeroespacial con certificación militar MIL-STD-810H. Equipado con Intel
+                Core Ultra 7 y pantalla OLED antirreflejos para jornadas sin límites.
               </p>
 
               <div class="flex flex-wrap items-center gap-2 pt-1 text-xs">
-                <span class="bg-white border border-slate-200 text-slate-800 px-2.5 py-1 rounded-md font-bold shadow-2xs flex items-center gap-1.5">
+                <span
+                  class="bg-white border border-slate-200 text-slate-800 px-2.5 py-1 rounded-md font-bold shadow-2xs flex items-center gap-1.5">
                   ⚖️ 990 gramos de peso
                 </span>
-                <span class="bg-white border border-slate-200 text-slate-800 px-2.5 py-1 rounded-md font-bold shadow-2xs flex items-center gap-1.5">
+                <span
+                  class="bg-white border border-slate-200 text-slate-800 px-2.5 py-1 rounded-md font-bold shadow-2xs flex items-center gap-1.5">
                   🔋 Batería de 20,5 horas
                 </span>
-                <span class="bg-emerald-50 border border-emerald-200 text-emerald-800 px-2.5 py-1 rounded-md font-bold shadow-2xs flex items-center gap-1.5">
+                <span
+                  class="bg-emerald-50 border border-emerald-200 text-emerald-800 px-2.5 py-1 rounded-md font-bold shadow-2xs flex items-center gap-1.5">
                   🛡️ 3 Años Garantía In Situ
                 </span>
               </div>
@@ -496,7 +530,8 @@
 
                 <div
                   class="absolute -bottom-2 -left-2 bg-white border border-slate-200 p-2.5 rounded-xl shadow-lg flex items-center gap-2.5">
-                  <span class="w-8 h-8 rounded-full bg-crimson text-white font-extrabold text-xs flex items-center justify-center">LG</span>
+                  <span
+                    class="w-8 h-8 rounded-full bg-crimson text-white font-extrabold text-xs flex items-center justify-center">LG</span>
                   <div>
                     <div class="text-xs font-black text-slate-900">Canal Oficial Preferente</div>
                     <div class="text-[10px] text-slate-500">Distribuidor Homologado Andalucía</div>
@@ -512,9 +547,11 @@
         <!-- ========================================== -->
         <div id="slide-2"
           class="slide-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 pointer-events-none flex items-center bg-gradient-to-r from-slate-900 via-slate-850 to-slate-900 overflow-hidden">
-          <div class="absolute left-0 bottom-0 w-96 h-96 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute left-0 bottom-0 w-96 h-96 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none">
+          </div>
 
-          <div class="max-w-7xl mx-auto px-6 sm:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10 py-6">
+          <div
+            class="max-w-7xl mx-auto px-6 sm:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10 py-6">
             <div class="lg:col-span-7 space-y-3.5 text-white">
               <div
                 class="inline-flex items-center gap-2 bg-emerald-500/15 border border-emerald-400/30 text-emerald-300 text-[11px] font-extrabold tracking-wider uppercase px-3 py-1 rounded-full backdrop-blur-xs">
@@ -528,7 +565,8 @@
                 </span>
               </h2>
               <p class="text-slate-300 text-xs sm:text-sm max-w-xl leading-relaxed">
-                Cumplimiento riguroso de normativas contables FACe, códigos DIR3, pliegos técnicos y entrega directa en sedes con soporte técnico prioritario en Andalucía.
+                Cumplimiento riguroso de normativas contables FACe, códigos DIR3, pliegos técnicos y entrega directa en
+                sedes con soporte técnico prioritario en Andalucía.
               </p>
 
               <div class="flex flex-wrap items-center gap-2 pt-1 text-[11px] font-extrabold text-slate-200">
@@ -566,9 +604,11 @@
                 </div>
                 <div>
                   <h3 class="text-white font-extrabold text-base">Solvencia Técnica Acreditada</h3>
-                  <p class="text-slate-300 text-xs mt-1">Más de 35 años suministrando tecnología y equipamiento oficial en toda España.</p>
+                  <p class="text-slate-300 text-xs mt-1">Más de 35 años suministrando tecnología y equipamiento oficial
+                    en toda España.</p>
                 </div>
-                <div class="pt-2 border-t border-white/10 text-xs text-emerald-400 font-bold flex items-center justify-center gap-1">
+                <div
+                  class="pt-2 border-t border-white/10 text-xs text-emerald-400 font-bold flex items-center justify-center gap-1">
                   <span class="material-symbols-outlined text-sm">receipt_long</span>
                   <span>Facturación FACe 100% Automatizada</span>
                 </div>
@@ -582,9 +622,11 @@
         <!-- ========================================== -->
         <div id="slide-3"
           class="slide-item absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 pointer-events-none flex items-center bg-gradient-to-r from-[#170206] via-slate-950 to-slate-900 overflow-hidden">
-          <div class="absolute right-0 bottom-0 w-96 h-96 bg-crimson/20 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute right-0 bottom-0 w-96 h-96 bg-crimson/20 rounded-full blur-3xl pointer-events-none">
+          </div>
 
-          <div class="max-w-7xl mx-auto px-6 sm:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10 py-6">
+          <div
+            class="max-w-7xl mx-auto px-6 sm:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10 py-6">
             <div class="lg:col-span-7 space-y-3.5 text-white">
               <div
                 class="inline-flex items-center gap-2 bg-amber-500/15 border border-amber-400/30 text-amber-300 text-[11px] font-extrabold tracking-wider uppercase px-3 py-1 rounded-full backdrop-blur-xs">
@@ -593,24 +635,29 @@
               </div>
               <h2 class="text-2xl sm:text-4xl lg:text-[40px] font-extrabold leading-[1.15] tracking-tight">
                 Consumibles Originales y Coste por Copia <br class="hidden sm:inline">
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-rose-300 to-crimson-bright">
+                <span
+                  class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-rose-300 to-crimson-bright">
                   con Entrega Garantizada 24h
                 </span>
               </h2>
               <p class="text-slate-300 text-xs sm:text-sm max-w-xl leading-relaxed">
-                Tóner 100% original HP, Brother y Epson con tarifas escaladas por volumen para empresas. Sin roturas de stock, con facturación agrupada mensual y logística prioritaria.
+                Tóner 100% original HP, Brother y Epson con tarifas escaladas por volumen para empresas. Sin roturas de
+                stock, con facturación agrupada mensual y logística prioritaria.
               </p>
 
               <div class="flex flex-wrap items-center gap-2 pt-1 text-xs">
-                <span class="bg-slate-800/90 border border-slate-700 text-slate-200 px-2.5 py-1 rounded-md font-semibold flex items-center gap-1.5">
+                <span
+                  class="bg-slate-800/90 border border-slate-700 text-slate-200 px-2.5 py-1 rounded-md font-semibold flex items-center gap-1.5">
                   <span class="material-symbols-outlined text-emerald-400 text-sm">verified</span>
                   Cartuchos 100% Originales
                 </span>
-                <span class="bg-slate-800/90 border border-slate-700 text-slate-200 px-2.5 py-1 rounded-md font-semibold flex items-center gap-1.5">
+                <span
+                  class="bg-slate-800/90 border border-slate-700 text-slate-200 px-2.5 py-1 rounded-md font-semibold flex items-center gap-1.5">
                   <span class="material-symbols-outlined text-sky-400 text-sm">local_shipping</span>
                   Suministro Inmediato 24/48h
                 </span>
-                <span class="bg-slate-800/90 border border-slate-700 text-slate-200 px-2.5 py-1 rounded-md font-semibold flex items-center gap-1.5">
+                <span
+                  class="bg-slate-800/90 border border-slate-700 text-slate-200 px-2.5 py-1 rounded-md font-semibold flex items-center gap-1.5">
                   <span class="material-symbols-outlined text-amber-400 text-sm">percent</span>
                   Descuento por Palet / Volumen
                 </span>
@@ -1294,7 +1341,8 @@
     <section id="homologaciones" class="py-10 bg-slate-50 border-y border-slate-200 my-4">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="text-center max-w-3xl mx-auto mb-8">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-bold uppercase tracking-wider mb-2.5">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-bold uppercase tracking-wider mb-2.5">
             <span class="material-symbols-outlined text-[15px] text-emerald-600">gavel</span>
             Acreditaciones Oficiales en Plataformas de Contratación
           </div>
@@ -1308,98 +1356,138 @@
 
         <!-- 6 Tarjetas de Homologación -->
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5">
-          
+
           <!-- Junta de Andalucía -->
-          <div class="p-4 bg-white border border-slate-200 rounded-xl text-center flex flex-col items-center justify-between shadow-xs hover:shadow-md hover:border-slate-300 transition group">
-            <div class="w-11 h-11 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-800 mb-2.5 group-hover:scale-105 transition-transform">
-              <svg class="w-5 h-5 fill-current text-emerald-700" viewBox="0 0 24 24"><path d="M12 2L3 6v1h18V6l-9-4zm7 7H5v9h2v-7h2v7h2v-7h2v7h2v-7h2v7h2V9zm-8 11v2h2v-2h-2zM3 21h18v2H3v-2z"></path></svg>
+          <div
+            class="p-4 bg-white border border-slate-200 rounded-xl text-center flex flex-col items-center justify-between shadow-xs hover:shadow-md hover:border-slate-300 transition group">
+            <div
+              class="w-11 h-11 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-800 mb-2.5 group-hover:scale-105 transition-transform">
+              <svg class="w-5 h-5 fill-current text-emerald-700" viewBox="0 0 24 24">
+                <path
+                  d="M12 2L3 6v1h18V6l-9-4zm7 7H5v9h2v-7h2v7h2v-7h2v7h2v-7h2v7h2V9zm-8 11v2h2v-2h-2zM3 21h18v2H3v-2z">
+                </path>
+              </svg>
             </div>
             <div>
               <span class="text-xs font-extrabold text-slate-950 block leading-tight">Junta de Andalucía</span>
               <span class="text-[10px] text-slate-500 font-medium block mt-0.5">Gobierno Autonómico</span>
             </div>
             <div class="mt-2.5 pt-2 border-t border-slate-100 w-full">
-              <span class="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">
+              <span
+                class="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">
                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Homologado
               </span>
             </div>
           </div>
 
           <!-- Univ. de Sevilla -->
-          <div class="p-4 bg-white border border-slate-200 rounded-xl text-center flex flex-col items-center justify-between shadow-xs hover:shadow-md hover:border-slate-300 transition group">
-            <div class="w-11 h-11 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-crimson mb-2.5 group-hover:scale-105 transition-transform">
-              <svg class="w-5 h-5 fill-current text-crimson" viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm0 15.3l-5-2.73v-3.72l5 2.73 5-2.73v3.72l-5 2.73zM5.45 9L12 5.42 18.55 9 12 12.58 5.45 9z"></path></svg>
+          <div
+            class="p-4 bg-white border border-slate-200 rounded-xl text-center flex flex-col items-center justify-between shadow-xs hover:shadow-md hover:border-slate-300 transition group">
+            <div
+              class="w-11 h-11 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-crimson mb-2.5 group-hover:scale-105 transition-transform">
+              <svg class="w-5 h-5 fill-current text-crimson" viewBox="0 0 24 24">
+                <path
+                  d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm0 15.3l-5-2.73v-3.72l5 2.73 5-2.73v3.72l-5 2.73zM5.45 9L12 5.42 18.55 9 12 12.58 5.45 9z">
+                </path>
+              </svg>
             </div>
             <div>
               <span class="text-xs font-extrabold text-slate-950 block leading-tight">Univ. de Sevilla</span>
               <span class="text-[10px] text-slate-500 font-medium block mt-0.5">Campus Central</span>
             </div>
             <div class="mt-2.5 pt-2 border-t border-slate-100 w-full">
-              <span class="inline-flex items-center gap-1 text-[10px] font-bold text-red-700 bg-red-50 px-2 py-0.5 rounded-full">
+              <span
+                class="inline-flex items-center gap-1 text-[10px] font-bold text-red-700 bg-red-50 px-2 py-0.5 rounded-full">
                 <span class="w-1.5 h-1.5 rounded-full bg-red-600"></span> Acuerdo Marco
               </span>
             </div>
           </div>
 
           <!-- Principado de Asturias -->
-          <div class="p-4 bg-white border border-slate-200 rounded-xl text-center flex flex-col items-center justify-between shadow-xs hover:shadow-md hover:border-slate-300 transition group">
-            <div class="w-11 h-11 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center text-sky-800 mb-2.5 group-hover:scale-105 transition-transform">
-              <svg class="w-5 h-5 fill-current text-sky-700" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>
+          <div
+            class="p-4 bg-white border border-slate-200 rounded-xl text-center flex flex-col items-center justify-between shadow-xs hover:shadow-md hover:border-slate-300 transition group">
+            <div
+              class="w-11 h-11 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center text-sky-800 mb-2.5 group-hover:scale-105 transition-transform">
+              <svg class="w-5 h-5 fill-current text-sky-700" viewBox="0 0 24 24">
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z">
+                </path>
+              </svg>
             </div>
             <div>
               <span class="text-xs font-extrabold text-slate-950 block leading-tight">Principado de Asturias</span>
               <span class="text-[10px] text-slate-500 font-medium block mt-0.5">SESPA y Consejerías</span>
             </div>
             <div class="mt-2.5 pt-2 border-t border-slate-100 w-full">
-              <span class="inline-flex items-center gap-1 text-[10px] font-bold text-sky-700 bg-sky-50 px-2 py-0.5 rounded-full">
+              <span
+                class="inline-flex items-center gap-1 text-[10px] font-bold text-sky-700 bg-sky-50 px-2 py-0.5 rounded-full">
                 <span class="w-1.5 h-1.5 rounded-full bg-sky-600"></span> Acreditado
               </span>
             </div>
           </div>
 
           <!-- Univ. Pablo de Olavide -->
-          <div class="p-4 bg-white border border-slate-200 rounded-xl text-center flex flex-col items-center justify-between shadow-xs hover:shadow-md hover:border-slate-300 transition group">
-            <div class="w-11 h-11 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center text-amber-800 mb-2.5 group-hover:scale-105 transition-transform">
-              <svg class="w-5 h-5 fill-current text-amber-700" viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM3.45 9L12 4.33 20.55 9 12 13.67 3.45 9zm4.55 6.38V18c0 2.21 3.58 4 8 4s8-1.79 8-4v-2.62c-2.07 1.6-4.9 2.62-8 2.62s-5.93-1.02-8-2.62z"></path></svg>
+          <div
+            class="p-4 bg-white border border-slate-200 rounded-xl text-center flex flex-col items-center justify-between shadow-xs hover:shadow-md hover:border-slate-300 transition group">
+            <div
+              class="w-11 h-11 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center text-amber-800 mb-2.5 group-hover:scale-105 transition-transform">
+              <svg class="w-5 h-5 fill-current text-amber-700" viewBox="0 0 24 24">
+                <path
+                  d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM3.45 9L12 4.33 20.55 9 12 13.67 3.45 9zm4.55 6.38V18c0 2.21 3.58 4 8 4s8-1.79 8-4v-2.62c-2.07 1.6-4.9 2.62-8 2.62s-5.93-1.02-8-2.62z">
+                </path>
+              </svg>
             </div>
             <div>
               <span class="text-xs font-extrabold text-slate-950 block leading-tight">Univ. Pablo Olavide</span>
               <span class="text-[10px] text-slate-500 font-medium block mt-0.5">Licitación de Campus</span>
             </div>
             <div class="mt-2.5 pt-2 border-t border-slate-100 w-full">
-              <span class="inline-flex items-center gap-1 text-[10px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full">
+              <span
+                class="inline-flex items-center gap-1 text-[10px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full">
                 <span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span> Licitación
               </span>
             </div>
           </div>
 
           <!-- Ayto. Sevilla & Huelva -->
-          <div class="p-4 bg-white border border-slate-200 rounded-xl text-center flex flex-col items-center justify-between shadow-xs hover:shadow-md hover:border-slate-300 transition group">
-            <div class="w-11 h-11 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-800 mb-2.5 group-hover:scale-105 transition-transform">
-              <svg class="w-5 h-5 fill-current text-indigo-700" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5z"></path></svg>
+          <div
+            class="p-4 bg-white border border-slate-200 rounded-xl text-center flex flex-col items-center justify-between shadow-xs hover:shadow-md hover:border-slate-300 transition group">
+            <div
+              class="w-11 h-11 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-800 mb-2.5 group-hover:scale-105 transition-transform">
+              <svg class="w-5 h-5 fill-current text-indigo-700" viewBox="0 0 24 24">
+                <path
+                  d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5z">
+                </path>
+              </svg>
             </div>
             <div>
               <span class="text-xs font-extrabold text-slate-950 block leading-tight">Ayto. Sevilla &amp; Huelva</span>
               <span class="text-[10px] text-slate-500 font-medium block mt-0.5">Corporaciones Locales</span>
             </div>
             <div class="mt-2.5 pt-2 border-t border-slate-100 w-full">
-              <span class="inline-flex items-center gap-1 text-[10px] font-bold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded-full">
+              <span
+                class="inline-flex items-center gap-1 text-[10px] font-bold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded-full">
                 <span class="w-1.5 h-1.5 rounded-full bg-indigo-600"></span> Concursado
               </span>
             </div>
           </div>
 
           <!-- Univ. de Huelva -->
-          <div class="p-4 bg-white border border-slate-200 rounded-xl text-center flex flex-col items-center justify-between shadow-xs hover:shadow-md hover:border-slate-300 transition group">
-            <div class="w-11 h-11 rounded-xl bg-teal-50 border border-teal-100 flex items-center justify-center text-teal-800 mb-2.5 group-hover:scale-105 transition-transform">
-              <svg class="w-5 h-5 fill-current text-teal-700" viewBox="0 0 24 24"><path d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2zm-1 12.08L4.2 11 2 12l10 4.54L22 12l-2.2-1-6.8 3.08z"></path></svg>
+          <div
+            class="p-4 bg-white border border-slate-200 rounded-xl text-center flex flex-col items-center justify-between shadow-xs hover:shadow-md hover:border-slate-300 transition group">
+            <div
+              class="w-11 h-11 rounded-xl bg-teal-50 border border-teal-100 flex items-center justify-center text-teal-800 mb-2.5 group-hover:scale-105 transition-transform">
+              <svg class="w-5 h-5 fill-current text-teal-700" viewBox="0 0 24 24">
+                <path d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2zm-1 12.08L4.2 11 2 12l10 4.54L22 12l-2.2-1-6.8 3.08z"></path>
+              </svg>
             </div>
             <div>
               <span class="text-xs font-extrabold text-slate-950 block leading-tight">Univ. de Huelva</span>
               <span class="text-[10px] text-slate-500 font-medium block mt-0.5">Suministro General</span>
             </div>
             <div class="mt-2.5 pt-2 border-t border-slate-100 w-full">
-              <span class="inline-flex items-center gap-1 text-[10px] font-bold text-teal-700 bg-teal-50 px-2 py-0.5 rounded-full">
+              <span
+                class="inline-flex items-center gap-1 text-[10px] font-bold text-teal-700 bg-teal-50 px-2 py-0.5 rounded-full">
                 <span class="w-1.5 h-1.5 rounded-full bg-teal-600"></span> Convenio
               </span>
             </div>
@@ -1888,8 +1976,14 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
         <!-- Imagen y Galería -->
         <div class="bg-slate-50 rounded-xl p-6 border border-slate-200 flex flex-col items-center">
-          <img id="modalImg" src="assets/img/banner-lg-gram.jpg" alt="Producto"
-            class="max-h-60 object-contain rounded-lg">
+          <a id="modalImgLink" href="preview-producto.html?id=fellowes" class="group block text-center" title="Hacer clic para ver la ficha técnica completa">
+            <img id="modalImg" src="assets/img/banner-lg-gram.jpg" alt="Producto"
+              class="max-h-60 object-contain rounded-lg group-hover:scale-105 transition duration-300">
+            <div class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold text-slate-600 group-hover:text-crimson bg-white px-3 py-1 rounded-full border border-slate-200 shadow-2xs transition">
+              <span class="material-symbols-outlined text-sm text-crimson">visibility</span>
+              <span>Abrir Ficha Técnica Completa</span>
+            </div>
+          </a>
           <div class="mt-4 text-xs text-slate-500 flex items-center gap-2">
             <span class="material-symbols-outlined text-sm">verified_user</span>
             Producto 100% Nuevo & Embalaje Original
@@ -1910,8 +2004,8 @@
             </h2>
           </a>
 
-          <!-- Precio Doble B2B / B2C -->
-          <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <!-- Precio Doble B2B (Modo Cliente) -->
+          <div id="modalClientPriceBox" class="bg-slate-50 p-4 rounded-xl border border-slate-200">
             <div class="flex items-baseline gap-2">
               <span id="modalPriceNet" class="text-3xl font-extrabold text-crimson">899,00 €</span>
               <span class="text-xs font-bold uppercase text-slate-600">Precio Neto (sin IVA)</span>
@@ -1921,9 +2015,26 @@
             </div>
           </div>
 
+          <!-- Precio Oculto / Consultar (Modo Visitante) -->
+          <div id="modalGuestPriceBox" class="bg-amber-50/70 p-4 rounded-xl border border-amber-200 space-y-1">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-amber-600 text-xl">lock</span>
+                <div>
+                  <div class="text-[10px] font-extrabold text-slate-500 uppercase tracking-wider">Tarifa B2B Privada</div>
+                  <div class="text-2xl font-black text-crimson">Precio a Consultar</div>
+                </div>
+              </div>
+              <span class="bg-amber-200 text-amber-900 text-[10px] font-extrabold px-2 py-0.5 rounded">ACCESO PRIVADO</span>
+            </div>
+            <p class="text-[11px] text-slate-600 pt-1 leading-snug">
+              Los precios oficiales y descuentos por volumen son visibles exclusivamente para empresas y autónomos con cuenta validada.
+            </p>
+          </div>
+
           <!-- Selector de Cantidad & Botón -->
           <div class="flex items-center gap-3 pt-2">
-            <div class="flex items-center border border-slate-300 rounded-lg overflow-hidden">
+            <div id="modalQtyBox" class="flex items-center border border-slate-300 rounded-lg overflow-hidden">
               <button onclick="decrementQty()"
                 class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold">-</button>
               <input id="modalQty" type="number" value="1" min="1"
@@ -1931,20 +2042,24 @@
               <button onclick="incrementQty()"
                 class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold">+</button>
             </div>
-            <button onclick="confirmModalAddToCart()"
+            <button id="modalAddToCartBtn" onclick="confirmModalAddToCart()"
               class="flex-1 btn-crimson font-bold text-sm py-2.5 px-4 rounded-lg flex items-center justify-center gap-2 shadow-md">
               <span class="material-symbols-outlined text-lg">shopping_cart</span>
               Añadir a la Cesta
+            </button>
+            <button id="modalConsultBtn" onclick="openConsultModal(currentModalProduct ? currentModalProduct.id : 'general', currentModalProduct ? currentModalProduct.name : 'Artículo')"
+              class="flex-1 bg-slate-800 hover:bg-slate-900 text-white font-bold text-sm py-2.5 px-4 rounded-lg flex items-center justify-center gap-2 shadow-md hidden">
+              <span class="material-symbols-outlined text-lg text-amber-400">mail</span>
+              Consultar Precio / Iniciar Sesión
             </button>
           </div>
 
           <!-- BOTÓN DIRECTO A LA FICHA TÉCNICA DETALLADA -->
           <a id="modalFullSheetBtn" href="preview-producto.html?id=lg-gram"
-            class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold py-2.5 px-4 rounded-lg flex items-center justify-center gap-2 transition border border-slate-200 shadow-2xs group">
-            <span class="material-symbols-outlined text-base text-slate-600 group-hover:text-crimson">description</span>
-            <span>Ver Ficha Técnica Detallada Completa</span>
-            <span
-              class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+            class="w-full bg-slate-900 hover:bg-crimson text-white text-xs font-extrabold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition shadow-md group">
+            <span class="material-symbols-outlined text-base text-amber-400 group-hover:text-white transition">menu_book</span>
+            <span>Ver Ficha Técnica Detallada (P/N, EAN y Especificaciones)</span>
+            <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
           </a>
 
           <!-- BLOQUE DE GARANTÍAS OFICIALES -->
@@ -1983,6 +2098,68 @@
           </div>
 
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- 10.5. MODAL DE CONSULTA DE PRECIO & ACCESO B2B (PARA VISITANTES) -->
+  <!-- ========================================== -->
+  <div id="consultModal" onclick="if(event.target === this) closeConsultModal()"
+    class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative">
+      <button onclick="closeConsultModal()"
+        class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 transition">
+        <span class="material-symbols-outlined text-2xl">close</span>
+      </button>
+
+      <div class="flex items-center gap-2 text-crimson mb-3">
+        <span class="material-symbols-outlined text-2xl">lock_person</span>
+        <h3 class="text-base font-extrabold text-slate-900">Tarifa B2B Privada &middot; Consultar</h3>
+      </div>
+
+      <div class="bg-slate-50 p-3 rounded-lg border border-slate-200 mb-4 text-xs">
+        <div class="text-[10px] text-slate-400 font-bold uppercase">Artículo Seleccionado:</div>
+        <div id="consultProdTitle" class="font-extrabold text-slate-900 mt-0.5 line-clamp-2">Portátil LG Gram 16Z90R</div>
+      </div>
+
+      <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+        Los precios netos oficiales están reservados a empresas, administraciones públicas y autónomos con cuenta activa.
+      </p>
+
+      <form onsubmit="submitConsultForm(event)" class="space-y-3 text-xs">
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Empresa / Razón Social o CIF:</label>
+          <input type="text" required placeholder="Ej: B12345678 o Nombre Empresa"
+            class="w-full bg-white border border-slate-300 rounded-lg p-2 text-xs font-semibold focus:border-crimson outline-none">
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Email Profesional:</label>
+            <input type="email" required placeholder="compras@empresa.com"
+              class="w-full bg-white border border-slate-300 rounded-lg p-2 text-xs focus:border-crimson outline-none">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Teléfono Directo:</label>
+            <input type="tel" required placeholder="600 000 000"
+              class="w-full bg-white border border-slate-300 rounded-lg p-2 text-xs focus:border-crimson outline-none">
+          </div>
+        </div>
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Unidades estimadas:</label>
+          <input type="number" min="1" value="1"
+            class="w-24 bg-white border border-slate-300 rounded-lg p-2 text-xs font-bold focus:border-crimson outline-none">
+        </div>
+
+        <button type="submit"
+          class="w-full btn-crimson font-extrabold py-2.5 rounded-lg flex items-center justify-center gap-1.5 shadow-sm mt-2">
+          <span class="material-symbols-outlined text-base">send</span>
+          <span>Solicitar Cotización Inmediata</span>
+        </button>
+      </form>
+
+      <div class="pt-4 mt-4 border-t border-slate-100 text-center text-xs text-slate-500">
+        ¿Ya tienes cuenta activada? <button type="button" onclick="setB2BRole('client'); closeConsultModal();" class="text-crimson font-bold hover:underline">Iniciar Sesión B2B</button>
       </div>
     </div>
   </div>
@@ -2297,8 +2474,31 @@
       const detailUrl = 'preview-producto.html?id=' + currentModalProduct.id;
       const detailLink = document.getElementById('modalDetailLink');
       const fullSheetBtn = document.getElementById('modalFullSheetBtn');
+      const imgLink = document.getElementById('modalImgLink');
       if (detailLink) detailLink.href = detailUrl;
       if (fullSheetBtn) fullSheetBtn.href = detailUrl;
+      if (imgLink) imgLink.href = detailUrl;
+
+      // Ajuste visual según Rol B2B (Visitante: Consultar vs Cliente: Precio)
+      const clientBox = document.getElementById('modalClientPriceBox');
+      const guestBox = document.getElementById('modalGuestPriceBox');
+      const qtyBox = document.getElementById('modalQtyBox');
+      const cartBtn = document.getElementById('modalAddToCartBtn');
+      const consultBtn = document.getElementById('modalConsultBtn');
+
+      if (b2bRole === 'guest') {
+        if (clientBox) clientBox.classList.add('hidden');
+        if (guestBox) guestBox.classList.remove('hidden');
+        if (qtyBox) qtyBox.classList.add('hidden');
+        if (cartBtn) cartBtn.classList.add('hidden');
+        if (consultBtn) consultBtn.classList.remove('hidden');
+      } else {
+        if (clientBox) clientBox.classList.remove('hidden');
+        if (guestBox) guestBox.classList.add('hidden');
+        if (qtyBox) qtyBox.classList.remove('hidden');
+        if (cartBtn) cartBtn.classList.remove('hidden');
+        if (consultBtn) consultBtn.classList.add('hidden');
+      }
 
       modal.classList.remove('hidden');
     }
@@ -2562,9 +2762,90 @@
     // Auto-advance slider every 6s
     setInterval(nextSlide, 6000);
 
+    // ==========================================
+    // SISTEMA DE PRECIOS PRIVADOS B2B (CONSULTAR vs CLIENTE ACTIVADO)
+    // ==========================================
+    let b2bRole = localStorage.getItem('pedregosa_b2b_role') || 'guest';
+
+    function setB2BRole(role) {
+      b2bRole = role;
+      localStorage.setItem('pedregosa_b2b_role', role);
+
+      const btnGuest = document.getElementById('btnRoleGuest');
+      const btnClient = document.getElementById('btnRoleClient');
+
+      if (role === 'guest') {
+        document.body.classList.remove('b2b-client-mode');
+        document.body.classList.add('b2b-guest-mode');
+        if (btnGuest) {
+          btnGuest.className = 'px-2 py-0.5 rounded font-bold transition bg-amber-500 text-slate-950 flex items-center gap-1 shadow-2xs';
+        }
+        if (btnClient) {
+          btnClient.className = 'px-2 py-0.5 rounded font-semibold text-slate-300 hover:text-white transition flex items-center gap-1';
+        }
+      } else {
+        document.body.classList.remove('b2b-guest-mode');
+        document.body.classList.add('b2b-client-mode');
+        if (btnGuest) {
+          btnGuest.className = 'px-2 py-0.5 rounded font-semibold text-slate-300 hover:text-white transition flex items-center gap-1';
+        }
+        if (btnClient) {
+          btnClient.className = 'px-2 py-0.5 rounded font-bold transition bg-emerald-500 text-white flex items-center gap-1 shadow-2xs';
+        }
+      }
+    }
+
+    function initB2BPricing() {
+      document.querySelectorAll('.featured-product-card').forEach((card, idx) => {
+        const buyBox = card.querySelector('.pt-3.border-t');
+        if (buyBox && !buyBox.querySelector('.b2b-price-guest')) {
+          const originalContent = buyBox.innerHTML;
+          const prodTitle = card.querySelector('h3')?.innerText.trim() || 'Artículo';
+
+          buyBox.innerHTML = `
+            <div class="b2b-price-client">
+              ${originalContent}
+            </div>
+            <div class="b2b-price-guest">
+              <div class="flex items-center justify-between bg-slate-100 hover:bg-slate-200 px-2.5 py-1.5 rounded-lg border border-slate-200 cursor-pointer mb-2 transition" onclick="openConsultModal('item-${idx}', '${prodTitle.replace(/'/g, "\\'")}')">
+                <span class="text-xs font-bold text-slate-600 flex items-center gap-1">
+                  <span class="material-symbols-outlined text-amber-600 text-sm">lock</span>
+                  Tarifa B2B:
+                </span>
+                <span class="text-xs font-black text-crimson bg-white px-2 py-0.5 rounded shadow-2xs">Consultar</span>
+              </div>
+              <button onclick="openConsultModal('item-${idx}', '${prodTitle.replace(/'/g, "\\'")}')"
+                class="w-full bg-slate-800 hover:bg-slate-900 text-white text-xs font-bold py-2 rounded-lg flex items-center justify-center gap-1.5 shadow-xs transition">
+                <span class="material-symbols-outlined text-sm text-amber-400">mail</span>
+                <span>Consultar Precio B2B</span>
+              </button>
+            </div>
+          `;
+        }
+      });
+      setB2BRole(b2bRole);
+    }
+
+    // Modal Consulta de Precio
+    function openConsultModal(prodId, prodTitle) {
+      document.getElementById('consultProdTitle').innerText = prodTitle || 'Artículo B2B Pedregosa';
+      document.getElementById('consultModal').classList.remove('hidden');
+    }
+
+    function closeConsultModal() {
+      document.getElementById('consultModal').classList.add('hidden');
+    }
+
+    function submitConsultForm(e) {
+      e.preventDefault();
+      alert('¡Solicitud de cotización B2B recibida!\n\nUn gestor comercial de Pedregosa revisará tu solicitud y te enviará la tarifa formal en menos de 2 horas.');
+      closeConsultModal();
+    }
+
     // Inicializar
     renderCart();
     renderFavoritesBadge();
+    initB2BPricing();
   </script>
 </body>
 

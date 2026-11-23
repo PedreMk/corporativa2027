@@ -64,10 +64,14 @@
     .btn-crimson:hover {
       background-color: #b50524;
     }
+    body.b2b-guest-mode .b2b-price-client { display: none !important; }
+    body.b2b-guest-mode .b2b-price-guest { display: block !important; }
+    body.b2b-client-mode .b2b-price-client { display: block !important; }
+    body.b2b-client-mode .b2b-price-guest { display: none !important; }
   </style>
 </head>
 
-<body class="bg-slate-50 font-sans text-slate-800 min-h-screen flex flex-col antialiased">
+<body class="bg-slate-50 font-sans text-slate-800 min-h-screen flex flex-col antialiased b2b-guest-mode">
 
   <!-- ========================================== -->
   <!-- 1. BARRA SUPERIOR DE CONTACTO DIRECTO B2B  -->
@@ -88,8 +92,24 @@
           Sede Central y SAT en Sevilla (Polígono Store)
         </span>
       </div>
-      <div class="flex items-center gap-3 sm:gap-4">
-        <span class="hidden sm:inline-block bg-slate-800 text-slate-200 px-2 py-0.5 rounded text-[11px] font-semibold border border-slate-700">
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- CONMUTADOR ROL B2B -->
+        <div class="flex items-center bg-slate-800 rounded-lg p-0.5 border border-slate-700 text-[10px] sm:text-[11px]">
+          <button id="btnRoleGuest" onclick="setB2BRole('guest')"
+            class="px-2 py-0.5 rounded font-bold transition bg-amber-500 text-slate-950 flex items-center gap-1 shadow-2xs"
+            title="Precios ocultos para no registrados">
+            <span class="material-symbols-outlined text-xs">visibility_off</span>
+            <span>Visitante: "Consultar"</span>
+          </button>
+          <button id="btnRoleClient" onclick="setB2BRole('client')"
+            class="px-2 py-0.5 rounded font-semibold text-slate-300 hover:text-white transition flex items-center gap-1"
+            title="Precios visibles para clientes validados">
+            <span class="material-symbols-outlined text-xs">verified_user</span>
+            <span>Cliente B2B Activado</span>
+          </button>
+        </div>
+
+        <span class="hidden lg:inline-block bg-slate-800 text-slate-200 px-2 py-0.5 rounded text-[11px] font-semibold border border-slate-700">
           🏛️ Facturación FACe
         </span>
         <a href="preview-backoffice.html"
@@ -294,75 +314,146 @@
         <!-- CUADRO DE PRECIOS CON ESCALADO B2B -->
         <div class="bg-white rounded-2xl border-2 border-slate-200 p-6 shadow-sm space-y-4">
           
-          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 pb-4 border-b border-slate-100">
-            <div>
-              <div class="flex items-baseline gap-2">
-                <span id="productPriceNet" class="text-4xl font-extrabold text-crimson">235,00 €</span>
-                <span class="text-xs font-extrabold uppercase text-slate-600">Precio B2B Neto (sin IVA)</span>
+          <!-- MODO CLIENTE B2B ACTIVADO (Precios visibles) -->
+          <div class="b2b-price-client space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 pb-4 border-b border-slate-100">
+              <div>
+                <div class="flex items-baseline gap-2">
+                  <span id="productPriceNet" class="text-4xl font-extrabold text-crimson">235,00 €</span>
+                  <span class="text-xs font-extrabold uppercase text-slate-600">Precio B2B Neto (sin IVA)</span>
+                </div>
+                <div id="productPriceTax" class="text-xs text-slate-500 font-semibold mt-0.5">
+                  284,35 € con 21% IVA incluido
+                </div>
               </div>
-              <div id="productPriceTax" class="text-xs text-slate-500 font-semibold mt-0.5">
-                284,35 € con 21% IVA incluido
+
+              <div class="text-left sm:text-right">
+                <span class="bg-amber-100 text-amber-900 text-[10px] font-extrabold px-2.5 py-1 rounded">
+                  REEMBOLSO HASTA 20€ POR FABRICANTE
+                </span>
               </div>
             </div>
 
-            <div class="text-left sm:text-right">
-              <span class="bg-amber-100 text-amber-900 text-[10px] font-extrabold px-2.5 py-1 rounded">
-                REEMBOLSO HASTA 20€ POR FABRICANTE
+            <!-- Escala de Precios por Volumen (Flotas / Grandes Compras) -->
+            <div class="bg-slate-50 rounded-xl p-3 border border-slate-200">
+              <div class="text-[11px] font-extrabold text-slate-700 uppercase tracking-wider mb-2 flex items-center justify-between">
+                <span>Tarifa B2B por Volumen (Descuento Directo):</span>
+                <span class="text-crimson font-bold">Ahorro para Flotas</span>
+              </div>
+              <div class="grid grid-cols-3 gap-2 text-center text-xs">
+                <div class="bg-white p-2 rounded-lg border border-slate-200">
+                  <div class="text-[10px] text-slate-500 font-bold">1 a 2 unidades</div>
+                  <div class="font-extrabold text-slate-900 mt-0.5">235,00 €/ud</div>
+                  <div class="text-[9px] text-slate-400">Tarifa base</div>
+                </div>
+                <div class="bg-white p-2 rounded-lg border border-slate-200">
+                  <div class="text-[10px] text-slate-500 font-bold">3 a 5 unidades</div>
+                  <div class="font-extrabold text-emerald-700 mt-0.5">219,00 €/ud</div>
+                  <div class="text-[9px] text-emerald-600 font-bold">Ahorro 7%</div>
+                </div>
+                <div class="bg-white p-2 rounded-lg border-2 border-crimson/30 bg-crimson-light/20">
+                  <div class="text-[10px] text-crimson font-extrabold">+6 unidades</div>
+                  <div class="font-extrabold text-crimson mt-0.5">199,00 €/ud</div>
+                  <div class="text-[9px] text-crimson font-bold">Ahorro 15%</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Selector de Cantidad & Botón de Añadir a la Cesta -->
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+              <div class="flex items-center border-2 border-slate-300 rounded-xl overflow-hidden h-12 bg-white">
+                <button onclick="changeQty(-1)" class="px-4 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-base h-full transition">-</button>
+                <input id="detailQty" type="number" value="1" min="1" class="w-14 text-center text-base font-extrabold focus:outline-none h-full">
+                <button onclick="changeQty(1)" class="px-4 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-base h-full transition">+</button>
+              </div>
+
+              <button onclick="addCurrentToCart()"
+                class="flex-1 btn-crimson text-sm font-extrabold py-3 px-6 rounded-xl flex items-center justify-center gap-2 shadow-md transition">
+                <span class="material-symbols-outlined text-xl">shopping_cart</span>
+                <span>Añadir al Pedido B2B</span>
+              </button>
+            </div>
+
+            <!-- Botón de Presupuesto Formal -->
+            <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs border-t border-slate-100">
+              <button onclick="alert('Generando presupuesto formal en formato PDF con validez de 15 días...')"
+                class="text-slate-600 hover:text-crimson font-bold flex items-center gap-1.5 transition">
+                <span class="material-symbols-outlined text-sm">picture_as_pdf</span>
+                <span>Descargar Presupuesto Formal Proforma</span>
+              </button>
+
+              <span class="text-slate-400 text-[11px]">
+                Envío Gratuito aplicado al superar 75 € neto
               </span>
             </div>
           </div>
 
-          <!-- Escala de Precios por Volumen (Flotas / Grandes Compras) -->
-          <div class="bg-slate-50 rounded-xl p-3 border border-slate-200">
-            <div class="text-[11px] font-extrabold text-slate-700 uppercase tracking-wider mb-2 flex items-center justify-between">
-              <span>Tarifa B2B por Volumen (Descuento Directo):</span>
-              <span class="text-crimson font-bold">Ahorro para Flotas</span>
-            </div>
-            <div class="grid grid-cols-3 gap-2 text-center text-xs">
-              <div class="bg-white p-2 rounded-lg border border-slate-200">
-                <div class="text-[10px] text-slate-500 font-bold">1 a 2 unidades</div>
-                <div class="font-extrabold text-slate-900 mt-0.5">235,00 €/ud</div>
-                <div class="text-[9px] text-slate-400">Tarifa base</div>
+          <!-- MODO VISITANTE SIN REGISTRO (Precios Ocultos / Consultar) -->
+          <div class="b2b-price-guest space-y-4">
+            <div class="bg-amber-50/70 border border-amber-200 rounded-xl p-5">
+              <div class="flex items-start justify-between gap-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-700 flex items-center justify-center flex-shrink-0">
+                    <span class="material-symbols-outlined text-2xl">lock</span>
+                  </div>
+                  <div>
+                    <div class="text-[10px] font-black uppercase text-slate-500 tracking-wider">Tarifa B2B Privada</div>
+                    <div class="text-3xl font-black text-crimson">Precio a Consultar</div>
+                  </div>
+                </div>
+                <span class="bg-amber-200 text-amber-900 text-[10px] font-extrabold px-2.5 py-1 rounded">ACCESO RESTRINGIDO</span>
               </div>
-              <div class="bg-white p-2 rounded-lg border border-slate-200">
-                <div class="text-[10px] text-slate-500 font-bold">3 a 5 unidades</div>
-                <div class="font-extrabold text-emerald-700 mt-0.5">219,00 €/ud</div>
-                <div class="text-[9px] text-emerald-600 font-bold">Ahorro 7%</div>
-              </div>
-              <div class="bg-white p-2 rounded-lg border-2 border-crimson/30 bg-crimson-light/20">
-                <div class="text-[10px] text-crimson font-extrabold">+6 unidades</div>
-                <div class="font-extrabold text-crimson mt-0.5">199,00 €/ud</div>
-                <div class="text-[9px] text-crimson font-bold">Ahorro 15%</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Selector de Cantidad & Botón de Añadir a la Cesta -->
-          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
-            <div class="flex items-center border-2 border-slate-300 rounded-xl overflow-hidden h-12 bg-white">
-              <button onclick="changeQty(-1)" class="px-4 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-base h-full transition">-</button>
-              <input id="detailQty" type="number" value="1" min="1" class="w-14 text-center text-base font-extrabold focus:outline-none h-full">
-              <button onclick="changeQty(1)" class="px-4 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-base h-full transition">+</button>
+              <p class="text-xs text-slate-600 mt-3 leading-relaxed">
+                Los precios de distribución, tramos por volumen y condiciones de crédito 30/60 días son visibles exclusivamente para empresas, autónomos y organismos públicos con cuenta validada en Pedregosa.
+              </p>
             </div>
 
-            <button onclick="addCurrentToCart()"
-              class="flex-1 btn-crimson text-sm font-extrabold py-3 px-6 rounded-xl flex items-center justify-center gap-2 shadow-md transition">
-              <span class="material-symbols-outlined text-xl">shopping_cart</span>
-              <span>Añadir al Pedido B2B</span>
-            </button>
-          </div>
+            <!-- Tramos por volumen informativos -->
+            <div class="bg-slate-50 rounded-xl p-3 border border-slate-200">
+              <div class="text-[11px] font-extrabold text-slate-700 uppercase tracking-wider mb-2 flex items-center justify-between">
+                <span>Descuentos por Volumen Disponibles:</span>
+                <span class="text-amber-700 font-bold flex items-center gap-1 text-[10px]">
+                  <span class="material-symbols-outlined text-xs">vpn_key</span> Requiere Registro
+                </span>
+              </div>
+              <div class="grid grid-cols-3 gap-2 text-center text-xs">
+                <div class="bg-white p-2 rounded-lg border border-slate-200">
+                  <div class="text-[10px] text-slate-500 font-bold">1 a 2 unidades</div>
+                  <div class="font-extrabold text-slate-700 mt-0.5">Tarifa Oficial</div>
+                </div>
+                <div class="bg-white p-2 rounded-lg border border-slate-200">
+                  <div class="text-[10px] text-slate-500 font-bold">3 a 5 unidades</div>
+                  <div class="font-extrabold text-emerald-700 mt-0.5">Hasta -10% B2B</div>
+                </div>
+                <div class="bg-white p-2 rounded-lg border border-slate-200">
+                  <div class="text-[10px] text-slate-500 font-bold">+6 unidades</div>
+                  <div class="font-extrabold text-crimson mt-0.5">Precio Contrato</div>
+                </div>
+              </div>
+            </div>
 
-          <!-- Botón de Presupuesto Formal -->
-          <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs border-t border-slate-100">
-            <button onclick="alert('Generando presupuesto formal en formato PDF con validez de 15 días...')"
-              class="text-slate-600 hover:text-crimson font-bold flex items-center gap-1.5 transition">
-              <span class="material-symbols-outlined text-sm">picture_as_pdf</span>
-              <span>Descargar Presupuesto Formal Proforma</span>
-            </button>
+            <!-- Botones de Acción para Visitante -->
+            <div class="space-y-2 pt-1">
+              <button onclick="openProductConsultModal()"
+                class="w-full btn-crimson text-sm font-extrabold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 shadow-md transition">
+                <span class="material-symbols-outlined text-lg text-amber-300">mail</span>
+                <span>Solicitar Cotización Inmediata para este Artículo</span>
+              </button>
+              
+              <div class="grid grid-cols-2 gap-2 pt-1 text-xs">
+                <a href="preview-tienda.html"
+                  class="bg-slate-800 hover:bg-slate-900 text-white font-bold py-2.5 px-3 rounded-lg flex items-center justify-center gap-1.5 transition text-center">
+                  <span class="material-symbols-outlined text-sm">login</span>
+                  <span>Iniciar Sesión B2B</span>
+                </a>
+                <button onclick="openProductConsultModal()"
+                  class="bg-white hover:bg-slate-100 text-slate-800 font-bold py-2.5 px-3 rounded-lg border border-slate-300 flex items-center justify-center gap-1.5 transition text-center">
+                  <span class="material-symbols-outlined text-sm text-crimson">app_registration</span>
+                  <span>Alta de Empresa</span>
+                </button>
+              </div>
+            </div>
 
-            <span class="text-slate-400 text-[11px]">
-              Envío Gratuito aplicado al superar 75 € neto
-            </span>
           </div>
 
         </div>
@@ -609,7 +700,121 @@
       const activeBtn = document.getElementById('tabBtn-' + tabName);
       activeBtn.className = "px-6 py-3.5 text-xs font-extrabold border-b-2 border-crimson text-crimson bg-white flex items-center gap-2";
     }
+
+    // ==========================================
+    // SISTEMA DE PRECIOS PRIVADOS B2B
+    // ==========================================
+    let b2bRole = localStorage.getItem('pedregosa_b2b_role') || 'guest';
+
+    function setB2BRole(role) {
+      b2bRole = role;
+      localStorage.setItem('pedregosa_b2b_role', role);
+
+      const btnGuest = document.getElementById('btnRoleGuest');
+      const btnClient = document.getElementById('btnRoleClient');
+
+      if (role === 'guest') {
+        document.body.classList.remove('b2b-client-mode');
+        document.body.classList.add('b2b-guest-mode');
+        if (btnGuest) {
+          btnGuest.className = 'px-2 py-0.5 rounded font-bold transition bg-amber-500 text-slate-950 flex items-center gap-1 shadow-2xs';
+        }
+        if (btnClient) {
+          btnClient.className = 'px-2 py-0.5 rounded font-semibold text-slate-300 hover:text-white transition flex items-center gap-1';
+        }
+      } else {
+        document.body.classList.remove('b2b-guest-mode');
+        document.body.classList.add('b2b-client-mode');
+        if (btnGuest) {
+          btnGuest.className = 'px-2 py-0.5 rounded font-semibold text-slate-300 hover:text-white transition flex items-center gap-1';
+        }
+        if (btnClient) {
+          btnClient.className = 'px-2 py-0.5 rounded font-bold transition bg-emerald-500 text-white flex items-center gap-1 shadow-2xs';
+        }
+      }
+    }
+
+    function openProductConsultModal() {
+      document.getElementById('consultProdTitle').innerText = prod.title;
+      document.getElementById('consultModal').classList.remove('hidden');
+    }
+
+    function closeConsultModal() {
+      document.getElementById('consultModal').classList.add('hidden');
+    }
+
+    function submitConsultForm(e) {
+      e.preventDefault();
+      alert('¡Solicitud de cotización B2B enviada con éxito!\n\nUn gestor comercial de Pedregosa revisará la cotización para "' + prod.title + '" y te responderá en menos de 2 horas laborables.');
+      closeConsultModal();
+    }
+
+    // Inicializar estado B2B al cargar
+    setB2BRole(b2bRole);
   </script>
+
+  <!-- ========================================== -->
+  <!-- MODAL DE CONSULTA DE PRECIO & ACCESO B2B   -->
+  <!-- ========================================== -->
+  <div id="consultModal" onclick="if(event.target === this) closeConsultModal()"
+    class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative">
+      <button onclick="closeConsultModal()"
+        class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 transition">
+        <span class="material-symbols-outlined text-2xl">close</span>
+      </button>
+
+      <div class="flex items-center gap-2 text-crimson mb-3">
+        <span class="material-symbols-outlined text-2xl">lock_person</span>
+        <h3 class="text-base font-extrabold text-slate-900">Tarifa B2B Privada &middot; Consultar</h3>
+      </div>
+
+      <div class="bg-slate-50 p-3 rounded-lg border border-slate-200 mb-4 text-xs">
+        <div class="text-[10px] text-slate-400 font-bold uppercase">Artículo Seleccionado:</div>
+        <div id="consultProdTitle" class="font-extrabold text-slate-900 mt-0.5 line-clamp-2">Destructora Fellowes AutoMax 100M</div>
+      </div>
+
+      <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+        Los precios netos oficiales están reservados a empresas, administraciones públicas y autónomos con cuenta activa en Pedregosa.
+      </p>
+
+      <form onsubmit="submitConsultForm(event)" class="space-y-3 text-xs">
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Empresa / Razón Social o CIF:</label>
+          <input type="text" required placeholder="Ej: B12345678 o Nombre Empresa"
+            class="w-full bg-white border border-slate-300 rounded-lg p-2 text-xs font-semibold focus:border-crimson outline-none">
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Email Profesional:</label>
+            <input type="email" required placeholder="compras@empresa.com"
+              class="w-full bg-white border border-slate-300 rounded-lg p-2 text-xs focus:border-crimson outline-none">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Teléfono Directo:</label>
+            <input type="tel" required placeholder="600 000 000"
+              class="w-full bg-white border border-slate-300 rounded-lg p-2 text-xs focus:border-crimson outline-none">
+          </div>
+        </div>
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Unidades estimadas:</label>
+          <input type="number" min="1" value="1"
+            class="w-24 bg-white border border-slate-300 rounded-lg p-2 text-xs font-bold focus:border-crimson outline-none">
+        </div>
+
+        <button type="submit"
+          class="w-full btn-crimson font-extrabold py-2.5 rounded-lg flex items-center justify-center gap-1.5 shadow-sm mt-2">
+          <span class="material-symbols-outlined text-base">send</span>
+          <span>Solicitar Cotización Inmediata</span>
+        </button>
+      </form>
+
+      <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+        <span>¿Ya tienes clave comercial?</span>
+        <a href="preview-tienda.html" class="font-bold text-crimson hover:underline">Acceso Clientes B2B</a>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
