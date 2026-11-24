@@ -356,11 +356,11 @@ Web: https://www.infopixel.es | Contacto: info@infopixel.es
 </div>
 </div>
 <!-- Controls: Arrows -->
-<button aria-label="Anterior slide" class="absolute top-1/2 left-3 -translate-y-1/2 w-10 h-10 rounded-full bg-slate-900/60 hover:bg-slate-900/90 text-white backdrop-blur-md flex items-center justify-center border border-white/20 transition-all opacity-80 group-hover:opacity-100 shadow-md focus:outline-none z-10" id="hero-prev-btn">
-<span class="material-symbols-outlined text-lg">chevron_left</span>
+<button type="button" aria-label="Anterior slide" class="absolute top-1/2 left-3 -translate-y-1/2 w-10 h-10 rounded-full bg-slate-900/80 hover:bg-primary text-white backdrop-blur-md flex items-center justify-center border border-white/20 transition-all opacity-90 group-hover:opacity-100 shadow-xl focus:outline-none z-30 cursor-pointer pointer-events-auto active:scale-90" id="hero-prev-btn" onclick="prevHeroSlide(event)">
+<span class="material-symbols-outlined text-lg pointer-events-none select-none">chevron_left</span>
 </button>
-<button aria-label="Siguiente slide" class="absolute top-1/2 right-3 -translate-y-1/2 w-10 h-10 rounded-full bg-slate-900/60 hover:bg-slate-900/90 text-white backdrop-blur-md flex items-center justify-center border border-white/20 transition-all opacity-80 group-hover:opacity-100 shadow-md focus:outline-none z-10" id="hero-next-btn">
-<span class="material-symbols-outlined text-lg">chevron_right</span>
+<button type="button" aria-label="Siguiente slide" class="absolute top-1/2 right-3 -translate-y-1/2 w-10 h-10 rounded-full bg-slate-900/80 hover:bg-primary text-white backdrop-blur-md flex items-center justify-center border border-white/20 transition-all opacity-90 group-hover:opacity-100 shadow-xl focus:outline-none z-30 cursor-pointer pointer-events-auto active:scale-90" id="hero-next-btn" onclick="nextHeroSlide(event)">
+<span class="material-symbols-outlined text-lg pointer-events-none select-none">chevron_right</span>
 </button>
 <!-- Controls: Indicators / Dots -->
 <div class="absolute top-4 right-4 flex items-center gap-1.5 bg-slate-950/50 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 z-10" id="hero-dots">
@@ -1501,15 +1501,23 @@ Web: https://www.infopixel.es | Contacto: info@infopixel.es
       if (autoPlayTimer) clearInterval(autoPlayTimer);
     }
 
-    if (nextBtn && prevBtn) {
-      nextBtn.addEventListener('click', () => {
-        showSlide(currentIndex + 1);
-        startAutoPlay();
-      });
-      prevBtn.addEventListener('click', () => {
-        showSlide(currentIndex - 1);
-        startAutoPlay();
-      });
+    window.prevHeroSlide = function(e) {
+      if (e) { e.preventDefault(); e.stopPropagation(); }
+      showSlide(currentIndex - 1);
+      startAutoPlay();
+    };
+
+    window.nextHeroSlide = function(e) {
+      if (e) { e.preventDefault(); e.stopPropagation(); }
+      showSlide(currentIndex + 1);
+      startAutoPlay();
+    };
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', window.nextHeroSlide);
+    }
+    if (prevBtn) {
+      prevBtn.addEventListener('click', window.prevHeroSlide);
     }
 
     dots.forEach((dot, idx) => {
@@ -1754,12 +1762,12 @@ Web: https://www.infopixel.es | Contacto: info@infopixel.es
           <span class="material-symbols-outlined text-[14px] text-slate-400 group-hover:text-primary group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
         </a>
 
-        <a href="index.html" class="ped-demo-link p-2.5 rounded-lg border border-slate-200 bg-slate-50 hover:border-primary hover:bg-primary/5 transition flex items-center justify-between group">
+        <a href="preview-carrusel.html" class="ped-demo-link p-2.5 rounded-lg border border-slate-200 bg-slate-50 hover:border-primary hover:bg-primary/5 transition flex items-center justify-between group">
           <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-emerald-600 text-[18px]">sync</span>
+            <span class="material-symbols-outlined text-emerald-600 text-[18px]">view_carousel</span>
             <div>
-              <div class="font-bold text-slate-900">V3: Carrusel Slider Dinámico</div>
-              <div class="text-[10px] text-slate-500">Rotador de gamas de producto</div>
+              <div class="font-bold text-slate-900">V3: Slider Superior a Toda Página</div>
+              <div class="text-[10px] text-slate-500">Slide completo rotativo 4 pilares</div>
             </div>
           </div>
           <span class="material-symbols-outlined text-[14px] text-slate-400 group-hover:text-primary group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
@@ -1801,7 +1809,7 @@ Web: https://www.infopixel.es | Contacto: info@infopixel.es
           <span class="font-semibold text-slate-800 flex items-center gap-2">
             <span class="material-symbols-outlined text-sm text-primary">view_carousel</span> Slider Superior Hero
           </span>
-          <input type="checkbox" id="toggle-hero-slider" class="ped-module-toggle accent-primary w-4 h-4 cursor-pointer" data-target="#hero-square-slider, #hero-stitch, .hero-sq-slide, #hero-square-slides" checked/>
+          <input type="checkbox" id="toggle-hero-slider" class="ped-module-toggle accent-primary w-4 h-4 cursor-pointer" data-target="#hero-carousel-container, #hero-square-slider, #hero-stitch, #hero-slider-section, .hero-sq-slide" checked/>
         </label>
 
         <label class="flex items-center justify-between p-2 rounded-lg bg-slate-50 border border-slate-200 cursor-pointer hover:bg-slate-100 transition">

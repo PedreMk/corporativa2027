@@ -127,7 +127,7 @@ if (defined('ABSPATH') && !current_user_can('manage_options')) {
           <span class="font-semibold text-slate-800 flex items-center gap-2">
             <span class="material-symbols-outlined text-sm text-primary">view_carousel</span> Slider Superior Hero
           </span>
-          <input type="checkbox" id="toggle-hero-slider" class="ped-module-toggle accent-primary w-4 h-4 cursor-pointer" data-target="#hero-square-slider, #hero-stitch, .hero-sq-slide, #hero-square-slides" checked/>
+          <input type="checkbox" id="toggle-hero-slider" class="ped-module-toggle accent-primary w-4 h-4 cursor-pointer" data-target="#hero-slider-section, #hero-carousel-container, #hero-square-slider, #hero-stitch, .hero-sq-slide" checked/>
         </label>
 
         <label class="flex items-center justify-between p-2 rounded-lg bg-slate-50 border border-slate-200 cursor-pointer hover:bg-slate-100 transition">
