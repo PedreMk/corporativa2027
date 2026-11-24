@@ -1,7 +1,7 @@
 <?php
 /**
  * Footer corporativo unificado - Pedregosa Corporativa 3.0
- * Desarrollado por CHRISTOPHE PALMIERO (www.infopixel.es - info@infopixel.es)
+ * Diseñado y desarrollado por INFOPIXEL STUDIO (www.infopixel.es - info@infopixel.es)
  */
 if (!defined('ABSPATH')) exit;
 ?>
@@ -92,10 +92,7 @@ if (!defined('ABSPATH')) exit;
         <a class="hover:text-slate-800 transition-colors" href="<?php echo esc_url(home_url('/politica-de-calidad/')); ?>">Calidad y Medio Ambiente</a>
       </div>
 
-      <!-- Créditos Web -->
-      <div class="text-[11px] text-slate-400">
-        <a href="https://www.infopixel.es" target="_blank" rel="noopener" class="text-slate-500 hover:text-primary transition-colors">www.infopixel.es</a>
-      </div>
+      <!-- Plantilla creada por INFOPIXEL STUDIO (Créditos técnicos integrados en metadatos y código) -->
     </div>
   </footer>
 

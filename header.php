@@ -1,7 +1,7 @@
 <?php
 /**
  * Header corporativo unificado - Pedregosa Corporativa 3.0
- * Desarrollado por CHRISTOPHE PALMIERO (www.infopixel.es - info@infopixel.es)
+ * Diseñado y desarrollado por INFOPIXEL STUDIO (www.infopixel.es - info@infopixel.es)
  */
 if (!defined('ABSPATH')) exit;
 ?>
@@ -10,6 +10,10 @@ if (!defined('ABSPATH')) exit;
 <head>
   <meta charset="<?php bloginfo('charset'); ?>"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <!-- Autoría Técnica Oficial (No visible en pantalla) -->
+  <meta name="author" content="INFOPIXEL STUDIO - www.infopixel.es"/>
+  <meta name="creator" content="INFOPIXEL STUDIO"/>
+  <meta name="developer" content="INFOPIXEL STUDIO (www.infopixel.es)"/>
   <?php wp_head(); ?>
   
   <link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri(); ?>/assets/img/favicon.png"/>
