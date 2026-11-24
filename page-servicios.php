@@ -49,7 +49,7 @@ $servicios = [
         'badge_color' => 'bg-primary-container',
         'title' => 'Consumibles, Impresoras y Pago por Copia',
         'subtitle' => 'El mayor catálogo de tóner, tinta y consumibles en Andalucía. Especialistas en flotas gestionadas HP Managed y Xerox con ahorro demostrado de hasta un 30% en costes de impresión.',
-        'hero_image' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDJeUxGQfPQmUPmoOLRInQNtwan1tBtU2u-QV8-6fxsBHacLRdzc2WVQEumZNxeK8BeCHkRtn1wtC7m7QHGxHd_GGRbQVjLRQ0_NQ-odQ4cKb6CFkodp6mf5anIs-b292LIkzYQmtb0le8830w30s5bt0c3rqnrkFqKwKuwjjBMzieF0NYylIXOUgAY9aS9MfXOOKnoy-ijRjQmC-eUp7W43h5BhPiIki2ENDaK6XWU_gazs0jC_Gkb6A',
+        'hero_image' => '<?php echo get_template_directory_uri(); ?>/assets/img/tecnico-impresora-encuadrado.jpg',
         'highlight_stat' => 'Stock permanente de +10.000 referencias',
         'features' => [
             [

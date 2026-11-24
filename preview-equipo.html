@@ -1401,7 +1401,7 @@
         <span class="material-symbols-outlined text-amber-300 text-2xl">calculate</span>
         <div>
           <h3 class="font-extrabold text-sm leading-tight text-white">Calculadora de Ahorro en Coste por Copia</h3>
-          <p class="text-[11px] text-white/80">Flotas Gestionadas Oficiales HP &amp; Brother con Mantenimiento</p>
+          <p class="text-[11px] text-white/80">Flotas Profesionales de Impresión Gestionada con Mantenimiento Integral</p>
         </div>
       </div>
       <button type="button" class="ped-close-calc text-white/80 hover:text-white transition cursor-pointer p-1">
@@ -1469,7 +1469,7 @@
           <span id="calc-traditional-cost" class="font-bold text-slate-700 line-through">155 €/mes</span>
         </div>
         <div class="flex items-center justify-between text-xs">
-          <span class="text-slate-500">Coste en modalidad Pago por Copia HP/Brother:</span>
+          <span class="text-slate-500">Coste en modalidad Pago por Copia Homologado:</span>
           <span id="calc-pedregosa-cost" class="font-bold text-emerald-600 text-sm">98 €/mes</span>
         </div>
         <div class="pt-2.5 border-t border-slate-200 flex items-center justify-between">
@@ -1890,7 +1890,7 @@ Teléfono: 954 36 80 11`;
   if (openCalcBtn) openCalcBtn.addEventListener("click", openCalc);
 
   // Escuchar cualquier botón "Auditar Coste por Copia" en la web
-  document.querySelectorAll(".ped-open-calc-btn, [data-open-calc='true']").forEach(btn => {
+  document.querySelectorAll(".ped-open-calc, .ped-open-calc-btn, [data-open-calc='true'], #ped-open-calculator-btn").forEach(btn => {
     btn.addEventListener("click", (e) => {
       e.preventDefault();
       openCalc();
@@ -2019,7 +2019,7 @@ PARÁMETROS AUDITADOS EN CALCULADORA:
 - Tipo de impresión: ${modeStr}
 - Ahorro anual estimado por la herramienta: ${savingStr}
 
-Por favor, envíenme una propuesta formal comparativa de flotas gestionadas HP / Brother.`);
+Por favor, envíenme una propuesta formal comparativa de flotas y servicios gestionados de impresión.`);
 
       setTimeout(() => {
         window.location.href = `mailto:pedidos@pedregosa.es?subject=${subject}&body=${body}`;

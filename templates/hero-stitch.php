@@ -73,7 +73,7 @@ $slides = [
         'btn2_text'    => 'Ver Consumibles e Impresoras',
         'btn2_url'     => esc_url(home_url('/consumibles-e-impresoras/')),
         'tags'         => ['Facturación Exacta por Copia', 'Reposición Automática de Tóner', 'Soporte In Situ'],
-        'img_src'      => 'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&fit=crop&w=1000&q=80',
+        'img_src'      => $theme_uri . '/assets/img/tecnico-impresora-encuadrado.jpg',
         'fallback_img' => 'http://pedregosa-30.local/wp-content/uploads/2026/03/FACHADA-CALLE-GRAMIL-8-1030x433.jpg',
         'card_badge'   => 'AUDITORÍA SIN COSTE &bull; FLOTAS MPS',
         'card_title'   => 'Parque de Multifuncionales Profesionales',
