@@ -85,7 +85,7 @@ if (!defined('ABSPATH')) exit;
     <div class="max-w-[1440px] mx-auto px-4 md:px-8 mt-12 pt-6 border-t border-slate-border flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
       <p>&copy; <?php echo date('Y'); ?> Pedregosa S.L.U. &bull; Todos los derechos reservados.</p>
       
-      <div class="flex flex-wrap items-center gap-4">
+      <div class="flex flex-wrap items-center gap-4 md:pr-24 relative z-10">
         <a class="hover:text-slate-800 transition-colors" href="<?php echo esc_url(home_url('/aviso-legal/')); ?>">Aviso Legal</a>
         <a class="hover:text-slate-800 transition-colors" href="<?php echo esc_url(home_url('/politica-privacidad/')); ?>">Política de Privacidad</a>
         <a class="hover:text-slate-800 transition-colors" href="<?php echo esc_url(home_url('/politica-de-cookies/')); ?>">Cookies</a>
