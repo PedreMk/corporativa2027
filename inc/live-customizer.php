@@ -267,24 +267,44 @@ if (defined('ABSPATH') && !current_user_can('manage_options')) {
       </button>
     </div>
 
-    <!-- Cuerpo del selector de departamento -->
+        <!-- Cuerpo del selector de departamento -->
     <div class="p-4 bg-slate-50 space-y-3">
-      <p class="text-xs text-slate-600">
-        ¿En qué podemos ayudarte? Selecciona el canal correspondiente:
+      <p class="text-xs text-slate-600 font-medium">
+        ¿En qué podemos ayudarte? Selecciona el canal directo:
       </p>
 
+      <!-- Rectángulo Destacado Principal: Contacto Directo WhatsApp B2B -->
+      <a href="https://wa.me/34624825868?text=Hola,%20deseo%20contactar%20por%20WhatsApp%20con%20Pedregosa" target="_blank" rel="noopener" class="block p-3.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white shadow-md hover:shadow-lg transition-all group">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 fill-current text-white" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.41 1.56 1.56 2.41 3.63 2.41 5.83s-.85 4.27-2.41 5.83a8.21 8.21 0 0 1-5.82 2.41c-1.5 0-2.97-.39-4.27-1.14l-.31-.18-3.12.82.83-3.04-.2-.32a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.53c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.01-1.24-.74-.66-1.24-1.48-1.39-1.73-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08 0 1.22.89 2.41 1.02 2.58.12.17 1.76 2.69 4.27 3.77.6.26 1.07.41 1.43.53.6.19 1.15.16 1.59.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.17-.48-.29Z"/></svg>
+            </div>
+            <div>
+              <div class="text-[10px] font-bold uppercase tracking-wider text-white/90">Escribir por WhatsApp</div>
+              <div class="text-base font-extrabold text-white tracking-wide flex items-center gap-1.5 leading-tight">
+                <span>+34 624 82 58 68</span>
+                <span class="inline-block w-2 h-2 rounded-full bg-white animate-pulse"></span>
+              </div>
+              <div class="text-[10px] text-white/80">Atención directa para pedidos y consultas</div>
+            </div>
+          </div>
+          <span class="material-symbols-outlined text-white text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+        </div>
+      </a>
+
       <!-- Opción 1: Pedidos B2B y Empresas -->
-      <a href="https://wa.me/34954368011?text=Hola,%20solicito%20presupuesto%20o%20informaci%C3%B3n%20para%20pedidos%20B2B" target="_blank" rel="noopener" class="block p-3 rounded-xl bg-white border border-slate-200 hover:border-[#25D366] hover:shadow-md transition group">
+      <a href="https://wa.me/34624825868?text=Hola,%20solicito%20presupuesto%20o%20informaci%C3%B3n%20para%20pedidos%20B2B" target="_blank" rel="noopener" class="block p-3 rounded-xl bg-white border border-slate-200 hover:border-[#25D366] hover:shadow-md transition group">
         <div class="flex items-start gap-3">
           <div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5">
             <span class="material-symbols-outlined text-[18px]">business_center</span>
           </div>
-          <div>
+          <div class="flex-1">
             <div class="font-bold text-xs text-slate-900 group-hover:text-emerald-600 transition-colors">
               Pedidos y Presupuestos B2B
             </div>
             <div class="text-[11px] text-slate-500 mt-0.5">
-              Empresas, colegios y suministros generales
+              Empresas, centros educativos y suministros
             </div>
             <div class="text-[10px] text-primary font-bold mt-1 flex items-center gap-1">
               <span class="material-symbols-outlined text-[12px]">mail</span> pedidos@pedregosa.es
@@ -294,17 +314,17 @@ if (defined('ABSPATH') && !current_user_can('manage_options')) {
       </a>
 
       <!-- Opción 2: Licitaciones y Concursos Públicos -->
-      <a href="https://wa.me/34954368011?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20licitaci%C3%B3n,%20pliego%20o%20acuerdo%20marco" target="_blank" rel="noopener" class="block p-3 rounded-xl bg-white border border-slate-200 hover:border-[#25D366] hover:shadow-md transition group">
+      <a href="https://wa.me/34624825868?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20licitaci%C3%B3n,%20pliego%20o%20acuerdo%20marco" target="_blank" rel="noopener" class="block p-3 rounded-xl bg-white border border-slate-200 hover:border-sky-500 hover:shadow-md transition group">
         <div class="flex items-start gap-3">
           <div class="w-8 h-8 rounded-lg bg-sky-50 text-sky-600 flex items-center justify-center flex-shrink-0 mt-0.5">
             <span class="material-symbols-outlined text-[18px]">gavel</span>
           </div>
-          <div>
+          <div class="flex-1">
             <div class="font-bold text-xs text-slate-900 group-hover:text-sky-600 transition-colors">
               Mesa de Licitaciones &amp; Concursos
             </div>
             <div class="text-[11px] text-slate-500 mt-0.5">
-              Organismos públicos, pliegos y FACe
+              Organismos públicos, pliegos y contratación
             </div>
             <div class="text-[10px] text-sky-600 font-bold mt-1 flex items-center gap-1">
               <span class="material-symbols-outlined text-[12px]">mail</span> concurso@pedregosa.es
@@ -313,12 +333,19 @@ if (defined('ABSPATH') && !current_user_can('manage_options')) {
         </div>
       </a>
 
-      <!-- Teléfono directo -->
-      <div class="pt-2 border-t border-slate-200 flex items-center justify-between text-[11px] text-slate-500">
-        <span class="flex items-center gap-1">
-          <span class="material-symbols-outlined text-[14px] text-primary">call</span> 954 36 80 11
-        </span>
-        <span class="text-[10px] text-emerald-600 font-bold">L-V 8:30 a 17:30</span>
+      <!-- Teléfono directo & Horario Oficial -->
+      <div class="pt-2.5 border-t border-slate-200 flex flex-col gap-1.5 text-[11px] text-slate-500">
+        <div class="flex items-center justify-between">
+          <a href="tel:954368011" class="flex items-center gap-1 font-bold text-slate-800 hover:text-primary transition-colors">
+            <span class="material-symbols-outlined text-[15px] text-primary">call</span>
+            <span>Tel: 954 36 80 11</span>
+          </a>
+          <span class="text-[10px] text-slate-400">Sede Central Sevilla</span>
+        </div>
+        <div class="text-[10px] text-emerald-700 font-semibold flex items-center gap-1">
+          <span class="material-symbols-outlined text-[13px]">schedule</span>
+          <span>L-J: 8:30-14:30 / 15:30-17:30 &bull; V: 8:00-15:00</span>
+        </div>
       </div>
 
     </div>
