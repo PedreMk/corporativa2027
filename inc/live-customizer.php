@@ -55,58 +55,47 @@ if (defined('ABSPATH') && !current_user_can('manage_options')) {
     <div class="space-y-2.5">
       <div class="flex items-center justify-between">
         <span class="font-extrabold uppercase tracking-wider text-[11px] text-slate-800">1. Versiones de Portada</span>
-        <span class="text-[10px] bg-red-100 text-primary font-bold px-2 py-0.5 rounded">5 Modelos</span>
+        <span class="text-[10px] bg-red-100 text-primary font-bold px-2 py-0.5 rounded">4 Modelos</span>
       </div>
       <div class="grid grid-cols-1 gap-2">
-        <a href="http://pedregosa-30.local/" class="ped-demo-link p-2.5 rounded-lg border border-slate-200 bg-slate-50 hover:border-primary hover:bg-primary/5 transition flex items-center justify-between group">
+        <a href="<?php echo esc_url(home_url('/')); ?>" class="ped-demo-link p-2.5 rounded-lg border border-slate-200 bg-slate-50 hover:border-primary hover:bg-primary/5 transition flex items-center justify-between group">
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined text-primary text-[18px]">apartment</span>
             <div>
-              <div class="font-bold text-slate-900">V1: WordPress Corporativa 3.0</div>
-              <div class="text-[10px] text-slate-500">Tema activo oficial con catálogo</div>
+              <div class="font-bold text-slate-900">V1: Corporativa 3.0 Oficial</div>
+              <div class="text-[10px] text-slate-500">Tema activo oficial con selector Hero dual</div>
             </div>
           </div>
           <span class="material-symbols-outlined text-[14px] text-slate-400 group-hover:text-primary group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
         </a>
 
-        <a href="http://pedregosa-30.local/preview-casos.html" class="ped-demo-link p-2.5 rounded-lg border border-slate-200 bg-slate-50 hover:border-primary hover:bg-primary/5 transition flex items-center justify-between group">
+        <a href="<?php echo esc_url(home_url('/preview-carrusel.html')); ?>" class="ped-demo-link p-2.5 rounded-lg border border-slate-200 bg-slate-50 hover:border-primary hover:bg-primary/5 transition flex items-center justify-between group">
           <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-sky-600 text-[18px]">view_carousel</span>
+            <span class="material-symbols-outlined text-emerald-600 text-[18px]">view_carousel</span>
             <div>
-              <div class="font-bold text-slate-900">V2: Casos de Éxito &amp; LinkedIn</div>
-              <div class="text-[10px] text-slate-500">Con 5 sliders interactivos</div>
+              <div class="font-bold text-slate-900">V2: Slider Superior a Toda Página</div>
+              <div class="text-[10px] text-slate-500">Slide completo rotativo 4 pilares</div>
             </div>
           </div>
           <span class="material-symbols-outlined text-[14px] text-slate-400 group-hover:text-primary group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
         </a>
 
-        <a href="http://pedregosa-30.local/preview-carrusel.html" class="ped-demo-link p-2.5 rounded-lg border border-slate-200 bg-slate-50 hover:border-primary hover:bg-primary/5 transition flex items-center justify-between group">
-          <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-emerald-600 text-[18px]">sync</span>
-            <div>
-              <div class="font-bold text-slate-900">V3: Carrusel Slider Dinámico</div>
-              <div class="text-[10px] text-slate-500">Rotador de gamas de producto</div>
-            </div>
-          </div>
-          <span class="material-symbols-outlined text-[14px] text-slate-400 group-hover:text-primary group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
-        </a>
-
-        <a href="http://pedregosa-30.local/preview-equipo.html" class="ped-demo-link p-2.5 rounded-lg border border-slate-200 bg-slate-50 hover:border-primary hover:bg-primary/5 transition flex items-center justify-between group">
+        <a href="<?php echo esc_url(home_url('/preview-equipo.html')); ?>" class="ped-demo-link p-2.5 rounded-lg border border-slate-200 bg-slate-50 hover:border-primary hover:bg-primary/5 transition flex items-center justify-between group">
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined text-green-600 text-[18px]">chat</span>
             <div>
-              <div class="font-bold text-slate-900">V4: Equipo &amp; WhatsApp B2B</div>
-              <div class="text-[10px] text-slate-500">Enfoque a conversión rápida</div>
+              <div class="font-bold text-slate-900">V3: Equipo &amp; WhatsApp B2B</div>
+              <div class="text-[10px] text-slate-500">Enfoque a conversión rápida y cercanía</div>
             </div>
           </div>
           <span class="material-symbols-outlined text-[14px] text-slate-400 group-hover:text-primary group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
         </a>
 
-        <a href="http://pedregosa-30.local/preview-premium.html" class="ped-demo-link p-2.5 rounded-lg border border-slate-200 bg-slate-50 hover:border-primary hover:bg-primary/5 transition flex items-center justify-between group">
+        <a href="<?php echo esc_url(home_url('/preview-premium.html')); ?>" class="ped-demo-link p-2.5 rounded-lg border border-slate-200 bg-slate-50 hover:border-primary hover:bg-primary/5 transition flex items-center justify-between group">
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined text-purple-600 text-[18px]">workspace_premium</span>
             <div>
-              <div class="font-bold text-slate-900">V5: Corporativa Minimal Premium</div>
+              <div class="font-bold text-slate-900">V4: Corporativa Minimal Premium</div>
               <div class="text-[10px] text-slate-500">Sobria y ejecutiva de alta gama</div>
             </div>
           </div>
@@ -114,6 +103,8 @@ if (defined('ABSPATH') && !current_user_can('manage_options')) {
         </a>
       </div>
     </div>
+
+    
 
     <!-- 2. INTERRUPTORES DE MÓDULOS (ON / OFF EN VIVO) -->
     <div class="space-y-3 pt-3 border-t border-slate-200">

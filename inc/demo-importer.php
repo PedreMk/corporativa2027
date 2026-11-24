@@ -191,7 +191,7 @@ function pedregosa_render_demo_importer_page() {
             'name'        => 'Demo 3: Proyectos Audiovisuales & Tecnología Educativa',
             'desc'        => 'Enfoque visual en integración de pantallas interactivas, aulas digitales, salas de juntas y proyectos llave en mano.',
             'badge'       => 'Proyectos Llave en Mano',
-            'preview_url' => home_url('/preview-casos.html'),
+            'preview_url' => home_url('/preview-carrusel.html'),
         ],
         'mps' => [
             'name'        => 'Demo 4: Impresión Gestionada & Coste por Copia (MPS)',
