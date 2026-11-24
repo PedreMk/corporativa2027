@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Catálogos B2B (Pedregosa Corporativa 3.0)
- * Desarrollado por CHRISTOPHE PALMIERO (www.infopixel.es - info@infopixel.es)
+ * Diseñado y desarrollado por INFOPIXEL STUDIO (www.infopixel.es - info@infopixel.es)
  */
 if (!defined('ABSPATH')) exit;
 
