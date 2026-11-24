@@ -35,12 +35,13 @@ if (!defined('ABSPATH')) exit;
       <div class="flex flex-col gap-3">
         <span class="font-bold text-sm text-slate-900 uppercase tracking-wider">Soluciones y Servicios</span>
         <ul class="flex flex-col gap-2 text-xs text-slate-600">
-          <li><a class="hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/informatica/')); ?>">Informática y Software IT</a></li>
-          <li><a class="hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/consumibles-e-impresoras/')); ?>">Consumibles e Impresoras</a></li>
+          <li><a class="hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/consumibles/')); ?>">Consumibles de Impresión y Tóner</a></li>
+          <li><a class="hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/impresion-gestionada/')); ?>">Sistemas de Impresión y Coste por Copia</a></li>
+          <li><a class="hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/informatica/')); ?>">Informática y Servidores IT</a></li>
           <li><a class="hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/audiovisuales/')); ?>">Audiovisuales e Integración</a></li>
           <li><a class="hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/mobiliario-e-instalaciones-de-oficina/')); ?>">Mobiliario e Instalaciones</a></li>
           <li><a class="hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/equipos-educat/')); ?>">Tecnología Educativa</a></li>
-          <li><a class="hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/artes-graficas-y-regalos/')); ?>">Artes Gráficas y Merchandising</a></li>
+          <li><a class="hover:text-primary transition-colors font-bold text-primary" href="<?php echo esc_url(home_url('/acuerdos-licitaciones/')); ?>">Acuerdos y Licitaciones</a></li>
         </ul>
       </div>
 

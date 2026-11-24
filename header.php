@@ -127,6 +127,10 @@ if (!defined('ABSPATH')) exit;
         <a class="px-3.5 py-2 rounded-lg hover:text-primary transition-colors <?php echo is_page('catalogos') ? 'text-primary font-bold' : ''; ?>" href="<?php echo esc_url(home_url('/catalogos/')); ?>">
           Catálogos
         </a>
+
+        <a class="px-3.5 py-2 rounded-lg hover:text-primary transition-colors <?php echo is_page('acuerdos-licitaciones') ? 'text-primary font-bold' : ''; ?>" href="<?php echo esc_url(home_url('/acuerdos-licitaciones/')); ?>">
+          Acuerdos y Licitaciones
+        </a>
         
         <!-- Dropdown Servicios -->
         <div class="relative group">
