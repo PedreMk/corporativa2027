@@ -41,7 +41,7 @@ if (!defined('ABSPATH')) exit;
           <li><a class="hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/audiovisuales/')); ?>">Audiovisuales e Integración</a></li>
           <li><a class="hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/mobiliario-e-instalaciones-de-oficina/')); ?>">Mobiliario e Instalaciones</a></li>
           <li><a class="hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/equipos-educat/')); ?>">Tecnología Educativa</a></li>
-          <li><a class="hover:text-primary transition-colors font-bold text-primary" href="<?php echo esc_url(home_url('/acuerdos-licitaciones/')); ?>">Acuerdos y Licitaciones</a></li>
+          <li><a class="hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/acuerdos-licitaciones/')); ?>">Acuerdos y Licitaciones</a></li>
         </ul>
       </div>
 
