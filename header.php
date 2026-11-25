@@ -128,17 +128,40 @@ if (!defined('ABSPATH')) exit;
           Quiénes Somos
         </a>
 
-        <a class="px-3.5 py-2 rounded-lg hover:text-primary transition-colors <?php echo is_page('catalogos') ? 'text-primary font-bold' : ''; ?>" href="<?php echo esc_url(home_url('/catalogos/')); ?>">
-          Catálogos
-        </a>
+        <!-- Dropdown Productos (5 niveles inferiores) -->
+        <div class="relative group">
+          <button type="button" class="px-3.5 py-2 rounded-lg hover:text-primary transition-colors flex items-center gap-1 font-semibold cursor-pointer <?php echo (is_page('catalogos') || is_page('mobiliario-de-oficina') || is_page('consumibles-e-impresoras')) ? 'text-primary font-bold' : ''; ?>">
+            <span>Productos</span>
+            <span class="material-symbols-outlined text-[17px] text-slate-400 group-hover:text-primary transition-transform group-hover:rotate-180">expand_more</span>
+          </button>
 
-        <a class="px-3.5 py-2 rounded-lg hover:text-primary transition-colors <?php echo is_page('acuerdos-licitaciones') ? 'text-primary font-bold' : ''; ?>" href="<?php echo esc_url(home_url('/acuerdos-licitaciones/')); ?>">
-          Acuerdos y Licitaciones
-        </a>
+          <div class="absolute top-full left-0 w-72 bg-white rounded-xl border border-slate-border shadow-xl p-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50">
+            <a class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-slate-50 text-xs font-bold text-slate-800 hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/consumibles-e-impresoras/')); ?>">
+              <span class="w-8 h-8 rounded-lg bg-red-50 text-primary flex items-center justify-center"><span class="material-symbols-outlined text-[18px]">print</span></span>
+              <div><span>Coste por Copia</span><span class="block text-[10px] text-slate-400 font-normal">Flotas MPS y auditoría de impresión</span></div>
+            </a>
+            <a class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-slate-50 text-xs font-bold text-slate-800 hover:text-primary transition-colors" href="https://oficina.pedregosa.es" target="_blank" rel="noopener">
+              <span class="w-8 h-8 rounded-lg bg-amber-50 text-amber-700 flex items-center justify-center"><span class="material-symbols-outlined text-[18px]">inventory_2</span></span>
+              <div><span>Material de Oficina</span><span class="block text-[10px] text-slate-400 font-normal">Papelería corporativa y suministro diario</span></div>
+            </a>
+            <a class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-slate-50 text-xs font-bold text-slate-800 hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/mobiliario-de-oficina/')); ?>">
+              <span class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center"><span class="material-symbols-outlined text-[18px]">chair_alt</span></span>
+              <div><span>Mobiliario de Oficina</span><span class="block text-[10px] text-slate-400 font-normal">Mesas Emobok, sit-stand y sillería</span></div>
+            </a>
+            <a class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-slate-50 text-xs font-bold text-slate-800 hover:text-primary transition-colors" href="<?php echo esc_url(pedregosa_shop_url()); ?>" target="_blank" rel="noopener">
+              <span class="w-8 h-8 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center"><span class="material-symbols-outlined text-[18px]">devices</span></span>
+              <div><span>Tecnología</span><span class="block text-[10px] text-slate-400 font-normal">Hardware IT, portátiles y servidores</span></div>
+            </a>
+            <a class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-slate-50 text-xs font-bold text-slate-800 hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/catalogos/')); ?>">
+              <span class="w-8 h-8 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center"><span class="material-symbols-outlined text-[18px]">menu_book</span></span>
+              <div><span>Catálogos</span><span class="block text-[10px] text-slate-400 font-normal">Tarifas oficiales y fichas PDF 2026</span></div>
+            </a>
+          </div>
+        </div>
         
         <!-- Dropdown Servicios -->
         <div class="relative group">
-          <button class="px-3.5 py-2 rounded-lg hover:text-primary transition-colors flex items-center gap-1 font-semibold cursor-pointer">
+          <button type="button" class="px-3.5 py-2 rounded-lg hover:text-primary transition-colors flex items-center gap-1 font-semibold cursor-pointer">
             <span>Servicios</span>
             <span class="material-symbols-outlined text-[17px] text-slate-400 group-hover:text-primary transition-transform group-hover:rotate-180">expand_more</span>
           </button>
@@ -171,8 +194,12 @@ if (!defined('ABSPATH')) exit;
           </div>
         </div>
 
+        <a class="px-3.5 py-2 rounded-lg hover:text-primary transition-colors <?php echo is_page('acuerdos-licitaciones') ? 'text-primary font-bold' : ''; ?>" href="<?php echo esc_url(home_url('/acuerdos-licitaciones/')); ?>">
+          Licitaciones B2G
+        </a>
+
         <a class="px-3.5 py-2 rounded-lg hover:text-primary transition-colors text-slate-600" href="<?php echo esc_url(home_url('/#ventajas-b2b')); ?>">
-          Ventajas B2B
+          Ventajas B2C
         </a>
       </nav>
 
