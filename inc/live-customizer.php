@@ -946,13 +946,15 @@ Teléfono: 954 36 80 11`;
     // Si imprime en A3, las copias A3 consumen el doble de tóner/superficie (~1.35x en entorno mixto)
     if (currentFormat === "a3") {
       tradRate *= 1.35;
-      mpsRate *= 1.32;
     }
 
+    const adminTrend = "<?php echo esc_js(get_theme_mod('ped_cpc_saving_trend', 'medium')); ?>";
+    const trendPctMap = { low: 0.20, medium: 0.32, high: 0.45 };
+    const trendPct = trendPctMap[adminTrend] || 0.32;
+
     const tradMonthly = Math.round(vol * tradRate);
-    const pedMonthly = Math.round(vol * mpsRate);
-    const annualSaving = Math.round((tradMonthly - pedMonthly) * 12);
-    const savingPercent = Math.round(((tradMonthly - pedMonthly) / tradMonthly) * 100);
+    const pedMonthly = Math.max(10, Math.round(tradMonthly * (1 - trendPct)));
+    const annualSaving = Math.max(120, (tradMonthly - pedMonthly) * 12);
 
     if (tradCostEl) tradCostEl.innerText = tradMonthly.toLocaleString("es-ES") + " €/mes";
     if (pedCostEl) pedCostEl.innerText = pedMonthly.toLocaleString("es-ES") + " €/mes";

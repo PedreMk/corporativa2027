@@ -278,5 +278,33 @@ function pedregosa_customize_register($wp_customize) {
             'type'    => 'url',
         ]);
     }
+
+    // =========================================================================
+    // 6. CALCULADORA COSTE POR COPIA (TERMÓMETRO SOLO ADMIN)
+    // =========================================================================
+    $wp_customize->add_section('ped_section_cpc', [
+        'title'       => __('🌡️ Calculadora Coste por Copia (Termómetro)', 'pedregosa-corporate'),
+        'description' => __('Control interno (invisible para el cliente) para ajustar la tendencia de ahorro mostrada en la calculadora.<br><br><strong>Números usados en el cálculo:</strong><br>• B/N (85%): <strong>0,028 €/pág</strong> tradicional<br>• Mixto Color (40%): <strong>0,052 €/pág</strong> tradicional<br>• Intensivo Color (70%): <strong>0,088 €/pág</strong> tradicional<br>• Formato A3 departamental: recargo <strong>×1,18 (+18%)</strong><br>• Tendencias: <strong>Bajo = 20%</strong> · <strong>Medio = 32%</strong> · <strong>Alto = 45%</strong> de ahorro sobre el coste tradicional.', 'pedregosa-corporate'),
+        'panel'       => 'pedregosa_options_panel',
+        'priority'    => 60,
+    ]);
+
+    $wp_customize->add_setting('ped_cpc_saving_trend', [
+        'default'           => 'medium',
+        'sanitize_callback' => function ($val) {
+            return in_array($val, ['low', 'medium', 'high'], true) ? $val : 'medium';
+        },
+    ]);
+
+    $wp_customize->add_control('ped_cpc_saving_trend', [
+        'label'   => __('Termómetro de Tendencia de Ahorro', 'pedregosa-corporate'),
+        'section' => 'ped_section_cpc',
+        'type'    => 'radio',
+        'choices' => [
+            'low'    => __('🔵 Ahorro Bajo (~20% sobre coste tradicional)', 'pedregosa-corporate'),
+            'medium' => __('🟢 Ahorro Medio (~32% - Estándar recomendado)', 'pedregosa-corporate'),
+            'high'   => __('🔥 Ahorro Alto (~45% - Flotas antiguas / alto consumo)', 'pedregosa-corporate'),
+        ],
+    ]);
 }
 add_action('customize_register', 'pedregosa_customize_register');
