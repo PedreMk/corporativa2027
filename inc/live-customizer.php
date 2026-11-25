@@ -4,7 +4,7 @@
  * Barra de Configuración Rápida en vivo para demostraciones a clientes
  * Desarrollado por CHRISTOPHE PALMIERO (www.infopixel.es - info@infopixel.es)
  */
-if (defined('ABSPATH') && !current_user_can('manage_options')) {
+if (!defined('ABSPATH') || !is_user_logged_in() || !current_user_can('manage_options')) {
     return;
 }
 ?>

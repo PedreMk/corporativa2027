@@ -35,11 +35,12 @@ if (!defined('ABSPATH')) exit;
       <div class="flex flex-col gap-3">
         <span class="font-bold text-sm text-slate-900 uppercase tracking-wider">Soluciones y Servicios</span>
         <ul class="flex flex-col gap-2 text-xs text-slate-600">
-          <li><a class="hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/consumibles/')); ?>">Consumibles de Impresión y Tóner</a></li>
-          <li><a class="hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/impresion-gestionada/')); ?>">Sistemas de Impresión y Coste por Copia</a></li>
+          <li><a class="hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/consumibles-e-impresoras/')); ?>">Consumibles de Impresión y Tóner</a></li>
+          <li><a class="hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/consumibles-e-impresoras/')); ?>">Sistemas de Impresión y Coste por Copia</a></li>
           <li><a class="hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/informatica/')); ?>">Informática y Servidores IT</a></li>
           <li><a class="hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/audiovisuales/')); ?>">Audiovisuales e Integración</a></li>
-          <li><a class="hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/mobiliario-e-instalaciones-de-oficina/')); ?>">Mobiliario e Instalaciones</a></li>
+          <li><a class="hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/mobiliario-de-oficina/')); ?>">Mobiliario de Oficina y Mesas</a></li>
+          <li><a class="hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/mobiliario-e-instalaciones-de-oficina/')); ?>">Instalaciones y Proyectos</a></li>
           <li><a class="hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/equipos-educat/')); ?>">Tecnología Educativa</a></li>
           <li><a class="hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/acuerdos-licitaciones/')); ?>">Acuerdos y Licitaciones</a></li>
         </ul>
@@ -97,8 +98,8 @@ if (!defined('ABSPATH')) exit;
   </footer>
 
 <?php
-// Barra de configuración rápida en vivo, demos y widget multicanal (Sólo administradores identificados)
-if (current_user_can('manage_options') && file_exists(get_template_directory() . '/inc/live-customizer.php')) {
+// Barra de configuración rápida en vivo, demos y widget multicanal (Sólo administradores identificados y conectados)
+if (is_user_logged_in() && current_user_can('manage_options') && file_exists(get_template_directory() . '/inc/live-customizer.php')) {
     include get_template_directory() . '/inc/live-customizer.php';
 }
 ?>
