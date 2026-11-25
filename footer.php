@@ -36,7 +36,7 @@ if (!defined('ABSPATH')) exit;
         <span class="font-bold text-sm text-slate-900 uppercase tracking-wider">Soluciones y Servicios</span>
         <ul class="flex flex-col gap-2 text-xs text-slate-600">
           <li><a class="hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/consumibles-e-impresoras/')); ?>">Consumibles de Impresión y Tóner</a></li>
-          <li><a class="hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/consumibles-e-impresoras/')); ?>">Sistemas de Impresión y Coste por Copia</a></li>
+          <li><a class="hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/coste-por-copia/')); ?>">Sistemas de Impresión y Coste por Copia</a></li>
           <li><a class="hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/informatica/')); ?>">Informática y Servidores IT</a></li>
           <li><a class="hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/audiovisuales/')); ?>">Audiovisuales e Integración</a></li>
           <li><a class="hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/mobiliario-de-oficina/')); ?>">Mobiliario de Oficina y Mesas</a></li>

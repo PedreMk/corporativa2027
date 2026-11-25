@@ -130,13 +130,13 @@ if (!defined('ABSPATH')) exit;
 
         <!-- Dropdown Productos (5 niveles inferiores) -->
         <div class="relative group">
-          <button type="button" class="px-3.5 py-2 rounded-lg hover:text-primary transition-colors flex items-center gap-1 font-semibold cursor-pointer <?php echo (is_page('catalogos') || is_page('mobiliario-de-oficina') || is_page('consumibles-e-impresoras')) ? 'text-primary font-bold' : ''; ?>">
+          <button type="button" class="px-3.5 py-2 rounded-lg hover:text-primary transition-colors flex items-center gap-1 font-semibold cursor-pointer <?php echo (is_page('catalogos') || is_page('mobiliario-de-oficina') || is_page('coste-por-copia')) ? 'text-primary font-bold' : ''; ?>">
             <span>Productos</span>
             <span class="material-symbols-outlined text-[17px] text-slate-400 group-hover:text-primary transition-transform group-hover:rotate-180">expand_more</span>
           </button>
 
           <div class="absolute top-full left-0 w-72 bg-white rounded-xl border border-slate-border shadow-xl p-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50">
-            <a class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-slate-50 text-xs font-bold text-slate-800 hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/consumibles-e-impresoras/')); ?>">
+            <a class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-slate-50 text-xs font-bold text-slate-800 hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/coste-por-copia/')); ?>">
               <span class="w-8 h-8 rounded-lg bg-red-50 text-primary flex items-center justify-center"><span class="material-symbols-outlined text-[18px]">print</span></span>
               <div><span>Coste por Copia</span><span class="block text-[10px] text-slate-400 font-normal">Flotas MPS y auditoría de impresión</span></div>
             </a>
