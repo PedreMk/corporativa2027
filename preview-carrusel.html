@@ -561,19 +561,18 @@
             Estructura operativa diseñada para dar respuesta rigurosa y experta en cada línea de aprovisionamiento de su organización.
           </p>
 </div>
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
 <!-- División 1: Impresión -->
 <article class="border border-slate-200 rounded-xl overflow-hidden bg-white flex flex-col justify-between hover:border-slate-400 hover:shadow-md transition-all">
 <div>
 <!-- Visual Header with Icon -->
-<div class="p-7 border-b border-slate-100 flex items-start justify-between bg-gradient-to-r from-red-50/60 to-slate-50/50">
+<div class="p-7 border-b border-slate-100 flex items-center justify-between gap-4 bg-gradient-to-r from-red-50/60 to-slate-50/50">
 <div>
 <span class="text-[11px] font-bold tracking-widest text-primary uppercase">División Técnica</span>
 <h3 class="text-xl sm:text-2xl font-extrabold text-slate-950 mt-1">COSTE POR COPIA</h3>
-
 </div>
-<div class="w-12 h-12 rounded-lg bg-white border border-slate-200 flex items-center justify-center p-2 shadow-xs">
-<svg class="w-7 h-7" fill="none" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<div class="w-16 h-16 rounded-xl bg-white border border-slate-200 flex items-center justify-center p-2.5 shadow-sm shrink-0">
+<svg class="w-11 h-11" fill="none" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
 <path d="M22 42C17.58 42 14 45.58 14 50V68C14 70.21 15.79 72 18 72H24V86H76V72H82C84.21 72 86 70.21 86 68V50C86 45.58 82.42 42 78 42H70V28C70 25.79 68.21 24 66 24H34C31.79 24 30 25.79 30 28V42H22Z" fill="#b50524"></path>
 <path d="M32 30H68V42H32V30Z" fill="#ffffff"></path>
 <rect fill="#ffffff" height="8" rx="2" width="48" x="26" y="58"></rect>
@@ -603,20 +602,30 @@
 </div>
 </div>
 <div class="p-7 pt-0 mt-4">
-<button type="button" class="inline-flex items-center justify-between w-full py-3 px-4 text-xs font-bold text-white bg-primary-container hover:bg-crimson-deep rounded-lg transition-colors ped-open-calc-btn cursor-pointer shadow-xs" data-open-calc="true"><span>Auditar Coste por Copia</span><span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+<button type="button" class="inline-flex items-center justify-between w-full py-2.5 px-3.5 text-xs font-bold text-white bg-primary-container hover:bg-crimson-deep rounded-xl transition-all ped-open-calc-btn cursor-pointer shadow-sm group" data-open-calc="true">
+<span class="flex items-center gap-2.5">
+<span class="w-7 h-7 rounded-lg bg-white/15 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[17px]">calculate</span>
+</span>
+<span>Auditar Coste por Copia</span>
+</span>
+<span class="material-symbols-outlined text-base group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</button>
 </div>
 </article>
-<!-- División 2: Oficina y Mobiliario -->
-<article class="border border-slate-200 rounded-xl overflow-hidden bg-white flex flex-col justify-between hover:border-slate-400 hover:shadow-md transition-all">
+
+<!-- División 2 (Columna Central en 2 Filas): Mobiliario de Oficina + Material de Oficina -->
+<div class="flex flex-col gap-5 h-full">
+<!-- Fila 1: Mobiliario de Oficina -->
+<article class="flex-1 border border-slate-200 rounded-xl overflow-hidden bg-white flex flex-col justify-between hover:border-slate-400 hover:shadow-md transition-all">
 <div>
-<!-- Visual Header with Icon -->
-<div class="p-7 border-b border-slate-100 flex items-start justify-between bg-gradient-to-r from-emerald-50/60 to-slate-50/50">
+<div class="p-5 border-b border-slate-100 flex items-center justify-between gap-3 bg-gradient-to-r from-emerald-50/60 to-slate-50/50">
 <div>
-<span class="text-[11px] font-bold tracking-widest text-emerald-800 uppercase">División Espacios de Trabajo</span>
-<h3 class="text-xl sm:text-2xl font-extrabold text-slate-950 mt-1">MOBILIARIO &amp; OFICINA</h3>
+<span class="text-[10px] font-bold tracking-widest text-emerald-800 uppercase">División Espacios</span>
+<h3 class="text-lg sm:text-xl font-extrabold text-slate-950 mt-0.5">MOBILIARIO DE OFICINA</h3>
 </div>
-<div class="w-12 h-12 rounded-lg bg-white border border-slate-200 flex items-center justify-center p-2 shadow-xs">
-<svg class="w-7 h-7" fill="none" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<div class="w-14 h-14 rounded-xl bg-white border border-slate-200 flex items-center justify-center p-2 shadow-sm shrink-0">
+<svg class="w-9 h-9" fill="none" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
 <path d="M34 22C34 16.48 38.48 12 44 12H56C61.52 12 66 16.48 66 22V36C66 41.52 61.52 46 56 46H44C38.48 46 34 41.52 34 36V22Z" fill="#1b7340"></path>
 <path d="M28 32H34V46H28C26.34 46 25 44.66 25 43V35C25 33.34 26.34 32 28 32Z" fill="#1b7340"></path>
 <path d="M66 32H72C73.66 32 75 33.34 75 35V43C75 44.66 73.66 46 72 46H66V32Z" fill="#1b7340"></path>
@@ -626,49 +635,77 @@
 </svg>
 </div>
 </div>
-<!-- Content -->
-<div class="p-7">
-<p class="text-sm text-slate-600 leading-relaxed">
-  Proyectos integrales de mobiliario para oficinas modernas, empresas y sector público. Distribuidor oficial Emobok: mesas operativas, regulables en altura (sit-stand), despachos ejecutivos, sillería ergonómica, medición in situ y planos 2D/3D con montaje propio homologado en Andalucía.
+<div class="p-5 py-3.5">
+<p class="text-xs sm:text-[13px] text-slate-600 leading-relaxed">
+Distribuidor oficial Emobok: mesas operativas, sit-stand, dirección, sillería ergonómica, planos 2D/3D y montaje propio homologado.
 </p>
-<div class="mt-6 space-y-2.5 text-xs text-slate-700 font-medium">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-badge-accent-emerald text-base">check_circle</span>
-<span>Proyectos y planos 2D/3D de distribución sin coste</span>
-</div>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-badge-accent-emerald text-base">check_circle</span>
-<span>Distribuidor oficial Emobok: mesas operativas, bench y sit-stand</span>
-</div>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-badge-accent-emerald text-base">check_circle</span>
-<span>Sillería de alta ergonomía certificada y servicio de montaje propio</span>
 </div>
 </div>
-</div>
-</div>
-<div class="p-7 pt-0 mt-4 space-y-2">
-<a class="inline-flex items-center justify-between w-full py-2.5 px-4 text-xs font-bold text-white bg-primary-container hover:bg-crimson-deep rounded-lg transition-colors shadow-xs group" href="mobiliario-de-oficina.html">
+<div class="p-5 pt-0">
+<a class="inline-flex items-center justify-between w-full py-2.5 px-3.5 text-xs font-bold text-white bg-primary-container hover:bg-crimson-deep rounded-xl transition-all shadow-sm group" href="mobiliario-de-oficina.html">
+<span class="flex items-center gap-2.5">
+<span class="w-7 h-7 rounded-lg bg-white/15 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[17px]">chair_alt</span>
+</span>
 <span>Ver División Mobiliario &amp; Mesas</span>
-<span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
-</a>
-<a class="inline-flex items-center justify-between w-full py-2 px-4 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 hover:text-slate-900 rounded-lg transition-colors group" href="https://oficina.pedregosa.es" rel="noopener" target="_blank">
-<span>Tienda Material de Oficina</span>
-<span class="material-symbols-outlined text-sm text-slate-500 group-hover:text-primary transition-colors">open_in_new</span>
+</span>
+<span class="material-symbols-outlined text-base group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
 </a>
 </div>
 </article>
+
+<!-- Fila 2: Material de Oficina -->
+<article class="flex-1 border border-slate-200 rounded-xl overflow-hidden bg-white flex flex-col justify-between hover:border-slate-400 hover:shadow-md transition-all">
+<div>
+<div class="p-5 border-b border-slate-100 flex items-center justify-between gap-3 bg-gradient-to-r from-amber-50/70 to-slate-50/50">
+<div>
+<span class="text-[10px] font-bold tracking-widest text-amber-800 uppercase">Suministro Diario</span>
+<h3 class="text-lg sm:text-xl font-extrabold text-slate-950 mt-0.5">MATERIAL DE OFICINA</h3>
+</div>
+<div class="w-14 h-14 rounded-xl bg-white border border-slate-200 flex items-center justify-center p-2 shadow-sm shrink-0">
+<svg class="w-9 h-9" fill="none" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<rect x="20" y="20" width="24" height="60" rx="3" fill="#d97706"></rect>
+<rect x="25" y="28" width="14" height="10" rx="1.5" fill="#ffffff"></rect>
+<circle cx="32" cy="68" r="4" fill="#ffffff"></circle>
+<rect x="48" y="26" width="20" height="54" rx="3" fill="#b45309"></rect>
+<rect x="52" y="34" width="12" height="8" rx="1.5" fill="#ffffff"></rect>
+<circle cx="58" cy="68" r="3.5" fill="#ffffff"></circle>
+<path d="M74 30L82 22L87 27L79 35L74 30Z" fill="#f59e0b"></path>
+<rect x="72" y="34" width="7" height="46" rx="2" fill="#92400e"></rect>
+</svg>
+</div>
+</div>
+<div class="p-5 py-3.5">
+<p class="text-xs sm:text-[13px] text-slate-600 leading-relaxed">
+Papelería corporativa, papel Navigator, Rey y Xerox, archivo, destrucción y consumibles diarios con tarifas B2B y entrega 24/48h.
+</p>
+</div>
+</div>
+<div class="p-5 pt-0">
+<a class="inline-flex items-center justify-between w-full py-2.5 px-3.5 text-xs font-bold text-white bg-primary-container hover:bg-crimson-deep rounded-xl transition-all shadow-sm group" href="https://oficina.pedregosa.es" rel="noopener" target="_blank">
+<span class="flex items-center gap-2.5">
+<span class="w-7 h-7 rounded-lg bg-white/15 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[17px]">inventory_2</span>
+</span>
+<span>Tienda Material de Oficina</span>
+</span>
+<span class="material-symbols-outlined text-base group-hover:translate-x-0.5 transition-transform">open_in_new</span>
+</a>
+</div>
+</article>
+</div>
+
 <!-- División 3: Tecnología -->
 <article class="border border-slate-200 rounded-xl overflow-hidden bg-white flex flex-col justify-between hover:border-slate-400 hover:shadow-md transition-all">
 <div>
 <!-- Visual Header with Icon -->
-<div class="p-7 border-b border-slate-100 flex items-start justify-between bg-gradient-to-r from-sky-50/60 to-slate-50/50">
+<div class="p-7 border-b border-slate-100 flex items-center justify-between gap-4 bg-gradient-to-r from-sky-50/60 to-slate-50/50">
 <div>
 <span class="text-[11px] font-bold tracking-widest text-sky-800 uppercase">División IT &amp; Sistemas</span>
 <h3 class="text-2xl font-extrabold text-slate-950 mt-1">TECNOLOGÍA</h3>
 </div>
-<div class="w-12 h-12 rounded-lg bg-white border border-slate-200 flex items-center justify-center p-2 shadow-xs">
-<svg class="w-7 h-7" fill="none" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<div class="w-16 h-16 rounded-xl bg-white border border-slate-200 flex items-center justify-center p-2.5 shadow-sm shrink-0">
+<svg class="w-11 h-11" fill="none" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#0284c7" height="60" rx="3" width="18" x="16" y="20"></rect>
 <circle cx="25" cy="66" fill="#ffffff" r="3.5"></circle>
 <path d="M38 23C38 21.34 39.34 20 41 20H81C82.66 20 84 21.34 84 23V58C84 59.66 82.66 61 81 61H41C39.34 61 38 59.66 38 58V23Z" fill="#0284c7"></path>
@@ -699,9 +736,14 @@
 </div>
 </div>
 <div class="p-7 pt-0 mt-4">
-<a class="inline-flex items-center justify-between w-full py-3 px-4 text-xs font-bold text-white bg-primary-container hover:bg-crimson-deep rounded-lg transition-colors shadow-xs group" href="https://tienda.pedregosa.es" rel="noopener" target="_blank">
+<a class="inline-flex items-center justify-between w-full py-2.5 px-3.5 text-xs font-bold text-white bg-primary-container hover:bg-crimson-deep rounded-xl transition-all shadow-sm group" href="https://tienda.pedregosa.es" rel="noopener" target="_blank">
+<span class="flex items-center gap-2.5">
+<span class="w-7 h-7 rounded-lg bg-white/15 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[17px]">devices</span>
+</span>
 <span>Acceder a Tienda IT</span>
-<span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">open_in_new</span>
+</span>
+<span class="material-symbols-outlined text-base group-hover:translate-x-0.5 transition-transform">open_in_new</span>
 </a>
 </div>
 </article>
