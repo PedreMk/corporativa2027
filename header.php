@@ -59,19 +59,8 @@ if (!defined('ABSPATH')) exit;
     body { font-family: 'Plus Jakarta Sans', sans-serif; }
     .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
   </style>
-<!-- Google Tag Manager (Pedregosa Corporativa) -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5CNQZPV6');</script>
-<!-- End Google Tag Manager -->
 </head>
-<body <?php body_class('bg-white text-on-surface antialiased selection:bg-primary-container selection:text-white'); ?>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CNQZPV6"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->>
+<body <?php body_class('bg-white text-on-surface antialiased selection:bg-primary-container selection:text-white'); ?>>
 <?php wp_body_open(); ?>
 
   <!-- ==========================================
