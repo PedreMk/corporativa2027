@@ -265,201 +265,238 @@
 
     <!-- ========================================== -->
     <!-- ========================================== -->
-    <!-- 4. BARRA DE NAVEGACIÓN Y MEGA-MENÚ B2B (TAXONOMÍA SOLUZION ERP) -->
+        <!-- ========================================== -->
+    <!-- 4. BARRA DE NAVEGACIÓN, CATEGORÍAS Y SUBMENÚS DESPLEGABLES -->
     <!-- ========================================== -->
     <nav class="border-t border-b border-slate-200 bg-white relative z-40">
-      <div
-        class="max-w-7xl mx-auto px-4 flex items-center justify-between py-1 text-xs font-bold tracking-tight">
+      <div class="max-w-7xl mx-auto px-4 flex items-center justify-between py-1.5 text-xs font-bold tracking-tight gap-2">
 
-        <!-- BOTÓN DESPLEGABLE: TODAS LAS CATEGORÍAS CON MEGA-MENÚ DE 3 COLUMNAS -->
-        <div class="relative group" id="megaMenuContainer">
+        <!-- BOTÓN DESPLEGABLE: CATEGORÍAS (1 LÍNEA + MEGA-MENÚ COMPLETO) -->
+        <div class="relative group shrink-0" id="megaMenuContainer">
           <button type="button" id="megaMenuTrigger"
-            class="bg-slate-900 hover:bg-crimson text-white px-3.5 py-2 rounded-lg flex items-center gap-2 transition font-extrabold shadow-xs cursor-pointer">
+            class="bg-slate-900 hover:bg-crimson text-white px-3.5 py-2 rounded-lg flex items-center gap-1.5 transition font-extrabold shadow-xs cursor-pointer whitespace-nowrap">
             <span class="material-symbols-outlined text-base">menu</span>
-            <span>TODAS LAS CATEGORÍAS</span>
+            <span>CATEGORÍAS</span>
             <span class="material-symbols-outlined text-sm group-hover:rotate-180 transition-transform">expand_more</span>
           </button>
 
-          <!-- MEGA MENÚ DESPLEGABLE (3 COLUMNAS DEL ERP SOLUZION) -->
+          <!-- MEGA MENÚ DESPLEGABLE (3 COLUMNAS EQUILIBRADAS) -->
           <div id="megaMenuDropdown"
-            class="absolute top-full left-0 mt-1 w-[880px] bg-white rounded-2xl shadow-2xl border border-slate-200 p-6 hidden group-hover:block transition-all duration-200 z-50">
+            class="absolute top-full left-0 mt-1 w-[860px] bg-white rounded-2xl shadow-2xl border border-slate-200 p-6 hidden group-hover:block transition-all duration-200 z-50">
             
             <div class="grid grid-cols-3 gap-6 text-xs divide-x divide-slate-100">
               
-              <!-- COLUMNA 1: AUDIOVISUALES, CONSUMIBLES, IMPRESORAS Y ESCÁNER -->
+              <!-- COLUMNA 1: ORDENADORES & AUDIOVISUALES -->
               <div class="space-y-5 pr-4">
-                
-                <!-- AUDIOVISUALES -->
-                <div>
-                  <h3 class="font-black text-slate-900 text-xs uppercase tracking-wider flex items-center gap-1.5 pb-1 border-b border-slate-100 mb-2">
-                    <span class="material-symbols-outlined text-sm text-crimson">tv</span>
-                    <span>AUDIOVISUALES</span>
-                  </h3>
-                  <ul class="space-y-1 text-slate-600 text-[11px] font-medium">
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Monitores para PC</a></li>
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Monitores Y TV Portátiles</a></li>
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Proyector De TV</a></li>
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Televisores</a></li>
-                  </ul>
-                </div>
-
-                <!-- CONSUMIBLES -->
-                <div>
-                  <h3 class="font-black text-slate-900 text-xs uppercase tracking-wider flex items-center gap-1.5 pb-1 border-b border-slate-100 mb-2">
-                    <span class="material-symbols-outlined text-sm text-amber-600">print</span>
-                    <span>CONSUMIBLES</span>
-                  </h3>
-                  <ul class="space-y-1 text-slate-600 text-[11px] font-medium">
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Bote residual</a></li>
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Cartuchos de tinta</a></li>
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block font-bold text-slate-900">Cartuchos de tóner</a></li>
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Fotoconductores</a></li>
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Tambores de impresoras</a></li>
-                  </ul>
-                </div>
-
-                <!-- IMPRESORAS Y ESCANER -->
-                <div>
-                  <h3 class="font-black text-slate-900 text-xs uppercase tracking-wider flex items-center gap-1.5 pb-1 border-b border-slate-100 mb-2">
-                    <span class="material-symbols-outlined text-sm text-sky-600">scanner</span>
-                    <span>IMPRESORAS Y ESCANER</span>
-                  </h3>
-                  <ul class="space-y-1 text-slate-600 text-[11px] font-medium">
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Impresoras 3D</a></li>
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Impresoras de etiquetas</a></li>
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Impresoras de Fotografías</a></li>
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Impresoras de gran formato</a></li>
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Impresoras de inyección</a></li>
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Impresoras de tickets</a></li>
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block font-bold text-slate-900">Impresoras láser</a></li>
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Impresoras multifunción</a></li>
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Impresoras Portátiles</a></li>
-                  </ul>
-                </div>
-
-              </div>
-
-              <!-- COLUMNA 2: PERIFÉRICOS Y ACCESORIOS -->
-              <div class="space-y-5 px-4">
-                <div>
-                  <h3 class="font-black text-slate-900 text-xs uppercase tracking-wider flex items-center gap-1.5 pb-1 border-b border-slate-100 mb-2">
-                    <span class="material-symbols-outlined text-sm text-indigo-600">cable</span>
-                    <span>PERIFÉRICOS Y ACCESORIOS</span>
-                  </h3>
-                  <ul class="space-y-1 text-slate-600 text-[11px] font-medium">
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Alfombrillas</a></li>
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">CDs</a></li>
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Discos duros externos</a></li>
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Discos duros internos</a></li>
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block font-bold text-slate-900">Discos duros sólidos externos SSD</a></li>
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block font-bold text-slate-900">Discos duros sólidos internos SSD</a></li>
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Discos Magneto-Ópticos</a></li>
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">DVDs</a></li>
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Estaciones base para Hdd/Ssd</a></li>
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Ratones</a></li>
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Reposamuñecas</a></li>
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Soportes para CPU</a></li>
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Teclados</a></li>
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Teclados Numéricos</a></li>
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">USB / Unidades flash</a></li>
-                  </ul>
-                </div>
-              </div>
-
-              <!-- COLUMNA 3: ORDENADORES Y PAPELERÍA -->
-              <div class="space-y-6 pl-4">
-                
-                <!-- ORDENADORES -->
                 <div>
                   <h3 class="font-black text-slate-900 text-xs uppercase tracking-wider flex items-center gap-1.5 pb-1 border-b border-slate-100 mb-2">
                     <span class="material-symbols-outlined text-sm text-emerald-600">computer</span>
                     <span>ORDENADORES</span>
                   </h3>
                   <ul class="space-y-1 text-slate-600 text-[11px] font-medium">
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">All-In-One Pcs</a></li>
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Clientes livianos</a></li>
                     <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block font-bold text-slate-900">Ordenadores Portátiles</a></li>
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Pc / Estaciones de trabajo Barebones</a></li>
-                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block font-bold text-slate-900">Pcs / Estaciones de Trabajo</a></li>
+                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block font-bold text-slate-900">PCs / Estaciones de Trabajo</a></li>
+                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">All-In-One PCs</a></li>
+                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Clientes livianos</a></li>
+                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Barebones</a></li>
                     <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Tablets</a></li>
                   </ul>
                 </div>
 
-                <!-- PAPELERÍA (TIENDA DIFERENTE) -->
-                <div class="bg-amber-50/70 border border-amber-200 rounded-xl p-3.5 space-y-2">
-                  <div class="flex items-center justify-between">
-                    <h3 class="font-black text-amber-900 text-xs uppercase tracking-wider flex items-center gap-1.5">
-                      <span class="material-symbols-outlined text-sm text-amber-700">edit_note</span>
-                      <span>PAPELERÍA</span>
-                    </h3>
-                    <span class="bg-amber-200 text-amber-900 text-[9px] font-extrabold px-1.5 py-0.5 rounded">OTRA TIENDA</span>
-                  </div>
-                  <p class="text-[11px] text-slate-600 leading-snug">
-                    Material de oficina general, archivo, mobiliario y papelería corporativa en plataforma dedicada.
-                  </p>
-                  <a href="https://pedregosa.es" target="_blank" rel="noopener"
-                    class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 text-[11px] font-extrabold py-1.5 px-3 rounded-lg flex items-center justify-center gap-1 transition shadow-2xs">
-                    <span>Ir a Tienda de Papelería</span>
-                    <span class="material-symbols-outlined text-xs">open_in_new</span>
-                  </a>
+                <div>
+                  <h3 class="font-black text-slate-900 text-xs uppercase tracking-wider flex items-center gap-1.5 pb-1 border-b border-slate-100 mb-2">
+                    <span class="material-symbols-outlined text-sm text-crimson">tv</span>
+                    <span>AUDIOVISUALES</span>
+                  </h3>
+                  <ul class="space-y-1 text-slate-600 text-[11px] font-medium">
+                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block font-bold text-slate-900">Monitores para PC</a></li>
+                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Monitores y TV Portátiles</a></li>
+                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Proyectores de TV</a></li>
+                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Televisores Profesionales</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- COLUMNA 2: CONSUMIBLES & IMPRESORAS -->
+              <div class="space-y-5 px-4">
+                <div>
+                  <h3 class="font-black text-slate-900 text-xs uppercase tracking-wider flex items-center gap-1.5 pb-1 border-b border-slate-100 mb-2">
+                    <span class="material-symbols-outlined text-sm text-amber-600">print</span>
+                    <span>CONSUMIBLES</span>
+                  </h3>
+                  <ul class="space-y-1 text-slate-600 text-[11px] font-medium">
+                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block font-bold text-slate-900">Cartuchos de tóner</a></li>
+                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Cartuchos de tinta</a></li>
+                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Tambores de impresoras</a></li>
+                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Fotoconductores</a></li>
+                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Botes residuales</a></li>
+                  </ul>
                 </div>
 
+                <div>
+                  <h3 class="font-black text-slate-900 text-xs uppercase tracking-wider flex items-center gap-1.5 pb-1 border-b border-slate-100 mb-2">
+                    <span class="material-symbols-outlined text-sm text-sky-600">scanner</span>
+                    <span>IMPRESORAS Y ESCÁNER</span>
+                  </h3>
+                  <ul class="space-y-1 text-slate-600 text-[11px] font-medium">
+                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block font-bold text-slate-900">Impresoras láser</a></li>
+                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block font-bold text-slate-900">Impresoras multifunción</a></li>
+                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Impresoras de inyección</a></li>
+                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Impresoras gran formato</a></li>
+                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Impresoras de etiquetas / tickets</a></li>
+                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Impresoras Portátiles y 3D</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- COLUMNA 3: PERIFÉRICOS Y ACCESORIOS -->
+              <div class="space-y-4 pl-4">
+                <div>
+                  <h3 class="font-black text-slate-900 text-xs uppercase tracking-wider flex items-center gap-1.5 pb-1 border-b border-slate-100 mb-2">
+                    <span class="material-symbols-outlined text-sm text-indigo-600">cable</span>
+                    <span>PERIFÉRICOS Y ACCESORIOS</span>
+                  </h3>
+                  <ul class="space-y-1 text-slate-600 text-[11px] font-medium">
+                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block font-bold text-slate-900">Discos duros sólidos SSD (Int / Ext)</a></li>
+                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Discos duros HDD (Int / Ext)</a></li>
+                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Estaciones base HDD / SSD</a></li>
+                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block font-bold text-slate-900">Teclados, Ratones y Numéricos</a></li>
+                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">USB / Unidades Flash y CD / DVD</a></li>
+                    <li><a href="#catalogo-it" class="hover:text-crimson hover:translate-x-1 transition-transform inline-block">Alfombrillas, Reposamuñecas y Soportes CPU</a></li>
+                  </ul>
+                </div>
               </div>
 
             </div>
 
-            <!-- PIE DEL MEGA MENÚ -->
-            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
-              <span class="flex items-center gap-1">
-                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                Taxonomía sincronizada automáticamente con SOLUZION ERP
+            <!-- PIE DEL MEGA MENÚ ORIENTADO AL COMPRADOR -->
+            <div class="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-600">
+              <span class="flex items-center gap-1.5 font-semibold">
+                <span class="material-symbols-outlined text-sm text-emerald-600">local_shipping</span>
+                Envío GRATIS en pedidos superiores a 75 € &bull; Entrega 24/48h
               </span>
-              <a href="preview-backoffice.html" class="text-crimson hover:underline font-bold flex items-center gap-1">
-                <span class="material-symbols-outlined text-xs">tune</span>
-                Gestionar Familias y Etiquetas en Backoffice
+              <a href="tel:954368011" class="text-crimson hover:underline font-bold flex items-center gap-1">
+                <span class="material-symbols-outlined text-xs">call</span>
+                Asesoría Directa B2B: 954 36 80 11
               </a>
             </div>
 
           </div>
         </div>
 
-        <!-- ENLACES HORIZONTALES DIRECTOS A LAS 5 FAMILIAS IT + PAPELERÍA -->
-        <div class="flex items-center gap-1 sm:gap-2 overflow-x-auto">
-          <a href="#catalogo-it"
-            class="px-3 py-2 rounded-lg text-slate-800 hover:text-crimson hover:bg-slate-50 transition flex items-center gap-1.5 whitespace-nowrap">
-            <span class="material-symbols-outlined text-base text-slate-400">laptop_mac</span>
-            ORDENADORES
-          </a>
-          <a href="#catalogo-it"
-            class="px-3 py-2 rounded-lg text-slate-800 hover:text-crimson hover:bg-slate-50 transition flex items-center gap-1.5 whitespace-nowrap">
-            <span class="material-symbols-outlined text-base text-slate-400">print</span>
-            CONSUMIBLES
-          </a>
-          <a href="#catalogo-it"
-            class="px-3 py-2 rounded-lg text-slate-800 hover:text-crimson hover:bg-slate-50 transition flex items-center gap-1.5 whitespace-nowrap">
-            <span class="material-symbols-outlined text-base text-slate-400">scanner</span>
-            IMPRESORAS &amp; ESCÁNER
-          </a>
-          <a href="#catalogo-it"
-            class="px-3 py-2 rounded-lg text-slate-800 hover:text-crimson hover:bg-slate-50 transition flex items-center gap-1.5 whitespace-nowrap">
-            <span class="material-symbols-outlined text-base text-slate-400">tv</span>
-            AUDIOVISUALES
-          </a>
-          <a href="#catalogo-it"
-            class="px-3 py-2 rounded-lg text-slate-800 hover:text-crimson hover:bg-slate-50 transition flex items-center gap-1.5 whitespace-nowrap">
-            <span class="material-symbols-outlined text-base text-slate-400">cable</span>
-            PERIFÉRICOS
-          </a>
-          <a href="https://pedregosa.es" target="_blank" rel="noopener"
-            class="px-2.5 py-1.5 rounded-lg text-amber-800 bg-amber-50 hover:bg-amber-100 transition flex items-center gap-1 whitespace-nowrap border border-amber-200 text-[11px]">
-            <span class="material-symbols-outlined text-sm text-amber-600">edit_note</span>
-            PAPELERÍA
-            <span class="text-[9px] bg-amber-200 text-amber-900 px-1 rounded font-bold">2ª web</span>
-          </a>
+        <!-- LAS 5 FAMILIAS IT CON DESPLEGABLE INDIVIDUAL DE SUBCATEGORÍAS -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- 1. ORDENADORES -->
+          <div class="relative group">
+            <a href="#catalogo-it" class="px-2.5 py-2 rounded-lg text-slate-800 hover:text-crimson hover:bg-slate-50 transition flex items-center gap-1 whitespace-nowrap">
+              <span class="material-symbols-outlined text-base text-slate-400 group-hover:text-crimson">laptop_mac</span>
+              <span>ORDENADORES</span>
+              <span class="material-symbols-outlined text-xs text-slate-400 group-hover:rotate-180 transition-transform">expand_more</span>
+            </a>
+            <div class="absolute top-full left-0 w-64 bg-white rounded-xl shadow-xl border border-slate-200 p-3 hidden group-hover:block z-50">
+              <div class="text-[10px] font-extrabold uppercase tracking-wider text-slate-400 px-2 pb-1.5 border-b border-slate-100 mb-1.5">Subfamilias Ordenadores</div>
+              <ul class="space-y-1 text-[11px] font-medium text-slate-700">
+                <li><a href="#catalogo-it" class="block px-2 py-1 rounded hover:bg-red-50 hover:text-crimson font-bold">Ordenadores Portátiles</a></li>
+                <li><a href="#catalogo-it" class="block px-2 py-1 rounded hover:bg-red-50 hover:text-crimson font-bold">PCs / Estaciones de Trabajo</a></li>
+                <li><a href="#catalogo-it" class="block px-2 py-1 rounded hover:bg-red-50 hover:text-crimson">All-In-One PCs</a></li>
+                <li><a href="#catalogo-it" class="block px-2 py-1 rounded hover:bg-red-50 hover:text-crimson">Clientes livianos</a></li>
+                <li><a href="#catalogo-it" class="block px-2 py-1 rounded hover:bg-red-50 hover:text-crimson">Barebones</a></li>
+                <li><a href="#catalogo-it" class="block px-2 py-1 rounded hover:bg-red-50 hover:text-crimson">Tablets</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 2. CONSUMIBLES -->
+          <div class="relative group">
+            <a href="#catalogo-it" class="px-2.5 py-2 rounded-lg text-slate-800 hover:text-crimson hover:bg-slate-50 transition flex items-center gap-1 whitespace-nowrap">
+              <span class="material-symbols-outlined text-base text-slate-400 group-hover:text-crimson">print</span>
+              <span>CONSUMIBLES</span>
+              <span class="material-symbols-outlined text-xs text-slate-400 group-hover:rotate-180 transition-transform">expand_more</span>
+            </a>
+            <div class="absolute top-full left-0 w-60 bg-white rounded-xl shadow-xl border border-slate-200 p-3 hidden group-hover:block z-50">
+              <div class="text-[10px] font-extrabold uppercase tracking-wider text-slate-400 px-2 pb-1.5 border-b border-slate-100 mb-1.5">Subfamilias Consumibles</div>
+              <ul class="space-y-1 text-[11px] font-medium text-slate-700">
+                <li><a href="#catalogo-it" class="block px-2 py-1 rounded hover:bg-red-50 hover:text-crimson font-bold">Cartuchos de tóner</a></li>
+                <li><a href="#catalogo-it" class="block px-2 py-1 rounded hover:bg-red-50 hover:text-crimson">Cartuchos de tinta</a></li>
+                <li><a href="#catalogo-it" class="block px-2 py-1 rounded hover:bg-red-50 hover:text-crimson">Tambores de impresoras</a></li>
+                <li><a href="#catalogo-it" class="block px-2 py-1 rounded hover:bg-red-50 hover:text-crimson">Fotoconductores</a></li>
+                <li><a href="#catalogo-it" class="block px-2 py-1 rounded hover:bg-red-50 hover:text-crimson">Bote residual</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 3. IMPRESORAS -->
+          <div class="relative group">
+            <a href="#catalogo-it" class="px-2.5 py-2 rounded-lg text-slate-800 hover:text-crimson hover:bg-slate-50 transition flex items-center gap-1 whitespace-nowrap">
+              <span class="material-symbols-outlined text-base text-slate-400 group-hover:text-crimson">scanner</span>
+              <span>IMPRESORAS</span>
+              <span class="material-symbols-outlined text-xs text-slate-400 group-hover:rotate-180 transition-transform">expand_more</span>
+            </a>
+            <div class="absolute top-full left-0 w-64 bg-white rounded-xl shadow-xl border border-slate-200 p-3 hidden group-hover:block z-50">
+              <div class="text-[10px] font-extrabold uppercase tracking-wider text-slate-400 px-2 pb-1.5 border-b border-slate-100 mb-1.5">Impresoras y Escáner</div>
+              <ul class="space-y-1 text-[11px] font-medium text-slate-700">
+                <li><a href="#catalogo-it" class="block px-2 py-1 rounded hover:bg-red-50 hover:text-crimson font-bold">Impresoras láser</a></li>
+                <li><a href="#catalogo-it" class="block px-2 py-1 rounded hover:bg-red-50 hover:text-crimson font-bold">Impresoras multifunción</a></li>
+                <li><a href="#catalogo-it" class="block px-2 py-1 rounded hover:bg-red-50 hover:text-crimson">Impresoras de inyección</a></li>
+                <li><a href="#catalogo-it" class="block px-2 py-1 rounded hover:bg-red-50 hover:text-crimson">Impresoras de gran formato</a></li>
+                <li><a href="#catalogo-it" class="block px-2 py-1 rounded hover:bg-red-50 hover:text-crimson">Impresoras de etiquetas / tickets</a></li>
+                <li><a href="#catalogo-it" class="block px-2 py-1 rounded hover:bg-red-50 hover:text-crimson">Impresoras de fotografías</a></li>
+                <li><a href="#catalogo-it" class="block px-2 py-1 rounded hover:bg-red-50 hover:text-crimson">Impresoras Portátiles y 3D</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 4. AUDIOVISUALES -->
+          <div class="relative group">
+            <a href="#catalogo-it" class="px-2.5 py-2 rounded-lg text-slate-800 hover:text-crimson hover:bg-slate-50 transition flex items-center gap-1 whitespace-nowrap">
+              <span class="material-symbols-outlined text-base text-slate-400 group-hover:text-crimson">tv</span>
+              <span>AUDIOVISUALES</span>
+              <span class="material-symbols-outlined text-xs text-slate-400 group-hover:rotate-180 transition-transform">expand_more</span>
+            </a>
+            <div class="absolute top-full left-0 w-60 bg-white rounded-xl shadow-xl border border-slate-200 p-3 hidden group-hover:block z-50">
+              <div class="text-[10px] font-extrabold uppercase tracking-wider text-slate-400 px-2 pb-1.5 border-b border-slate-100 mb-1.5">Subfamilias Audiovisuales</div>
+              <ul class="space-y-1 text-[11px] font-medium text-slate-700">
+                <li><a href="#catalogo-it" class="block px-2 py-1 rounded hover:bg-red-50 hover:text-crimson font-bold">Monitores para PC</a></li>
+                <li><a href="#catalogo-it" class="block px-2 py-1 rounded hover:bg-red-50 hover:text-crimson">Monitores y TV Portátiles</a></li>
+                <li><a href="#catalogo-it" class="block px-2 py-1 rounded hover:bg-red-50 hover:text-crimson">Proyector de TV</a></li>
+                <li><a href="#catalogo-it" class="block px-2 py-1 rounded hover:bg-red-50 hover:text-crimson">Televisores</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 5. PERIFÉRICOS -->
+          <div class="relative group">
+            <a href="#catalogo-it" class="px-2.5 py-2 rounded-lg text-slate-800 hover:text-crimson hover:bg-slate-50 transition flex items-center gap-1 whitespace-nowrap">
+              <span class="material-symbols-outlined text-base text-slate-400 group-hover:text-crimson">cable</span>
+              <span>PERIFÉRICOS</span>
+              <span class="material-symbols-outlined text-xs text-slate-400 group-hover:rotate-180 transition-transform">expand_more</span>
+            </a>
+            <div class="absolute top-full right-0 w-80 bg-white rounded-xl shadow-xl border border-slate-200 p-3 hidden group-hover:block z-50">
+              <div class="text-[10px] font-extrabold uppercase tracking-wider text-slate-400 px-2 pb-1.5 border-b border-slate-100 mb-1.5">Periféricos y Almacenamiento</div>
+              <div class="grid grid-cols-2 gap-2 text-[11px] font-medium text-slate-700">
+                <ul class="space-y-1">
+                  <li><a href="#catalogo-it" class="block px-2 py-1 rounded hover:bg-red-50 hover:text-crimson font-bold">SSD Externos / Int.</a></li>
+                  <li><a href="#catalogo-it" class="block px-2 py-1 rounded hover:bg-red-50 hover:text-crimson">HDD Externos / Int.</a></li>
+                  <li><a href="#catalogo-it" class="block px-2 py-1 rounded hover:bg-red-50 hover:text-crimson">Estaciones HDD/SSD</a></li>
+                  <li><a href="#catalogo-it" class="block px-2 py-1 rounded hover:bg-red-50 hover:text-crimson">USB / Unidades flash</a></li>
+                  <li><a href="#catalogo-it" class="block px-2 py-1 rounded hover:bg-red-50 hover:text-crimson">CDs / DVDs</a></li>
+                </ul>
+                <ul class="space-y-1">
+                  <li><a href="#catalogo-it" class="block px-2 py-1 rounded hover:bg-red-50 hover:text-crimson font-bold">Teclados y Ratones</a></li>
+                  <li><a href="#catalogo-it" class="block px-2 py-1 rounded hover:bg-red-50 hover:text-crimson">Teclados Numéricos</a></li>
+                  <li><a href="#catalogo-it" class="block px-2 py-1 rounded hover:bg-red-50 hover:text-crimson">Alfombrillas</a></li>
+                  <li><a href="#catalogo-it" class="block px-2 py-1 rounded hover:bg-red-50 hover:text-crimson">Reposamuñecas</a></li>
+                  <li><a href="#catalogo-it" class="block px-2 py-1 rounded hover:bg-red-50 hover:text-crimson">Soportes para CPU</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
         </div>
 
         <!-- ACCESOS DESTACADOS DESDE ETIQUETAS CSV: NOVEDADES Y OFERTAS -->
-        <div class="flex items-center gap-1.5 ml-2 shrink-0">
+        <div class="flex items-center gap-1.5 shrink-0">
           <a href="#mas-vendidos"
             class="px-3 py-2 rounded-lg text-emerald-700 bg-emerald-50 hover:bg-emerald-600 hover:text-white border border-emerald-200 transition font-extrabold flex items-center gap-1 whitespace-nowrap shadow-xs">
             <span class="material-symbols-outlined text-base">new_releases</span>
@@ -467,7 +504,7 @@
           </a>
           <a href="#mas-vendidos"
             class="px-3.5 py-2 rounded-lg text-crimson bg-red-100 hover:bg-crimson hover:text-white transition font-extrabold flex items-center gap-1.5 whitespace-nowrap shadow-xs">
-            <span class="material-symbols-outlined text-base animate-bounce">local_fire_department</span>
+            <span class="material-symbols-outlined text-base">local_fire_department</span>
             <span>OFERTAS</span>
           </a>
         </div>
