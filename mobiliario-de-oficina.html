@@ -1,0 +1,967 @@
+<!-- 
+=============================================================================
+PEDREGOSA CORPORATIVA 3.0
+División Mobiliario de Oficina & Mesas de Trabajo Emobok
+Diseño, Arquitectura y Desarrollo Web por INFOPIXEL STUDIO
+Web: https://www.infopixel.es | Contacto: info@infopixel.es
+=============================================================================
+-->
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.png"/>
+  <link rel="shortcut icon" href="assets/img/favicon.ico"/>
+  
+  <!-- SEO & Metadatos Oficiales -->
+  <title>Mobiliario de Oficina y Mesas de Trabajo | Pedregosa S.L. - Distribuidor Emobok</title>
+  <meta name="description" content="Mobiliario de oficina, mesas de trabajo operativas, escritorios regulables en altura sit-stand y despachos de dirección en Sevilla y Andalucía. Distribuidor oficial Emobok. Proyectos 2D/3D y montaje propio."/>
+  <link rel="canonical" href="https://pedremk.github.io/corporativa2027/mobiliario-de-oficina.html"/>
+  
+  <!-- OpenGraph / Redes Sociales -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Mobiliario de Oficina y Mesas de Trabajo | Pedregosa S.L."/>
+  <meta property="og:description" content="Soluciones integrales de mobiliario para oficinas modernas, empresas y sector público. Distribuidor oficial Emobok en Andalucía."/>
+  <meta property="og:image" content="https://pedremk.github.io/corporativa2027/assets/img/portada-emobok.jpg"/>
+  <meta property="og:url" content="https://pedremk.github.io/corporativa2027/mobiliario-de-oficina.html"/>
+  
+  <!-- Tipografía y Google Icons -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#8a0018",
+            "primary-container": "#b50524",
+            "crimson-deep": "#8F031C",
+            "crimson-bright": "#D91638",
+            "inverse-surface": "#0f172a",
+            "on-surface": "#0f172a",
+            "on-surface-variant": "#475569",
+            "slate-border": "#E2E8F0",
+            "slate-subtle": "#F8FAFC",
+            "badge-accent-emerald": "#059669",
+            "badge-accent-blue": "#0284C7"
+          },
+          fontFamily: {
+            sans: ["Plus Jakarta Sans", "system-ui", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    .pattern-grid {
+      background-image: radial-gradient(rgba(15, 23, 42, 0.08) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    .filter-btn.active {
+      background-color: #0f172a;
+      color: #ffffff;
+      border-color: #0f172a;
+    }
+  </style>
+</head>
+<body class="bg-white font-sans text-on-surface antialiased">
+
+  <!-- ================= TOP CORPORATE BAR ================= -->
+  <header class="fixed top-0 w-full z-50 bg-white">
+    <div class="bg-[#0f172a] text-slate-300 border-b border-slate-800 text-[13px] tracking-tight">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-9 flex items-center justify-between">
+        <div class="flex items-center gap-6">
+          <a class="flex items-center gap-2 hover:text-white transition-colors" href="tel:954368011">
+            <span class="material-symbols-outlined text-[15px] text-badge-accent-emerald">call</span>
+            <span class="font-medium text-white">954 36 80 11</span>
+          </a>
+          <span class="text-slate-700 hidden sm:inline">|</span>
+          <a class="hidden sm:flex items-center gap-2 hover:text-white transition-colors text-slate-300" href="mailto:pedidos@pedregosa.es">
+            <span class="material-symbols-outlined text-[15px] text-slate-400">mail</span>
+            <span>pedidos@pedregosa.es</span>
+          </a>
+          <span class="text-slate-700 hidden md:inline">|</span>
+          <span class="hidden md:inline-flex items-center gap-1.5 text-slate-400">
+            <span class="w-1.5 h-1.5 rounded-full bg-badge-accent-emerald"></span>
+            División Mobiliario &bull; Polígono Store (Sevilla)
+          </span>
+        </div>
+        <div class="flex items-center gap-4 text-xs">
+          <a class="inline-flex items-center gap-1 hover:text-white transition-colors text-slate-300" href="https://tienda.pedregosa.es" target="_blank" rel="noopener">
+            <span class="material-symbols-outlined text-[14px] text-sky-400">devices</span>
+            <span>Tienda IT</span>
+          </a>
+          <span class="text-slate-700">|</span>
+          <a class="inline-flex items-center gap-1 hover:text-white transition-colors text-slate-300" href="https://oficina.pedregosa.es" target="_blank" rel="noopener">
+            <span class="material-symbols-outlined text-[14px] text-red-400">desk</span>
+            <span>Tienda Papelería</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN NAVIGATION -->
+    <div class="border-b border-slate-200/80 bg-white/95 backdrop-blur-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+        <a class="flex-shrink-0 py-2" href="index.html">
+          <img alt="Pedregosa S.L." class="h-9 sm:h-10 w-auto object-contain" src="assets/img/logo-pedregosa-tagline.png"/>
+        </a>
+        <nav class="hidden lg:flex items-center gap-6 text-[14px] font-semibold text-slate-700">
+<a class="hover:text-primary transition-colors" href="index.html">Inicio</a>
+<a class="hover:text-primary transition-colors" href="quienes-somos.html">Quiénes Somos</a>
+<div class="relative group">
+  <button type="button" class="inline-flex items-center gap-1 py-2 hover:text-primary transition-colors cursor-pointer">
+    <span>Productos</span>
+    <span class="material-symbols-outlined text-[17px] text-slate-400 group-hover:text-primary transition-transform group-hover:rotate-180">expand_more</span>
+  </button>
+  <div class="absolute top-full left-0 w-72 bg-white rounded-xl border border-slate-200 shadow-xl p-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50">
+    <a class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-slate-50 text-xs font-bold text-slate-800 hover:text-primary transition-colors" href="coste-por-copia.html">
+      <span class="w-8 h-8 rounded-lg bg-red-50 text-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[18px]">print</span></span>
+      <div><span>Coste por Copia</span><span class="block text-[10px] text-slate-400 font-normal">Flotas MPS y auditoría de impresión</span></div>
+    </a>
+    <a class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-slate-50 text-xs font-bold text-slate-800 hover:text-primary transition-colors" href="https://oficina.pedregosa.es" target="_blank" rel="noopener">
+      <span class="w-8 h-8 rounded-lg bg-amber-50 text-amber-700 flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[18px]">inventory_2</span></span>
+      <div><span>Material de Oficina</span><span class="block text-[10px] text-slate-400 font-normal">Papelería corporativa y suministro diario</span></div>
+    </a>
+    <a class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-slate-50 text-xs font-bold text-slate-800 hover:text-primary transition-colors" href="mobiliario-de-oficina.html">
+      <span class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[18px]">chair_alt</span></span>
+      <div><span>Mobiliario de Oficina</span><span class="block text-[10px] text-slate-400 font-normal">Mesas Emobok, sit-stand y sillería</span></div>
+    </a>
+    <a class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-slate-50 text-xs font-bold text-slate-800 hover:text-primary transition-colors" href="https://tienda.pedregosa.es" target="_blank" rel="noopener">
+      <span class="w-8 h-8 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[18px]">devices</span></span>
+      <div><span>Tecnología</span><span class="block text-[10px] text-slate-400 font-normal">Hardware IT, portátiles y servidores</span></div>
+    </a>
+    <a class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-slate-50 text-xs font-bold text-slate-800 hover:text-primary transition-colors" href="catalogos.html">
+      <span class="w-8 h-8 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[18px]">menu_book</span></span>
+      <div><span>Catálogos</span><span class="block text-[10px] text-slate-400 font-normal">Tarifas oficiales y fichas PDF 2026</span></div>
+    </a>
+  </div>
+</div>
+<a class="hover:text-primary transition-colors" href="index.html#divisiones">Servicios</a>
+<a class="hover:text-primary transition-colors" href="acuerdos-licitaciones.html">Licitaciones B2G</a>
+<a class="hover:text-primary transition-colors" href="index.html#sectores">Ventajas B2C</a>
+</nav>
+        <div class="flex items-center gap-3">
+          <a class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary-container hover:bg-crimson-deep text-white font-semibold text-[13px] rounded tracking-wide shadow-xs transition-all" href="#solicitud-proyecto">
+            <span>Pedir Asesoría 3D</span>
+            <span class="material-symbols-outlined text-[17px]">architecture</span>
+          </a>
+          <button type="button" id="ped-mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-slate-700 hover:text-primary hover:bg-slate-100 transition-colors cursor-pointer" aria-label="Abrir menú">
+            <span class="material-symbols-outlined text-2xl">menu</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="ped-mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white/98 backdrop-blur-md px-6 py-4 shadow-xl">
+<div class="flex flex-col gap-2.5 text-sm font-semibold text-slate-800">
+<a class="py-2 hover:text-primary transition-colors border-b border-slate-100" href="index.html">Inicio</a>
+<a class="py-2 hover:text-primary transition-colors border-b border-slate-100" href="quienes-somos.html">Quiénes Somos</a>
+<div class="py-2 border-b border-slate-100">
+  <div class="text-xs font-extrabold uppercase tracking-wider text-primary mb-2">Productos</div>
+  <div class="pl-3 flex flex-col gap-2 text-xs font-semibold text-slate-700">
+    <a class="py-1 hover:text-primary transition-colors" href="coste-por-copia.html">Coste por Copia</a>
+    <a class="py-1 hover:text-primary transition-colors" href="https://oficina.pedregosa.es" target="_blank" rel="noopener">Material de Oficina</a>
+    <a class="py-1 hover:text-primary transition-colors" href="mobiliario-de-oficina.html">Mobiliario de Oficina</a>
+    <a class="py-1 hover:text-primary transition-colors" href="https://tienda.pedregosa.es" target="_blank" rel="noopener">Tecnología</a>
+    <a class="py-1 hover:text-primary transition-colors" href="catalogos.html">Catálogos</a>
+  </div>
+</div>
+<a class="py-2 hover:text-primary transition-colors border-b border-slate-100" href="index.html#divisiones">Servicios</a>
+<a class="py-2 hover:text-primary transition-colors border-b border-slate-100" href="acuerdos-licitaciones.html">Licitaciones B2G</a>
+<a class="py-2 hover:text-primary transition-colors border-b border-slate-100" href="index.html#sectores">Ventajas B2C</a>
+<div class="pt-2 flex flex-col gap-2">
+<a class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-primary text-white text-xs font-bold rounded shadow-sm" href="tel:954368011">
+<span class="material-symbols-outlined text-sm">call</span>
+<span>Llamar: 954 36 80 11</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-slate-900 text-white text-xs font-bold rounded shadow-sm" href="index.html#contacto-b2b">
+<span>Pedir Presupuesto B2B</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SELECTOR / FILTROS DE CATEGORÍA DE MOBILIARIO
+         ========================================================================= -->
+    <section class="py-6 bg-slate-900 text-white sticky top-[116px] z-30 shadow-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between gap-4 overflow-x-auto no-scrollbar py-1">
+          <span class="text-xs font-bold uppercase tracking-wider text-slate-400 whitespace-nowrap hidden sm:inline">Filtrar Colecciones:</span>
+          <div class="flex items-center gap-2 overflow-x-auto no-scrollbar text-xs font-semibold">
+            <button type="button" onclick="filterFurniture('all')" class="filter-btn active px-3.5 py-1.5 rounded-lg border border-slate-700 hover:border-slate-500 transition whitespace-nowrap cursor-pointer">Todas las Series</button>
+            <button type="button" onclick="filterFurniture('operativas')" class="filter-btn px-3.5 py-1.5 rounded-lg bg-slate-800 text-slate-300 border border-slate-700 hover:border-slate-500 hover:text-white transition whitespace-nowrap cursor-pointer">Mesas Operativas Bench</button>
+            <button type="button" onclick="filterFurniture('regulables')" class="filter-btn px-3.5 py-1.5 rounded-lg bg-slate-800 text-slate-300 border border-slate-700 hover:border-slate-500 hover:text-white transition whitespace-nowrap cursor-pointer">Regulables Sit-Stand</button>
+            <button type="button" onclick="filterFurniture('direccion')" class="filter-btn px-3.5 py-1.5 rounded-lg bg-slate-800 text-slate-300 border border-slate-700 hover:border-slate-500 hover:text-white transition whitespace-nowrap cursor-pointer">Dirección &amp; Ejecutivas</button>
+            <button type="button" onclick="filterFurniture('reunion')" class="filter-btn px-3.5 py-1.5 rounded-lg bg-slate-800 text-slate-300 border border-slate-700 hover:border-slate-500 hover:text-white transition whitespace-nowrap cursor-pointer">Salas de Juntas</button>
+            <button type="button" onclick="filterFurniture('silleria')" class="filter-btn px-3.5 py-1.5 rounded-lg bg-slate-800 text-slate-300 border border-slate-700 hover:border-slate-500 hover:text-white transition whitespace-nowrap cursor-pointer">Sillería Ergonómica</button>
+          </div>
+          <a href="#solicitud-proyecto" class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-primary text-white text-xs font-bold whitespace-nowrap hover:bg-crimson-bright transition">
+            <span class="material-symbols-outlined text-[15px]">call</span>
+            <span>Asesor: 954 36 80 11</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         CATÁLOGO DE SERIES Y MODELOS DE MESAS DE TRABAJO (ESTILO EMOBOK)
+         ========================================================================= -->
+    <section class="py-16 sm:py-20 bg-white border-b border-slate-200" id="catalogo-mobiliario">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mb-12">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-primary">Colecciones Oficiales Emobok</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-950 mt-1 tracking-tight">
+            Sistemas de mobiliario diseñados para la productividad y el confort
+          </h2>
+          <p class="text-slate-600 mt-2 text-sm leading-relaxed">
+            Cada serie responde a una necesidad funcional específica: desde grandes áreas operativas multipuesto hasta despachos ejecutivos con gestión integral de cableado y electrificación oculta.
+          </p>
+        </div>
+
+        <!-- Grid de Tarjetas de Series de Mobiliario -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="furniture-grid">
+
+          <!-- SERIE 1: ORGANOVA (Operativa / Bench) -->
+          <article class="furniture-card bg-white border border-slate-200 rounded-2xl overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-category="operativas">
+            <div>
+              <div class="relative h-64 overflow-hidden bg-slate-100">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80" alt="Serie Organova Emobok mesas operativas"/>
+                <div class="absolute top-3 left-3 bg-slate-900/90 text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-md backdrop-blur-md">
+                  Mesas Operativas &amp; Bench
+                </div>
+                <div class="absolute top-3 right-3 bg-emerald-600 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-xs">
+                  Electrificable
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="text-[11px] font-bold uppercase tracking-wider text-primary">Serie Insignia</div>
+                <h3 class="text-xl font-extrabold text-slate-900 mt-0.5 group-hover:text-primary transition-colors">
+                  ORGANOVA &bull; Puestos Bench &amp; Flex
+                </h3>
+                <p class="text-xs text-slate-600 mt-2 leading-relaxed font-normal">
+                  Superficies diáfanas de líneas puras con estructura pórtico de alta resistencia. Canalización central para paso de cableado, pasacables de diseño y paneles acústicos fonoabsorbentes tapizados.
+                </p>
+                <div class="mt-4 pt-4 border-t border-slate-100 space-y-1.5 text-xs text-slate-700">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-600 text-[16px]">check</span>
+                    <span>Puestos individuales o bench de 2, 4, 6 y 8 puestos</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-600 text-[16px]">check</span>
+                    <span>Tableros en melamina antibacteriana de 25mm</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-600 text-[16px]">check</span>
+                    <span>Canal de electrificación y pasacables abatible</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-6 pt-0">
+              <a href="#solicitud-proyecto" onclick="selectSeries('Organova')" class="w-full py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-primary text-white font-bold text-xs flex items-center justify-center gap-2 transition shadow-xs">
+                <span>Solicitar Proyecto con Organova</span>
+                <span class="material-symbols-outlined text-xs">arrow_forward</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- SERIE 2: EMO-VITY (Regulable Sit-Stand) -->
+          <article class="furniture-card bg-white border border-slate-200 rounded-2xl overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-category="regulables">
+            <div>
+              <div class="relative h-64 overflow-hidden bg-slate-100">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?auto=format&fit=crop&w=800&q=80" alt="Serie Emo-Vity Emobok mesas regulables sit-stand"/>
+                <div class="absolute top-3 left-3 bg-red-600 text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-md shadow-xs">
+                  Ergonomía Activa &bull; Sit-Stand
+                </div>
+                <div class="absolute top-3 right-3 bg-slate-900/90 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-xs">
+                  Motor Dual Eléctrico
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="text-[11px] font-bold uppercase tracking-wider text-primary">Salud Laboral</div>
+                <h3 class="text-xl font-extrabold text-slate-900 mt-0.5 group-hover:text-primary transition-colors">
+                  EMO-VITY &bull; Regulación en Altura
+                </h3>
+                <p class="text-xs text-slate-600 mt-2 leading-relaxed font-normal">
+                  Escritorios motorizados que permiten alternar cómodamente entre trabajar sentado y de pie. Panel digital táctil con 4 memorias de posición, movimiento extrasilencioso y sensor de colisión integrado.
+                </p>
+                <div class="mt-4 pt-4 border-t border-slate-100 space-y-1.5 text-xs text-slate-700">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-600 text-[16px]">check</span>
+                    <span>Rango de elevación telescópica: 65 a 130 cm</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-600 text-[16px]">check</span>
+                    <span>Display digital táctil con memorias de altura</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-600 text-[16px]">check</span>
+                    <span>Sensor giroscópico de seguridad anticolisión</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-6 pt-0">
+              <a href="#solicitud-proyecto" onclick="selectSeries('Emo-Vity Sit-Stand')" class="w-full py-2.5 px-4 rounded-xl bg-primary hover:bg-crimson-deep text-white font-bold text-xs flex items-center justify-center gap-2 transition shadow-xs">
+                <span>Solicitar Oferta Emo-Vity</span>
+                <span class="material-symbols-outlined text-xs">arrow_forward</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- SERIE 3: Q-BOK (Pata Cuadrada Cerrada) -->
+          <article class="furniture-card bg-white border border-slate-200 rounded-2xl overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-category="operativas">
+            <div>
+              <div class="relative h-64 overflow-hidden bg-slate-100">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Serie Q-Bok Emobok mesas estructura cerrada"/>
+                <div class="absolute top-3 left-3 bg-slate-900/90 text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-md backdrop-blur-md">
+                  Estructura Geométrica
+                </div>
+                <div class="absolute top-3 right-3 bg-sky-600 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-xs">
+                  Alta Resistencia
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="text-[11px] font-bold uppercase tracking-wider text-primary">Diseño Arquitectónico</div>
+                <h3 class="text-xl font-extrabold text-slate-900 mt-0.5 group-hover:text-primary transition-colors">
+                  Q-BOK &bull; Solidez y Orden Visual
+                </h3>
+                <p class="text-xs text-slate-600 mt-2 leading-relaxed font-normal">
+                  Diseño de pata perimetral cerrada en tubo de acero de 50x50mm. Aporta una imagen arquitectónica sólida y ordenada a grandes oficinas abiertas, zonas técnicas y despachos compartidos.
+                </p>
+                <div class="mt-4 pt-4 border-t border-slate-100 space-y-1.5 text-xs text-slate-700">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-600 text-[16px]">check</span>
+                    <span>Pata metálica en bucle cerrado de máxima estabilidad</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-600 text-[16px]">check</span>
+                    <span>Acabados en blanco polar, grafito y plata texturado</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-600 text-[16px]">check</span>
+                    <span>Compatibilidad con alas de retorno y cajoneras soporte</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-6 pt-0">
+              <a href="#solicitud-proyecto" onclick="selectSeries('Q-Bok')" class="w-full py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-primary text-white font-bold text-xs flex items-center justify-center gap-2 transition shadow-xs">
+                <span>Solicitar Proyecto Q-Bok</span>
+                <span class="material-symbols-outlined text-xs">arrow_forward</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- SERIE 4: EGO & T-FUSION (Dirección Ejecutiva) -->
+          <article class="furniture-card bg-white border border-slate-200 rounded-2xl overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-category="direccion">
+            <div>
+              <div class="relative h-64 overflow-hidden bg-slate-100">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="Despachos ejecutivos y de dirección Emobok Ego"/>
+                <div class="absolute top-3 left-3 bg-slate-950 text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-md shadow-xs">
+                  Alta Dirección
+                </div>
+                <div class="absolute top-3 right-3 bg-amber-600 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-xs">
+                  Acabados Nobles
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="text-[11px] font-bold uppercase tracking-wider text-primary">Línea Ejecutiva</div>
+                <h3 class="text-xl font-extrabold text-slate-900 mt-0.5 group-hover:text-primary transition-colors">
+                  EGO &bull; Despachos de Representación
+                </h3>
+                <p class="text-xs text-slate-600 mt-2 leading-relaxed font-normal">
+                  Mesas directivas de grandes dimensiones con tableros de 38mm de grosor, faldones de diseño y muebles credenza integrados. Cajas de conexión de aluminio anodizado para gestión total de dispositivos ejecutivos.
+                </p>
+                <div class="mt-4 pt-4 border-t border-slate-100 space-y-1.5 text-xs text-slate-700">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-600 text-[16px]">check</span>
+                    <span>Dimensiones generosas: hasta 240 x 100 cm</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-600 text-[16px]">check</span>
+                    <span>Mueble de servicio o credenza con puertas y cajonera</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-600 text-[16px]">check</span>
+                    <span>Tonos roble tostado, nogal americano, negro y olmo</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-6 pt-0">
+              <a href="#solicitud-proyecto" onclick="selectSeries('Ego Dirección')" class="w-full py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-primary text-white font-bold text-xs flex items-center justify-center gap-2 transition shadow-xs">
+                <span>Solicitar Despacho de Dirección</span>
+                <span class="material-symbols-outlined text-xs">arrow_forward</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- SERIE 5: PIRAMID & MENTOR (Reuniones & Aulas) -->
+          <article class="furniture-card bg-white border border-slate-200 rounded-2xl overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-category="reunion">
+            <div>
+              <div class="relative h-64 overflow-hidden bg-slate-100">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&w=800&q=80" alt="Mesas de juntas y conferencias Emobok Piramid"/>
+                <div class="absolute top-3 left-3 bg-slate-900/90 text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-md backdrop-blur-md">
+                  Salas de Juntas &amp; Reunión
+                </div>
+                <div class="absolute top-3 right-3 bg-indigo-600 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-xs">
+                  Hasta 24 Plazas
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="text-[11px] font-bold uppercase tracking-wider text-primary">Colaboración &amp; Audiovisual</div>
+                <h3 class="text-xl font-extrabold text-slate-900 mt-0.5 group-hover:text-primary transition-colors">
+                  PIRAMID &bull; Salas de Consejo y Juntas
+                </h3>
+                <p class="text-xs text-slate-600 mt-2 leading-relaxed font-normal">
+                  Grandes superficies de reunión modulares con pata piramidal inclinada. Integración oculta para tomas HDMI, USB y red conectadas a sistemas de pantalla interactiva y videoconferencia.
+                </p>
+                <div class="mt-4 pt-4 border-t border-slate-100 space-y-1.5 text-xs text-slate-700">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-600 text-[16px]">check</span>
+                    <span>Formatos rectangulares, ovalados y en herradura</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-600 text-[16px]">check</span>
+                    <span>Cajas de conectividad multimedia empotradas</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-600 text-[16px]">check</span>
+                    <span>Mesas abatibles sobre ruedas para formación</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-6 pt-0">
+              <a href="#solicitud-proyecto" onclick="selectSeries('Piramid Reuniones')" class="w-full py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-primary text-white font-bold text-xs flex items-center justify-center gap-2 transition shadow-xs">
+                <span>Presupuesto Sala de Juntas</span>
+                <span class="material-symbols-outlined text-xs">arrow_forward</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- SERIE 6: SILLERÍA ERGONÓMICA EN 1335 -->
+          <article class="furniture-card bg-white border border-slate-200 rounded-2xl overflow-hidden hover:border-slate-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-category="silleria">
+            <div>
+              <div class="relative h-64 overflow-hidden bg-slate-100 flex items-center justify-center p-4">
+                <img class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-500" src="assets/img/portada-silleria.jpg" alt="Catálogo Sillería Ergonómica Pedregosa" onerror="this.src='https://images.unsplash.com/photo-1580481077195-c3a821a58875?auto=format&fit=crop&w=800&q=80';"/>
+                <div class="absolute top-3 left-3 bg-emerald-700 text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-md shadow-xs">
+                  Ergonomía Certificada
+                </div>
+                <div class="absolute top-3 right-3 bg-slate-900 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-xs">
+                  Norma EN 1335
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="text-[11px] font-bold uppercase tracking-wider text-primary">Sillas Operativas &amp; Confidentes</div>
+                <h3 class="text-xl font-extrabold text-slate-900 mt-0.5 group-hover:text-primary transition-colors">
+                  Sillería Ergonómica de Oficina
+                </h3>
+                <p class="text-xs text-slate-600 mt-2 leading-relaxed font-normal">
+                  Sillas de alta gama para jornadas intensivas de más de 8 horas. Mecanismo sincronizado autopesante, soporte lumbar activo 3D, brazos 4D y tapizados técnicos ignífugos de alta transpirabilidad.
+                </p>
+                <div class="mt-4 pt-4 border-t border-slate-100 space-y-1.5 text-xs text-slate-700">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-600 text-[16px]">check</span>
+                    <span>Mecanismo sincro con bloqueo multiposición</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-600 text-[16px]">check</span>
+                    <span>Soporte lumbar regulable en altura y profundidad</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-emerald-600 text-[16px]">check</span>
+                    <span>Brazos 4D con reposabrazos de poliuretano suave</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-6 pt-0">
+              <a href="#solicitud-proyecto" onclick="selectSeries('Sillería Ergonómica')" class="w-full py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-primary text-white font-bold text-xs flex items-center justify-center gap-2 transition shadow-xs">
+                <span>Consultar Modelos y Tarifas</span>
+                <span class="material-symbols-outlined text-xs">arrow_forward</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         EL MÉTODO PEDREGOSA: PROYECTOS INTEGRALES DE MOBILIARIO
+         ========================================================================= -->
+    <section class="py-16 sm:py-20 bg-slate-50 border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-primary">Metodología de Trabajo</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-950 mt-1 tracking-tight">
+            Cómo gestionamos su proyecto de mobiliario de principio a fin
+          </h2>
+          <p class="text-slate-600 mt-2 text-sm leading-relaxed">
+            Eliminamos cualquier incertidumbre con nuestro servicio integral de interiorismo corporativo y montaje propio en Andalucía.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Paso 1 -->
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-red-50 text-primary flex items-center justify-center font-black text-lg mb-4">
+                01
+              </div>
+              <h3 class="text-base font-extrabold text-slate-900 mb-2">Medición In Situ</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Nos desplazamos a su sede en Sevilla o cualquier punto de Andalucía para tomar cotas exactas, revisar tomas eléctricas, pasos y luz natural.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] font-bold text-slate-400">
+              Sin compromiso
+            </div>
+          </div>
+
+          <!-- Paso 2 -->
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-red-50 text-primary flex items-center justify-center font-black text-lg mb-4">
+                02
+              </div>
+              <h3 class="text-base font-extrabold text-slate-900 mb-2">Planos 2D &amp; Renders 3D</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Elaboramos una propuesta de distribución óptima con infografías 3D fotorrealistas para que visualice su oficina antes de fabricar nada.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] font-bold text-slate-400">
+              Estudio fotorrealista gratuito
+            </div>
+          </div>
+
+          <!-- Paso 3 -->
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-red-50 text-primary flex items-center justify-center font-black text-lg mb-4">
+                03
+              </div>
+              <h3 class="text-base font-extrabold text-slate-900 mb-2">Fabricación Nacional</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Producción en planta Emobok (Écija, Sevilla) con certificados de calidad ISO y maderas con sello de sostenibilidad PEFC/FSC.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] font-bold text-slate-400">
+              Plazos estrictos garantizados
+            </div>
+          </div>
+
+          <!-- Paso 4 -->
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-red-50 text-primary flex items-center justify-center font-black text-lg mb-4">
+                04
+              </div>
+              <h3 class="text-base font-extrabold text-slate-900 mb-2">Montaje Propio Homologado</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Nuestros montadores profesionales entregan, ensamblan, nivelan cada puesto y retiran el 100% de los residuos para su reciclaje.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] font-bold text-slate-400">
+              Llave en mano &bull; Listo para trabajar
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         BANNER DESCARGA CATÁLOGO EMOBOK PDF
+         ========================================================================= -->
+    <section class="py-12 bg-slate-900 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gradient-to-r from-slate-950 to-slate-900 border border-slate-800 p-8 sm:p-10 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-8">
+          <div class="flex items-center gap-6">
+            <div class="w-20 h-28 flex-shrink-0 bg-white rounded-lg p-1 shadow-lg hidden sm:block">
+              <img src="assets/img/portada-emobok.jpg" alt="Catálogo Emobok Magazine" class="w-full h-full object-cover rounded"/>
+            </div>
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-red-400">Documentación Oficial de Fabricante</span>
+              <h3 class="text-xl sm:text-2xl font-extrabold text-white mt-1">Emobok Magazine 2026 &bull; Catálogo Completo</h3>
+              <p class="text-slate-300 text-xs sm:text-sm mt-1 max-w-xl">
+                Descubra todas las medidas, muestras de color, opciones de electrificación y configuraciones técnicas disponibles en PDF de alta resolución.
+              </p>
+            </div>
+          </div>
+          <div class="flex-shrink-0">
+            <a href="https://pedregosa.es/wp-content/uploads/2026/CATALOGOS/EMOBOK_MAGAZINE_2026.pdf" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-primary-container hover:bg-crimson-bright text-white font-bold text-xs tracking-wide shadow-lg transition-all">
+              <span class="material-symbols-outlined text-[18px]">download</span>
+              <span>Descargar Catálogo Mobiliario PDF (48 MB)</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         FORMULARIO DE SOLICITUD DE PROYECTO / ASESORÍA 3D
+         ========================================================================= -->
+    <section class="py-16 sm:py-20 bg-white border-b border-slate-200" id="solicitud-proyecto">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          <!-- Columna Información -->
+          <div class="lg:col-span-5 space-y-6">
+            <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary">
+              <span class="w-2 h-2 rounded-full bg-primary-container"></span>
+              <span>Atención Técnica Directa</span>
+            </div>
+            
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight">
+              Solicite estudio de mobiliario y distribución 3D sin coste
+            </h2>
+
+            <p class="text-sm text-slate-600 leading-relaxed font-normal">
+              Indíquenos las necesidades de su organización o el tipo de espacio a acondicionar. Un asesor especialista en mobiliario corporativo contactará con usted en menos de 24 horas laborables.
+            </p>
+
+            <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
+              <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary text-xl mt-0.5">apartment</span>
+                <div>
+                  <div class="text-xs font-bold text-slate-900">Showroom y Oficinas Centrales</div>
+                  <div class="text-xs text-slate-600">Polígono Store &bull; C/ Gramil nº 8, 41008 Sevilla</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary text-xl mt-0.5">call</span>
+                <div>
+                  <div class="text-xs font-bold text-slate-900">Teléfono Directo de Mobiliario</div>
+                  <a href="tel:954368011" class="text-xs font-extrabold text-primary hover:underline">954 36 80 11</a>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary text-xl mt-0.5">mail</span>
+                <div>
+                  <div class="text-xs font-bold text-slate-900">Correo Electrónico de Proyectos</div>
+                  <a href="mailto:pedidos@pedregosa.es" class="text-xs text-slate-700 hover:text-primary">pedidos@pedregosa.es</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 text-xs text-slate-500">
+              <span class="material-symbols-outlined text-emerald-600 text-base">verified</span>
+              <span>Proveedor homologado para universidades, empresas privadas y mesas de contratación en Andalucía.</span>
+            </div>
+          </div>
+
+          <!-- Columna Formulario -->
+          <div class="lg:col-span-7">
+            <div class="bg-slate-50 border border-slate-200 p-6 sm:p-8 rounded-2xl shadow-xs">
+              <h3 class="text-lg font-bold text-slate-900 mb-1">Formulario de Presupuesto y Asesoría 3D</h3>
+              <p class="text-xs text-slate-500 mb-6">Complete los campos para que podamos preparar una propuesta a medida:</p>
+
+              <form id="furniture-project-form" onsubmit="handleFurnitureSubmit(event)" class="space-y-4">
+                
+                <!-- Tipo de Espacio -->
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1">Tipo de Proyecto / Espacio *</label>
+                  <select id="form-space-type" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs bg-white text-slate-900 focus:outline-none focus:border-primary">
+                    <option value="Oficina Completa / Proyecto Integral">Oficina Completa / Proyecto Integral</option>
+                    <option value="Mesas Operativas Bench (Organova / Q-Bok)">Mesas Operativas Bench (Organova / Q-Bok)</option>
+                    <option value="Mesas Regulables Sit-Stand (Emo-Vity)">Mesas Regulables Sit-Stand (Emo-Vity)</option>
+                    <option value="Despachos de Dirección (Ego / T-Fusion)">Despachos de Dirección (Ego / T-Fusion)</option>
+                    <option value="Salas de Juntas &amp; Reunión (Piramid)">Salas de Juntas &amp; Reunión (Piramid)</option>
+                    <option value="Sillería Ergonómica Certificada">Sillería Ergonómica Certificada</option>
+                    <option value="Aulas Digitales &amp; Centros Educativos">Aulas Digitales &amp; Centros Educativos</option>
+                  </select>
+                </div>
+
+                <!-- Nº de puestos estimados -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Nº estimado de puestos *</label>
+                    <select id="form-seats-count" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs bg-white text-slate-900 focus:outline-none focus:border-primary">
+                      <option value="1 a 5 puestos">1 a 5 puestos</option>
+                      <option value="6 a 15 puestos">6 a 15 puestos</option>
+                      <option value="16 a 50 puestos">16 a 50 puestos</option>
+                      <option value="Más de 50 puestos">Más de 50 puestos (Gran Proyecto / Flota)</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Plazo previsto de instalación</label>
+                    <select id="form-timeframe" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs bg-white text-slate-900 focus:outline-none focus:border-primary">
+                      <option value="Inmediato (menos de 1 mes)">Inmediato (menos de 1 mes)</option>
+                      <option value="A corto plazo (1 a 3 meses)">A corto plazo (1 a 3 meses)</option>
+                      <option value="Fase de estudio / Licitación futura">Fase de estudio / Licitación futura</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Datos Personales -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Nombre y Apellidos *</label>
+                    <input type="text" id="form-name" required placeholder="Ej: Carmen Gómez" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs bg-white text-slate-900 focus:outline-none focus:border-primary"/>
+                  </div>
+                  <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Empresa u Organismo *</label>
+                    <input type="text" id="form-company" required placeholder="Ej: Consultores Asociados S.L." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs bg-white text-slate-900 focus:outline-none focus:border-primary"/>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Teléfono Directo *</label>
+                    <input type="tel" id="form-phone" required placeholder="Ej: 600 000 000" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs bg-white text-slate-900 focus:outline-none focus:border-primary"/>
+                  </div>
+                  <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Correo Electrónico *</label>
+                    <input type="email" id="form-email" required placeholder="Ej: c.gomez@empresa.com" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs bg-white text-slate-900 focus:outline-none focus:border-primary"/>
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1">Detalles del proyecto o espacio (Medidas aproximadas, ubicación, etc.)</label>
+                  <textarea id="form-comments" rows="3" placeholder="Indíquenos si dispone de plano, dimensiones del espacio, preferencias de acabado o si necesita visita técnica..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs bg-white text-slate-900 focus:outline-none focus:border-primary"></textarea>
+                </div>
+
+                <div class="pt-2">
+                  <label class="flex items-start gap-2 cursor-pointer text-xs text-slate-600">
+                    <input type="checkbox" required class="mt-0.5 rounded border-slate-300 text-primary focus:ring-primary"/>
+                    <span>Acepto la <a href="politica-privacidad.html" target="_blank" class="text-primary underline">política de privacidad</a> para la gestión de este presupuesto.</span>
+                  </label>
+                </div>
+
+                <div class="pt-2">
+                  <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-primary-container hover:bg-crimson-deep text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer">
+                    <span class="material-symbols-outlined text-[19px]">send</span>
+                    <span>Enviar Solicitud de Proyecto</span>
+                  </button>
+                </div>
+
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= CORPORATE FOOTER ================= -->
+  <footer class="bg-white border-t border-slate-200 text-slate-600 text-sm mt-auto">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div>
+        <div class="mb-4">
+          <img alt="Pedregosa S.L." class="h-9 sm:h-10 w-auto object-contain" src="assets/img/logo-pedregosa-tagline.png"/>
+        </div>
+        <p class="text-xs text-slate-500 leading-relaxed">
+          Proveedor de referencia en consumibles de impresión, equipamiento IT, mobiliario de oficina y material corporativo en Andalucía desde 1987.
+        </p>
+        <div class="flex items-center gap-2 mt-4">
+          <img alt="ISO 9001" class="h-9 w-auto object-contain border border-slate-200 rounded p-1" src="assets/img/adok-iso9001-120.jpg"/>
+          <img alt="ISO 14001" class="h-9 w-auto object-contain border border-slate-200 rounded p-1" src="assets/img/adok-iso14001-120.jpg"/>
+        </div>
+        <div class="pt-2">
+          <a class="inline-flex items-center gap-2 text-xs font-semibold text-slate-600 hover:text-[#0a66c2] transition-colors" href="https://www.linkedin.com/company/pedregosa-sl/" rel="noopener" target="_blank">
+            <svg class="w-4 h-4 fill-current text-[#0a66c2]" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76c-.97 0-1.75-.79-1.75-1.76s.78-1.75 1.75-1.75 1.75.78 1.75 1.75-.78 1.76-1.75 1.76m1.39 9.74v-8.37H5.07v8.37h2.78Z"/></svg>
+            <span>Seguir proyectos en LinkedIn</span>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-900 mb-4">Divisiones Especializadas</h4>
+        <ul class="space-y-2 text-xs text-slate-600">
+          <li><a class="hover:text-primary transition-colors font-bold text-primary" href="mobiliario-de-oficina.html">Mobiliario de Oficina y Mesas Emobok</a></li>
+          <li><a class="hover:text-primary transition-colors" href="index.html#divisiones">Sistemas de Impresión y Pago por Copia</a></li>
+          <li><a class="hover:text-primary transition-colors" href="index.html#divisiones">Consumibles de Impresión y Tóner Original</a></li>
+          <li><a class="hover:text-primary transition-colors" href="index.html#divisiones">Informática Corporativa y Servidores</a></li>
+          <li><a class="hover:text-primary transition-colors" href="index.html#divisiones">Aulas Digitales y Tecnología Educativa</a></li>
+          <li><a class="hover:text-primary transition-colors" href="acuerdos-licitaciones.html">Acuerdos y Licitaciones</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-900 mb-4">Portales y Secciones</h4>
+        <ul class="space-y-2 text-xs text-slate-600">
+          <li><a class="hover:text-primary transition-colors" href="mobiliario-de-oficina.html">Catálogo Mobiliario &amp; Mesas</a></li>
+          <li><a class="hover:text-primary transition-colors" href="https://tienda.pedregosa.es" target="_blank" rel="noopener">Tienda Informática IT</a></li>
+          <li><a class="hover:text-primary transition-colors" href="https://oficina.pedregosa.es" target="_blank" rel="noopener">Tienda Material Oficina</a></li>
+          <li><a class="hover:text-primary transition-colors" href="quienes-somos.html">Quiénes Somos</a></li>
+          <li><a class="hover:text-primary transition-colors" href="catalogos.html">Catálogos y Descargas PDF</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-900 mb-4">Sede y Operaciones</h4>
+        <div class="space-y-2 text-xs text-slate-600">
+          <p class="font-semibold text-slate-900">Polígono Store, 41008 Sevilla</p>
+          <p>Oficinas Centrales: Calle Gramil, 8</p>
+          <p class="pt-1"><strong class="text-slate-900">Tel:</strong> 954 36 80 11</p>
+          <p><strong class="text-slate-900">Email:</strong> pedidos@pedregosa.es</p>
+          <p class="text-[11px] text-badge-accent-emerald font-semibold pt-1">L-J 8:30-14:30 / 15:30-17:30 &bull; V 8:00-15:00</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Subfooter con espaciado anti-WhatsApp protegido -->
+    <div class="border-t border-slate-100 py-6 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>&copy; 2026 Pedregosa S.L.U. Todos los derechos reservados.</p>
+        <div class="flex flex-wrap items-center gap-6 sm:pr-24 relative z-10">
+          <a class="hover:text-slate-900 transition-colors" href="aviso-legal.html">Aviso Legal</a>
+          <a class="hover:text-slate-900 transition-colors" href="politica-privacidad.html">Política de Privacidad</a>
+          <a class="hover:text-slate-900 transition-colors" href="politica-de-cookies.html">Cookies</a>
+          <a class="hover:text-slate-900 transition-colors" href="politica-de-calidad.html">Calidad y Medio Ambiente</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= WIDGET FLOTANTE DE WHATSAPP ================= -->
+  <div id="ped-whatsapp-widget" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex flex-col items-end pointer-events-none">
+    <div id="ped-whatsapp-box" class="mb-3 w-[calc(100vw-2rem)] max-w-sm sm:w-92 bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden transform scale-95 opacity-0 pointer-events-none transition-all duration-300 origin-bottom-right">
+      <div class="bg-[#0f172a] p-4 text-white flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-[#25D366] flex items-center justify-center text-white shadow-xs">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.41 1.56 1.56 2.41 3.63 2.41 5.83s-.85 4.27-2.41 5.83a8.21 8.21 0 0 1-5.82 2.41c-1.5 0-2.97-.39-4.27-1.14l-.31-.18-3.12.82.83-3.04-.2-.32a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.53c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.01-1.24-.74-.66-1.24-1.48-1.39-1.73-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08 0 1.22.89 2.41 1.02 2.58.12.17 1.76 2.69 4.27 3.77.6.26 1.07.41 1.43.53.6.19 1.15.16 1.59.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.17-.48-.29Z"/></svg>
+          </div>
+          <div>
+            <div class="font-extrabold text-sm text-white leading-tight">Pedregosa Mobiliario</div>
+            <div class="text-[11px] text-emerald-400 flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Proyectos B2B &bull; En línea
+            </div>
+          </div>
+        </div>
+        <button type="button" id="ped-whatsapp-close" class="text-slate-400 hover:text-white transition cursor-pointer p-1">
+          <span class="material-symbols-outlined text-[18px]">close</span>
+        </button>
+      </div>
+      <div class="p-4 space-y-3 bg-slate-50 text-xs">
+        <a href="https://wa.me/34624825868?text=Hola,%20solicito%20asesoría%20sobre%20mesas%20de%20trabajo%20y%20mobiliario%20Emobok." target="_blank" rel="noopener" class="block p-3 rounded-xl bg-white border border-slate-200 hover:border-emerald-500 hover:shadow-sm transition">
+          <div class="font-bold text-slate-900 flex items-center justify-between">
+            <span>Dpto. Proyectos de Mobiliario</span>
+            <span class="material-symbols-outlined text-emerald-600 text-sm">open_in_new</span>
+          </div>
+          <div class="text-[11px] text-slate-500 mt-0.5">Asesoría de mesas, sillería y planos 2D/3D</div>
+        </a>
+      </div>
+    </div>
+    <button type="button" id="ped-whatsapp-toggle" class="w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white flex items-center justify-center shadow-2xl hover:scale-105 transition-all cursor-pointer relative group pointer-events-auto" aria-label="Abrir WhatsApp">
+      <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.41 1.56 1.56 2.41 3.63 2.41 5.83s-.85 4.27-2.41 5.83a8.21 8.21 0 0 1-5.82 2.41c-1.5 0-2.97-.39-4.27-1.14l-.31-.18-3.12.82.83-3.04-.2-.32a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.53c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.01-1.24-.74-.66-1.24-1.48-1.39-1.73-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08 0 1.22.89 2.41 1.02 2.58.12.17 1.76 2.69 4.27 3.77.6.26 1.07.41 1.43.53.6.19 1.15.16 1.59.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.17-.48-.29Z"/></svg>
+      <span class="absolute -top-1 -right-1 w-3.5 h-3.5 bg-red-500 rounded-full border-2 border-white animate-pulse"></span>
+    </button>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Filtro interactivo de series de mobiliario
+    function filterFurniture(cat) {
+      const cards = document.querySelectorAll('.furniture-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => btn.classList.remove('active', 'bg-slate-900', 'text-white'));
+      event.target.classList.add('active');
+
+      cards.forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-category') === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function selectSeries(name) {
+      const select = document.getElementById('form-space-type');
+      if (select) {
+        for (let i = 0; i < select.options.length; i++) {
+          if (select.options[i].text.includes(name) || select.options[i].value.includes(name)) {
+            select.selectedIndex = i;
+            break;
+          }
+        }
+      }
+    }
+
+    function handleFurnitureSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('form-name').value;
+      const company = document.getElementById('form-company').value;
+      const phone = document.getElementById('form-phone').value;
+      const email = document.getElementById('form-email').value;
+      const space = document.getElementById('form-space-type').value;
+      const seats = document.getElementById('form-seats-count').value;
+      const timeframe = document.getElementById('form-timeframe').value;
+      const comments = document.getElementById('form-comments').value;
+
+      const subject = encodeURIComponent(`Solicitud Proyecto Mobiliario Emobok - ${company}`);
+      const body = encodeURIComponent(`SOLICITUD DE PROYECTO DE MOBILIARIO & ESPACIOS DE TRABAJO:
+
+Empresa: ${company}
+Contacto: ${name}
+Teléfono: ${phone}
+Email: ${email}
+
+DATOS DEL PROYECTO:
+- Tipo de Espacio: ${space}
+- Puestos Estimados: ${seats}
+- Plazo Previsto: ${timeframe}
+- Detalles: ${comments}
+
+Por favor, contacten para coordinar visita / envío de plano para renderizado 3D.`);
+
+      alert(`Gracias ${name}. Se abrirá su cliente de correo para enviar la solicitud de proyecto con todos los datos cumplimentados.`);
+      window.location.href = `mailto:pedidos@pedregosa.es?subject=${subject}&body=${body}`;
+    }
+
+    // Toggle menú móvil
+    const mobileBtn = document.getElementById('ped-mobile-menu-btn');
+    const mobileMenu = document.getElementById('ped-mobile-menu');
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+
+    // Toggle WhatsApp
+    const waToggle = document.getElementById('ped-whatsapp-toggle');
+    const waBox = document.getElementById('ped-whatsapp-box');
+    const waClose = document.getElementById('ped-whatsapp-close');
+    if (waToggle && waBox) {
+      waToggle.addEventListener('click', () => {
+        waBox.classList.toggle('opacity-0');
+        waBox.classList.toggle('pointer-events-none');
+        waBox.classList.toggle('scale-95');
+      });
+    }
+    if (waClose && waBox) {
+      waClose.addEventListener('click', () => {
+        waBox.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
+      });
+    }
+  </script>
+
+</body>
+</html>

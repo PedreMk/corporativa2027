@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ficha Técnica Detallada | Pedregosa B2B Suministros IT</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            crimson: {
+              DEFAULT: '#8a0018',
+              hover: '#b50524',
+              dark: '#6b0013',
+              light: '#fff1f2',
+            },
+            slate: {
+              950: '#0b1120',
+              900: '#0f172a',
+              850: '#141e33',
+              800: '#1e293b',
+              700: '#334155',
+              100: '#f1f5f9',
+              50: '#f8fafc'
+            },
+            emerald: {
+              600: '#059669',
+              500: '#10b981',
+              50: '#ecfdf5',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      vertical-align: middle;
+    }
+    .btn-crimson {
+      background-color: #8a0018;
+      color: #ffffff;
+      transition: all 0.2s ease;
+    }
+    .btn-crimson:hover {
+      background-color: #b50524;
+    }
+    body.b2b-guest-mode .b2b-price-client { display: none !important; }
+    body.b2b-guest-mode .b2b-price-guest { display: block !important; }
+    body.b2b-client-mode .b2b-price-client { display: block !important; }
+    body.b2b-client-mode .b2b-price-guest { display: none !important; }
+  </style>
+</head>
+
+<body class="bg-slate-50 font-sans text-slate-800 min-h-screen flex flex-col antialiased b2b-guest-mode">
+
+  <!-- ========================================== -->
+  <!-- 1. BARRA SUPERIOR DE CONTACTO DIRECTO B2B  -->
+  <!-- ========================================== -->
+  <aside class="bg-slate-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center gap-4 sm:gap-6">
+        <span class="flex items-center gap-1.5 text-slate-200">
+          <span class="material-symbols-outlined text-sm text-crimson">phone_in_talk</span>
+          Pedidos Directos: <a href="tel:954368011" class="hover:underline font-bold text-white">954 36 80 11</a>
+        </span>
+        <span class="hidden md:flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-sm text-slate-400">mail</span>
+          pedidos@pedregosa.es
+        </span>
+        <span class="hidden lg:flex items-center gap-1.5 text-slate-400">
+          <span class="material-symbols-outlined text-sm text-slate-400">location_on</span>
+          Sede Central y SAT en Sevilla (Polígono Store)
+        </span>
+      </div>
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- CONMUTADOR ROL B2B -->
+        <div class="flex items-center bg-slate-800 rounded-lg p-0.5 border border-slate-700 text-[10px] sm:text-[11px]">
+          <button id="btnRoleGuest" onclick="setB2BRole('guest')"
+            class="px-2 py-0.5 rounded font-bold transition bg-amber-500 text-slate-950 flex items-center gap-1 shadow-2xs"
+            title="Precios ocultos para no registrados">
+            <span class="material-symbols-outlined text-xs">visibility_off</span>
+            <span>Visitante: "Consultar"</span>
+          </button>
+          <button id="btnRoleClient" onclick="setB2BRole('client')"
+            class="px-2 py-0.5 rounded font-semibold text-slate-300 hover:text-white transition flex items-center gap-1"
+            title="Precios visibles para clientes validados">
+            <span class="material-symbols-outlined text-xs">verified_user</span>
+            <span>Cliente B2B Activado</span>
+          </button>
+        </div>
+
+        <a href="https://wa.me/34624825868?text=Hola,%20solicito%20informaci%C3%B3n%20o%20cotizaci%C3%B3n%20B2B"
+          target="_blank" rel="noopener"
+          class="bg-emerald-800 hover:bg-emerald-700 text-white px-2 py-0.5 rounded text-[11px] font-bold border border-emerald-600 transition flex items-center gap-1 shadow-2xs">
+          <span>💬</span>
+          <span>WhatsApp: 624 82 58 68</span>
+        </a>
+
+        <a href="preview-backoffice.html"
+          class="bg-slate-800 hover:bg-slate-700 text-amber-300 hover:text-amber-200 transition flex items-center gap-1 text-[11px] font-bold px-2 py-0.5 rounded border border-slate-700 shadow-xs">
+          <span class="material-symbols-outlined text-xs">tune</span>
+          <span>Panel Módulos</span>
+        </a>
+        <a href="preview-tienda.html" class="hover:text-white transition flex items-center gap-1 text-[11px] sm:text-xs">
+          <span>← Volver a la Tienda</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ========================================== -->
+  <!-- 2. CABECERA PRINCIPAL CON LOGO OFICIAL      -->
+  <!-- ========================================== -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
+      
+      <!-- LOGO OFICIAL PEDREGOSA -->
+      <a href="preview-tienda.html" class="flex-shrink-0 flex items-center gap-2 group">
+        <img src="assets/img/logo-pedregosa-pds.png" alt="Pedregosa Suministros Informáticos y de Oficina"
+          class="h-10 sm:h-12 w-auto object-contain">
+      </a>
+
+      <!-- Buscador Rápido -->
+      <div class="flex-1 max-w-xl hidden md:flex items-center relative">
+        <input type="text" placeholder="Buscar por referencia, P/N, modelo o tóner..."
+          class="w-full bg-slate-50 border border-slate-300 rounded-lg pl-10 pr-24 py-2 text-xs text-slate-800 focus:bg-white focus:border-crimson outline-none">
+        <span class="material-symbols-outlined absolute left-3 text-slate-400 text-sm">search</span>
+        <button class="absolute right-1 top-1 bottom-1 bg-slate-800 text-white px-3 text-xs font-bold rounded-md hover:bg-crimson transition">
+          Buscar
+        </button>
+      </div>
+
+      <!-- Acciones Cabecera -->
+      <div class="flex items-center gap-3">
+        <a href="tel:954368011" class="hidden lg:flex items-center gap-2 bg-slate-50 border border-slate-200 px-3 py-1.5 rounded-lg text-xs font-bold text-slate-700 hover:border-crimson transition">
+          <span class="material-symbols-outlined text-crimson text-base">support_agent</span>
+          <span>Asistencia Comercial</span>
+        </a>
+        <a href="preview-tienda.html#cart" onclick="window.location.href='preview-tienda.html'; return false;"
+          class="bg-crimson hover:bg-crimson-hover text-white text-xs font-bold px-4 py-2 rounded-lg flex items-center gap-2 transition shadow-xs">
+          <span class="material-symbols-outlined text-base">shopping_cart</span>
+          <span>Ver Cesta</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- 3. MIGA DE PAN (BREADCRUMB)                -->
+  <!-- ========================================== -->
+  <nav class="bg-white border-b border-slate-200 py-2.5 px-4 sm:px-6 text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto flex items-center gap-1.5 overflow-x-auto whitespace-nowrap">
+      <a href="preview-tienda.html" class="hover:text-crimson flex items-center gap-1">
+        <span class="material-symbols-outlined text-sm">home</span>
+        <span>Inicio Tienda</span>
+      </a>
+      <span>/</span>
+      <span id="bcCategory" class="hover:text-crimson cursor-pointer">Periféricos & RGPD</span>
+      <span>/</span>
+      <span id="bcSubcategory" class="hover:text-crimson cursor-pointer">Destructoras de Papel</span>
+      <span>/</span>
+      <span id="bcProduct" class="font-bold text-slate-900 truncate">Destructora Fellowes AutoMax 100M</span>
+    </div>
+  </nav>
+
+  <!-- ========================================== -->
+  <!-- 4. CONTENIDO PRINCIPAL: FICHA DETALLADA    -->
+  <!-- ========================================== -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex-1 w-full space-y-10">
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+      <!-- ========================================== -->
+      <!-- COLUMNA IZQUIERDA: FOTOS Y GARANTÍAS (5 col) -->
+      <!-- ========================================== -->
+      <div class="lg:col-span-5 space-y-4">
+        
+        <!-- Contenedor Foto Principal -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs flex flex-col items-center relative group">
+          <span id="productBadgeTag" class="absolute top-4 left-4 bg-emerald-600 text-white text-[11px] font-extrabold px-3 py-1 rounded shadow-xs uppercase">
+            CUMPLIMIENTO RGPD
+          </span>
+          <img id="mainProductImg" src="assets/img/banner-fellowes.jpg" alt="Producto Detalle"
+            class="max-h-80 w-full object-contain mix-blend-multiply group-hover:scale-105 transition duration-300">
+          <div class="text-[11px] text-slate-400 mt-4 flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-xs">zoom_in</span>
+            Pasa el cursor para ampliar la imagen
+          </div>
+        </div>
+
+        <!-- Miniaturas de Galería -->
+        <div class="grid grid-cols-4 gap-2">
+          <div class="bg-white border-2 border-crimson rounded-lg p-1.5 h-16 flex items-center justify-center cursor-pointer shadow-2xs">
+            <img id="thumb1" src="assets/img/banner-fellowes.jpg" class="h-full object-contain">
+          </div>
+          <div class="bg-white border border-slate-200 rounded-lg p-1.5 h-16 flex items-center justify-center cursor-pointer hover:border-slate-400 opacity-70 hover:opacity-100 transition">
+            <img src="assets/img/categories/cat-perifericos.jpg" class="h-full object-contain">
+          </div>
+          <div class="bg-white border border-slate-200 rounded-lg p-1.5 h-16 flex items-center justify-center cursor-pointer hover:border-slate-400 opacity-70 hover:opacity-100 transition">
+            <img src="assets/img/categories/cat-papeleria.jpg" class="h-full object-contain">
+          </div>
+          <div class="bg-white border border-slate-200 rounded-lg p-1.5 h-16 flex items-center justify-center cursor-pointer hover:border-slate-400 opacity-70 hover:opacity-100 transition">
+            <span class="material-symbols-outlined text-slate-400 text-xl">play_circle</span>
+          </div>
+        </div>
+
+        <!-- 4 Sellos de Garantía Oficial B2B -->
+        <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-xs grid grid-cols-2 gap-3 text-xs text-slate-700">
+          <div class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-emerald-600 text-lg flex-shrink-0">verified</span>
+            <div>
+              <strong class="text-slate-900">Garantía Directa</strong>
+              <div class="text-[11px] text-slate-500">2 años máquina / 7 años cuchillas</div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-emerald-600 text-lg flex-shrink-0">local_shipping</span>
+            <div>
+              <strong class="text-slate-900">Envío 24/48h</strong>
+              <div class="text-[11px] text-slate-500">Stock mayorista verificado</div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-sky-600 text-lg flex-shrink-0">store</span>
+            <div>
+              <strong class="text-slate-900">SAT en Sevilla</strong>
+              <div class="text-[11px] text-slate-500">Soporte técnico directo</div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-emerald-600 text-lg flex-shrink-0">chat</span>
+            <div>
+              <strong class="text-slate-900">WhatsApp Directo</strong>
+              <div class="text-[11px] text-slate-500"><a href="https://wa.me/34624825868" target="_blank" rel="noopener" class="text-emerald-700 font-bold hover:underline">624 82 58 68</a></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ========================================== -->
+      <!-- COLUMNA DERECHA: DATOS, PRECIOS Y COMPRA (7 col) -->
+      <!-- ========================================== -->
+      <div class="lg:col-span-7 space-y-6">
+
+        <!-- Referencias & Stock -->
+        <div>
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span id="productBrand" class="text-xs font-extrabold uppercase tracking-wider text-slate-500 bg-slate-100 px-2 py-0.5 rounded">
+              FELLOWES ESPAÑA
+            </span>
+            <span class="text-slate-300">|</span>
+            <span class="text-xs text-slate-500 font-mono">P/N: <strong id="productPN" class="text-slate-700">4629201</strong></span>
+            <span class="text-slate-300">|</span>
+            <span class="text-xs text-slate-500 font-mono">EAN: <span id="productEAN" class="text-slate-700">0043859733026</span></span>
+          </div>
+
+          <h1 id="productTitle" class="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight">
+            Destructora Fellowes AutoMax 100M Microcorte DIN P-5
+          </h1>
+
+          <div class="mt-3 flex items-center gap-2 text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-lg border border-emerald-200 inline-flex">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>Entrega Garantizada 24/48h &middot; Stock Mayorista Disponible (+25 unidades)</span>
+          </div>
+        </div>
+
+        <!-- Puntos Fuertes B2B -->
+        <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-xs space-y-2">
+          <div class="text-xs font-extrabold uppercase tracking-wider text-slate-800 flex items-center gap-1.5 mb-2">
+            <span class="material-symbols-outlined text-crimson text-sm">check_circle</span>
+            Aspectos Clave para Entornos Corporativos y Oficinas
+          </div>
+          <ul id="productKeyPoints" class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-600">
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-crimson"></span>
+              <strong>Seguridad Máxima DIN P-5:</strong> Microcorte 2x12 mm
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-crimson"></span>
+              <strong>Destrucción Automática:</strong> 100 hojas de capacidad
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-crimson"></span>
+              <strong>Alimentación Manual:</strong> 10 hojas por pasada
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-crimson"></span>
+              <strong>Destruye:</strong> Clips, grapas y tarjetas de crédito
+            </li>
+          </ul>
+        </div>
+
+        <!-- CUADRO DE PRECIOS CON ESCALADO B2B -->
+        <div class="bg-white rounded-2xl border-2 border-slate-200 p-6 shadow-sm space-y-4">
+          
+          <!-- MODO CLIENTE B2B ACTIVADO (Precios visibles) -->
+          <div class="b2b-price-client space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 pb-4 border-b border-slate-100">
+              <div>
+                <div class="flex items-baseline gap-2">
+                  <span id="productPriceNet" class="text-4xl font-extrabold text-crimson">235,00 €</span>
+                  <span class="text-xs font-extrabold uppercase text-slate-600">Precio B2B Neto (sin IVA)</span>
+                </div>
+                <div id="productPriceTax" class="text-xs text-slate-500 font-semibold mt-0.5">
+                  284,35 € con 21% IVA incluido
+                </div>
+              </div>
+
+              <div class="text-left sm:text-right">
+                <span class="bg-amber-100 text-amber-900 text-[10px] font-extrabold px-2.5 py-1 rounded">
+                  REEMBOLSO HASTA 20€ POR FABRICANTE
+                </span>
+              </div>
+            </div>
+
+            <!-- Escala de Precios por Volumen (Flotas / Grandes Compras) -->
+            <div class="bg-slate-50 rounded-xl p-3 border border-slate-200">
+              <div class="text-[11px] font-extrabold text-slate-700 uppercase tracking-wider mb-2 flex items-center justify-between">
+                <span>Tarifa B2B por Volumen (Descuento Directo):</span>
+                <span class="text-crimson font-bold">Ahorro para Flotas</span>
+              </div>
+              <div class="grid grid-cols-3 gap-2 text-center text-xs">
+                <div class="bg-white p-2 rounded-lg border border-slate-200">
+                  <div class="text-[10px] text-slate-500 font-bold">1 a 2 unidades</div>
+                  <div class="font-extrabold text-slate-900 mt-0.5">235,00 €/ud</div>
+                  <div class="text-[9px] text-slate-400">Tarifa base</div>
+                </div>
+                <div class="bg-white p-2 rounded-lg border border-slate-200">
+                  <div class="text-[10px] text-slate-500 font-bold">3 a 5 unidades</div>
+                  <div class="font-extrabold text-emerald-700 mt-0.5">219,00 €/ud</div>
+                  <div class="text-[9px] text-emerald-600 font-bold">Ahorro 7%</div>
+                </div>
+                <div class="bg-white p-2 rounded-lg border-2 border-crimson/30 bg-crimson-light/20">
+                  <div class="text-[10px] text-crimson font-extrabold">+6 unidades</div>
+                  <div class="font-extrabold text-crimson mt-0.5">199,00 €/ud</div>
+                  <div class="text-[9px] text-crimson font-bold">Ahorro 15%</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Selector de Cantidad & Botón de Añadir a la Cesta -->
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+              <div class="flex items-center border-2 border-slate-300 rounded-xl overflow-hidden h-12 bg-white">
+                <button onclick="changeQty(-1)" class="px-4 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-base h-full transition">-</button>
+                <input id="detailQty" type="number" value="1" min="1" class="w-14 text-center text-base font-extrabold focus:outline-none h-full">
+                <button onclick="changeQty(1)" class="px-4 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-base h-full transition">+</button>
+              </div>
+
+              <button onclick="addCurrentToCart()"
+                class="flex-1 btn-crimson text-sm font-extrabold py-3 px-6 rounded-xl flex items-center justify-center gap-2 shadow-md transition">
+                <span class="material-symbols-outlined text-xl">shopping_cart</span>
+                <span>Añadir al Pedido B2B</span>
+              </button>
+            </div>
+
+            <!-- Botón de Presupuesto Formal -->
+            <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs border-t border-slate-100">
+              <button onclick="alert('Generando presupuesto formal en formato PDF con validez de 15 días...')"
+                class="text-slate-600 hover:text-crimson font-bold flex items-center gap-1.5 transition">
+                <span class="material-symbols-outlined text-sm">picture_as_pdf</span>
+                <span>Descargar Presupuesto Formal Proforma</span>
+              </button>
+
+              <span class="text-slate-400 text-[11px]">
+                Envío Gratuito aplicado al superar 75 € neto
+              </span>
+            </div>
+          </div>
+
+          <!-- MODO VISITANTE SIN REGISTRO (Precios Ocultos / Consultar) -->
+          <div class="b2b-price-guest space-y-4">
+            <div class="bg-amber-50/70 border border-amber-200 rounded-xl p-5">
+              <div class="flex items-start justify-between gap-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-700 flex items-center justify-center flex-shrink-0">
+                    <span class="material-symbols-outlined text-2xl">lock</span>
+                  </div>
+                  <div>
+                    <div class="text-[10px] font-black uppercase text-slate-500 tracking-wider">Tarifa B2B Privada</div>
+                    <div class="text-3xl font-black text-crimson">Precio a Consultar</div>
+                  </div>
+                </div>
+                <span class="bg-amber-200 text-amber-900 text-[10px] font-extrabold px-2.5 py-1 rounded">ACCESO RESTRINGIDO</span>
+              </div>
+              <p class="text-xs text-slate-600 mt-3 leading-relaxed">
+                Los precios de distribución, tramos por volumen y condiciones de crédito 30/60 días son visibles exclusivamente para empresas, autónomos y organismos públicos con cuenta validada en Pedregosa.
+              </p>
+            </div>
+
+            <!-- Tramos por volumen informativos -->
+            <div class="bg-slate-50 rounded-xl p-3 border border-slate-200">
+              <div class="text-[11px] font-extrabold text-slate-700 uppercase tracking-wider mb-2 flex items-center justify-between">
+                <span>Descuentos por Volumen Disponibles:</span>
+                <span class="text-amber-700 font-bold flex items-center gap-1 text-[10px]">
+                  <span class="material-symbols-outlined text-xs">vpn_key</span> Requiere Registro
+                </span>
+              </div>
+              <div class="grid grid-cols-3 gap-2 text-center text-xs">
+                <div class="bg-white p-2 rounded-lg border border-slate-200">
+                  <div class="text-[10px] text-slate-500 font-bold">1 a 2 unidades</div>
+                  <div class="font-extrabold text-slate-700 mt-0.5">Tarifa Oficial</div>
+                </div>
+                <div class="bg-white p-2 rounded-lg border border-slate-200">
+                  <div class="text-[10px] text-slate-500 font-bold">3 a 5 unidades</div>
+                  <div class="font-extrabold text-emerald-700 mt-0.5">Hasta -10% B2B</div>
+                </div>
+                <div class="bg-white p-2 rounded-lg border border-slate-200">
+                  <div class="text-[10px] text-slate-500 font-bold">+6 unidades</div>
+                  <div class="font-extrabold text-crimson mt-0.5">Precio Contrato</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Botones de Acción para Visitante -->
+            <div class="space-y-2 pt-1">
+              <button onclick="openProductConsultModal()"
+                class="w-full btn-crimson text-sm font-extrabold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 shadow-md transition">
+                <span class="material-symbols-outlined text-lg text-amber-300">mail</span>
+                <span>Solicitar Cotización Inmediata para este Artículo</span>
+              </button>
+              
+              <div class="grid grid-cols-2 gap-2 pt-1 text-xs">
+                <a href="preview-tienda.html"
+                  class="bg-slate-800 hover:bg-slate-900 text-white font-bold py-2.5 px-3 rounded-lg flex items-center justify-center gap-1.5 transition text-center">
+                  <span class="material-symbols-outlined text-sm">login</span>
+                  <span>Iniciar Sesión B2B</span>
+                </a>
+                <button onclick="openProductConsultModal()"
+                  class="bg-white hover:bg-slate-100 text-slate-800 font-bold py-2.5 px-3 rounded-lg border border-slate-300 flex items-center justify-center gap-1.5 transition text-center">
+                  <span class="material-symbols-outlined text-sm text-crimson">app_registration</span>
+                  <span>Alta de Empresa</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 5. PESTAÑAS DE ESPECIFICACIONES TÉCNICAS   -->
+    <!-- ========================================== -->
+    <div class="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
+      
+      <!-- Barra de Pestañas -->
+      <div class="flex border-b border-slate-200 bg-slate-50 overflow-x-auto">
+        <button onclick="showTab('specs')" id="tabBtn-specs"
+          class="px-6 py-3.5 text-xs font-extrabold border-b-2 border-crimson text-crimson bg-white flex items-center gap-2">
+          <span class="material-symbols-outlined text-base">format_list_bulleted</span>
+          <span>Especificaciones Técnicas</span>
+        </button>
+        <button onclick="showTab('downloads')" id="tabBtn-downloads"
+          class="px-6 py-3.5 text-xs font-bold text-slate-600 hover:text-slate-900 flex items-center gap-2">
+          <span class="material-symbols-outlined text-base">cloud_download</span>
+          <span>Ficha Oficial Fabricante (PDF)</span>
+        </button>
+        <button onclick="showTab('sat')" id="tabBtn-sat"
+          class="px-6 py-3.5 text-xs font-bold text-slate-600 hover:text-slate-900 flex items-center gap-2">
+          <span class="material-symbols-outlined text-base">support</span>
+          <span>Garantía & Servicio Técnico Sevilla</span>
+        </button>
+      </div>
+
+      <!-- CONTENIDO PESTAÑA 1: SPECS -->
+      <div id="tabContent-specs" class="p-6 sm:p-8 space-y-4">
+        <h3 class="text-base font-extrabold text-slate-900">Ficha de Ingeniería y Parámetros Técnicos</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+          <div class="border border-slate-200 rounded-lg divide-y divide-slate-100">
+            <div class="flex justify-between p-3 bg-slate-50 font-bold text-slate-700">
+              <span>Nivel de Seguridad</span>
+              <span class="text-slate-900 font-extrabold">DIN 66399 Nivel P-5</span>
+            </div>
+            <div class="flex justify-between p-3">
+              <span class="text-slate-500">Tipo de Corte</span>
+              <span class="font-bold text-slate-800">Microcorte (2 x 12 mm)</span>
+            </div>
+            <div class="flex justify-between p-3 bg-slate-50">
+              <span class="text-slate-500">Capacidad Bandeja Automática</span>
+              <span class="font-bold text-slate-800">100 hojas A4 (70-80 g/m²)</span>
+            </div>
+            <div class="flex justify-between p-3">
+              <span class="text-slate-500">Capacidad Ranura Manual</span>
+              <span class="font-bold text-slate-800">10 hojas A4</span>
+            </div>
+            <div class="flex justify-between p-3 bg-slate-50">
+              <span class="text-slate-500">Ciclo de Trabajo</span>
+              <span class="font-bold text-slate-800">15 minutos continuos</span>
+            </div>
+          </div>
+
+          <div class="border border-slate-200 rounded-lg divide-y divide-slate-100">
+            <div class="flex justify-between p-3 bg-slate-50 font-bold text-slate-700">
+              <span>Capacidad de la Papelera</span>
+              <span class="text-slate-900 font-extrabold">23 Litros (aprox. 175 hojas)</span>
+            </div>
+            <div class="flex justify-between p-3">
+              <span class="text-slate-500">Materiales que Destruye</span>
+              <span class="font-bold text-slate-800">Papel, clips, grapas, tarjetas</span>
+            </div>
+            <div class="flex justify-between p-3 bg-slate-50">
+              <span class="text-slate-500">Nivel Sonoro</span>
+              <span class="font-bold text-slate-800">SilentShred™ (&lt; 60 dB)</span>
+            </div>
+            <div class="flex justify-between p-3">
+              <span class="text-slate-500">Dimensiones (Alt x Anc x Prof)</span>
+              <span class="font-bold text-slate-800">67,3 x 38,4 x 36,8 cm</span>
+            </div>
+            <div class="flex justify-between p-3 bg-slate-50">
+              <span class="text-slate-500">Peso Neto</span>
+              <span class="font-bold text-slate-800">13,2 kg</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTENIDO PESTAÑA 2: DESCARGAS -->
+      <div id="tabContent-downloads" class="p-6 sm:p-8 hidden space-y-4">
+        <h3 class="text-base font-extrabold text-slate-900">Documentación Oficial y Certificados</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="border border-slate-200 rounded-xl p-4 flex items-center justify-between bg-slate-50">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-rose-600 text-3xl">picture_as_pdf</span>
+              <div>
+                <div class="text-xs font-bold text-slate-900">Ficha Técnica Fellowes AutoMax 100M.pdf</div>
+                <div class="text-[10px] text-slate-400">Datasheet oficial de fabricante (2.4 MB)</div>
+              </div>
+            </div>
+            <button onclick="alert('Descargando PDF oficial de Fellowes...')"
+              class="text-xs font-bold text-crimson hover:underline flex items-center gap-1">
+              <span>Descargar</span>
+              <span class="material-symbols-outlined text-sm">download</span>
+            </button>
+          </div>
+
+          <div class="border border-slate-200 rounded-xl p-4 flex items-center justify-between bg-slate-50">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-rose-600 text-3xl">picture_as_pdf</span>
+              <div>
+                <div class="text-xs font-bold text-slate-900">Certificado Cumplimiento RGPD DIN 66399.pdf</div>
+                <div class="text-[10px] text-slate-400">Válido para auditorías de seguridad (1.1 MB)</div>
+              </div>
+            </div>
+            <button onclick="alert('Descargando Certificado RGPD...')"
+              class="text-xs font-bold text-crimson hover:underline flex items-center gap-1">
+              <span>Descargar</span>
+              <span class="material-symbols-outlined text-sm">download</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTENIDO PESTAÑA 3: SAT -->
+      <div id="tabContent-sat" class="p-6 sm:p-8 hidden space-y-4">
+        <h3 class="text-base font-extrabold text-slate-900">Garantía Directa y Asistencia Técnica Pedregosa</h3>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          Como distribuidores homologados en Andalucía, todos los equipos adquiridos en Pedregosa cuentan con cobertura directa de garantía oficial del fabricante y soporte técnico prioritario gestionado desde nuestras instalaciones centrales en Sevilla (Polígono Store, Calle Gramil 14).
+        </p>
+        <div class="p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-xs text-emerald-900 font-semibold flex items-center gap-2">
+          <span class="material-symbols-outlined text-emerald-600">check_circle</span>
+          <span>Sustitución de equipo o reparación rápida en caso de incidencia durante el período de garantía.</span>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ========================================== -->
+  <!-- 6. PIE DE PÁGINA CORPORATIVO               -->
+  <!-- ========================================== -->
+  <footer class="bg-slate-900 text-slate-400 text-xs py-8 px-4 border-t border-slate-800 mt-12">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <img src="assets/img/logo-pedregosa-pds.png" class="h-8 brightness-200 opacity-80">
+        <div>
+          <strong class="text-white">Pedregosa S.L.</strong> &middot; Polígono Store, Calle Gramil 14, 41008 Sevilla
+        </div>
+      </div>
+      <div class="text-left sm:text-right space-y-1">
+        <div>
+          Atención Comercial B2B: <a href="tel:954368011" class="text-white font-bold hover:underline">954 36 80 11</a> | WhatsApp: <a href="https://wa.me/34624825868" target="_blank" rel="noopener" class="text-[#25D366] font-bold hover:underline">+34 624 82 58 68</a>
+        </div>
+        <div class="text-[11px] text-slate-400 flex items-center sm:justify-end gap-1">
+          <span class="material-symbols-outlined text-xs text-amber-400">schedule</span>
+          <span>Horario: <strong class="text-slate-300 ped-schedule-lj">L-J: 8:30 a 14:30 y 15:30 a 17:30</strong> &middot; <strong class="text-slate-300 ped-schedule-v">Viernes: 8:00 a 15:00</strong></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT DE CONTROL DINÁMICO SEGÚN PRODUCTO -->
+  <script>
+    const catalog = {
+      'fellowes': {
+        brand: 'FELLOWES ESPAÑA',
+        pn: '4629201',
+        ean: '0043859733026',
+        title: 'Destructora Fellowes AutoMax 100M Microcorte DIN P-5',
+        badge: 'CUMPLIMIENTO RGPD',
+        priceNet: 235.00,
+        img: 'assets/img/banner-fellowes.jpg',
+        category: 'Periféricos & RGPD',
+        subcategory: 'Destructoras de Papel'
+      },
+      'lg-gram': {
+        brand: 'LG ELECTRONICS',
+        pn: '16Z90R-G.AA78B',
+        ean: '8806091873124',
+        title: 'Portátil LG Gram 16Z90R Intel Core i7 16GB 512GB SSD W11 Pro',
+        badge: 'OFERTA FLOTAS',
+        priceNet: 899.00,
+        img: 'assets/img/banner-lg-gram.jpg',
+        category: 'Ordenadores & Portátiles',
+        subcategory: 'Portátiles Ultraligeros'
+      },
+      'toner-hp': {
+        brand: 'HP ORIGINAL',
+        pn: 'W2030A',
+        ean: '0193015403218',
+        title: 'Tóner Original HP W2030A (HP 415A) Negro 2.400 págs.',
+        badge: '100% ORIGINAL',
+        priceNet: 79.50,
+        img: 'assets/img/categories/cat-consumibles.jpg',
+        category: 'Consumibles & Tóner',
+        subcategory: 'Tóner Láser HP'
+      },
+      'docking': {
+        brand: 'CONCEPTRONIC',
+        pn: 'DA200-USBC',
+        ean: '4015867223948',
+        title: 'Docking Station USB-C Dual HDMI 4K Gigabit 100W PD',
+        badge: 'CONECTIVIDAD',
+        priceNet: 48.00,
+        img: 'assets/img/banner-conceptronic.jpg',
+        category: 'Periféricos & Accesorios',
+        subcategory: 'Hubs & Docks'
+      }
+    };
+
+    // Leer parámetro URL ?id=...
+    const urlParams = new URLSearchParams(window.location.search);
+    const prodId = urlParams.get('id') || 'fellowes';
+    const prod = catalog[prodId] || catalog['fellowes'];
+
+    // Aplicar a la interfaz
+    document.getElementById('productBrand').innerText = prod.brand;
+    document.getElementById('productPN').innerText = prod.pn;
+    document.getElementById('productEAN').innerText = prod.ean;
+    document.getElementById('productTitle').innerText = prod.title;
+    document.getElementById('bcProduct').innerText = prod.title;
+    document.getElementById('bcCategory').innerText = prod.category;
+    document.getElementById('bcSubcategory').innerText = prod.subcategory;
+    document.getElementById('productBadgeTag').innerText = prod.badge;
+    document.getElementById('productPriceNet').innerText = prod.priceNet.toFixed(2) + ' €';
+    document.getElementById('productPriceTax').innerText = (prod.priceNet * 1.21).toFixed(2) + ' € con 21% IVA incluido';
+    document.getElementById('mainProductImg').src = prod.img;
+    document.getElementById('thumb1').src = prod.img;
+
+    function changeQty(delta) {
+      const q = document.getElementById('detailQty');
+      const val = parseInt(q.value) + delta;
+      if (val >= 1) q.value = val;
+    }
+
+    function addCurrentToCart() {
+      const qty = parseInt(document.getElementById('detailQty').value) || 1;
+      alert("¡" + qty + "x unidad(es) de '" + prod.title + "' añadidas a la cesta!\n\nRedirigiendo a la cesta...");
+      window.location.href = "preview-tienda.html";
+    }
+
+    function showTab(tabName) {
+      document.getElementById('tabContent-specs').classList.add('hidden');
+      document.getElementById('tabContent-downloads').classList.add('hidden');
+      document.getElementById('tabContent-sat').classList.add('hidden');
+
+      document.getElementById('tabBtn-specs').className = "px-6 py-3.5 text-xs font-bold text-slate-600 hover:text-slate-900 flex items-center gap-2";
+      document.getElementById('tabBtn-downloads').className = "px-6 py-3.5 text-xs font-bold text-slate-600 hover:text-slate-900 flex items-center gap-2";
+      document.getElementById('tabBtn-sat').className = "px-6 py-3.5 text-xs font-bold text-slate-600 hover:text-slate-900 flex items-center gap-2";
+
+      document.getElementById('tabContent-' + tabName).classList.remove('hidden');
+      const activeBtn = document.getElementById('tabBtn-' + tabName);
+      activeBtn.className = "px-6 py-3.5 text-xs font-extrabold border-b-2 border-crimson text-crimson bg-white flex items-center gap-2";
+    }
+
+    // ==========================================
+    // SISTEMA DE PRECIOS PRIVADOS B2B
+    // ==========================================
+    let b2bRole = localStorage.getItem('pedregosa_b2b_role') || 'guest';
+
+    function setB2BRole(role) {
+      b2bRole = role;
+      localStorage.setItem('pedregosa_b2b_role', role);
+
+      const btnGuest = document.getElementById('btnRoleGuest');
+      const btnClient = document.getElementById('btnRoleClient');
+
+      if (role === 'guest') {
+        document.body.classList.remove('b2b-client-mode');
+        document.body.classList.add('b2b-guest-mode');
+        if (btnGuest) {
+          btnGuest.className = 'px-2 py-0.5 rounded font-bold transition bg-amber-500 text-slate-950 flex items-center gap-1 shadow-2xs';
+        }
+        if (btnClient) {
+          btnClient.className = 'px-2 py-0.5 rounded font-semibold text-slate-300 hover:text-white transition flex items-center gap-1';
+        }
+      } else {
+        document.body.classList.remove('b2b-guest-mode');
+        document.body.classList.add('b2b-client-mode');
+        if (btnGuest) {
+          btnGuest.className = 'px-2 py-0.5 rounded font-semibold text-slate-300 hover:text-white transition flex items-center gap-1';
+        }
+        if (btnClient) {
+          btnClient.className = 'px-2 py-0.5 rounded font-bold transition bg-emerald-500 text-white flex items-center gap-1 shadow-2xs';
+        }
+      }
+    }
+
+    function openProductConsultModal() {
+      document.getElementById('consultProdTitle').innerText = prod.title;
+      document.getElementById('consultModal').classList.remove('hidden');
+    }
+
+    function closeConsultModal() {
+      document.getElementById('consultModal').classList.add('hidden');
+    }
+
+    function submitConsultForm(e) {
+      e.preventDefault();
+      alert('¡Solicitud de cotización B2B enviada con éxito!\n\nUn gestor comercial de Pedregosa revisará la cotización para "' + prod.title + '" y te responderá en menos de 2 horas laborables.');
+      closeConsultModal();
+    }
+
+    // Sincronización Global de Horario y Contacto
+    function syncGlobalSchedule() {
+      const savedLj = localStorage.getItem('pedregosa_schedule_lj');
+      const savedV = localStorage.getItem('pedregosa_schedule_v');
+      const savedWa = localStorage.getItem('pedregosa_whatsapp');
+
+      if (savedLj) document.querySelectorAll('.ped-schedule-lj').forEach(el => el.innerText = savedLj);
+      if (savedV) document.querySelectorAll('.ped-schedule-v').forEach(el => el.innerText = savedV);
+      if (savedWa) document.querySelectorAll('.ped-wa-num').forEach(el => el.innerText = savedWa);
+    }
+    window.addEventListener('storage', syncGlobalSchedule);
+
+    // Inicializar estado B2B al cargar
+    setB2BRole(b2bRole);
+    syncGlobalSchedule();
+  </script>
+
+  <!-- ========================================== -->
+  <!-- MODAL DE CONSULTA DE PRECIO & ACCESO B2B   -->
+  <!-- ========================================== -->
+  <div id="consultModal" onclick="if(event.target === this) closeConsultModal()"
+    class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative">
+      <button onclick="closeConsultModal()"
+        class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 transition">
+        <span class="material-symbols-outlined text-2xl">close</span>
+      </button>
+
+      <div class="flex items-center gap-2 text-crimson mb-3">
+        <span class="material-symbols-outlined text-2xl">lock_person</span>
+        <h3 class="text-base font-extrabold text-slate-900">Tarifa B2B Privada &middot; Consultar</h3>
+      </div>
+
+      <div class="bg-slate-50 p-3 rounded-lg border border-slate-200 mb-4 text-xs">
+        <div class="text-[10px] text-slate-400 font-bold uppercase">Artículo Seleccionado:</div>
+        <div id="consultProdTitle" class="font-extrabold text-slate-900 mt-0.5 line-clamp-2">Destructora Fellowes AutoMax 100M</div>
+      </div>
+
+      <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+        Los precios netos oficiales están reservados a empresas, administraciones públicas y autónomos con cuenta activa en Pedregosa.
+      </p>
+
+      <form onsubmit="submitConsultForm(event)" class="space-y-3 text-xs">
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Empresa / Razón Social o CIF:</label>
+          <input type="text" required placeholder="Ej: B12345678 o Nombre Empresa"
+            class="w-full bg-white border border-slate-300 rounded-lg p-2 text-xs font-semibold focus:border-crimson outline-none">
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Email Profesional:</label>
+            <input type="email" required placeholder="compras@empresa.com"
+              class="w-full bg-white border border-slate-300 rounded-lg p-2 text-xs focus:border-crimson outline-none">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Teléfono Directo:</label>
+            <input type="tel" required placeholder="600 000 000"
+              class="w-full bg-white border border-slate-300 rounded-lg p-2 text-xs focus:border-crimson outline-none">
+          </div>
+        </div>
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Unidades estimadas:</label>
+          <input type="number" min="1" value="1"
+            class="w-24 bg-white border border-slate-300 rounded-lg p-2 text-xs font-bold focus:border-crimson outline-none">
+        </div>
+
+        <button type="submit"
+          class="w-full btn-crimson font-extrabold py-2.5 rounded-lg flex items-center justify-center gap-1.5 shadow-sm mt-2">
+          <span class="material-symbols-outlined text-base">send</span>
+          <span>Solicitar Cotización Inmediata</span>
+        </button>
+      </form>
+
+      <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+        <span>¿Ya tienes clave comercial?</span>
+        <a href="preview-tienda.html" class="font-bold text-crimson hover:underline">Acceso Clientes B2B</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTÓN FLOTANTE WHATSAPP B2B -->
+  <a href="https://wa.me/34624825868?text=Hola%20Pedregosa,%20solicito%20informaci%C3%B3n%20o%20cotizaci%C3%B3n%20B2B"
+    target="_blank" rel="noopener"
+    class="fixed bottom-6 right-6 z-40 bg-[#25D366] hover:bg-[#20ba59] text-white p-3.5 rounded-full shadow-2xl flex items-center gap-2 group hover:scale-105 transition-all"
+    title="Atención Comercial WhatsApp (+34 624 82 58 68)">
+    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.41 1.56 1.56 2.41 3.63 2.41 5.83s-.85 4.27-2.41 5.83a8.21 8.21 0 0 1-5.82 2.41c-1.5 0-2.97-.39-4.27-1.14l-.31-.18-3.12.82.83-3.04-.2-.32a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.53c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.01-1.24-.74-.66-1.24-1.48-1.39-1.73-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08 0 1.22.89 2.41 1.02 2.58.12.17 1.76 2.69 4.27 3.77.6.26 1.07.41 1.43.53.6.19 1.15.16 1.59.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.17-.48-.29Z"/></svg>
+    <span class="hidden sm:inline font-bold text-xs pr-1">WhatsApp B2B</span>
+  </a>
+</body>
+</html>

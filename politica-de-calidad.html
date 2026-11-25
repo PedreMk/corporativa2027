@@ -1,0 +1,333 @@
+<!-- 
+=============================================================================
+PEDREGOSA CORPORATIVA 3.0
+Diseño, Arquitectura y Desarrollo Web por INFOPIXEL STUDIO
+Web: https://www.infopixel.es | Contacto: info@infopixel.es
+=============================================================================
+-->
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="es">
+<head>
+  <!-- Autoría Técnica Oficial (No visible en pantalla) -->
+  <meta name="author" content="INFOPIXEL STUDIO - www.infopixel.es"/>
+  <meta name="creator" content="INFOPIXEL STUDIO"/>
+
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.png"/>
+  <link rel="shortcut icon" href="assets/img/favicon.ico"/>
+  
+  <title>Política de Calidad, Medio Ambiente y Mejora Continua | Pedregosa S.L.</title>
+  <meta name="description" content="Política oficial de calidad y medio ambiente de Pedregosa S.L. Certificaciones ISO 9001 e ISO 14001 por Adok, proceso de mejora continua y encuesta de satisfacción."/>
+  <link rel="canonical" href="https://pedremk.github.io/corporativa2027/politica-de-calidad.html"/>
+  
+  <!-- Tipografía y Google Icons -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries,typography"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#8a0018",
+            "primary-container": "#b50524",
+            "crimson-deep": "#8F031C",
+            "crimson-bright": "#D91638",
+            "inverse-surface": "#0f172a",
+            "on-surface": "#0f172a",
+            "on-surface-variant": "#475569",
+            "slate-border": "#E2E8F0",
+            "slate-subtle": "#F8FAFC",
+            "badge-accent-emerald": "#059669",
+            "badge-accent-blue": "#0284C7"
+          },
+          fontFamily: {
+            sans: ["Plus Jakarta Sans", "system-ui", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-white font-sans text-on-surface antialiased flex flex-col min-h-screen">
+
+  <!-- ================= TOP CORPORATE BAR ================= -->
+  <header class="fixed top-0 w-full z-50 bg-white shadow-xs">
+    <div class="bg-[#0f172a] text-slate-300 border-b border-slate-800 text-[13px] tracking-tight">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-9 flex items-center justify-between">
+        <div class="flex items-center gap-6">
+          <a class="flex items-center gap-2 hover:text-white transition-colors" href="tel:954368011">
+            <span class="material-symbols-outlined text-[15px] text-badge-accent-emerald">call</span>
+            <span class="font-medium text-white">954 36 80 11</span>
+          </a>
+          <span class="text-slate-700 hidden sm:inline">|</span>
+          <a class="hidden sm:flex items-center gap-2 hover:text-white transition-colors text-slate-300" href="mailto:pedidos@pedregosa.es">
+            <span class="material-symbols-outlined text-[15px] text-slate-400">mail</span>
+            <span>pedidos@pedregosa.es</span>
+          </a>
+          <span class="text-slate-700 hidden md:inline">|</span>
+          <span class="hidden md:inline-flex items-center gap-1.5 text-slate-400">
+            <span class="w-1.5 h-1.5 rounded-full bg-badge-accent-emerald"></span>
+            Polígono Store &bull; Calle Gramil nº 8, 41008 Sevilla
+          </span>
+        </div>
+        <div class="flex items-center gap-4 text-xs">
+          <a class="inline-flex items-center gap-1 hover:text-white transition-colors text-slate-300" href="https://tienda.pedregosa.es" target="_blank">
+            <span class="material-symbols-outlined text-[14px] text-sky-400">devices</span>
+            <span>Tienda IT</span>
+          </a>
+          <span class="text-slate-700">|</span>
+          <a class="inline-flex items-center gap-1 hover:text-white transition-colors text-slate-300" href="https://oficina.pedregosa.es" target="_blank">
+            <span class="material-symbols-outlined text-[14px] text-red-400">desk</span>
+            <span>Tienda Papelería</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN NAVIGATION -->
+    <div class="border-b border-slate-200/80 bg-white/95 backdrop-blur-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+        <a class="flex-shrink-0 py-2" href="index.html">
+          <img alt="Pedregosa S.L." class="h-9 sm:h-10 w-auto object-contain" src="assets/img/logo-pedregosa-tagline.png"/>
+        </a>
+        <nav class="hidden lg:flex items-center gap-6 text-[14px] font-semibold text-slate-700">
+<a class="hover:text-primary transition-colors" href="index.html">Inicio</a>
+<a class="hover:text-primary transition-colors" href="quienes-somos.html">Quiénes Somos</a>
+<div class="relative group">
+  <button type="button" class="inline-flex items-center gap-1 py-2 hover:text-primary transition-colors cursor-pointer">
+    <span>Productos</span>
+    <span class="material-symbols-outlined text-[17px] text-slate-400 group-hover:text-primary transition-transform group-hover:rotate-180">expand_more</span>
+  </button>
+  <div class="absolute top-full left-0 w-72 bg-white rounded-xl border border-slate-200 shadow-xl p-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50">
+    <a class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-slate-50 text-xs font-bold text-slate-800 hover:text-primary transition-colors" href="coste-por-copia.html">
+      <span class="w-8 h-8 rounded-lg bg-red-50 text-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[18px]">print</span></span>
+      <div><span>Coste por Copia</span><span class="block text-[10px] text-slate-400 font-normal">Flotas MPS y auditoría de impresión</span></div>
+    </a>
+    <a class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-slate-50 text-xs font-bold text-slate-800 hover:text-primary transition-colors" href="https://oficina.pedregosa.es" target="_blank" rel="noopener">
+      <span class="w-8 h-8 rounded-lg bg-amber-50 text-amber-700 flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[18px]">inventory_2</span></span>
+      <div><span>Material de Oficina</span><span class="block text-[10px] text-slate-400 font-normal">Papelería corporativa y suministro diario</span></div>
+    </a>
+    <a class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-slate-50 text-xs font-bold text-slate-800 hover:text-primary transition-colors" href="mobiliario-de-oficina.html">
+      <span class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[18px]">chair_alt</span></span>
+      <div><span>Mobiliario de Oficina</span><span class="block text-[10px] text-slate-400 font-normal">Mesas Emobok, sit-stand y sillería</span></div>
+    </a>
+    <a class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-slate-50 text-xs font-bold text-slate-800 hover:text-primary transition-colors" href="https://tienda.pedregosa.es" target="_blank" rel="noopener">
+      <span class="w-8 h-8 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[18px]">devices</span></span>
+      <div><span>Tecnología</span><span class="block text-[10px] text-slate-400 font-normal">Hardware IT, portátiles y servidores</span></div>
+    </a>
+    <a class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-slate-50 text-xs font-bold text-slate-800 hover:text-primary transition-colors" href="catalogos.html">
+      <span class="w-8 h-8 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[18px]">menu_book</span></span>
+      <div><span>Catálogos</span><span class="block text-[10px] text-slate-400 font-normal">Tarifas oficiales y fichas PDF 2026</span></div>
+    </a>
+  </div>
+</div>
+<a class="hover:text-primary transition-colors" href="index.html#divisiones">Servicios</a>
+<a class="hover:text-primary transition-colors" href="acuerdos-licitaciones.html">Licitaciones B2G</a>
+<a class="hover:text-primary transition-colors" href="index.html#sectores">Ventajas B2C</a>
+</nav>
+        <div class="flex items-center gap-3">
+          <a class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary-container hover:bg-crimson-deep text-white font-semibold text-[13px] rounded tracking-wide shadow-xs transition-all" href="index.html#contacto-b2b">
+            <span>Pedir Presupuesto B2B</span>
+            <span class="material-symbols-outlined text-[17px]">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= CUERPO PRINCIPAL ================= -->
+  <main class="pt-[116px] pb-20 flex-1">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+      
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs font-semibold text-slate-500 mb-8">
+        <a href="index.html" class="hover:text-primary transition-colors">Inicio</a>
+        <span class="text-slate-300">/</span>
+        <span class="text-primary font-bold">Calidad y Medio Ambiente</span>
+      </nav>
+
+      <!-- Encabezado de la Página -->
+      <div class="border-b border-slate-200 pb-6 mb-8">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-200 mb-3">
+          <span class="material-symbols-outlined text-sm">verified</span>
+          <span>Sistemas Integrados de Gestión &bull; ISO 9001 e ISO 14001</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Política de Calidad, Sostenibilidad y Mejora Continua</h1>
+        <p class="text-xs text-slate-500 mt-2">Documento oficial del Sistema Integrado de Gestión &bull; Revisado y aprobado por Dirección</p>
+      </div>
+
+      <!-- Tarjeta Destacada: Sellos Oficiales de Certificación -->
+      <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 mb-10 shadow-xs">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div class="max-w-xl">
+            <h2 class="text-lg font-bold text-slate-900 mb-1 flex items-center gap-2">
+              <span class="material-symbols-outlined text-emerald-600">workspace_premium</span>
+              <span>Certificaciones Oficiales Acreditadas</span>
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              En <strong>PEDREGOSA, S.L.</strong> implementamos y mantenemos un Sistema Integrado de Gestión certificado por la entidad acreditada <strong>Adok Certificación</strong>, que garantiza el cumplimiento estricto de las normas internacionales más exigentes en aprovisionamiento empresarial y contratación pública.
+            </p>
+          </div>
+          <!-- Logos de Certificación -->
+          <div class="flex items-center gap-3 flex-shrink-0">
+            <div class="p-2 bg-white rounded-xl border border-slate-200 shadow-xs flex flex-col items-center">
+              <img src="assets/img/adok-iso9001-120.jpg" alt="Certificado ISO 9001 Adok" class="h-16 w-auto object-contain"/>
+              <span class="text-[9px] font-bold text-slate-500 mt-1 uppercase">ISO 9001:2015</span>
+            </div>
+            <div class="p-2 bg-white rounded-xl border border-slate-200 shadow-xs flex flex-col items-center">
+              <img src="assets/img/adok-iso14001-120.jpg" alt="Certificado ISO 14001 Adok" class="h-16 w-auto object-contain"/>
+              <span class="text-[9px] font-bold text-slate-500 mt-1 uppercase">ISO 14001:2015</span>
+            </div>
+            <div class="p-2 bg-white rounded-xl border border-slate-200 shadow-xs flex flex-col items-center">
+              <img src="assets/img/hp_amplify.jpg" alt="HP Amplify Sostenibilidad" class="h-16 w-auto object-contain"/>
+              <span class="text-[9px] font-bold text-slate-500 mt-1 uppercase">HP Amplify</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contenido de la Política Oficial -->
+      <div class="space-y-8 text-xs sm:text-sm text-slate-700 leading-relaxed">
+        
+        <!-- Sección 1: Compromiso -->
+        <section class="space-y-3">
+          <h2 class="text-base sm:text-lg font-bold text-slate-900 border-b border-slate-100 pb-1.5 flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs font-bold">1</span>
+            Compromiso de Gestión y Alcance
+          </h2>
+          <p>
+            En <strong>PEDREGOSA, S.L.</strong> nos comprometemos a ofrecer servicios de comercialización, distribución y soporte técnico de material de oficina, consumibles de impresión, equipamiento informático, mobiliario y tecnología audiovisual que cumplan rigurosamente con las expectativas de nuestros clientes y con todos los requisitos legales y reglamentarios aplicables, minimizando el impacto ambiental de nuestras actividades.
+          </p>
+          <p>
+            Nuestro Sistema Integrado de Gestión asegura la <strong>mejora continua de nuestros procesos, productos y servicios</strong>, actuando siempre con un alto sentido de responsabilidad social, ética y medioambiental.
+          </p>
+        </section>
+
+        <!-- Sección 2: Principios Rectores -->
+        <section class="space-y-4">
+          <h2 class="text-base sm:text-lg font-bold text-slate-900 border-b border-slate-100 pb-1.5 flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs font-bold">2</span>
+            Principios de Calidad y Medio Ambiente
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+            <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-1">
+              <strong class="text-slate-900 font-bold block flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-emerald-600 text-base">support_agent</span>
+                Enfoque en el Cliente
+              </strong>
+              <p class="text-slate-600 text-xs">
+                Lograr la satisfacción plena de nuestros clientes mediante soluciones adaptadas, comunicación directa y asesoramiento técnico con interlocutor asignado.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-1">
+              <strong class="text-slate-900 font-bold block flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-emerald-600 text-base">psychology</span>
+                Liderazgo y Know-how del Personal
+              </strong>
+              <p class="text-slate-600 text-xs">
+                Fomento de la formación continua, desarrollo de competencias e implicación de nuestro equipo humano como pilar del servicio excelente.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-1">
+              <strong class="text-slate-900 font-bold block flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-emerald-600 text-base">schema</span>
+                Gestión Basada en Procesos
+              </strong>
+              <p class="text-slate-600 text-xs">
+                Operaciones estandarizadas y trazables que garantizan resultados coherentes, puntualidad en la entrega e integración ambiental en cada fase.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-1">
+              <strong class="text-slate-900 font-bold block flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-emerald-600 text-base">recycling</span>
+                Sostenibilidad y Normativa RAEE
+              </strong>
+              <p class="text-slate-600 text-xs">
+                Gestión autorizada de Residuos de Aparatos Eléctricos y Electrónicos (RAEE), recogida de cartuchos usados y fomento del ecodiseño.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sección 3: Objetivos y Evaluación Periódica -->
+        <section class="space-y-3">
+          <h2 class="text-base sm:text-lg font-bold text-slate-900 border-b border-slate-100 pb-1.5 flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs font-bold">3</span>
+            Objetivos Medibles y Revisión por Dirección
+          </h2>
+          <p>
+            Para asegurar la eficacia del sistema, en Pedregosa establecemos <strong>objetivos anuales medibles de calidad y medio ambiente</strong>, revisados periódicamente en comités de dirección para evaluar su progreso:
+          </p>
+          <ul class="list-disc pl-5 space-y-1.5 text-slate-600">
+            <li>Índice de puntualidad en entregas superior al 98,5% en Andalucía.</li>
+            <li>Optimización de rutas logísticas y reducción progresiva de la huella de carbono.</li>
+            <li>Gestión y recogida certificada de tóners y consumibles agotados a través de programas de canal oficial.</li>
+            <li>Resolución de incidencias técnicas en un plazo máximo inferior a 24 horas laborables.</li>
+          </ul>
+        </section>
+
+        <!-- ==========================================
+             MÓDULO DESTACADO: MEJORA CONTINUA Y ENCUESTA DE CALIDAD
+             ========================================== -->
+        <section class="mt-12 p-8 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 text-white shadow-xl relative overflow-hidden">
+          <div class="absolute -right-12 -bottom-12 w-64 h-64 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none"></div>
+          
+          <div class="relative z-10 max-w-2xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-950/80 border border-emerald-500/30 mb-4">
+              <span class="material-symbols-outlined text-sm">trending_up</span>
+              <span>Proceso de Mejora Continua</span>
+            </div>
+            
+            <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight mb-3">
+              Su opinión es clave para seguir mejorando
+            </h2>
+            
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6 font-normal">
+              Dentro de nuestro compromiso con la norma ISO 9001 y la excelencia en el servicio, realizamos un seguimiento continuo de la satisfacción de nuestros clientes. Le agradecemos que dedique 2 minutos a completar nuestra encuesta de calidad oficial.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+              <a href="https://docs.google.com/forms/d/1_aK-CpxJRRvlixqSak4mW_vM6CCfrZFMCmbEdfDYtiU/viewform" target="_blank" rel="noopener" class="px-6 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs sm:text-sm rounded-xl shadow-lg transition-all inline-flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-lg">rate_review</span>
+                <span>Completar Encuesta de Calidad</span>
+                <span class="material-symbols-outlined text-sm">open_in_new</span>
+              </a>
+              <span class="text-[11px] text-slate-400 text-center sm:text-left">
+                Formulario oficial confidencial de evaluación de proveedores.
+              </span>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ================= FOOTER CORPORATIVO OFICIAL ================= -->
+  <footer class="bg-white border-t border-slate-200 text-slate-600 text-sm mt-auto">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-12 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <p>&copy; 2026 Pedregosa S.L.U. &bull; Todos los derechos reservados.</p>
+      <div class="flex flex-wrap items-center gap-6 sm:pr-24 relative z-10">
+        <a class="hover:text-primary transition-colors" href="aviso-legal.html">Aviso Legal</a>
+        <a class="hover:text-primary transition-colors" href="politica-privacidad.html">Política de Privacidad</a>
+        <a class="hover:text-primary transition-colors" href="politica-de-cookies.html">Cookies</a>
+        <a class="text-primary font-bold hover:underline" href="politica-de-calidad.html">Calidad y Medio Ambiente</a>
+      </div>
+      <!-- Créditos técnicos integrados por INFOPIXEL STUDIO -->
+    </div>
+  </footer>
+
+</body>
+</html>
