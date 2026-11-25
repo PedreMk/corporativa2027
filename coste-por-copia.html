@@ -470,6 +470,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </div>
             </div>
 
+            <!-- 4. Termómetro de Ahorro (Bajo / Medio / Alto) -->
+            <div class="space-y-2.5 p-4 rounded-xl bg-slate-50/80 border border-slate-200">
+              <div class="flex items-center justify-between gap-2">
+                <label class="font-bold text-slate-900 text-sm flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-[18px] text-primary">thermostat</span>
+                  <span>4. Nivel de ahorro estimado:</span>
+                </label>
+                <span id="calc-temp-badge" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-extrabold bg-emerald-100 text-emerald-800">
+                  Medio (~32%)
+                </span>
+              </div>
+
+              <div class="pt-1">
+                <div class="h-2.5 w-full rounded-full bg-gradient-to-r from-sky-400 via-amber-400 to-emerald-600 p-0.5 mb-1.5"></div>
+                <input type="range" id="calc-saving-slider" min="1" max="3" step="1" value="2" class="w-full accent-primary cursor-pointer"/>
+              </div>
+
+              <div class="grid grid-cols-3 gap-2">
+                <button type="button" class="ped-calc-temp p-2 rounded-lg border border-slate-200 bg-white text-slate-600 font-bold text-center transition cursor-pointer text-[11px]" data-level="1">
+                  Bajo &middot; ~20%
+                </button>
+                <button type="button" class="ped-calc-temp p-2 rounded-lg border-2 border-primary bg-primary/10 text-primary font-bold text-center transition cursor-pointer text-[11px]" data-level="2">
+                  Medio &middot; ~32%
+                </button>
+                <button type="button" class="ped-calc-temp p-2 rounded-lg border border-slate-200 bg-white text-slate-600 font-bold text-center transition cursor-pointer text-[11px]" data-level="3">
+                  Alto &middot; ~45%
+                </button>
+              </div>
+            </div>
+
             <!-- Resultados -->
             <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
               <div class="flex items-center justify-between text-sm">
@@ -482,7 +512,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </div>
               <div class="pt-3 border-t border-slate-200 flex items-center justify-between">
                 <div>
-                  <div class="text-xs font-extrabold uppercase text-primary">Ahorro Anual Estimado (~32%)</div>
+                  <div id="calc-saving-label" class="text-xs font-extrabold uppercase text-primary">Ahorro Anual Estimado (~32%)</div>
                   <div class="text-[11px] text-slate-500">Cero costes imprevistos de piezas, mano de obra o tóner</div>
                 </div>
                 <div id="calc-annual-saving" class="text-2xl sm:text-3xl font-black text-emerald-600">684 € / año</div>
@@ -602,6 +632,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const pedCostEl = document.getElementById("calc-pedregosa-cost");
       const savingEl = document.getElementById("calc-annual-saving");
       const formatLabelEl = document.getElementById("calc-format-label");
+      const savingSlider = document.getElementById("calc-saving-slider");
+      const tempBadgeEl = document.getElementById("calc-temp-badge");
+      const savingLabelEl = document.getElementById("calc-saving-label");
+      const tempBtns = document.querySelectorAll(".ped-calc-temp");
       const modeBtns = document.querySelectorAll(".ped-calc-mode");
       const formatBtns = document.querySelectorAll(".ped-calc-format");
       const sendRequestBtn = document.getElementById("ped-send-calc-request");
@@ -609,6 +643,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       let currentMode = "bw";
       let currentFormat = "a4";
+      let savingLevel = 2;
+
+      const tempConfig = {
+        1: { pct: 0.20, label: "Bajo (~20%)", cls: "inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-extrabold bg-sky-100 text-sky-800" },
+        2: { pct: 0.32, label: "Medio (~32%)", cls: "inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-extrabold bg-emerald-100 text-emerald-800" },
+        3: { pct: 0.45, label: "Alto (~45%)", cls: "inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-extrabold bg-emerald-600 text-white" }
+      };
+
+      function syncTempUI() {
+        if (savingSlider) savingSlider.value = String(savingLevel);
+        const cfg = tempConfig[savingLevel] || tempConfig[2];
+        if (tempBadgeEl) {
+          tempBadgeEl.textContent = cfg.label;
+          tempBadgeEl.className = cfg.cls;
+        }
+        if (savingLabelEl) {
+          savingLabelEl.textContent = "Ahorro Anual Estimado (~" + Math.round(cfg.pct * 100) + "%)";
+        }
+        tempBtns.forEach(b => {
+          const lvl = parseInt(b.getAttribute("data-level"), 10);
+          if (lvl === savingLevel) {
+            b.classList.add("border-2", "border-primary", "bg-primary/10", "text-primary");
+            b.classList.remove("border", "border-slate-200", "bg-white", "text-slate-600");
+          } else {
+            b.classList.remove("border-2", "border-primary", "bg-primary/10", "text-primary");
+            b.classList.add("border", "border-slate-200", "bg-white", "text-slate-600");
+          }
+        });
+      }
 
       function updateCalc() {
         if (!volSlider) return;
@@ -616,26 +679,41 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         if (volDisplay) volDisplay.textContent = vol.toLocaleString("es-ES") + " págs";
 
         let tradRate = 0.028;
-        let pedRate = 0.011;
-        if (currentMode === "mixed") { tradRate = 0.052; pedRate = 0.025; }
-        else if (currentMode === "color") { tradRate = 0.088; pedRate = 0.044; }
+        if (currentMode === "mixed") { tradRate = 0.052; }
+        else if (currentMode === "color") { tradRate = 0.088; }
 
         if (currentFormat === "a3") {
           tradRate *= 1.18;
-          pedRate *= 1.15;
           if (formatLabelEl) formatLabelEl.textContent = "A4 + A3 Departamental";
         } else {
           if (formatLabelEl) formatLabelEl.textContent = "Solo A4";
         }
 
+        const cfg = tempConfig[savingLevel] || tempConfig[2];
         const tradMonthly = Math.round(vol * tradRate);
-        const pedMonthly = Math.round(vol * pedRate);
-        const annualSaving = Math.max(180, (tradMonthly - pedMonthly) * 12);
+        const pedMonthly = Math.max(10, Math.round(tradMonthly * (1 - cfg.pct)));
+        const annualSaving = Math.max(120, (tradMonthly - pedMonthly) * 12);
 
         if (tradCostEl) tradCostEl.textContent = tradMonthly.toLocaleString("es-ES") + " €/mes";
         if (pedCostEl) pedCostEl.textContent = pedMonthly.toLocaleString("es-ES") + " €/mes";
         if (savingEl) savingEl.textContent = annualSaving.toLocaleString("es-ES") + " € / año";
       }
+
+      if (savingSlider) {
+        savingSlider.addEventListener("input", () => {
+          savingLevel = parseInt(savingSlider.value, 10) || 2;
+          syncTempUI();
+          updateCalc();
+        });
+      }
+      tempBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+          savingLevel = parseInt(btn.getAttribute("data-level"), 10) || 2;
+          syncTempUI();
+          updateCalc();
+        });
+      });
+      syncTempUI();
 
       if (volSlider) volSlider.addEventListener("input", updateCalc);
 
@@ -699,6 +777,7 @@ PARÁMETROS AUDITADOS EN CALCULADORA:
 - Volumen mensual estimado: ${vol} páginas/mes
 - Formato de impresión: ${formatStr}
 - Tipo de impresión: ${modeStr}
+- Nivel de ahorro estimado: ${(tempConfig[savingLevel] || tempConfig[2]).label}
 - Ahorro anual estimado: ${savingStr}
 
 Por favor, envíenme una propuesta formal comparativa de flotas y servicios gestionados de impresión.`);
