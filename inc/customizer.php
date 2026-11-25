@@ -77,46 +77,151 @@ function pedregosa_customize_register($wp_customize) {
     }
 
     // =========================================================================
-    // 3. DIAPOSITIVAS DEL HERO (SLIDER B2B)
+    // 3. DIAPOSITIVAS DEL HERO (SLIDER B2B: SLIDES 1, 2, 3 Y 4 EDITABLES)
     // =========================================================================
-    $wp_customize->add_section('ped_section_hero', [
-        'title'    => __('🖼️ Diapositivas de Portada (Slider)', 'pedregosa-corporate'),
-        'panel'    => 'pedregosa_options_panel',
-        'priority' => 30,
-    ]);
+    $slides_config = [
+        1 => [
+            'section'    => 'ped_section_hero',
+            'sec_title'  => __('🖼️ Slide 1: Portada Corporativa B2B', 'pedregosa-corporate'),
+            'priority'   => 30,
+            'badge'      => 'PROVEEDOR HOMOLOGADO B2B & SECTOR PÚBLICO',
+            'badge_sub'  => 'Soluciones para PYMES, Grandes Cuentas y Administraciones',
+            'title'      => 'Soluciones integrales en <span class="text-primary-container">Impresión</span>, Oficina y <span class="text-primary-container">Tecnología</span> para su empresa.',
+            'desc'       => 'Centralice sus compras en un único proveedor de máxima solvencia técnica. Más de 35 años aprovisionando con rigor a administraciones públicas, universidades y aportando agilidad, precios directos y asesoría personalizada a PYMES y sector privado. Catálogo con más de 30.000 referencias y entregas 24/48h.',
+            'tags'       => '+35 Años de Experiencia | 30.000+ Referencias | Entrega 24/48h Península',
+            'btn1_text'  => 'Solicitar Presupuesto Corporativo',
+            'btn1_url'   => '#contacto',
+            'btn2_text'  => 'Explorar Portales Online',
+            'btn2_url'   => '#servicios',
+            'microcopy'  => '¿Consultas o stock crítico? Llámenos al 954 36 80 11 | Atención comercial directa L-V',
+            'img'        => 'http://pedregosa-30.local/wp-content/uploads/2026/03/FACHADA-CALLE-GRAMIL-8-1030x433.jpg',
+            'card_badge' => 'Sede Central • Polígono Store (Sevilla)',
+            'card_title' => 'Polígono Store, C/ Gramil nº 8, 41008 Sevilla',
+            'card_sub'   => 'Conexión telemática directa con almacenes oficiales de fabricantes en España',
+        ],
+        2 => [
+            'section'    => 'ped_section_hero_slide2',
+            'sec_title'  => __('💻 Slide 2: Renovación IT & Acuerdos Marco', 'pedregosa-corporate'),
+            'priority'   => 31,
+            'badge'      => 'RENOVACIÓN DE PARQUE INFORMÁTICO • ACUERDOS MARCO',
+            'badge_sub'  => 'Aprovisionamiento Corporativo Homologado',
+            'title'      => 'Flotas de <span class="text-primary-container">Portátiles y Puestos IT</span> configurados a medida para su equipo.',
+            'desc'       => 'No solo entregamos hardware: diseñamos y desplegamos proyectos de renovación tecnológica para empresas y organismos públicos. Si su proyecto o concurso lo requiere, preparamos, serigrafiamos y etiquetamos sus equipos antes de la entrega, con ampliación oficial de garantía del fabricante y cumplimiento estricto de pliegos técnicos.',
+            'tags'       => 'ACER | ASUS | LG Electronics (LGE)',
+            'btn1_text'  => 'Solicitar Propuesta de Proyecto',
+            'btn1_url'   => '#contacto',
+            'btn2_text'  => 'Explorar Catálogo Profesional',
+            'btn2_url'   => 'https://tienda.pedregosa.es',
+            'microcopy'  => 'Asesoramiento técnico previo • Facturación adaptada a AA.PP. y empresas privadas',
+            'img'        => 'https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?auto=format&fit=crop&w=1000&q=80',
+            'card_badge' => 'DISPONIBILIDAD GARANTIZADA • 24/48H',
+            'card_title' => '+2.400 Configuraciones Profesionales',
+            'card_sub'   => 'Condiciones especiales para proyectos por volumen, licitaciones y Acuerdos Marco.',
+        ],
+        3 => [
+            'section'    => 'ped_section_hero_slide3',
+            'sec_title'  => __('🖥️ Slide 3: Aulas Digitales & Audiovisuales', 'pedregosa-corporate'),
+            'priority'   => 32,
+            'badge'      => 'TECNOLOGÍA EDUCATIVA • AUDIOVISUALES',
+            'badge_sub'  => 'Salas de Juntas y Campus Homologados',
+            'title'      => 'Pantallas Interactivas y <span class="text-primary-container">Tecnología Educativa</span>.',
+            'desc'       => 'Equipamiento interactivo para educación digital y salas ejecutivas. Monitores táctiles 4K de 65", 75" y 86", videobar inteligentes Teams/Zoom con IA y soporte de instalación llave en mano por técnicos cualificados.',
+            'tags'       => 'Paneles Táctiles 4K | Videoconferencia Inteligente | Instalación Llave en Mano',
+            'btn1_text'  => 'Solicitar Proyecto Audiovisual',
+            'btn1_url'   => '#contacto',
+            'btn2_text'  => 'Ver Soluciones Audiovisuales',
+            'btn2_url'   => '/audiovisuales/',
+            'microcopy'  => 'Canal Oficial Promethean, Clevertouch, ViewSonic y equipamiento homologado',
+            'img'        => 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80',
+            'card_badge' => 'CENTROS EDUCATIVOS • SECTOR PÚBLICO',
+            'card_title' => 'Aulas Digitales y Campus Digitales',
+            'card_sub'   => 'Pantallas táctiles interactivas y entornos de colaboración digital',
+        ],
+        4 => [
+            'section'    => 'ped_section_hero_slide4',
+            'sec_title'  => __('🖨️ Slide 4: Impresión y Pago por Copia', 'pedregosa-corporate'),
+            'priority'   => 33,
+            'badge'      => 'OPTIMIZACIÓN DE COSTES • PAGO POR COPIA',
+            'badge_sub'  => 'Servicios Gestionados de Impresión (MPS)',
+            'title'      => 'Servicios Gestionados de <span class="text-primary-container">Impresión y Pago por Copia</span>.',
+            'desc'       => 'Reduzca hasta un 30% los costes de su parque de impresoras multifunción. Monitorización automática de niveles de tóner, reposición predictiva de consumibles y mantenimiento técnico in situ con piezas y mano de obra incluidos.',
+            'tags'       => 'Ahorro hasta 30% | Reposición Automática de Tóner | Soporte Técnico In Situ',
+            'btn1_text'  => 'Solicitar Auditoría Sin Coste',
+            'btn1_url'   => '#contacto',
+            'btn2_text'  => 'Ver Consumibles e Impresoras',
+            'btn2_url'   => '/consumibles-e-impresoras/',
+            'microcopy'  => 'Monitorización remota proactiva y contratos de mantenimiento directo',
+            'img'        => get_template_directory_uri() . '/assets/img/tecnico-impresora-encuadrado.jpg',
+            'card_badge' => 'AUDITORÍA SIN COSTE • FLOTAS MPS',
+            'card_title' => 'Parque de Multifuncionales Profesionales',
+            'card_sub'   => 'Optimización integral de costes documentales y contratos de mantenimiento directo',
+        ],
+    ];
 
-    // Slide 1
-    $wp_customize->add_setting('ped_slide1_title', [
-        'default'           => 'Soluciones integrales en Impresión, Oficina y Tecnología para su empresa',
-        'sanitize_callback' => 'sanitize_text_field',
-    ]);
-    $wp_customize->add_control('ped_slide1_title', [
-        'label'   => __('Slide 1 - Titular Principal', 'pedregosa-corporate'),
-        'section' => 'ped_section_hero',
-        'type'    => 'textarea',
-    ]);
+    foreach ($slides_config as $num => $cfg) {
+        $sec = $cfg['section'];
+        $wp_customize->add_section($sec, [
+            'title'    => $cfg['sec_title'],
+            'panel'    => 'pedregosa_options_panel',
+            'priority' => $cfg['priority'],
+        ]);
 
-    $wp_customize->add_setting('ped_slide1_desc', [
-        'default'           => 'Centralice sus compras en un único proveedor de máxima solvencia técnica. Más de 35 años aprovisionando con rigor a administraciones públicas, universidades y aportando agilidad, precios directos y asesoría personalizada a PYMES y sector privado. Catálogo con más de 30.000 referencias y entregas 24/48h.',
-        'sanitize_callback' => 'sanitize_textarea_field',
-    ]);
-    $wp_customize->add_control('ped_slide1_desc', [
-        'label'   => __('Slide 1 - Párrafo Descriptivo', 'pedregosa-corporate'),
-        'section' => 'ped_section_hero',
-        'type'    => 'textarea',
-    ]);
+        $fields = [
+            "ped_slide{$num}_badge"      => ['label' => "Slide {$num} - Etiqueta Superior (Badge)", 'type' => 'text', 'sanitize' => 'sanitize_text_field'],
+            "ped_slide{$num}_badge_sub"  => ['label' => "Slide {$num} - Sub-etiqueta", 'type' => 'text', 'sanitize' => 'sanitize_text_field'],
+            "ped_slide{$num}_title"      => ['label' => "Slide {$num} - Titular Principal (admite <span>)", 'type' => 'textarea', 'sanitize' => 'wp_kses_post'],
+            "ped_slide{$num}_desc"       => ['label' => "Slide {$num} - Párrafo Descriptivo", 'type' => 'textarea', 'sanitize' => 'sanitize_textarea_field'],
+            "ped_slide{$num}_tags"       => ['label' => "Slide {$num} - Pills / Fabricantes (separados por |)", 'type' => 'text', 'sanitize' => 'sanitize_text_field'],
+            "ped_slide{$num}_btn1_text"  => ['label' => "Slide {$num} - Botón 1 Texto", 'type' => 'text', 'sanitize' => 'sanitize_text_field'],
+            "ped_slide{$num}_btn1_url"   => ['label' => "Slide {$num} - Botón 1 Enlace", 'type' => 'text', 'sanitize' => 'sanitize_text_field'],
+            "ped_slide{$num}_btn2_text"  => ['label' => "Slide {$num} - Botón 2 Texto", 'type' => 'text', 'sanitize' => 'sanitize_text_field'],
+            "ped_slide{$num}_btn2_url"   => ['label' => "Slide {$num} - Botón 2 Enlace", 'type' => 'text', 'sanitize' => 'sanitize_text_field'],
+            "ped_slide{$num}_microcopy"  => ['label' => "Slide {$num} - Microcopy Inferior", 'type' => 'text', 'sanitize' => 'sanitize_text_field'],
+            "ped_slide{$num}_card_badge" => ['label' => "Slide {$num} - Tarjeta Imagen (Etiqueta)", 'type' => 'text', 'sanitize' => 'sanitize_text_field'],
+            "ped_slide{$num}_card_title" => ['label' => "Slide {$num} - Tarjeta Imagen (Título)", 'type' => 'text', 'sanitize' => 'sanitize_text_field'],
+            "ped_slide{$num}_card_sub"   => ['label' => "Slide {$num} - Tarjeta Imagen (Subtítulo)", 'type' => 'text', 'sanitize' => 'sanitize_text_field'],
+        ];
 
-    $wp_customize->add_setting('ped_slide1_btn1_text', ['default' => 'Solicitar Presupuesto Corporativo', 'sanitize_callback' => 'sanitize_text_field']);
-    $wp_customize->add_control('ped_slide1_btn1_text', ['label' => 'Slide 1 - Botón 1 Texto', 'section' => 'ped_section_hero', 'type' => 'text']);
+        $map_keys = [
+            "ped_slide{$num}_badge"      => 'badge',
+            "ped_slide{$num}_badge_sub"  => 'badge_sub',
+            "ped_slide{$num}_title"      => 'title',
+            "ped_slide{$num}_desc"       => 'desc',
+            "ped_slide{$num}_tags"       => 'tags',
+            "ped_slide{$num}_btn1_text"  => 'btn1_text',
+            "ped_slide{$num}_btn1_url"   => 'btn1_url',
+            "ped_slide{$num}_btn2_text"  => 'btn2_text',
+            "ped_slide{$num}_btn2_url"   => 'btn2_url',
+            "ped_slide{$num}_microcopy"  => 'microcopy',
+            "ped_slide{$num}_card_badge" => 'card_badge',
+            "ped_slide{$num}_card_title" => 'card_title',
+            "ped_slide{$num}_card_sub"   => 'card_sub',
+        ];
 
-    $wp_customize->add_setting('ped_slide1_btn1_url', ['default' => '#contacto-rapido', 'sanitize_callback' => 'sanitize_text_field']);
-    $wp_customize->add_control('ped_slide1_btn1_url', ['label' => 'Slide 1 - Botón 1 Enlace', 'section' => 'ped_section_hero', 'type' => 'text']);
+        foreach ($fields as $setting_id => $meta) {
+            $default_key = $map_keys[$setting_id];
+            $wp_customize->add_setting($setting_id, [
+                'default'           => $cfg[$default_key],
+                'sanitize_callback' => $meta['sanitize'],
+                'transport'         => 'refresh',
+            ]);
+            $wp_customize->add_control($setting_id, [
+                'label'   => $meta['label'],
+                'section' => $sec,
+                'type'    => $meta['type'],
+            ]);
+        }
 
-    $wp_customize->add_setting('ped_slide1_btn2_text', ['default' => 'Explorar Portales Online', 'sanitize_callback' => 'sanitize_text_field']);
-    $wp_customize->add_control('ped_slide1_btn2_text', ['label' => 'Slide 1 - Botón 2 Texto', 'section' => 'ped_section_hero', 'type' => 'text']);
-
-    $wp_customize->add_setting('ped_slide1_btn2_url', ['default' => '#portales-tienda', 'sanitize_callback' => 'sanitize_text_field']);
-    $wp_customize->add_control('ped_slide1_btn2_url', ['label' => 'Slide 1 - Botón 2 Enlace', 'section' => 'ped_section_hero', 'type' => 'text']);
+        $wp_customize->add_setting("ped_slide{$num}_img", [
+            'default'           => $cfg['img'],
+            'sanitize_callback' => 'esc_url_raw',
+            'transport'         => 'refresh',
+        ]);
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, "ped_slide{$num}_img", [
+            'label'   => "Slide {$num} - Imagen Lateral",
+            'section' => $sec,
+        ]));
+    }
 
     // =========================================================================
     // 4. MÉTRICAS DE SOLVENCIA B2B (LOS 4 CONTADORES)

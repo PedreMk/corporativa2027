@@ -10,76 +10,101 @@ $theme_uri = get_template_directory_uri();
 $phone = pedregosa_phone();
 $address = pedregosa_address();
 
-// Definición de las 4 diapositivas del carrusel corporativo con alturas uniformes
-$slides = [
-    [
-        'badge'        => 'PROVEEDOR HOMOLOGADO B2B &amp; SECTOR PÚBLICO',
-        'badge_sub'    => 'Soluciones para PYMES, Grandes Cuentas y Administraciones',
-        'badge_icon'   => 'verified',
-        'title'        => 'Soluciones integrales en <span class="text-primary-container">Impresión</span>, Oficina y <span class="text-primary-container">Tecnología</span> para su empresa.',
-        'desc'         => 'Centralice sus compras en un único proveedor de máxima solvencia técnica. Más de 35 años aprovisionando con rigor a administraciones públicas, universidades y aportando agilidad, precios directos y asesoría personalizada a PYMES y sector privado. Catálogo con más de 30.000 referencias y entregas 24/48h.',
-        'btn1_text'    => 'SOLICITAR PRESUPUESTO',
-        'btn1_url'     => '#contacto',
-        'btn2_text'    => 'Explorar Portales Online',
-        'btn2_url'     => '#servicios',
-        'tags'         => ['+35 Años de Experiencia', '30.000+ Referencias', 'Entrega 24/48h Península'],
-        'img_src'      => 'http://pedregosa-30.local/wp-content/uploads/2026/03/FACHADA-CALLE-GRAMIL-8-1030x433.jpg',
-        'card_badge'   => 'Sede Central &bull; Polígono Store (Sevilla)',
-        'card_title'   => $address,
-        'card_sub'     => 'Conexión telemática directa con almacenes oficiales de fabricantes en España'
+// Definición dinámica de las 4 diapositivas del carrusel corporativo (editables desde Personalizar)
+$slide_defaults = [
+    1 => [
+        'badge'      => 'PROVEEDOR HOMOLOGADO B2B &amp; SECTOR PÚBLICO',
+        'badge_sub'  => 'Soluciones para PYMES, Grandes Cuentas y Administraciones',
+        'badge_icon' => 'verified',
+        'title'      => 'Soluciones integrales en <span class="text-primary-container">Impresión</span>, Oficina y <span class="text-primary-container">Tecnología</span> para su empresa.',
+        'desc'       => 'Centralice sus compras en un único proveedor de máxima solvencia técnica. Más de 35 años aprovisionando con rigor a administraciones públicas, universidades y aportando agilidad, precios directos y asesoría personalizada a PYMES y sector privado. Catálogo con más de 30.000 referencias y entregas 24/48h.',
+        'tags'       => '+35 Años de Experiencia | 30.000+ Referencias | Entrega 24/48h Península',
+        'btn1_text'  => 'SOLICITAR PRESUPUESTO',
+        'btn1_url'   => '#contacto',
+        'btn2_text'  => 'Explorar Portales Online',
+        'btn2_url'   => '#servicios',
+        'microcopy'  => '¿Consultas o stock crítico? Llámenos al ' . $phone . ' | Atención comercial directa L-V',
+        'img_src'    => 'http://pedregosa-30.local/wp-content/uploads/2026/03/FACHADA-CALLE-GRAMIL-8-1030x433.jpg',
+        'card_badge' => 'Sede Central &bull; Polígono Store (Sevilla)',
+        'card_title' => $address,
+        'card_sub'   => 'Conexión telemática directa con almacenes oficiales de fabricantes en España',
     ],
-    [
-        'badge'        => 'RENOVACIÓN DE PUESTOS IT &bull; FLOTAS B2B',
-        'badge_sub'    => 'Aprovisionamiento Corporativo Homologado',
-        'badge_icon'   => 'laptop_mac',
-        'title'        => 'Flotas de <span class="text-primary-container">Portátiles &amp; PCs</span> Homologados para Empresas',
-        'desc'         => 'Suministro masivo de equipos portátiles ultraligeros, estaciones de trabajo de alto rendimiento y All-In-One con configuración a medida para administraciones públicas y empresas privadas. Gestión de garantías directas de fabricante in situ.',
-        'btn1_text'    => 'SOLICITAR PRESUPUESTO',
-        'btn1_url'     => '#contacto',
-        'btn2_text'    => 'Ver Catálogo de Ordenadores',
-        'btn2_url'     => esc_url(home_url('/informatica/')),
-        'tags'         => ['HP EliteBook &amp; ProBook', 'Lenovo ThinkPad &amp; ThinkCentre', 'ASUS ExpertBook'],
-        'img_src'      => 'https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?auto=format&fit=crop&w=1000&q=80',
-        'fallback_img' => 'http://pedregosa-30.local/wp-content/uploads/2026/03/FACHADA-CALLE-GRAMIL-8-1030x433.jpg',
-        'card_badge'   => 'DISPONIBILIDAD INMEDIATA &bull; 24/48H',
-        'card_title'   => '+2.400 Referencias de Movilidad y Puestos IT',
-        'card_sub'     => 'Tarifas preferentes para compras por flota y mesas de contratación'
+    2 => [
+        'badge'      => 'RENOVACIÓN DE PARQUE INFORMÁTICO &bull; ACUERDOS MARCO',
+        'badge_sub'  => 'Aprovisionamiento Corporativo Homologado',
+        'badge_icon' => 'laptop_mac',
+        'title'      => 'Flotas de <span class="text-primary-container">Portátiles y Puestos IT</span> configurados a medida para su equipo.',
+        'desc'       => 'No solo entregamos hardware: diseñamos y desplegamos proyectos de renovación tecnológica para empresas y organismos públicos. Si su proyecto o concurso lo requiere, preparamos, serigrafiamos y etiquetamos sus equipos antes de la entrega, con ampliación oficial de garantía del fabricante y cumplimiento estricto de pliegos técnicos.',
+        'tags'       => 'ACER | ASUS | LG Electronics (LGE)',
+        'btn1_text'  => 'Solicitar Propuesta de Proyecto',
+        'btn1_url'   => '#contacto',
+        'btn2_text'  => 'Explorar Catálogo Profesional',
+        'btn2_url'   => 'https://tienda.pedregosa.es',
+        'microcopy'  => 'Asesoramiento técnico previo &bull; Facturación adaptada a AA.PP. y empresas privadas',
+        'img_src'    => 'https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?auto=format&fit=crop&w=1000&q=80',
+        'card_badge' => 'DISPONIBILIDAD GARANTIZADA &bull; 24/48H',
+        'card_title' => '+2.400 Configuraciones Profesionales',
+        'card_sub'   => 'Condiciones especiales para proyectos por volumen, licitaciones y Acuerdos Marco.',
     ],
-    [
-        'badge'        => 'TECNOLOGÍA EDUCATIVA &bull; TECNOLOGÍA AUDIOVISUAL',
-        'badge_sub'    => 'Salas de Juntas y Centros de Formación Homologados',
-        'badge_icon'   => 'co_present',
-        'title'        => 'Pantallas Interactivas y <span class="text-primary-container">Tecnología Educativa</span>',
-        'desc'         => 'Equipamiento interactivo para educación digital y salas ejecutivas. Monitores táctiles 4K de 65", 75" y 86", videobar inteligentes Teams/Zoom con IA y soporte de instalación llave en mano por técnicos cualificados.',
-        'btn1_text'    => 'SOLICITAR PRESUPUESTO',
-        'btn1_url'     => '#contacto',
-        'btn2_text'    => 'Ver Soluciones Audiovisuales',
-        'btn2_url'     => esc_url(home_url('/audiovisuales/')),
-        'tags'         => ['Paneles Táctiles 4K', 'Videoconferencia Inteligente', 'Instalación Llave en Mano'],
-        'img_src'      => 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80',
-        'fallback_img' => 'http://pedregosa-30.local/wp-content/uploads/2026/03/FACHADA-CALLE-GRAMIL-8-1030x433.jpg',
-        'card_badge'   => 'CENTROS EDUCATIVOS &bull; SECTOR PÚBLICO',
-        'card_title'   => 'Aulas Digitales y Campus Digitales',
-        'card_sub'     => 'Pantallas táctiles interactivas y entornos de colaboración digital'
+    3 => [
+        'badge'      => 'TECNOLOGÍA EDUCATIVA &bull; TECNOLOGÍA AUDIOVISUAL',
+        'badge_sub'  => 'Salas de Juntas y Centros de Formación Homologados',
+        'badge_icon' => 'co_present',
+        'title'      => 'Pantallas Interactivas y <span class="text-primary-container">Tecnología Educativa</span>',
+        'desc'       => 'Equipamiento interactivo para educación digital y salas ejecutivas. Monitores táctiles 4K de 65", 75" y 86", videobar inteligentes Teams/Zoom con IA y soporte de instalación llave en mano por técnicos cualificados.',
+        'tags'       => 'Paneles Táctiles 4K | Videoconferencia Inteligente | Instalación Llave en Mano',
+        'btn1_text'  => 'SOLICITAR PRESUPUESTO',
+        'btn1_url'   => '#contacto',
+        'btn2_text'  => 'Ver Soluciones Audiovisuales',
+        'btn2_url'   => esc_url(home_url('/audiovisuales/')),
+        'microcopy'  => 'Canal Oficial Promethean, Clevertouch, ViewSonic y equipamiento homologado',
+        'img_src'    => 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80',
+        'card_badge' => 'CENTROS EDUCATIVOS &bull; SECTOR PÚBLICO',
+        'card_title' => 'Aulas Digitales y Campus Digitales',
+        'card_sub'   => 'Pantallas táctiles interactivas y entornos de colaboración digital',
     ],
-    [
-        'badge'        => 'OPTIMIZACIÓN DE COSTES &bull; PAGO POR COPIA',
-        'badge_sub'    => 'Servicios Gestionados de Impresión (MPS)',
-        'badge_icon'   => 'print',
-        'title'        => 'Servicios Gestionados de <span class="text-primary-container">Impresión y Pago por Copia</span>',
-        'desc'         => 'Reduzca hasta un 30% los costes de su parque de impresoras multifunción. Monitorización automática de niveles de tóner, reposición predictiva de consumibles y mantenimiento técnico in situ con piezas y mano de obra incluidos.',
-        'btn1_text'    => 'SOLICITAR PRESUPUESTO',
-        'btn1_url'     => '#contacto',
-        'btn2_text'    => 'Ver Consumibles e Impresoras',
-        'btn2_url'     => esc_url(home_url('/consumibles-e-impresoras/')),
-        'tags'         => ['Facturación Exacta por Copia', 'Reposición Automática de Tóner', 'Soporte In Situ'],
-        'img_src'      => $theme_uri . '/assets/img/tecnico-impresora-encuadrado.jpg',
-        'fallback_img' => 'http://pedregosa-30.local/wp-content/uploads/2026/03/FACHADA-CALLE-GRAMIL-8-1030x433.jpg',
-        'card_badge'   => 'AUDITORÍA SIN COSTE &bull; FLOTAS MPS',
-        'card_title'   => 'Parque de Multifuncionales Profesionales',
-        'card_sub'     => 'Optimización integral de costes documentales y contratos de mantenimiento directo'
-    ]
+    4 => [
+        'badge'      => 'OPTIMIZACIÓN DE COSTES &bull; PAGO POR COPIA',
+        'badge_sub'  => 'Servicios Gestionados de Impresión (MPS)',
+        'badge_icon' => 'print',
+        'title'      => 'Servicios Gestionados de <span class="text-primary-container">Impresión y Pago por Copia</span>',
+        'desc'       => 'Reduzca hasta un 30% los costes de su parque de impresoras multifunción. Monitorización automática de niveles de tóner, reposición predictiva de consumibles y mantenimiento técnico in situ con piezas y mano de obra incluidos.',
+        'tags'       => 'Facturación Exacta por Copia | Reposición Automática de Tóner | Soporte In Situ',
+        'btn1_text'  => 'SOLICITAR PRESUPUESTO',
+        'btn1_url'   => '#contacto',
+        'btn2_text'  => 'Ver Consumibles e Impresoras',
+        'btn2_url'   => esc_url(home_url('/consumibles-e-impresoras/')),
+        'microcopy'  => 'Monitorización remota proactiva y contratos de mantenimiento directo',
+        'img_src'    => $theme_uri . '/assets/img/tecnico-impresora-encuadrado.jpg',
+        'card_badge' => 'AUDITORÍA SIN COSTE &bull; FLOTAS MPS',
+        'card_title' => 'Parque de Multifuncionales Profesionales',
+        'card_sub'   => 'Optimización integral de costes documentales y contratos de mantenimiento directo',
+    ],
 ];
+
+$slides = [];
+foreach ($slide_defaults as $n => $def) {
+    $raw_tags = pedregosa_get_option("ped_slide{$n}_tags", $def['tags']);
+    $tags_arr = array_filter(array_map('trim', explode('|', $raw_tags)));
+    $slides[] = [
+        'badge'        => pedregosa_get_option("ped_slide{$n}_badge", $def['badge']),
+        'badge_sub'    => pedregosa_get_option("ped_slide{$n}_badge_sub", $def['badge_sub']),
+        'badge_icon'   => $def['badge_icon'],
+        'title'        => pedregosa_get_option("ped_slide{$n}_title", $def['title']),
+        'desc'         => pedregosa_get_option("ped_slide{$n}_desc", $def['desc']),
+        'tags'         => $tags_arr,
+        'btn1_text'    => pedregosa_get_option("ped_slide{$n}_btn1_text", $def['btn1_text']),
+        'btn1_url'     => pedregosa_get_option("ped_slide{$n}_btn1_url", $def['btn1_url']),
+        'btn2_text'    => pedregosa_get_option("ped_slide{$n}_btn2_text", $def['btn2_text']),
+        'btn2_url'     => pedregosa_get_option("ped_slide{$n}_btn2_url", $def['btn2_url']),
+        'microcopy'    => pedregosa_get_option("ped_slide{$n}_microcopy", $def['microcopy']),
+        'img_src'      => pedregosa_get_option("ped_slide{$n}_img", $def['img_src']),
+        'fallback_img' => 'http://pedregosa-30.local/wp-content/uploads/2026/03/FACHADA-CALLE-GRAMIL-8-1030x433.jpg',
+        'card_badge'   => pedregosa_get_option("ped_slide{$n}_card_badge", $def['card_badge']),
+        'card_title'   => pedregosa_get_option("ped_slide{$n}_card_title", $def['card_title']),
+        'card_sub'     => pedregosa_get_option("ped_slide{$n}_card_sub", $def['card_sub']),
+    ];
+}
 ?>
 
 <section class="relative w-full pt-4 pb-8 bg-surface border-b border-slate-border overflow-hidden" id="hero-slider-section">
@@ -138,8 +163,8 @@ $slides = [
 
               <!-- Micro Info Urgencias -->
               <div class="flex items-center gap-2 pt-1 text-xs text-slate-500">
-                <span class="material-symbols-outlined text-primary text-[17px]">support_agent</span>
-                <span>¿Consultas o stock crítico? Llámenos al <strong class="text-slate-800"><?php echo esc_html($phone); ?></strong> | Atención comercial directa L-V</span>
+                <span class="material-symbols-outlined text-primary text-[17px]">verified_user</span>
+                <span><?php echo wp_kses_post($s['microcopy']); ?></span>
               </div>
 
             </div>
