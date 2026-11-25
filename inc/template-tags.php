@@ -43,5 +43,5 @@ function pedregosa_schedule() {
 }
 
 function pedregosa_shop_url() {
-    return esc_url(pedregosa_get_option('ped_shop_url', 'http://34.255.186.36/'));
+    return esc_url(pedregosa_get_option('ped_shop_url', 'https://tienda.pedregosa.es/'));
 }

@@ -94,7 +94,7 @@ function pedregosa_customize_register($wp_customize) {
             'btn2_text'  => 'Explorar Portales Online',
             'btn2_url'   => '#servicios',
             'microcopy'  => '¿Consultas o stock crítico? Llámenos al 954 36 80 11 | Atención comercial directa L-V',
-            'img'        => 'http://pedregosa-30.local/wp-content/uploads/2026/03/FACHADA-CALLE-GRAMIL-8-1030x433.jpg',
+            'img'        => get_template_directory_uri() . '/assets/img/fachada-gramil.jpg',
             'card_badge' => 'Sede Central • Polígono Store (Sevilla)',
             'card_title' => 'Polígono Store, C/ Gramil nº 8, 41008 Sevilla',
             'card_sub'   => 'Conexión telemática directa con almacenes oficiales de fabricantes en España',
@@ -265,7 +265,7 @@ function pedregosa_customize_register($wp_customize) {
     ]);
 
     $links = [
-        'ped_shop_url'    => ['label' => 'URL Tienda PrestaShop Informática', 'default' => 'http://34.255.186.36/'],
+        'ped_shop_url'    => ['label' => 'URL Tienda PrestaShop Informática', 'default' => 'https://tienda.pedregosa.es/'],
         'ped_catalog_url' => ['label' => 'URL Catálogos / Fichas Técnicas', 'default' => '/catalogos/'],
         'ped_dir3_url'    => ['label' => 'URL Información Licitaciones FACe / DIR3', 'default' => '#licitaciones'],
     ];

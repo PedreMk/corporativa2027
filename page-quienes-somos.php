@@ -56,7 +56,7 @@ get_header();
           <!-- Columna Derecha: Foto de Instalaciones y Sede -->
           <div class="lg:col-span-5">
             <div class="relative rounded-2xl overflow-hidden border border-slate-border shadow-2xl bg-inverse-surface aspect-[4/3] group">
-              <img class="w-full h-full object-cover img-right-bottom group-hover:scale-105 transition-transform duration-700" style="object-position: right bottom !important; object-fit: cover !important;" src="http://pedregosa-30.local/wp-content/uploads/2026/03/FACHADA-CALLE-GRAMIL-8-1030x433.jpg" alt="Instalaciones Pedregosa Calle Gramil Sevilla"/>
+              <img class="w-full h-full object-cover img-right-bottom group-hover:scale-105 transition-transform duration-700" style="object-position: right bottom !important; object-fit: cover !important;" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/fachada-gramil.jpg" alt="Instalaciones Pedregosa Calle Gramil Sevilla"/>
               <div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/85 via-transparent to-transparent pointer-events-none"></div>
               <div class="absolute bottom-5 left-5 right-5 bg-inverse-surface/90 backdrop-blur-md p-4 rounded-xl border border-white/10 text-white">
                 <div class="text-xs font-bold text-primary-fixed uppercase tracking-wider mb-0.5">Sede Central en Sevilla</div>

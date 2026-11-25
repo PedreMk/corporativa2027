@@ -24,7 +24,7 @@ $slide_defaults = [
         'btn2_text'  => 'Explorar Portales Online',
         'btn2_url'   => '#servicios',
         'microcopy'  => '¿Consultas o stock crítico? Llámenos al ' . $phone . ' | Atención comercial directa L-V',
-        'img_src'    => 'http://pedregosa-30.local/wp-content/uploads/2026/03/FACHADA-CALLE-GRAMIL-8-1030x433.jpg',
+        'img_src'    => $theme_uri . '/assets/img/fachada-gramil.jpg',
         'card_badge' => 'Sede Central &bull; Polígono Store (Sevilla)',
         'card_title' => $address,
         'card_sub'   => 'Conexión telemática directa con almacenes oficiales de fabricantes en España',
@@ -99,7 +99,7 @@ foreach ($slide_defaults as $n => $def) {
         'btn2_url'     => pedregosa_get_option("ped_slide{$n}_btn2_url", $def['btn2_url']),
         'microcopy'    => pedregosa_get_option("ped_slide{$n}_microcopy", $def['microcopy']),
         'img_src'      => pedregosa_get_option("ped_slide{$n}_img", $def['img_src']),
-        'fallback_img' => 'http://pedregosa-30.local/wp-content/uploads/2026/03/FACHADA-CALLE-GRAMIL-8-1030x433.jpg',
+        'fallback_img' => $theme_uri . '/assets/img/fachada-gramil.jpg',
         'card_badge'   => pedregosa_get_option("ped_slide{$n}_card_badge", $def['card_badge']),
         'card_title'   => pedregosa_get_option("ped_slide{$n}_card_title", $def['card_title']),
         'card_sub'     => pedregosa_get_option("ped_slide{$n}_card_sub", $def['card_sub']),
@@ -173,7 +173,7 @@ foreach ($slide_defaults as $n => $def) {
             <!-- Columna Derecha: Tarjeta Visual -->
             <div class="lg:col-span-5">
               <div class="relative rounded-2xl overflow-hidden border border-slate-border shadow-xl bg-slate-900 aspect-[4/3] group">
-                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="<?php echo esc_url($s['img_src']); ?>" alt="<?php echo esc_attr(strip_tags($s['title'])); ?>" onerror="this.src='<?php echo esc_url($s['fallback_img'] ?? 'http://pedregosa-30.local/wp-content/uploads/2026/03/FACHADA-CALLE-GRAMIL-8-1030x433.jpg'); ?>'"/>
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="<?php echo esc_url($s['img_src']); ?>" alt="<?php echo esc_attr(strip_tags($s['title'])); ?>" onerror="this.src='<?php echo esc_url($s['fallback_img'] ?? $theme_uri . '/assets/img/fachada-gramil.jpg'); ?>'"/>
                 <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent pointer-events-none"></div>
                 
                 <div class="absolute bottom-4 left-4 right-4 bg-slate-900/90 backdrop-blur-md p-4 rounded-xl border border-white/15 text-white">
