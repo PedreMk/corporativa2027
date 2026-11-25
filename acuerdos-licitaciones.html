@@ -62,8 +62,19 @@ Web: https://www.infopixel.es | Contacto: info@infopixel.es
       }
     };
   </script>
+<!-- Google Tag Manager (Pedregosa Corporativa) -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5CNQZPV6');</script>
+<!-- End Google Tag Manager -->
 </head>
 <body class="bg-white font-sans text-on-surface antialiased">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CNQZPV6"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
   <!-- ================= TOP CORPORATE BAR ================= -->
   <header class="fixed top-0 w-full z-50 bg-white">
@@ -750,5 +761,77 @@ Web: https://www.infopixel.es | Contacto: info@infopixel.es
     });
   </script>
 
+<!-- DataLayer B2B Pedregosa: Embudo, Eventos Clave y Cross-Domain -->
+<script>
+(function() {
+  window.dataLayer = window.dataLayer || [];
+  function pushEvent(eventName, params) {
+    window.dataLayer.push(Object.assign({ 'event': eventName }, params || {}));
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // 1. Clics hacia Tiendas Online (Paso crítico del Funnel: Web -> PrestaShop)
+    document.querySelectorAll('a[href*="tienda.pedregosa.es"], a[href*="oficina.pedregosa.es"]').forEach(function(el) {
+      el.addEventListener('click', function() {
+        var url = el.href || '';
+        pushEvent('clic_ir_a_tienda', {
+          tienda_destino: url.indexOf('oficina') !== -1 ? 'Tienda_Oficina' : 'Tienda_Informatica',
+          enlace_texto: (el.innerText || '').trim().substring(0, 60),
+          target_url: url
+        });
+      });
+    });
+
+    // 2. Descargas de Catálogos PDF
+    document.querySelectorAll('a[href$=".pdf"], a[href*="catalogos"]').forEach(function(el) {
+      el.addEventListener('click', function() {
+        pushEvent('descarga_catalogo', {
+          documento: (el.innerText || el.getAttribute('href') || '').trim().substring(0, 80),
+          target_url: el.href || ''
+        });
+      });
+    });
+
+    // 3. Uso de Calculadora Coste por Copia & Envío de Auditoría
+    var calcSlider = document.getElementById('calc-volume-slider');
+    if (calcSlider) {
+      calcSlider.addEventListener('change', function() {
+        pushEvent('uso_calculadora_cpc', { volumen_mensual: calcSlider.value });
+      });
+    }
+    var sendCalc = document.getElementById('ped-send-calc-request');
+    if (sendCalc) {
+      sendCalc.addEventListener('click', function() {
+        pushEvent('envio_auditoria_cpc', {
+          volumen_mensual: calcSlider ? calcSlider.value : '5000',
+          lead_tipo: 'Calculadora_MPS'
+        });
+      });
+    }
+
+    // 4. Envío de Formularios B2B / Mobiliario
+    document.querySelectorAll('form').forEach(function(form) {
+      form.addEventListener('submit', function() {
+        pushEvent('generate_lead', {
+          form_id: form.id || 'formulario_corporativo',
+          page_path: window.location.pathname
+        });
+      });
+    });
+
+    // 5. Clics en Teléfono, Email y WhatsApp
+    document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
+      el.addEventListener('click', function() {
+        pushEvent('llamada_telefono', { telefono: el.getAttribute('href') });
+      });
+    });
+    document.querySelectorAll('a[href*="wa.me"]').forEach(function(el) {
+      el.addEventListener('click', function() {
+        pushEvent('clic_whatsapp', { origen: window.location.pathname });
+      });
+    });
+  });
+})();
+</script>
 </body>
 </html>

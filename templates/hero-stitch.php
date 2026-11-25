@@ -129,9 +129,10 @@ foreach ($slide_defaults as $n => $def) {
                 <span class="text-slate-600 font-medium hidden sm:inline"><?php echo $s['badge_sub']; ?></span>
               </div>
 
-              <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-on-surface tracking-tight leading-tight min-h-[2.4em] flex items-center">
-                <span><?php echo $s['title']; ?></span>
-              </h1>
+              <?php $heading_tag = ($idx === 0) ? 'h1' : 'h2'; ?>
+              <<?php echo $heading_tag; ?> class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-on-surface tracking-tight leading-tight min-h-[2.4em] flex items-center">
+                <span><?php echo wp_kses_post($s['title']); ?></span>
+              </<?php echo $heading_tag; ?>>
 
               <p class="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl min-h-[4.5em] flex items-center">
                 <?php echo esc_html($s['desc']); ?>

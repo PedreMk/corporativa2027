@@ -156,8 +156,19 @@ Web: https://www.infopixel.es | Contacto: info@infopixel.es
     object-fit: cover !important;
   }
 </style>
+<!-- Google Tag Manager (Pedregosa Corporativa) -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5CNQZPV6');</script>
+<!-- End Google Tag Manager -->
 </head>
 <body class="bg-white font-sans text-on-surface antialiased selection:bg-primary-container selection:text-white">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CNQZPV6"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <!-- ================= TOP CORPORATE BAR ================= -->
 <header class="fixed top-0 w-full z-50 bg-white">
 <div class="bg-[#0f172a] text-slate-300 border-b border-slate-800 text-[13px] tracking-tight">
@@ -441,9 +452,9 @@ Web: https://www.infopixel.es | Contacto: info@infopixel.es
               <span class="text-slate-300 hidden sm:inline">•</span>
               <span class="text-slate-600 font-medium hidden sm:inline normal-case tracking-normal">Salas de Juntas y Campus Homologados</span>
             </div>
-            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950 tracking-tight leading-[1.15] min-h-[2.4em] flex items-center">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950 tracking-tight leading-[1.15] min-h-[2.4em] flex items-center">
               <span>Pantallas Interactivas y <span class="text-primary-container">Tecnología Educativa</span>.</span>
-            </h1>
+            </h2>
             <p class="text-base text-slate-600 leading-relaxed max-w-2xl min-h-[4.2em] flex items-center font-normal">
               Equipamiento interactivo para educación digital y salas ejecutivas. Monitores táctiles 4K de 65", 75" y 86", videobar inteligentes Teams/Zoom con IA y soporte de instalación llave en mano por técnicos certificados.
             </p>
@@ -503,9 +514,9 @@ Web: https://www.infopixel.es | Contacto: info@infopixel.es
               <span class="text-slate-300 hidden sm:inline">•</span>
               <span class="text-slate-600 font-medium hidden sm:inline normal-case tracking-normal">Servicios Gestionados de Impresión (MPS)</span>
             </div>
-            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950 tracking-tight leading-[1.15] min-h-[2.4em] flex items-center">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950 tracking-tight leading-[1.15] min-h-[2.4em] flex items-center">
               <span>Servicios Gestionados de <span class="text-primary-container">Impresión y Pago por Copia</span>.</span>
-            </h1>
+            </h2>
             <p class="text-base text-slate-600 leading-relaxed max-w-2xl min-h-[4.2em] flex items-center font-normal">
               Reduzca hasta un 30% los costes de su parque de impresoras multifunción. Monitorización automática de niveles de tóner, reposición predictiva de consumibles y mantenimiento técnico in situ con piezas y mano de obra incluidos.
             </p>
@@ -592,9 +603,9 @@ Web: https://www.infopixel.es | Contacto: info@infopixel.es
 <span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
               Proveedor Homologado • Sector Público &amp; Corporativo
             </div>
-<h1 class="text-3xl sm:text-5xl lg:text-[50px] font-extrabold text-slate-950 leading-[1.12] tracking-tight">
+<h2 class="text-3xl sm:text-5xl lg:text-[50px] font-extrabold text-slate-950 leading-[1.12] tracking-tight">
               Suministro integral y tecnología para grandes organizaciones y empresas.
-            </h1>
+            </h2>
 <p class="mt-6 text-lg text-slate-600 leading-relaxed font-normal max-w-2xl">
               Centralice sus compras en un único interlocutor con solvencia técnica demostrada. Más de 35 años aprovisionando con rigor administrativo a administraciones públicas, universidades y grandes cuentas, y aportando precios directos y agilidad comercial a PYMES.
             </p>
@@ -3376,4 +3387,76 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
+<!-- DataLayer B2B Pedregosa: Embudo, Eventos Clave y Cross-Domain -->
+<script>
+(function() {
+  window.dataLayer = window.dataLayer || [];
+  function pushEvent(eventName, params) {
+    window.dataLayer.push(Object.assign({ 'event': eventName }, params || {}));
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // 1. Clics hacia Tiendas Online (Paso crítico del Funnel: Web -> PrestaShop)
+    document.querySelectorAll('a[href*="tienda.pedregosa.es"], a[href*="oficina.pedregosa.es"]').forEach(function(el) {
+      el.addEventListener('click', function() {
+        var url = el.href || '';
+        pushEvent('clic_ir_a_tienda', {
+          tienda_destino: url.indexOf('oficina') !== -1 ? 'Tienda_Oficina' : 'Tienda_Informatica',
+          enlace_texto: (el.innerText || '').trim().substring(0, 60),
+          target_url: url
+        });
+      });
+    });
+
+    // 2. Descargas de Catálogos PDF
+    document.querySelectorAll('a[href$=".pdf"], a[href*="catalogos"]').forEach(function(el) {
+      el.addEventListener('click', function() {
+        pushEvent('descarga_catalogo', {
+          documento: (el.innerText || el.getAttribute('href') || '').trim().substring(0, 80),
+          target_url: el.href || ''
+        });
+      });
+    });
+
+    // 3. Uso de Calculadora Coste por Copia & Envío de Auditoría
+    var calcSlider = document.getElementById('calc-volume-slider');
+    if (calcSlider) {
+      calcSlider.addEventListener('change', function() {
+        pushEvent('uso_calculadora_cpc', { volumen_mensual: calcSlider.value });
+      });
+    }
+    var sendCalc = document.getElementById('ped-send-calc-request');
+    if (sendCalc) {
+      sendCalc.addEventListener('click', function() {
+        pushEvent('envio_auditoria_cpc', {
+          volumen_mensual: calcSlider ? calcSlider.value : '5000',
+          lead_tipo: 'Calculadora_MPS'
+        });
+      });
+    }
+
+    // 4. Envío de Formularios B2B / Mobiliario
+    document.querySelectorAll('form').forEach(function(form) {
+      form.addEventListener('submit', function() {
+        pushEvent('generate_lead', {
+          form_id: form.id || 'formulario_corporativo',
+          page_path: window.location.pathname
+        });
+      });
+    });
+
+    // 5. Clics en Teléfono, Email y WhatsApp
+    document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
+      el.addEventListener('click', function() {
+        pushEvent('llamada_telefono', { telefono: el.getAttribute('href') });
+      });
+    });
+    document.querySelectorAll('a[href*="wa.me"]').forEach(function(el) {
+      el.addEventListener('click', function() {
+        pushEvent('clic_whatsapp', { origen: window.location.pathname });
+      });
+    });
+  });
+})();
+</script>
 </body></html>
