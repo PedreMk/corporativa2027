@@ -190,7 +190,7 @@ if (!defined('ABSPATH')) exit;
           Licitaciones B2G
         </a>
 
-        <a class="px-3.5 py-2 rounded-lg hover:text-primary transition-colors text-slate-600" href="<?php echo esc_url(home_url('/#servicios')); ?>">
+        <a class="px-3.5 py-2 rounded-lg hover:text-primary transition-colors <?php echo is_page('ventajas-b2b') ? 'text-primary font-bold' : 'text-slate-600'; ?>" href="<?php echo esc_url(home_url('/ventajas-b2b/')); ?>">
           Ventajas B2B
         </a>
       </nav>
