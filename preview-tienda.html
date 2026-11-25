@@ -3189,17 +3189,32 @@
   <!-- ========================================== -->
   <!-- PESTAÑA FLOTANTE LATERAL: TIENDA PAPELERÍA -->
   <!-- ========================================== -->
-  <a href="https://oficina.pedregosa.es" target="_blank" rel="noopener"
-    class="fixed right-0 top-1/2 -translate-y-1/2 z-40 group flex items-center bg-amber-400 hover:bg-amber-500 text-slate-950 shadow-2xl rounded-l-2xl border border-r-0 border-amber-300 transition-all duration-300 overflow-hidden"
-    title="¿Buscas material de oficina o papelería? Visita nuestra tienda dedicada">
-    <div class="flex flex-col items-center justify-center gap-2 py-4 px-2.5">
-      <span class="material-symbols-outlined text-xl text-slate-900 group-hover:scale-110 transition-transform">edit_note</span>
-      <span class="[writing-mode:vertical-rl] rotate-180 text-[11px] font-extrabold uppercase tracking-wider whitespace-nowrap">
-        ¿Buscas Papelería? &middot; Tienda Oficina
+  <a id="floatingPapeleriaTab" href="https://oficina.pedregosa.es" target="_blank" rel="noopener"
+    class="hidden md:flex fixed right-0 top-44 z-30 group items-center bg-white/95 hover:bg-amber-50 text-slate-600 hover:text-amber-900 shadow-md rounded-l-xl border border-r-0 border-slate-200 hover:border-amber-300 backdrop-blur-xs transition-all duration-300 overflow-hidden"
+    title="¿Buscas material de oficina o papelería? Ir a oficina.pedregosa.es">
+    <div class="flex flex-col items-center justify-center gap-1.5 py-2.5 px-1.5">
+      <span class="material-symbols-outlined text-base text-amber-600">edit_note</span>
+      <span class="[writing-mode:vertical-rl] rotate-180 text-[10px] font-bold tracking-wide whitespace-nowrap">
+        Papelería &middot; Oficina
       </span>
-      <span class="material-symbols-outlined text-xs text-slate-800">open_in_new</span>
+      <span class="material-symbols-outlined text-[11px] text-slate-400 group-hover:text-amber-700">open_in_new</span>
     </div>
   </a>
+  <script>
+    (function() {
+      var tab = document.getElementById('floatingPapeleriaTab');
+      if (!tab) return;
+      function toggleTabOnTop() {
+        if (window.scrollY > 140) {
+          tab.classList.add('opacity-0', 'pointer-events-none', 'translate-x-full');
+        } else {
+          tab.classList.remove('opacity-0', 'pointer-events-none', 'translate-x-full');
+        }
+      }
+      window.addEventListener('scroll', toggleTabOnTop, { passive: true });
+      toggleTabOnTop();
+    })();
+  </script>
   <!-- ========================================== -->
   <!-- BOTÓN FLOTANTE WHATSAPP B2B                -->
   <!-- ========================================== -->
