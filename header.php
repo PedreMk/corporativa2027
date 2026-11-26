@@ -59,6 +59,38 @@ if (!defined('ABSPATH')) exit;
     body { font-family: 'Plus Jakarta Sans', sans-serif; }
     .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
   </style>
+  <!-- Datos Estructurados Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["WholesaleStore", "LocalBusiness"],
+    "name": "PEDREGOSA S.L.",
+    "taxID": "B41501388",
+    "url": "<?php echo esc_url(home_url('/')); ?>",
+    "logo": "<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo-pedregosa-tagline.png'); ?>",
+    "telephone": "+34954368011",
+    "email": "pedidos@pedregosa.es",
+    "priceRange": "€€",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Polígono Store, Calle Gramil nº 8",
+      "addressLocality": "Sevilla",
+      "postalCode": "41008",
+      "addressRegion": "Andalucía",
+      "addressCountry": "ES"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "08:30", "closes": "14:30" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "15:30", "closes": "17:30" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "08:00", "closes": "15:00" }
+    ],
+    "sameAs": [
+      "https://tienda.pedregosa.es/",
+      "https://oficina.pedregosa.es/",
+      "https://www.linkedin.com/company/pedregosa-sl/"
+    ]
+  }
+  </script>
 </head>
 <body <?php body_class('bg-white text-on-surface antialiased selection:bg-primary-container selection:text-white'); ?>>
 <?php wp_body_open(); ?>
